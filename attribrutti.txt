@@ -1,0 +1,81 @@
+allenatore già fatto
+	
+invito
+	allenatore
+	lega
+	risposta
+lega
+	nome
+	logo
+	maxAllenatori
+	quotamensile
+	budget
+	primoPosto
+	secondoPosto
+	terzoPosto
+	presidente
+	partite l
+	squadre l
+squadra
+	nome
+	allenatore
+	logo
+	nome lega
+	punti
+	formazione
+	giocatori l
+asta
+	dataInizio
+	ora
+	dataFine
+	nomeLega
+	offerte l
+offerta
+	nomeSquadra
+	dataAsta
+	nomeLega
+	giocatore
+	somma
+giocatore
+	idGiocatore
+	nome
+	cognome
+	ruolo
+	squadra
+	presenze
+	votoMedio
+	goal
+	assist
+	ammonizioni
+	espulsioni
+	rigoriSegnati
+	rigoriSbagliati
+	rigoriParati
+	listaFantaSquadre
+formazione
+	modulo
+	giornata
+	squadra
+	schierata bool
+	giocatoriSchierati l(array)
+	panchina l(array)
+scambio
+	idGiocatore1
+	nomeSquadra1
+	idGiocatore2
+	nomeSquadra2
+	prezzoOfferto
+scout
+	nome
+	cognome
+	username
+	email
+	password
+
+		
+post
+	idPost
+	data
+	titolo
+	testo
+	Scout
