@@ -25,7 +25,7 @@ CalendarioView
 VisualizzaMatchView
 VisualizzaBachecaView
 inserisciPostView
-modifcaPostView
+modificaPostView
 visualizzaSquadraView
 
 
@@ -33,27 +33,24 @@ CONTROL
 registrazioneServlet
 loginServlet
 logoutServlet
-cancellaProfiloServlet
-modificaDatiServlet
+gestoreProfiloServlet
 creaSquadraServlet
 creaLegaServlet
 invitoServlet
+astaServlet
 uniscitiAllaLegaServlet
 organizzaAstaServlet
-astaFaiOffertaServlet
-astaCancellaOffertaServlet
-astaModificaOffertaServlet
+offertaServlet
 formazioniServlet
 visualizzaSquadraServlet
-inserisciFormazioneServlet
-filtraGiocatoriServlet
-salvaFormazioneServlet
+formazioneServlet
+ricercaGiocatoriServlet
 classificaServlet
 giocatoreServlet
-invioScambioServlet
-rispondiScambioServlet
+scambioServlet
 calendarioServlet
 matchServlet
+gestorePostServlet
 
 MODEL
 allenatore
@@ -67,6 +64,7 @@ offerta
 invito
 scout
 post
+scambio
 
 GestoreAllenatore
 GestoreLega
