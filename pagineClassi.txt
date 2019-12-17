@@ -31,7 +31,7 @@ visualizzaSquadraView
 
 CONTROL
 registrazioneServlet FATTO G
-loginServlet
+loginServlet G
 logoutServlet
 gestoreProfiloServlet
 creaSquadraServlet
