@@ -33,7 +33,7 @@ CONTROL
 registrazioneServlet FATTO G
 loginServlet G
 logoutServlet G ma parla col prof per la post, non mi convince, avrei dovuto solo scrivere "Utente rimosso dalla sessione"
-gestoreProfiloServlet
+gestoreProfiloServlet modificadati/cancellaprofilo
 creaSquadraServlet
 creaLegaServlet
 invitoServlet
