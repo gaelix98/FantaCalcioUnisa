@@ -30,7 +30,7 @@ visualizzaSquadraView
 
 
 CONTROL
-registrazioneServlet
+registrazioneServlet FATTO G
 loginServlet
 logoutServlet
 gestoreProfiloServlet
