@@ -62,8 +62,10 @@ formazione
 scambio
 	idGiocatore1
 	nomeSquadra1
+	nomeLega1
 	idGiocatore2
 	nomeSquadra2
+	nomeLega2
 	prezzoOfferto
 scout
 	nome
