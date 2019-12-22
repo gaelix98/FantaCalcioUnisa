@@ -24,6 +24,8 @@ public class Offerta {
 		this.giocatore = giocatore;
 		this.somma = somma;
 	}
+	
+	public Offerta() {}
 
 	/**
 	 * @return squadra squadra che fa l'offerta
