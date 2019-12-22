@@ -3,14 +3,12 @@ CREATE DATABASE fantacalciounisa;
 use fantacalciounisa;
 
 
-
 CREATE TABLE allenatore (
   Nome VARCHAR(50) NOT NULL,
   Cognome VARCHAR(50) NOT NULL,
-  email VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL UNIQUE,
   password VARCHAR(50) NOT NULL,
   username VARCHAR(50) NOT NULL,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
   PRIMARY KEY (`username`));
   
 CREATE TABLE squadra (
@@ -188,7 +186,8 @@ CREATE TABLE giocatoreformazione (
     FOREIGN KEY ( Giornata,NomeSquadra , NomeLega)
         REFERENCES formazione (Giornata , Squadra , NomeLega)
         ON UPDATE CASCADE ON DELETE CASCADE,
-        Id INT NOT NULL,
+	Id INT NOT NULL,
+    posizione INT NOT NULL,
      FOREIGN KEY (Id)
         REFERENCES giocatore (Id)
         ON UPDATE CASCADE ON DELETE CASCADE,
