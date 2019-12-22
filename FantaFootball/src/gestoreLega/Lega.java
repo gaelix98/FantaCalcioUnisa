@@ -51,90 +51,177 @@ public class Lega {
 		this.squadre=new HashSet<>();
 	}
 
+	/**
+	 *@return nome nome univoco della lega
+	 */
 	public String getNome() {
 		return nome;
 	}
-
+	
+	/**
+	 * @param nome nome univoco da assegnare alla lega
+	 * @return
+	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
+	/**
+	 * 
+	 * @return logo logo assegnato alla lega
+	 */
 	public String getLogo() {
 		return logo;
 	}
-
+	
+	/**
+	 * 
+	 * @param logo logo da assegnare alla lega
+	 */
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
 
+	/**
+	 * 
+	 * @return maxAllenatori numero massimo di allenatori partecipanti alla lega
+	 */
 	public int getMaxAllenatori() {
 		return maxAllenatori;
 	}
-
+	
+	/**
+	 * 
+	 * @param maxAllenatori numero massimo di allenatori partecipanti da assegnare alla lega
+	 */
 	public void setMaxAllenatori(int maxAllenatori) {
 		this.maxAllenatori = maxAllenatori;
 	}
-
+	
+	/**
+	 * 
+	 * @return quotaMensile quota che ogni allenatore di questa lega deve pagare mensilmente
+	 */
 	public int getQuotaMensile() {
 		return quotaMensile;
 	}
-
+	
+	/**
+	 * 
+	 * @param quotaMensile quota che ogni allenatore di questa lega deve pagare mensilmente da assegnare a questa lega
+	 */
 	public void setQuotaMensile(int quotaMensile) {
 		this.quotaMensile = quotaMensile;
 	}
-
+	
+	/**
+	 * 
+	 * @return budget budget iniziale che ogni squadra della lega ha disposizione
+	 */
 	public int getBudget() {
 		return budget;
 	}
-
+	
+	/**
+	 * 
+	 * @param budget budget iniziale da assegnare
+	 */
 	public void setBudget(int budget) {
 		this.budget = budget;
 	}
-
+	
+	/**
+	 * 
+	 * @return primoPosto percentuale di vincita del primo posto
+	 */
 	public int getPrimoPosto() {
 		return primoPosto;
 	}
-
+	
+	/**
+	 * 
+	 * @param primoPosto percentuale di vincita del primo posto da assegnare alla lega
+	 */
 	public void setPrimoPosto(int primoPosto) {
 		this.primoPosto = primoPosto;
 	}
-
+	
+	/**
+	 * 
+	 * @return secondoPosto percentuale di vincita del secondo posto
+	 */
 	public int getSecondoPosto() {
 		return secondoPosto;
 	}
-
+	
+	/**
+	 * 
+	 * @param secondoPosto percentuale di vincita del secondo posto da assegnare alla lega
+	 */
 	public void setSecondoPosto(int secondoPosto) {
 		this.secondoPosto = secondoPosto;
 	}
-
+	
+	/**
+	 * 
+	 * @return terzoPosto percentuale di vincita del terzo posto
+	 */
 	public int getTerzoPosto() {
 		return terzoPosto;
 	}
-
+	
+	/**
+	 * 
+	 * @param terzoPosto percentuale di vincita del terzo posto da assegnare alla lega
+	 */
 	public void setTerzoPosto(int terzoPosto) {
 		this.terzoPosto = terzoPosto;
 	}
-
+	
+	/**
+	 * 
+	 * @return presidente l'allenatore che ha creato la lega
+	 */
 	public Allenatore getPresidente() {
 		return presidente;
 	}
 
+	/**
+	 * 
+	 * @param presidente l'allenatore che ha creato la lega
+	 */
 	public void setPresidente(Allenatore presidente) {
 		this.presidente = presidente;
 	}
-
+	
+	/**
+	 * 
+	 * @return partite l'insieme delle partite di questa lega
+	 */
 	public Set<Partita> getPartite() {
 		return partite;
 	}
 
+	/**
+	 * 
+	 * @param partite l'insieme delle partite da assegnare a questa lega
+	 */
 	public void setPartite(Set<Partita> partite) {
 		this.partite = partite;
 	}
-
+	
+	/**
+	 * 
+	 * @return squadre l'insieme delle squadre di questa lega
+	 */
 	public Set<Squadra> getSquadre() {
 		return squadre;
 	}
-
+	
+	/**
+	 * 
+	 * @param squadre l'insieme delle squadre da assegnare a questa lega
+	 */
 	public void setSquadre(Set<Squadra> squadre) {
 		this.squadre = squadre;
 	}

@@ -18,7 +18,6 @@ public class Invito {
 	 * @return 
 	 */
 	public Invito(Allenatore allenatore, Lega lega, boolean risposta) {
-		super();
 		this.allenatore = allenatore;
 		this.lega = lega;
 		this.risposta = risposta;
