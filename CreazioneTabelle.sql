@@ -67,8 +67,8 @@ CREATE TABLE partita (
     Squadra1 VARCHAR(50) NOT NULL,
     Squadra2 VARCHAR(50) NOT NULL,
     NomeLega VARCHAR(50) NOT NULL,
-    Goal1 INT NOT NULL,
-    Goal2 INT NOT NULL,
+    Goal1 INT,
+    Goal2 INT,
     giornata INT NOT NULL,
     FOREIGN KEY (Squadra1 , NomeLega)
         REFERENCES squadra (NomeSquadra , Lega)
@@ -78,6 +78,8 @@ CREATE TABLE partita (
         ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (NomeLega , Squadra1 , Squadra2 , Giornata)
 );
+
+
 
 CREATE TABLE giocatore (
     Id INT AUTO_INCREMENT NOT NULL,
