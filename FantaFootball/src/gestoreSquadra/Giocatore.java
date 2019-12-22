@@ -6,7 +6,7 @@ package gestoreSquadra;
  *
  */
 public class Giocatore {
-	private String id;
+	private int id;
 	private String nome;
 	private String cognome;
 	private String ruolo;
@@ -28,17 +28,8 @@ public class Giocatore {
 	 * @param cognome
 	 * @param ruolo
 	 * @param squadra
-	 * @param presenze
-	 * @param votoMedio
-	 * @param goal
-	 * @param assist
-	 * @param ammonizioni
-	 * @param espulsioni
-	 * @param rigoriSegnati
-	 * @param rigoriSbagliati
-	 * @param rigoriParati
 	 */
-	public Giocatore(String id, String nome, String cognome, String ruolo, String squadra) {
+	public Giocatore(int id, String nome, String cognome, String ruolo, String squadra) {
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -54,18 +45,57 @@ public class Giocatore {
 		this.rigoriSbagliati = 0;
 		this.rigoriParati = 0;
 	}
+	
+	
+	/**
+	 * 
+	 * @param id
+	 * @param nome
+	 * @param cognome
+	 * @param ruolo
+	 * @param squadra
+	 * @param presenze
+	 * @param votoMedio
+	 * @param goal
+	 * @param assist
+	 * @param ammonizioni
+	 * @param espulsioni
+	 * @param rigoriSegnati
+	 * @param rigoriSbagliati
+	 * @param rigoriParati
+	 */
+	public Giocatore(int id, String nome, String cognome, String ruolo, String squadra, int presenze, float votoMedio,
+			int goal, int assist, int ammonizioni, int espulsioni, int rigoriSegnati, int rigoriSbagliati,
+			int rigoriParati) {
+		this.id = id;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.ruolo = ruolo;
+		this.squadra = squadra;
+		this.presenze = presenze;
+		this.votoMedio = votoMedio;
+		this.goal = goal;
+		this.assist = assist;
+		this.ammonizioni = ammonizioni;
+		this.espulsioni = espulsioni;
+		this.rigoriSegnati = rigoriSegnati;
+		this.rigoriSbagliati = rigoriSbagliati;
+		this.rigoriParati = rigoriParati;
+	}
+
+
 
 	/**
 	 * @return id
 	 */
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 	
 	/**
 	 * @param id id
 	 */
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

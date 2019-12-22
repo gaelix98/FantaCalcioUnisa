@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import db.DriverManagerConnectionPool;
 
 /**
- * 
+ * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Offerta.
  * @author Maria Natale
  *
  */
@@ -30,6 +30,8 @@ public class OffertaDAO {
 	 */
 	public synchronized boolean addOfferta(String nomeSquadra, Date dataAsta, String nomeLega, int giocatore, int somma) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
+		int ris;
+		boolean inserito=false;
 		String sql="insert into offerta values (?,?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, nomeSquadra);
@@ -37,8 +39,6 @@ public class OffertaDAO {
 		ps.setString(3, nomeLega);
 		ps.setInt(4, giocatore);
 		ps.setInt(5, somma);
-		int ris;
-		boolean inserito=false;
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -83,6 +83,8 @@ public class OffertaDAO {
 	 */
 	public synchronized boolean updateOfferta (String nomeSquadra, Date dataAsta, String nomeLega, int giocatore, int somma) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
+		boolean modificato=false;
+		int ris;
 		String sqlUp="Update Offerta set somma=? where squadra=? and dataInizio=? and nomeLega=? and giocatore=? ";
 		PreparedStatement ps = conn.prepareStatement(sqlUp);
 		ps.setInt(1, somma);
@@ -90,8 +92,6 @@ public class OffertaDAO {
 		ps.setString(3, dataAsta.toString());
 		ps.setString(4, nomeLega);
 		ps.setInt(5, giocatore);
-		boolean modificato=false;
-		int ris;
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -282,6 +282,7 @@ public class OffertaDAO {
 	 */
 	public synchronized Offerta getOffertaGiocatoreSquadra(int giocatore, Date dataInizioAsta, String nomeLega, String nomeSquadra) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
+		Offerta offerta=null;
 		String sql="select offerta.* where offerta.giocatore=? and offerta.dataInizo=? and offerta.nomeLega=? and offerta.squadra=nomeSquadra";
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setInt(1, giocatore);
@@ -289,7 +290,6 @@ public class OffertaDAO {
 		ps.setString(3, nomeLega);
 		ps.setString(4, nomeSquadra);
 		ResultSet rs=ps.executeQuery();
-		Offerta offerta=null;
 		/*while(rs.next()) {
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));

@@ -25,6 +25,25 @@ public class Partita {
 		this.goalSquadra2 = 0;
 	}
 	
+	
+	/**
+	 * 
+	 * @param squadra1
+	 * @param squadra2
+	 * @param giornata
+	 * @param goalSquadra1
+	 * @param goalSquadra2
+	 */
+	public Partita(Squadra squadra1, Squadra squadra2, int giornata, int goalSquadra1, int goalSquadra2) {
+		this.squadra1 = squadra1;
+		this.squadra2 = squadra2;
+		this.giornata = giornata;
+		this.goalSquadra1 = goalSquadra1;
+		this.goalSquadra2 = goalSquadra2;
+	}
+
+
+
 	/**
 	 * @return squadra1 squadra di casa
 	 */
