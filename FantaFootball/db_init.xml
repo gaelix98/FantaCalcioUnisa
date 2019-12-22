@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<allenatore
+	nome="maria"
+	cognome="natale"
+	email="maria_natale98@yahoo.it"
+	password="maria"
+	username="maria98"
+/>
+<allenatore
+	nome="gaetano"
+	cognome="casillo"
+	email="gaetano.casillo@gmail.com"
+	password="gaetanoc"
+	username="tae98"
+/>
+<lega
+	NomeLega="memeroni"
+    Logo="" 
+    MaxAllenatori="5"
+    quotaMensile="20"
+    budget="250"
+    primoPosto="50"
+    secondoPosto="30"
+    terzoPosto="20"
+    Presidente="tae98"
+/>
+<invito
+	allenatore="maria98"
+	nomeLega="memeroni"
+	risposta="true"/>
+<squadra
+	NomeSquadra="squadraMaria"
+    Lega="memeroni"
+    Logo="" 
+    Allenatore="maria98"
+    Punti="0"
+    BudgetRimanente="150"
+/>
+<squadra
+	NomeSquadra="squadraTae"
+    Lega="memeroni"
+    Logo="" 
+    Allenatore="tae98"
+    Punti="0"
+    BudgetRimanente="50"
+/>
+<asta
+	dataInizio="2019-12-22"
+	nomeLega="memeroni"
+	ora="12:35:00"
+	dataFine="2019-12-23"/>
+<giocatore
+    Nome="Federico"
+    Cognome="Bernardeschi"
+    Ruolo="CEN"
+    SquadraReale="Juventus" 
+    Presenze="0"
+    VotoMedio="0"
+    Goal="0"
+    Assist="0"
+    Ammonizioni="0" 
+    Espulsioni="0"
+    RigoriSegnati="0"
+    RigoriSbagliati="0"
+    RigoriParati="0"/>
+<giocatore
+    Nome="Cristiano"
+    Cognome="Ronaldo"
+    Ruolo="ATT"
+    SquadraReale="Juventus" 
+    Presenze="0"
+    VotoMedio="0"
+    Goal="0"
+    Assist="0"
+    Ammonizioni="0" 
+    Espulsioni="0"
+    RigoriSegnati="0"
+    RigoriSbagliati="0"
+    RigoriParati="0"/>
+<giocatore
+    Nome="Gianluigi"
+    Cognome="Buffon"
+    Ruolo="POR"
+    SquadraReale="Juventus" 
+    Presenze="0"
+    VotoMedio="0"
+    Goal="0"
+    Assist="0"
+    Ammonizioni="0" 
+    Espulsioni="0"
+    RigoriSegnati="0"
+    RigoriSbagliati="0"
+    RigoriParati="0"/>
+<offerta
+	squadra="squadraMaria"
+	dataInizio="2019-12-22"
+	nomeLega="memeroni"
+	giocatore="1"
+	somma="20"/>
+<offerta
+	squadra="squadraMaria"
+	dataInizio="2019-12-22"
+	nomeLega="memeroni"
+	giocatore="2"
+	somma="30"/>
+<offerta
+	squadra="squadraTae"
+	dataInizio="2019-12-22"
+	nomeLega="memeroni"
+	giocatore="2"
+	somma="40"/>
+<squadragiocatore
+	nomeSquadra="squadraMaria"
+	nomeLega="memeroni"
+	id="1"/>
+<squadragiocatore
+	nomeSquadra="squadraTae"
+	nomeLega="memeroni"
+	id="2"/>
+</dataset>
