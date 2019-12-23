@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
 import gestoreLega.Asta;
@@ -116,6 +117,37 @@ public class GiocatoreDAO {
 		}
 		conn.close();
 		return giocatore;
+	}
+	
+	public synchronized Giocatore[] getGiocatoriBySquadra(String nomeLega,String nomeSquadra) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		Giocatore[] giocatori = new Giocatore[25];
+		int i = 0;
+		String sql = "select * from squadragiocatore where squadragiocatore.NomeLega = ? and squadragiocatore.NomeSquadra = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, nomeLega);
+		ps.setString(2, nomeSquadra);
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			int id = rs.getInt("id");
+			String nome=rs.getString("nome");
+			String cognome=rs.getString("cognome");
+			String ruolo=rs.getString("ruolo");
+			String squadra=rs.getString("squadraReale");
+			int presenze=rs.getInt("presenze");
+			float votoMedio=rs.getFloat("votoMedio");
+			int goal=rs.getInt("goal");
+			int assist=rs.getInt("assist");
+			int ammonizioni=rs.getInt("ammonizioni");
+			int espulsioni=rs.getInt("espulsioni");
+			int rigoriSegnati=rs.getInt("rigoriSegnati");
+			int rigoriSbagliati=rs.getInt("rigoriSbagliati");
+			int rigoriParati=rs.getInt("rigoriParati");
+			Giocatore giocatore=new Giocatore(id, nome, cognome, ruolo, squadra, presenze, votoMedio, goal, assist, ammonizioni, espulsioni, rigoriSegnati, rigoriSbagliati, rigoriParati);
+			giocatori[i++] = giocatore;
+		}
+		return giocatori;
 	}
 	
 }
