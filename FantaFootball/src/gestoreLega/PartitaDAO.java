@@ -41,7 +41,7 @@ public class PartitaDAO {
 			if (ris==1)
 				inserito=true;
 		}
-		catch(SQLException ex) {
+		catch(SQLException ex) { 
 			ex.printStackTrace();
 		}
 		conn.close();

@@ -61,7 +61,7 @@ public class OffertaDAO {
 		ps.setString(3, offerta.getAsta().getLega().getNome());
 		ps.setInt(4, offerta.getGiocatore().getId());
 		ps.execute();
-		conn.close();
+		conn.close(); 
 	}
 	
 	/**

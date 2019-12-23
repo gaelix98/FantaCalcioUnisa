@@ -18,7 +18,7 @@ import gestoreSquadra.OffertaDAO;
  *
  */
 public class AstaDAO {
-	Connection conn = null;
+	Connection conn = null ;
 	
 	/**
 	 * 
