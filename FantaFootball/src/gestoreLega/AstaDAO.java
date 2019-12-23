@@ -21,7 +21,7 @@ public class AstaDAO {
 	Connection conn = null ;
 	
 	/**
-	 * 
+	 *  
 	 * @param asta
 	 * @return
 	 * @throws SQLException

@@ -28,7 +28,7 @@ public class PartitaDAO {
 	 */
 	public synchronized boolean addPartita(Partita partita) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
-		int ris;
+		int ris; 
 		boolean inserito=false;
 		String sql="insert into partita (squadra1, squadra2, nomeLega, giornata) values (?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
