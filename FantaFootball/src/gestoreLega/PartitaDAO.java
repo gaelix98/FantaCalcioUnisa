@@ -45,7 +45,7 @@ public class PartitaDAO {
 			ex.printStackTrace();
 		}
 		conn.close();
-		return inserito;
+		return inserito; 
 	}
 	
 	/**

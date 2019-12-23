@@ -28,7 +28,7 @@ public class AstaDAO {
 	 */
 	public synchronized boolean addAsta(Asta asta) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
-		int ris;
+		int ris; 
 		boolean inserito=false;
 		String sql="insert into asta values (?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
