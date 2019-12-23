@@ -20,25 +20,21 @@ public class OffertaDAO {
 	
 	/**
 	 * 
-	 * @param nomeSquadra
-	 * @param dataAsta
-	 * @param nomeLega
-	 * @param giocatore
-	 * @param somma
+	 * @param offerta
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized boolean addOfferta(String nomeSquadra, Date dataAsta, String nomeLega, int giocatore, int somma) throws SQLException {
+	public synchronized boolean addOfferta(Offerta offerta) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
 		boolean inserito=false;
 		String sql="insert into offerta values (?,?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(1, nomeSquadra);
-		ps.setString(2, dataAsta.toString());
-		ps.setString(3, nomeLega);
-		ps.setInt(4, giocatore);
-		ps.setInt(5, somma);
+		ps.setString(1, offerta.getSquadra().getNome());
+		ps.setString(2, offerta.getAsta().getDataInizio().toString());
+		ps.setString(3, offerta.getAsta().getLega().getNome());
+		ps.setInt(4, offerta.getGiocatore().getId());
+		ps.setInt(5, offerta.getSomma());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -51,47 +47,40 @@ public class OffertaDAO {
 		return inserito;
 	}
 	
-	/**
+	/***
 	 * 
-	 * @param nomeSquadra
-	 * @param dataAsta
-	 * @param nomeLega
-	 * @param giocatore
+	 * @param offerta
 	 * @throws SQLException
 	 */
-	public synchronized void deleteOfferta(String nomeSquadra, Date dataAsta, String nomeLega, int giocatore) throws SQLException {
+	public synchronized void deleteOfferta(Offerta offerta) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		String sql="Delete from Offerta where squadra=? and dataInizio=? and nomeLega=? and giocatore=?";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(1, nomeSquadra);
-		ps.setString(2, dataAsta.toString());
-		ps.setString(3, nomeLega);
-		ps.setInt(4, giocatore);
+		ps.setString(1, offerta.getSquadra().getNome());
+		ps.setString(2, offerta.getAsta().getDataInizio().toString());
+		ps.setString(3, offerta.getAsta().getLega().getNome());
+		ps.setInt(4, offerta.getGiocatore().getId());
 		ps.execute();
 		conn.close();
 	}
 	
 	/**
 	 * 
-	 * @param nomeSquadra
-	 * @param dataAsta
-	 * @param nomeLega
-	 * @param giocatore
-	 * @param somma
+	 * @param offerta
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized boolean updateOfferta (String nomeSquadra, Date dataAsta, String nomeLega, int giocatore, int somma) throws SQLException {
+	public synchronized boolean updateOfferta (Offerta offerta) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean modificato=false;
 		int ris;
 		String sqlUp="Update Offerta set somma=? where squadra=? and dataInizio=? and nomeLega=? and giocatore=? ";
 		PreparedStatement ps = conn.prepareStatement(sqlUp);
-		ps.setInt(1, somma);
-		ps.setString(2, nomeSquadra);
-		ps.setString(3, dataAsta.toString());
-		ps.setString(4, nomeLega);
-		ps.setInt(5, giocatore);
+		ps.setInt(1, offerta.getSomma());
+		ps.setString(2, offerta.getSquadra().getNome());
+		ps.setString(3, offerta.getAsta().getDataInizio().toString());
+		ps.setString(4, offerta.getAsta().getLega().getNome());
+		ps.setInt(5, offerta.getGiocatore().getId());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)

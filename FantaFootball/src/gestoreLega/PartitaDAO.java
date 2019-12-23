@@ -22,22 +22,20 @@ public class PartitaDAO {
 	
 	/**
 	 * 
-	 * @param squadra1
-	 * @param squadra2
-	 * @param giornata
+	 * @param partita
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized boolean addPartita(Squadra squadra1, Squadra squadra2, int giornata) throws SQLException {
+	public synchronized boolean addPartita(Partita partita) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
 		boolean inserito=false;
 		String sql="insert into partita (squadra1, squadra2, nomeLega, giornata) values (?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(1, squadra1.getNome());
-		ps.setString(2, squadra2.getNome());
-		ps.setString(3, squadra1.getLega().getNome());
-		ps.setInt(4, giornata);
+		ps.setString(1, partita.getSquadra1().getNome());
+		ps.setString(2, partita.getSquadra2().getNome());
+		ps.setString(3, partita.getSquadra1().getLega().getNome());
+		ps.setInt(4, partita.getGiornata());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -77,28 +75,24 @@ public class PartitaDAO {
 		return partita;
 	}
 	
-	/**ù
+	/**
 	 * 
-	 * @param squadra1
-	 * @param squadra2
-	 * @param giornata
-	 * @param goal1
-	 * @param goal2
+	 * @param partita
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized boolean updatePartita(Squadra squadra1, Squadra squadra2, int giornata, int goal1, int goal2) throws SQLException {
+	public synchronized boolean updatePartita(Partita partita) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean modificato=false;
 		int ris;
 		String sqlUp="Update Partita set goal1=?, goal2=? where partita.squadra1=? and partita.squadra2=? and partita.giornata=? and partita.nomeLega=?; ";
 		PreparedStatement ps = conn.prepareStatement(sqlUp);
-		ps.setInt(1, goal1);
-		ps.setInt(2, goal2);
-		ps.setString(3, squadra1.getNome());
-		ps.setString(4, squadra2.getNome());
-		ps.setInt(5, giornata);
-		ps.setString(6, squadra1.getLega().getNome());
+		ps.setInt(1, partita.getGoalSquadra1());
+		ps.setInt(2, partita.getGoalSquadra2());
+		ps.setString(3, partita.getSquadra1().getNome());
+		ps.setString(4, partita.getSquadra2().getNome());
+		ps.setString(5, partita.getSquadra1().getLega().getNome());
+		ps.setInt(6, partita.getGiornata());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)

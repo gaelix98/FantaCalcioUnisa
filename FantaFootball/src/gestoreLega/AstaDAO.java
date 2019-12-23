@@ -21,23 +21,21 @@ public class AstaDAO {
 	Connection conn = null;
 	
 	/**
-	 * @param dataInizio
-	 * @param ora
-	 * @param dataFine
-	 * @param nomeLega
+	 * 
+	 * @param asta
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized boolean addAsta(Date dataInizio, Time ora, Date dataFine, String nomeLega) throws SQLException {
+	public synchronized boolean addAsta(Asta asta) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
 		boolean inserito=false;
 		String sql="insert into asta values (?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(1, dataInizio.toString());
-		ps.setString(2, nomeLega);
-		ps.setString(3, ora.toString());
-		ps.setString(4, dataFine.toString());
+		ps.setString(1, asta.getDataInizio().toString());
+		ps.setString(2, asta.getLega().getNome());
+		ps.setString(3, asta.getOra().toString());
+		ps.setString(4, asta.getDataFine().toString());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
