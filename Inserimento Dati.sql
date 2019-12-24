@@ -7,9 +7,9 @@ values ('Mattia','Bella Sara','mattia.bellasara@gmail.com','PipPo111','Condor123
 INSERT INTO allenatore
 values ('Pasquale','Caramella','pasquale.caramella.22@gmail.com','PIPPO33','CARAMAo');
 INSERT INTO allenatore
-values ('Giovanni','Mucciaccia','artattack@hotmail.it','Capo22','Artattack');
+values ('Giovanni','Mucciaccia','artattack@hotmail.it','Capoo22','Artattack');
 INSERT INTO allenatore
-values ('Carlo','Conti','scossaaaa@gmail.com','tantantan','Sc00S54');
+values ('Carlo','Conti','scossaaaa@gmail.com','tantantan1','Sc00S54');
 
 
 INSERT INTO squadra(NomeSquadra,Lega,Logo,Allenatore,Punti,BudgetRimanente)
@@ -143,11 +143,11 @@ values ('CavalDonato','9/10/2019','LegaCheNonEsiste',3,3);
 
 
 INSERT INTO scout(Nome,Cognome,Username,email,pass)
-values ('Paolo','Conte','LoScarso','nonhopiuidee@perlemail.com','bingobangobongo');
+values ('Paolo','Conte','LoScarso','nonhopiuidee@perlemail.com','bingobangobongo1');
 INSERT INTO scout
-values ('Angelo','Coralluzzo','LoScarso2','vogliofarejungler@mannaggiagaetano.it','imsohappyinthejungle');
+values ('Angelo','Coralluzzo','LoScarso2','vogliofarejungler@mannaggiagaetano.it','imsohappyinthejungle1');
 INSERT INTO scout
-values ('Nardo','Nardiello','Narducci2000','mipiaceflammarti@tutto.it','Irefusetogooo');
+values ('Nardo','Nardiello','Narducci2000','mipiaceflammarti@tutto.it','Irefusetogooo1');
 
 
 
