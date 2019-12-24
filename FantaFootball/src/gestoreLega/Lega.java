@@ -46,8 +46,6 @@ public class Lega {
 		this.secondoPosto = secondoPosto;
 		this.terzoPosto = terzoPosto;
 		this.presidente = presidente;
-		this.partite=new HashSet<>();
-		this.squadre=new HashSet<>();
 	}
 
 	/**
@@ -191,38 +189,6 @@ public class Lega {
 	 */
 	public void setPresidente(Allenatore presidente) {
 		this.presidente = presidente;
-	}
-	
-	/**
-	 * 
-	 * @return partite l'insieme delle partite di questa lega
-	 */
-	public Set<Partita> getPartite() {
-		return partite;
-	}
-
-	/**
-	 * 
-	 * @param partite l'insieme delle partite da assegnare a questa lega
-	 */
-	public void setPartite(Set<Partita> partite) {
-		this.partite = partite;
-	}
-	
-	/**
-	 * 
-	 * @return squadre l'insieme delle squadre di questa lega
-	 */
-	public Set<Squadra> getSquadre() {
-		return squadre;
-	}
-	
-	/**
-	 * 
-	 * @param squadre l'insieme delle squadre da assegnare a questa lega
-	 */
-	public void setSquadre(Set<Squadra> squadre) {
-		this.squadre = squadre;
 	}
 	
 	

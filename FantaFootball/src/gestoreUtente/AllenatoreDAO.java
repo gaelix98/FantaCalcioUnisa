@@ -109,8 +109,6 @@ public class AllenatoreDAO {
 
 
 	public boolean checkLogin (String username, String password) throws SQLException {
-
-
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps=con.prepareStatement("Select username,password from allenatore where username = ?");
 			ps.setString(1, username);
