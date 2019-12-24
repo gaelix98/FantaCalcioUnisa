@@ -15,7 +15,7 @@ public class Allenatore {
 	private String email;
 	private String username;
 	private String password;
-	private List<Squadra> squadre;
+
 	
 	/**
 	 * @param nome nome dell'allenatore
@@ -32,7 +32,6 @@ public class Allenatore {
 		this.email = email;
 		this.username = username;
 		this.password = password;
-		this.squadre = new ArrayList<Squadra>();
 	}
 
 	/**
@@ -110,20 +109,6 @@ public class Allenatore {
 		this.password = password;
 	}
 
-	/**
-	 * @return squadre fantasquadre gestite dall'allenatore
-	 */
-	public List<Squadra> getSquadre() {
-		return squadre;
-	}
-
-	/**
-	 * @param squadre fantasquadre da assegnare all'allenatore
-	 * @return 
-	 */
-	public void setSquadre(List<Squadra> squadre) {
-		this.squadre = squadre;
-	}
 	
 	
 	
