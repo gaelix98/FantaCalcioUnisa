@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="gestoreUtente.*"%>
 <!-- Header section -->
+<%String tipoUtente=(String)session.getAttribute("tipoUtente");
+String username=null;
+String paginaPersonale=null;
+if (tipoUtente!=null &&tipoUtente.equals("allenatore")){
+	Allenatore allenatore=(Allenatore) session.getAttribute("utente");
+	username=allenatore.getUsername();
+	paginaPersonale="areaPersonaleAllenatore.jsp";
+}
+else if (tipoUtente!=null && tipoUtente.equals("scout")){
+	Scout scout=(Scout) session.getAttribute("utente");
+	username=scout.getUsername();
+	paginaPersonale="areaPersonaleScout.jsp";
+}%>
 	<header class="header_area">
         <div class="sub_header">
             <div class="container">
@@ -36,15 +49,25 @@
                                         <a href="#" class="nav-link">Live</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="login.jsp" class="nav-link">Login</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a href="#" class="nav-link">Il Gioco</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">Help</a>
                                     </li>
-
+									 <%if (tipoUtente==null || tipoUtente==""){ %>
+                                    <li class="nav-item">
+                                        <a href="login.jsp" class="nav-link">Login</a>
+                                    </li>
+                                    <%}else{ %>
+                                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <%=username%>
+                                        </a>
+                                    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Area Personale</a>
+                                            <a class="dropdown-item" href="LogoutServlet">Logout</a>
+                                        </div>
+                                    </li>
+                                    <%} %>
                                 </ul>
                                 <div class="header_social_icon d-none d-lg-block">
                                     <ul>

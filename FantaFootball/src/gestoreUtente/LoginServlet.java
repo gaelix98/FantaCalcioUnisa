@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet {
 		Allenatore allenatore=null;
 		Scout scout=null;
 		String redirect="";
+		session.setAttribute("tipoUtente", null);
 		
 		try {
 			if (allenatoreDAO.checkLogin(username, password)) {

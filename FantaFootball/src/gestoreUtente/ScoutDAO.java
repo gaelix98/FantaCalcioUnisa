@@ -44,7 +44,7 @@ public class ScoutDAO {
 	public synchronized boolean checkLogin (String username ,String password) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean login = false;
-		String sql = "Select username,password from scout where scout.username = ? and scout.password = ?";
+		String sql = "Select username,pass from scout where scout.username = ? and scout.pass = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, username);
 		ps.setString(2, password);
@@ -106,7 +106,7 @@ public class ScoutDAO {
 			String nome = rs.getString("Nome");
 			String cognome = rs.getString("Cognome");
 			String email = rs.getString("email");
-			String password = rs.getString("password");
+			String password = rs.getString("pass");
 			String username = rs.getString("username");
 			
 			scout = new Scout(nome,cognome,email,username,password);
@@ -126,7 +126,7 @@ public class ScoutDAO {
 			String nome = rs.getString("Nome");
 			String cognome = rs.getString("Cognome");
 			String email = rs.getString("email");
-			String password = rs.getString("password");
+			String password = rs.getString("pass");
 			String usernamet = rs.getString("username");
 			scout = new Scout(nome,cognome,email,usernamet,password);
 		}
