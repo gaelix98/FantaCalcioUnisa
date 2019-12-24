@@ -59,17 +59,17 @@ values ('Gaetanondorf','LegaNatalizia',1);
 
 
 INSERT INTO asta(DataInizio,NomeLega,Ora,DataFine)
-values ('25/12/2019','LegaNatalizia','15:30','1/2/2020');
+values ('2019-12-25','LegaNatalizia','15-30-00','2020-02-01');
 INSERT INTO asta
-values ('15/2/2019','LegaNatalizia','9:00','29/2/2019');
+values ('2019-02-15','LegaNatalizia','9-00-00','2019-02-29');
 INSERT INTO asta
-values ('10/10/2019','Memeroni','13:00','18/10/2019');
+values ('2019-10-10','Memeroni','13-00-00','2019-10-18');
 INSERT INTO asta
-values ('15/10/2019','NotMemeroni','16:00','26/11/2019');
+values ('2019-10-15','NotMemeroni','16-00-00','2019-11-26');
 INSERT INTO asta
-values ('1/7/2019','LegaNatalizia','11:00','8/7/2019');
+values ('2019-07-01','LegaNatalizia','11-00-00','2019-07-08');
 INSERT INTO asta
-values ('1/10/2019','LegaCheNonEsiste','8:00','15/10/2019');
+values ('2019-10-01','LegaCheNonEsiste','8-00-00','2019-10-15');
 
 
 
@@ -125,17 +125,17 @@ values (18,1,'CavalDonato','LegaCheNonEsiste');
 
 
 INSERT INTO offerta(Squadra,DataInizio,NomeLega,Giocatore,somma)
-values ('Zoe4Evah','21/4/2019','Memeroni',4,30);
+values ('Zoe4Evah','2019-04-21','Memeroni',4,30);
 INSERT INTO offerta
-values ('PippoSquad','1/1/2019','LegaNatalizia',1,22);
+values ('PippoSquad','2019-01-01','LegaNatalizia',1,22);
 INSERT INTO offerta
-values ('ScossaF.C','11/12/2019','LegaNatalizia'1,28);
+values ('ScossaF.C','2019-12-11','LegaNatalizia'1,28);
 INSERT INTO offerta
-values ('Fiorellina','10/10/2019','NotMemeroni',2,12);
+values ('Fiorellina','2019-10-10','NotMemeroni',2,12);
 INSERT INTO offerta
-values ('FantaCola','7/8/2019','Memeroni',2,23);
+values ('FantaCola','2019-08-07','Memeroni',2,23);
 INSERT INTO offerta
-values ('CavalDonato','9/10/2019','LegaCheNonEsiste',3,3);
+values ('CavalDonato','2019-10-09','LegaCheNonEsiste',3,3);
 
 
 
@@ -154,13 +154,13 @@ values ('Nardo','Nardiello','Narducci2000','mipiaceflammarti@tutto.it','Irefuset
 
 
 INSERT INTO post(idPost,DataPubblicazione,Titolo,Testo,Scout)
-values (1,24/12/2019,'COME GUADAGNARE SOLDI STANDO COMODAMENTE SEDUTO A CASA','primo post non so che scrivere quindi scrivero' del fatto che non so che scrivere scrivendo per l'appunto non so che scrivere','LoScarso');
+values (1,2019-12-24,'COME GUADAGNARE SOLDI STANDO COMODAMENTE SEDUTO A CASA','primo post non so che scrivere quindi scrivero' del fatto che non so che scrivere scrivendo per l'appunto non so che scrivere','LoScarso');
 INSERT INTO post
-values (2,25/12/2019,'CHI PRENDE PIU' PUNTI QUEST'ANNO?','e io che ne so di chi prende piU punti non ho idea nemmeno delle regole del calcio tanto meno di quelle del fantacalcio quindi gioca e non chiedere a me','LoScarso');
+values (2,2019-12-25,'CHI PRENDE PIU' PUNTI QUEST'ANNO?','e io che ne so di chi prende piU punti non ho idea nemmeno delle regole del calcio tanto meno di quelle del fantacalcio quindi gioca e non chiedere a me','LoScarso');
 INSERT INTO post
-values (3,1/12/2019,'6 PERSONAGGI IN CERCA DI ALLENATORE','pinco, pallino, cip, ciop, trick, e ballak stanno cercando proprio te. Quindi comprateli che fai bene, un prezzo buono? 13 FM non farti scappare questa possibilitA','Narducci2000');
+values (3,2019-12-01,'6 PERSONAGGI IN CERCA DI ALLENATORE','pinco, pallino, cip, ciop, trick, e ballak stanno cercando proprio te. Quindi comprateli che fai bene, un prezzo buono? 13 FM non farti scappare questa possibilitA','Narducci2000');
 INSERT INTO post
-values (3,1/11/2019,'FESTA SUPER COOL AD AVELLINO','Vieni alla festa di GiorgioVanni alle ore 21:00 a via cavour n1 ci saranno tante bevande e si potranno vedere le partite dell'anno in HD al locale Lo SpaccaBicchiere','LoScarso2');
+values (3,2019-11-01,'FESTA SUPER COOL AD AVELLINO','Vieni alla festa di GiorgioVanni alle ore 21:00 a via cavour n1 ci saranno tante bevande e si potranno vedere le partite dell'anno in HD al locale Lo SpaccaBicchiere','LoScarso2');
 
 
 
