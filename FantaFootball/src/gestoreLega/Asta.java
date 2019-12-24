@@ -14,7 +14,6 @@ public class Asta {
 	private Lega lega;
 	private Time ora;
 	private Date dataFine;
-	private List<Offerta> offerte;
 	
 	/**
 	 * @param dataInizio data di inizio dell'asta
@@ -27,7 +26,6 @@ public class Asta {
 		this.lega = lega;
 		this.ora = ora;
 		this.dataFine = dataFine;
-		this.offerte = new ArrayList<Offerta>();
 	}
 	
 	/**
@@ -90,20 +88,6 @@ public class Asta {
 		this.dataFine = dataFine;
 	}
 	
-	/**
-	 * @return offerte lista delle offerte effettuate nell'asta
-	 */
-	public List<Offerta> getOfferte() {
-		return offerte;
-	}
-	
-	/**
-	 * @param offerte lista delle offerte da assegnare all'asta
-	 * @return
-	 */
-	public void setOfferte(List<Offerta> offerte) {
-		this.offerte = offerte;
-	}
 	
 	
 }
