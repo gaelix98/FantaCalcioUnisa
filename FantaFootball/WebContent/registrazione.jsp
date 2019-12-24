@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registrati</title>
-<%@include file="head.html" %>
+<%@include file="header.html" %>
 </head>
 <body>
-	<%@ include file="header.jsp"%>
+	<%@ include file="menu.jsp"%>
 	<div class="container ">
 			<div class="col-md-12">
 				<div class="row">
@@ -35,8 +35,7 @@
 												placeholder="Password" class="form-control" id="password">		
 										<input type="checkbox" onclick="showPassword()">Show Password
 										<hr>
-										<button type="submit" class="btn btn-info btn-primary">
-											<i class="fa fa-lock"></i> Registrati
+										<button type="submit" class="genric-btn primary circle arrow">Registrati<span class="lnr lnr-arrow-right"></span></button>
 										</button>
 									</div>
 								</div>
@@ -46,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-<%@include file="footer.html"%>
+<%@include file="footer.jsp"%>
 <script>
 function showPassword() {
 	  var x = document.getElementById("password1");

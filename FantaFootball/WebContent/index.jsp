@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FantaFootaball</title>
-<%@include file="head.html" %>
+<meta charset="ISO-8859-1">
+<title>FantaFootball</title>
+<%@include file="header.html"%>
 </head>
 <body>
-<%@include file="header.jsp" %>
-ciao
-<%@include file="footer.html" %>
+<%@include file="menu.jsp"%>
+
+<%@include file="footer.jsp"%>
 </body>
 </html>
