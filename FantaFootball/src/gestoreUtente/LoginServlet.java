@@ -58,8 +58,6 @@ public class LoginServlet extends HttpServlet {
 			if (allenatoreDAO.checkLogin(username, password)) {
 				allenatore=allenatoreDAO.getAllenatoreByUsername(username);
 				redirect="index.jsp";
-				session.setAttribute("utente", allenatore);
-				session.setAttribute("tipoUtente", "allenatore");
 				
 				LegaDAO legaDAO=new LegaDAO();
 				//cerco le leghe di cui l'allenatore è presidente
@@ -87,6 +85,8 @@ public class LoginServlet extends HttpServlet {
 				InvitoDAO invitoDAO=new InvitoDAO();
 				ArrayList<Invito> inviti=(ArrayList<Invito>) invitoDAO.getInvitoByAllenatore(allenatore.getUsername());
 				
+				session.setAttribute("utente", allenatore);
+				session.setAttribute("tipoUtente", "allenatore");
 				session.setAttribute("legheCreate", legheCreate);
 				session.setAttribute("leghe", leghe);
 				session.setAttribute("scambi", scambi);
@@ -95,12 +95,12 @@ public class LoginServlet extends HttpServlet {
 			else if(scoutDAO.checkLogin(username, password)) {
 				scout=scoutDAO.getScoutByUsername(username);
 				redirect="index.jsp";
-				session.setAttribute("utente", scout);
-				session.setAttribute("tipoUtente", "scout");
+				
 				
 				PostDAO postDAO=new PostDAO();
 				ArrayList<Post> post=postDAO.getPostByScout(scout.getUsername());
-				
+				session.setAttribute("utente", scout);
+				session.setAttribute("tipoUtente", "scout");
 				session.setAttribute("post", post);
 			}
 			else {

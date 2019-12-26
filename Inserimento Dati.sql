@@ -35,9 +35,9 @@ values ('NotMemeroni','C:\Media\Immagini\Campo.png',10,45,200,80,10,10,'Gaetanon
 INSERT INTO lega
 values ('LegaDellaGiustizia','C:\Media\Immagini\jleague.png',5,3,120,40,35,25,'CARAMAo');
 INSERT INTO lega 
-values ('LegaNatalizia','C:\Media\Immagini\meryC.png',25,12,60,30,10,'Condor1234');
+values ('LegaNatalizia','C:\Media\Immagini\meryC.png',5,12,300,60,20,10,'Condor1234');
 INSERT INTO lega
-values ('LegaCheNonEsiste','C:\Media\Immagini\pandacorno.png',8,100,50,50,0,'MariaN1');
+values ('LegaCheNonEsiste','C:\Media\Immagini\pandacorno.png',8,10,200,50,50,0,'MariaN1');
 
 
 
@@ -54,7 +54,6 @@ INSERT INTO invito
 values ('MariaN1','LegaCheNonEsiste',1);
 INSERT INTO invito
 values ('Gaetanondorf','LegaNatalizia',1);
-
 
 
 

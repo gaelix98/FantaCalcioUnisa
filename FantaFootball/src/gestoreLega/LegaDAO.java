@@ -16,18 +16,19 @@ import gestoreUtente.AllenatoreDAO;
 public class LegaDAO {
 	public Lega getLegaByNome(String lega) throws SQLException{
 		AllenatoreDAO dao = new AllenatoreDAO();
+		Lega u=null;
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			PreparedStatement ps=conn.prepareStatement("SELECT * FROM lega where NomeLega=?");
 			ps.setString(1, lega);
 			ResultSet rs= ps.executeQuery();
-			Lega u=new Lega(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),dao.getAllenatoreByUsername(rs.getString(9)));
+			while(rs.next()) {
+				u=new Lega(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),dao.getAllenatoreByUsername(rs.getString(9)));
+			}
 		    conn.close();
-		    return u;
-
-
 		}catch(SQLException e) {
-			throw new RuntimeException(e);
+			e.printStackTrace();
 		}
+		return u;
 	}
 	
 	public boolean addLega(Lega lega) throws SQLException {

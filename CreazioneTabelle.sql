@@ -141,6 +141,7 @@ CREATE TABLE offerta (
     somma INT NOT NULL,
     FOREIGN KEY (Giocatore)
         REFERENCES giocatore (Id)
+         ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (Squadra , NomeLega)
         REFERENCES squadra (NomeSquadra , Lega)
         ON UPDATE CASCADE ON DELETE CASCADE,

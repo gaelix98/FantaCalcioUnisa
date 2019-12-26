@@ -6,12 +6,16 @@ String username=null;
 String paginaPersonale=null;
 if (tipoUtente!=null &&tipoUtente.equals("allenatore")){
 	Allenatore allenatore=(Allenatore) session.getAttribute("utente");
-	username=allenatore.getUsername();
-	paginaPersonale="areaPersonaleAllenatore.jsp";
+	if (allenatore!=null){
+		username=allenatore.getUsername();
+		paginaPersonale="areaPersonaleAllenatore.jsp";
+	}
 }
 else if (tipoUtente!=null && tipoUtente.equals("scout")){
 	Scout scout=(Scout) session.getAttribute("utente");
-	username=scout.getUsername();
+	if (scout!=null){
+		username=scout.getUsername();
+	}
 	paginaPersonale="areaPersonaleScout.jsp";
 }%>
 <header class="header_area">
@@ -23,12 +27,14 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 						<a href="index.html"><img src="img/Logo.png" alt="" title="" /></a>
 					</div>
 				</div>
+				<%if (tipoUtente==null){ %>
 				<div class="col-md-8 col-xl-6">
 					<div class="sub_header_social_icon float-right">
 						<a href="registrazione.jsp" class="register_icon"><i
 							class="ti-arrow-right"></i>REGISTRATI</a>
 					</div>
 				</div>
+				<%} %>
 			</div>
 		</div>
 	</div>
@@ -64,8 +70,9 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 									aria-expanded="false"> <%=username%>
 								</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" href="#">Area Personale</a> <a
-											class="dropdown-item" href="LogoutServlet">Logout</a>
+										<a class="dropdown-item" href=<%=paginaPersonale%>>Area Personale</a>
+										<a class="dropdown-item" href="#">Modifica dati</a>
+										 <a class="dropdown-item" href="LogoutServlet">Logout</a>
 									</div></li>
 								<%} %>
 							</ul>

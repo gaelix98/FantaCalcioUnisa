@@ -20,7 +20,7 @@ public class AllenatoreDAO {
 			ArrayList<Allenatore> utenti = new ArrayList<>();
 			ResultSet rs= ps.executeQuery();
 			while(rs.next()) {
-				Allenatore u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+				Allenatore u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 				utenti.add(u);
 
 
@@ -34,13 +34,14 @@ public class AllenatoreDAO {
 	public Allenatore getAllenatoreByUsername(String username) throws SQLException{
 
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
-			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, passowrd, username FROM allenatore where username=?");
+			Allenatore u=null;
+			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, password, username FROM allenatore where username=?");
 			ps.setString(1, username);
 			ResultSet rs= ps.executeQuery();
-			Allenatore u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+			while (rs.next()) {
+				u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
+			}
 			return u;
-
-
 
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
@@ -109,19 +110,16 @@ public class AllenatoreDAO {
 
 
 	public boolean checkLogin (String username, String password) throws SQLException {
-		try(Connection con= DriverManagerConnectionPool.getConnection()){
-			PreparedStatement ps=con.prepareStatement("Select username,password from allenatore where username = ?");
-			ps.setString(1, username);
-			ResultSet rs= ps.executeQuery();
-			if(username.equals(rs.getString(1))) {
-				if(password.equals(rs.getString(2))) {
-					return true;
-				}
-			}else {
-				return false;
-			}
+		Connection conn = DriverManagerConnectionPool.getConnection();
+		boolean login = false;
+		String sql = "Select username,password from allenatore where username = ? and password = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, username);
+		ps.setString(2, password);
+		if(ps.executeQuery().next()) {
+			login = true;
 		}
-		return false;
+		return login;
 	}
 }
 

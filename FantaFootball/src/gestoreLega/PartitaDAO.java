@@ -11,6 +11,7 @@ import db.DriverManagerConnectionPool;
 import gestoreSquadra.Giocatore;
 import gestoreSquadra.Offerta;
 import gestoreSquadra.Squadra;
+import gestoreSquadra.SquadraDAO;
 
 /**
  * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Partita.
@@ -112,7 +113,7 @@ public class PartitaDAO {
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setString(1, lega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Partita partita=null;
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra1=squadraDAO.getSquadraById(rs.getString("squadra1"), rs.getString("nomeLega"));
@@ -122,7 +123,7 @@ public class PartitaDAO {
 			int goal2=rs.getInt("goal2");
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 			partite.add(partita);
-		}*/
+		}
 		conn.close();
 		return partite;
 	}
@@ -142,7 +143,7 @@ public class PartitaDAO {
 		ps.setString(2, squadra.getNome());
 		ps.setString(2, squadra.getLega().getNome());
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Partita partita=null;
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra1=squadraDAO.getSquadraById(rs.getString("squadra1"), rs.getString("nomeLega"));
@@ -152,7 +153,7 @@ public class PartitaDAO {
 			int goal2=rs.getInt("goal2");
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 			partite.add(partita);
-		}*/
+		}
 		conn.close();
 		return partite;
 	}
@@ -172,17 +173,16 @@ public class PartitaDAO {
 		ps.setInt(1, giornata);
 		ps.setString(2, lega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Partita partita=null;
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra1=squadraDAO.getSquadraById(rs.getString("squadra1"), rs.getString("nomeLega"));
 			Squadra squadra2=squadraDAO.getSquadraById(rs.getString("squadra2"), rs.getString("nomeLega"));
-			int giornata=rs.getInt("giornata");
 			int goal1=rs.getInt("goal1");
 			int goal2=rs.getInt("goal2");
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 			partite.add(partita);
-		}*/
+		}
 		conn.close();
 		return partite;
 	}

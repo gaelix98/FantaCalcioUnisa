@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
 import gestoreLega.Lega;
+import gestoreLega.LegaDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 /**
@@ -99,19 +100,19 @@ public class SquadraDAO {
 	public Squadra getSquadraById(String nomeSquadra, String nomeLega) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Squadra squadra = null;
-		String sql = "select * from squadra where squadra.nome = ? and squadra.lega = ?";
+		String sql = "select * from squadra where squadra.nomeSquadra = ? and squadra.lega = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, nomeSquadra);
 		ps.setString(2, nomeLega);
 		
 		ResultSet rs = ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			LegaDAO legaDAO = new LegaDAO();
 			AllenatoreDAO allenatoreDAO = new AllenatoreDAO();
 			GiocatoreDAO giocatoreDAO = new GiocatoreDAO();
 			String nome = rs.getString("NomeSquadra");
 			String logo = rs.getString("Logo");
-			Lega lega = legaDAO.getLegaById(rs.getString("Lega"));
+			Lega lega = legaDAO.getLegaByNome(rs.getString("Lega"));
 			Allenatore allenatoreobj = allenatoreDAO.getAllenatoreByUsername(rs.getString("Allenatore"));
 			Giocatore[] giocatori = giocatoreDAO.getGiocatoriBySquadra(nomeSquadra,lega.getNome());
 			int punti = rs.getInt("Punti");
@@ -120,7 +121,7 @@ public class SquadraDAO {
 			squadra.setGiocatori(giocatori);
 			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
 			squadra.setGiocatori(giocatori);
-		}*/
+		}
 		return squadra;
 	}
 	
