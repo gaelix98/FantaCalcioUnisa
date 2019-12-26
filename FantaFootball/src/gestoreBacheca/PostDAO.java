@@ -100,11 +100,7 @@ public class PostDAO {
 			Post tmp = null;
 			int id = rs.getInt("idPost");
 			Date data = null;
-			try {
-				data = new Date(new SimpleDateFormat("yyyy/MM/dd").parse(rs.getString("DataPubblicazione")).getTime());
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+			data = Date.valueOf(rs.getString("dataPubblicazione"));
 			String titolo = rs.getString("Titolo");
 			String testo = rs.getString("Testo");
 			tmp = new Post(id,data,titolo,testo,scouttmp);
@@ -119,7 +115,7 @@ public class PostDAO {
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Post> post = new ArrayList<Post>();
 		
-		String sql = "select * from post";
+		String sql = "select * from post order by dataPubblicazione desc";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		
@@ -127,11 +123,7 @@ public class PostDAO {
 			Post tmp = null;
 			int id = rs.getInt("idPost");
 			Date data = null;
-			try {
-				data = new Date(new SimpleDateFormat("yyyy/MM/dd").parse(rs.getString("DataPubblicazione")).getTime());
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+			data = Date.valueOf(rs.getString("dataPubblicazione"));
 			String titolo = rs.getString("Titolo");
 			String testo = rs.getString("Testo");
 			Scout scouttmp = new ScoutDAO().getScoutByUsername(rs.getString("Scout"));

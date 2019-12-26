@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"
-	import="gestoreLega.*, java.util.*, gestoreSquadra.*"%>
+	import="gestoreLega.*, java.util.*, gestoreSquadra.*, gestoreBacheca.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,7 @@
 		ArrayList<Lega> leghe = (ArrayList<Lega>) session.getAttribute("leghe");
 		ArrayList<Scambio> scambi = (ArrayList<Scambio>) session.getAttribute("scambi");
 		ArrayList<Invito> inviti = (ArrayList<Invito>) session.getAttribute("inviti");
+		ArrayList<Post> post=(ArrayList<Post>) session.getAttribute("allPost");
 		Allenatore a = (Allenatore) session.getAttribute("utente");
 	%>
 	<%@ include file="menu.jsp"%>
@@ -149,6 +150,34 @@
 			<div class="col-lg-4 col-md-4">
 				<aside class="single_sidebar_widget search_widget">
 					<h2>Bacheca</h2>
+					<%
+							if (post.size() > 0) {
+								for (int i=0;i<5 && i<post.size();i++) {
+									Post p=post.get(i);
+						%>
+						<div class="row">
+						<div class="col-lg-7 col-md-7">
+						<h3>
+							<%=p.getTitolo() %>
+							</h3>
+							</div>
+							<div class="col-lg-5 col-md-5">
+							<h3>
+							<%=p.getData() %>
+							</h3>
+							</div>
+							<p><%=p.getTesto()%></p>
+							</div>
+							<hr><br>
+							<%
+								}
+								} else {
+							%>
+						
+						<p>Non ci sono post da mostrare</p>
+						<%
+							}
+						%>
 					<button class="button rounded-0 primary-bg text-white w-100">Visualizza
 						altro</button>
 				</aside>
