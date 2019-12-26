@@ -63,16 +63,16 @@ public class AstaDAO {
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setString(1, allenatore);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
-			Asta asta=null:
+		while(rs.next()) {
+			Asta asta=null;
 			LegaDAO legaDAO=new LegaDAO();
 			Lega lega=legaDAO.getLegaByNome(rs.getString("nomeLega"));
 			OffertaDAO offertaDAO=new OffertaDAO();
 			ArrayList<Offerta> offerte=offertaDAO.getAllOfferteByAsta(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
-			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
-			asta.setOfferte(offerte);
+			//asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
+			//asta.setOfferte(offerte);
 			aste.add(asta);
-		}*/
+		}
 		conn.close();
 		return aste;
 	}
@@ -87,20 +87,21 @@ public class AstaDAO {
 	public synchronized Asta getAstaByKey(Date dataInizio, String nomeLega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		Asta asta=null;
+		ArrayList<Asta> aste=new ArrayList<>();
 		String sql="select * from asta where asta.dataInizio=? and asta.nomeLega=?";
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setString(1, dataInizio.toString());
 		ps.setString(2, nomeLega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			LegaDAO legaDAO=new LegaDAO();
 			Lega lega=legaDAO.getLegaByNome(rs.getString("nomeLega"));
 			OffertaDAO offertaDAO=new OffertaDAO();
 			ArrayList<Offerta> offerte=offertaDAO.getAllOfferteByAsta(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
-			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
-			asta.setOfferte(offerte);
+			//asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
+			//asta.setOfferte(offerte);
 			aste.add(asta);
-		}*/
+		}
 		conn.close();
 		return asta;
 	}

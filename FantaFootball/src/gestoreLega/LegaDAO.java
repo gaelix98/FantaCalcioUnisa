@@ -1,11 +1,15 @@
 package gestoreLega;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
+import gestoreSquadra.Offerta;
+import gestoreSquadra.OffertaDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
@@ -50,4 +54,27 @@ public class LegaDAO {
 		return ok;
 	}
 
+	public ArrayList<Lega> getLegheByPresidente(Allenatore allenatore) throws SQLException{
+		Connection conn =  DriverManagerConnectionPool.getConnection();
+		Lega lega=null;
+		ArrayList<Lega> leghe=new ArrayList<>();
+		String sql="select * from lega where lega.presidente=?";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setString(1, allenatore.getUsername());
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			String nome=rs.getString("nomeLega");
+			String logo=rs.getString("logo");
+			int maxAllenatori=rs.getInt("maxAllenatori");
+			int quotaMensile=rs.getInt("quotaMensile");
+			int budget=rs.getInt("budget");
+			int primoPosto=rs.getInt("primoPosto");
+			int secondoPosto=rs.getInt("secondoPosto");
+			int terzoPosto=rs.getInt("terzoPosto");
+			lega=new Lega(nome, logo, maxAllenatori, quotaMensile, budget, primoPosto, secondoPosto, terzoPosto, allenatore);
+			leghe.add(lega);
+		}
+		conn.close();
+		return leghe;
+	}
 }

@@ -5762,4 +5762,9 @@ h6 {
   font-size: 14px;
 }
 
+input.er{
+	border-style: solid;
+	border-color:red;
+}
+
 /*# sourceMappingURL=style.css.map */
