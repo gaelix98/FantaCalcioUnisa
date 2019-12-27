@@ -1,4 +1,7 @@
 package gestoreSquadra;
+
+import gestoreLega.Lega;
+
 /**
  * Questa classe rappresenta l'entità Formazione.
  * @author Pasquale Caramante
