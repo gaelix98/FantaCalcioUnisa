@@ -136,6 +136,27 @@ public class PostDAO {
 		
 	}
 
-	
+	public synchronized Post getPostById(int idPost) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		Post post=null;
+		
+		String sql = "select * from post where idPost=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, idPost);
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			int id = rs.getInt("idPost");
+			Date data = null;
+			data = Date.valueOf(rs.getString("dataPubblicazione"));
+			String titolo = rs.getString("Titolo");
+			String testo = rs.getString("Testo");
+			Scout scouttmp = new ScoutDAO().getScoutByUsername(rs.getString("Scout"));
+			post = new Post(id,data,titolo,testo,scouttmp);
+		}
+		
+		return post;
+		
+	}
 	
 }

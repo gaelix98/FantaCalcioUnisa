@@ -30,6 +30,13 @@ public class Post {
 		this.scout = scout;
 	}
 	
+	public Post( Date data, String titolo, String testo, Scout scout) {
+		this.data = data;
+		this.titolo = titolo;
+		this.testo = testo;
+		this.scout = scout;
+	}
+	
 	/**
 	 * @return idPost id del post
 	 */
