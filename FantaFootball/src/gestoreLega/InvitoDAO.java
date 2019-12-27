@@ -34,7 +34,7 @@ public class InvitoDAO {
 	public  boolean updateInvito(Invito invito) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("Update invito SET risposta=? and where allenatore=? AND NomeLega=?");
+			PreparedStatement ps = con.prepareStatement("Update invito SET risposta=?  where allenatore=? AND NomeLega=?");
 			ps.setBoolean(1, invito.isRisposta());
 			ps.setString(2, invito.getAllenatore().getUsername());
 			ps.setString(3, invito.getLega().getNome());
