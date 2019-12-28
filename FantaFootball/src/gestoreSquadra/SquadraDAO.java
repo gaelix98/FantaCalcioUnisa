@@ -44,6 +44,27 @@ public class SquadraDAO {
 		return inserita;	
 	}
 	
+	public boolean updateSquadra(Squadra squadra) throws SQLException {
+		conn = DriverManagerConnectionPool.getConnection();
+		boolean modificato=false;
+		int ris;
+		String sqlUp="Update Squadra set budgetRimanente=? where nomeSquadra=? and lega=? ";
+		PreparedStatement ps = conn.prepareStatement(sqlUp);
+		ps.setInt(1, squadra.getBudgetRimanente());
+		ps.setString(2, squadra.getNome());
+		ps.setString(3, squadra.getLega().getNome());
+		try {
+			ris=ps.executeUpdate();
+			if (ris==1)
+				modificato=true;
+		}
+		catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		conn.close();
+		return modificato;
+	}
+	
 	public boolean addGiocatoreSquadra(String nomeSquadra, String nomeLega, int idGiocatore) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
@@ -64,6 +85,7 @@ public class SquadraDAO {
 		
 		return inserito;	
 	}
+	
 	
 	public void deleteGiocatoreSquadra(String nomeSquadra,String nomeLega, int idGiocatore) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();

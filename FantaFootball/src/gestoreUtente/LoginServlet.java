@@ -106,6 +106,7 @@ public class LoginServlet extends HttpServlet {
 			else {
 				redirect="login.jsp";
 				request.setAttribute("message", "Username o password errati!");
+				throw new IllegalArgumentException("Username o password errati");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -119,7 +120,7 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
