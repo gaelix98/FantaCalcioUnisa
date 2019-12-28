@@ -1,4 +1,4 @@
-package gestoreLega;
+package gestoreSquadra;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -12,12 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import gestoreSquadra.Giocatore;
-import gestoreSquadra.GiocatoreDAO;
-import gestoreSquadra.Offerta;
-import gestoreSquadra.OffertaDAO;
-import gestoreSquadra.Squadra;
-import gestoreSquadra.SquadraDAO;
+import gestoreLega.Asta;
+import gestoreLega.AstaDAO;
 
 /**
  * 
