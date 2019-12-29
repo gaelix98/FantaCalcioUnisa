@@ -10,6 +10,8 @@ INSERT INTO allenatore
 values ('Giovanni','Mucciaccia','artattack@hotmail.it','Capoo22','Artattack');
 INSERT INTO allenatore
 values ('Carlo','Conti','scossaaaa@gmail.com','tantantan1','Sc00S54');
+INSERT INTO allenatore
+values ('Gaetano','Casillo','gaelix@gmail.com','Condor1234--','Gaelix98');
 
 
 INSERT INTO squadra(NomeSquadra,Lega,Logo,Allenatore,Punti,BudgetRimanente)
@@ -58,17 +60,17 @@ values ('Gaetanondorf','LegaNatalizia',1);
 
 
 INSERT INTO asta(DataInizio,NomeLega,Ora,DataFine)
-values ('2019-12-25','LegaNatalizia','15-30-00','2020-02-01');
+values ('2019-12-25','LegaNatalizia','15:30:00','2020-02-01');
 INSERT INTO asta
-values ('2019-02-15','LegaNatalizia','9-00-00','2019-02-29');
+values ('2019-02-15','LegaNatalizia','09:00:00','2019-02-29');
 INSERT INTO asta
-values ('2019-10-10','Memeroni','13-00-00','2019-10-18');
+values ('2019-10-10','Memeroni','13:00:00','2019-10-18');
 INSERT INTO asta
-values ('2019-10-15','NotMemeroni','16-00-00','2019-11-26');
+values ('2019-10-15','NotMemeroni','16:00:00','2019-11-26');
 INSERT INTO asta
-values ('2019-07-01','LegaNatalizia','11-00-00','2019-07-08');
+values ('2019-07-01','LegaNatalizia','11:00:00','2019-07-08');
 INSERT INTO asta
-values ('2019-10-01','LegaCheNonEsiste','8-00-00','2019-10-15');
+values ('2019-10-01','LegaCheNonEsiste','08:00:00','2019-10-15');
 
 
 

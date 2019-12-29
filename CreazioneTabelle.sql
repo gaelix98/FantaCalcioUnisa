@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS fantacalciounisa;
 CREATE DATABASE fantacalciounisa;
 use fantacalciounisa;
 
-
+select * from asta;
 CREATE TABLE allenatore (
   Nome VARCHAR(50) NOT NULL,
   Cognome VARCHAR(50) NOT NULL,
