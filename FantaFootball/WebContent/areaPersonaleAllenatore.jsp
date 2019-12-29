@@ -32,7 +32,7 @@
 							if (leghe.size() > 0) {
 								for (Lega lega : leghe) {
 						%>
-						<p><%=lega.getNome()%></p>
+						<p><a href="getLegaServlet?q=<%=lega.getNome()%>"><%=lega.getNome() %></a></p>
 						<%
 							}
 							} else {

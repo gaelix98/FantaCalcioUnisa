@@ -8,8 +8,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
+import gestoreSquadra.Giocatore;
+import gestoreSquadra.GiocatoreDAO;
 import gestoreSquadra.Offerta;
 import gestoreSquadra.OffertaDAO;
+import gestoreSquadra.Squadra;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
@@ -78,4 +81,6 @@ public class LegaDAO {
 		conn.close();
 		return leghe;
 	}
+	
+
 }

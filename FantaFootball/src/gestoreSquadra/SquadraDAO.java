@@ -150,7 +150,7 @@ public class SquadraDAO {
 	public ArrayList<Squadra> getSquadreByLega(String nomeLega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
-		String sql = "select * from squadra where squadra.Lega = ?";
+		String sql = "select * from squadra where squadra.Lega = ? order by squadra.punti desc";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, nomeLega);
 		ResultSet rs = ps.executeQuery();

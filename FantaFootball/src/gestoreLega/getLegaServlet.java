@@ -1,0 +1,74 @@
+package gestoreLega;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import gestoreSquadra.Squadra;
+import gestoreSquadra.SquadraDAO;
+
+/**
+ * 
+ * @author Maria Natale
+ *
+ */
+@WebServlet("/getLegaServlet")
+public class getLegaServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public getLegaServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session=request.getSession();
+		LegaDAO legaDAO=new LegaDAO();
+		SquadraDAO squadraDAO=new SquadraDAO();
+		AstaDAO astaDAO=new AstaDAO();
+		PartitaDAO partitaDAO=new PartitaDAO();
+		//FormazioneDAO formazioneDAO=new FormazioneDAO();
+		try {
+			Lega lega=legaDAO.getLegaByNome(request.getParameter("q"));
+			List<Squadra> classifica=squadraDAO.getSquadreByLega(lega.getNome());
+			//List<Formazione> formazioni=formazioneDAO
+			List<Partita> calendario=partitaDAO.getAllPartiteLega(lega.getNome());
+			List<Asta> aste=astaDAO.getAsteByLega(lega);
+			
+			session.setAttribute("lega", lega);
+			session.setAttribute("classifica", classifica);
+			//session.setAttribute("formazioni", formazioni);
+			session.setAttribute("calendario", calendario);
+			session.setAttribute("aste", aste);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("lega.jsp");
+		requestDispatcher.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

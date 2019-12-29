@@ -67,10 +67,7 @@ public class AstaDAO {
 			Asta asta=null;
 			LegaDAO legaDAO=new LegaDAO();
 			Lega lega=legaDAO.getLegaByNome(rs.getString("nomeLega"));
-			OffertaDAO offertaDAO=new OffertaDAO();
-			ArrayList<Offerta> offerte=offertaDAO.getAllOfferteByAsta(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
-			//asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
-			//asta.setOfferte(offerte);
+			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
 			aste.add(asta);
 		}
 		conn.close();
@@ -96,14 +93,28 @@ public class AstaDAO {
 		while(rs.next()) {
 			LegaDAO legaDAO=new LegaDAO();
 			Lega lega=legaDAO.getLegaByNome(rs.getString("nomeLega"));
-			OffertaDAO offertaDAO=new OffertaDAO();
-			ArrayList<Offerta> offerte=offertaDAO.getAllOfferteByAsta(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
-			//asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
-			//asta.setOfferte(offerte);
+			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
 			aste.add(asta);
 		}
 		conn.close();
 		return asta;
+	}
+	
+	
+	public synchronized ArrayList<Asta> getAsteByLega(Lega lega) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		ArrayList<Asta> aste=new ArrayList<>();
+		String sql="select asta.* from asta where asta.nomeLega=?";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setString(1, lega.getNome());
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			Asta asta=null;
+			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
+			aste.add(asta);
+		}
+		conn.close();
+		return aste;
 	}
 
 }
