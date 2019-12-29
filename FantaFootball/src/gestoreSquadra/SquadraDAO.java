@@ -28,7 +28,7 @@ public class SquadraDAO {
 		ps.setString(1, squadra.getNome());
 		ps.setString(2, squadra.getLega().getNome());
 		ps.setString(3, squadra.getLogo());
-		ps.setString(4, squadra.getAllenatore().getNome());
+		ps.setString(4, squadra.getAllenatore().getUsername());
 		ps.setInt(5, squadra.getPunti());
 		ps.setInt(6, squadra.getBudgetRimanente());
 		
