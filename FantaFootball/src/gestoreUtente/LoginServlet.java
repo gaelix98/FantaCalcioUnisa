@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IllegalArgumentException {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
@@ -58,6 +58,7 @@ public class LoginServlet extends HttpServlet {
 			if (allenatoreDAO.checkLogin(username, password)) {
 				allenatore=allenatoreDAO.getAllenatoreByUsername(username);
 				redirect="index.jsp";
+				response.setContentType("json");
 				
 				LegaDAO legaDAO=new LegaDAO();
 				//cerco le leghe di cui l'allenatore è presidente
@@ -95,7 +96,7 @@ public class LoginServlet extends HttpServlet {
 			else if(scoutDAO.checkLogin(username, password)) {
 				scout=scoutDAO.getScoutByUsername(username);
 				redirect="index.jsp";
-				
+				response.setContentType("json");
 				
 				PostDAO postDAO=new PostDAO();
 				ArrayList<Post> post=postDAO.getPostByScout(scout.getUsername());
@@ -112,6 +113,7 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 			redirect="errorPage.jsp";
 		}
+		
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);

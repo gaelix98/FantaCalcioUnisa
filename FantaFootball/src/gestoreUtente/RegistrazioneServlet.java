@@ -56,9 +56,11 @@ public class RegistrazioneServlet extends HttpServlet {
 		if (!risultato) {
 			request.setAttribute("message", "Registrazione non effettuata");
 			redirect="registrazione.jsp";
+			throw new IllegalArgumentException("Formato errato dati");
 		}
 		else {
 			redirect="login.jsp";
+			response.setContentType("json");
 		}
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
@@ -68,7 +70,7 @@ public class RegistrazioneServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
@@ -78,7 +80,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		String expNome="^[A-Za-z ]{2,50}$";
 		String expCognome="^[A-Za-z ]{2,50}$";
 		String expEmail="^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
-		String expUsername="^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$";
+		String expUsername="^[a-zA-Z0-9]+([a-zA-Z0-9](_|-|)[a-zA-Z0-9])*[a-zA-Z0-9]+$";
 		String expPassword="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{5,}$";
 		if (!Pattern.matches(expNome, nome)) {
 			valido=false;
