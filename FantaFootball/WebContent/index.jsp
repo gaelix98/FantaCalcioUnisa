@@ -9,8 +9,9 @@
 </head>
 <body>
 <%@include file="menu.jsp"%>
+<%=getServletContext().getInitParameter("giornata")%>
 <%ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
-if (allPost==null) response.sendRedirect("getAllPostServlet");%>
+if (allPost==null) {response.sendRedirect("getAllPostServlet");}%>
 <%@include file="footer.jsp"%>
 </body>
 </html>

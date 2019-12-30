@@ -33,8 +33,8 @@ public class FormazioneDAO {
 		ok=true;
 		return ok;
 	}
-	
-	
+
+
 	public boolean addGiocatoreFormazione(Formazione formazione,Giocatore giocatore, int posizione) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
@@ -55,8 +55,8 @@ public class FormazioneDAO {
 		return ok;
 	}
 
-	
-	
+
+
 	public boolean deleteGiocatoreFormazione(Formazione formazione, Giocatore giocatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -76,7 +76,7 @@ public class FormazioneDAO {
 
 		return ok;
 	}
-	
+
 	public  boolean updateGiocatoreFormazione(Formazione formazione, Giocatore giocatore1, Giocatore giocatore2) throws SQLException {
 		boolean ok=false;
 		int posizione;
@@ -90,7 +90,7 @@ public class FormazioneDAO {
 			posizione=rs.getInt(1);
 			deleteGiocatoreFormazione(formazione,giocatore1);
 			addGiocatoreFormazione(formazione, giocatore2,posizione);
-			
+
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -100,8 +100,8 @@ public class FormazioneDAO {
 		ok=true;
 		return ok;
 	}
-	
-	
+
+
 	public  boolean updateFormazione(Formazione formazione) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -110,7 +110,7 @@ public class FormazioneDAO {
 			ps.setInt(2,formazione.getGiornata());
 			ps.setString(3, formazione.getSquadra().getNome());
 			ps.setString(4, formazione.getSquadra().getLega().getNome());
-			
+
 			ps.executeUpdate();
 		}
 		catch(SQLException x) {
@@ -126,40 +126,37 @@ public class FormazioneDAO {
 
 
 
-public Formazione getFormazioneBySquadraGiornata(String nomeSquadra, String nomeLega) throws SQLException{
-AllenatoreDAO alld= new AllenatoreDAO();
-LegaDAO legD= new LegaDAO();
-GiocatoreDAO gd = new GiocatoreDAO();
-Giocatore[] giocatori =new Giocatore[11];
-Giocatore[] panchina  = new Giocatore[7];
-int i=0;
-
-	try (Connection conn = DriverManagerConnectionPool.getConnection();) {
-		PreparedStatement p=conn.prepareStatement("Select * from squadra where NomeSquadra=? AND Lega=? AND  Giornata=?");
-		ResultSet Rs = p.executeQuery();
-		Squadra squadra = new Squadra(Rs.getString(1),Rs.getString(3), alld.getAllenatoreByUsername(Rs.getString(4)),legD.getLegaByNome(nomeLega) , Rs.getInt(5), Rs.getInt(6));
-		PreparedStatement ps=conn.prepareStatement("SELECT * FROM giocatoreformazione where NomeSquadra=? amd NomeLega=? ORDER BY posizione");
-		ResultSet rs= ps.executeQuery(); 
-		Formazione u=new Formazione(rs.getInt(1), true, squadra );
-		while(rs.next()){
-			if(rs.getInt("posizione")<=11) {
-				giocatori[i]=gd.getGiocatoreById(rs.getInt("Id"));
-			}else {
-				panchina[i]=gd.getGiocatoreById(rs.getInt("Id"));
+	public Formazione getFormazioneBySquadraGiornata(Squadra squadra, int giornata) throws SQLException{
+		AllenatoreDAO alld= new AllenatoreDAO();
+		LegaDAO legD= new LegaDAO();
+		GiocatoreDAO gd = new GiocatoreDAO();
+		Giocatore[] giocatori =new Giocatore[11];
+		Giocatore[] panchina  = new Giocatore[7];
+		int i=0;
+		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
+			PreparedStatement ps=conn.prepareStatement("SELECT * FROM formazione, giocatoreformazione where formazione.nomeSquadra=giocatoreformazione.nomeSquadra "
+					+ "and formazione.nomeLega=formazionegiocatore.nomeLega and NomeSquadra=? and NomeLega=? and giornata=?"
+					+ " ORDER BY posizione");
+			ps.setString(1, squadra.getNome());
+			ps.setString(2, squadra.getLega().getNome());
+			ps.setInt(3, giornata);
+			ResultSet rs= ps.executeQuery(); 
+			Formazione u=new Formazione(rs.getInt("giornata"), rs.getBoolean("schierata"), squadra);
+			while(rs.next()){
+				if(rs.getInt("posizione")<=11) {
+					giocatori[i]=gd.getGiocatoreById(rs.getInt("Id"));
+				}else {
+					panchina[i]=gd.getGiocatoreById(rs.getInt("Id"));
+				}
+				i++;
 			}
-			i++;
-
-			
-
-
+			u.setGiocatori(giocatori);
+			u.setPanchina(panchina);
+			return u;
+		}catch(SQLException e) {
+			throw new RuntimeException(e);
 		}
-		u.setGiocatori(giocatori);
-		u.setPanchina(panchina);
-		return u;
-	}catch(SQLException e) {
-		throw new RuntimeException(e);
 	}
-}
 }
 
 

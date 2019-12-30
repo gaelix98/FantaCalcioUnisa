@@ -71,7 +71,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 								</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href=<%=paginaPersonale%>>Area Personale</a>
-										<a class="dropdown-item" href="#">Modifica dati</a>
+										<a class="dropdown-item" href="modificaDati.jsp">Modifica dati</a>
 										 <a class="dropdown-item" href="LogoutServlet">Logout</a>
 									</div></li>
 								<%} %>

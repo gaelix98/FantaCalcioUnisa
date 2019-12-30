@@ -2,6 +2,7 @@ package gestoreLega;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import gestoreSquadra.Formazione;
+import gestoreSquadra.FormazioneDAO;
 import gestoreSquadra.Squadra;
 import gestoreSquadra.SquadraDAO;
 
@@ -41,17 +44,25 @@ public class getLegaServlet extends HttpServlet {
 		SquadraDAO squadraDAO=new SquadraDAO();
 		AstaDAO astaDAO=new AstaDAO();
 		PartitaDAO partitaDAO=new PartitaDAO();
-		//FormazioneDAO formazioneDAO=new FormazioneDAO();
+		FormazioneDAO formazioneDAO=new FormazioneDAO();
+		int giornataAttuale=Integer.parseInt(getServletContext().getInitParameter("giornata"));
+		
 		try {
 			Lega lega=legaDAO.getLegaByNome(request.getParameter("q"));
 			List<Squadra> classifica=squadraDAO.getSquadreByLega(lega.getNome());
-			//List<Formazione> formazioni=formazioneDAO
+			
+			ArrayList<Formazione> formazioni=new ArrayList<>();
+			for (int giornata=1;giornata<giornataAttuale;giornata++) {
+				for (Squadra squadra: classifica) {
+					formazioni.add(formazioneDAO.getFormazioneBySquadraGiornata(squadra, giornata));
+				}
+			}
 			List<Partita> calendario=partitaDAO.getAllPartiteLega(lega.getNome());
 			List<Asta> aste=astaDAO.getAsteByLega(lega);
 			
 			session.setAttribute("lega", lega);
 			session.setAttribute("classifica", classifica);
-			//session.setAttribute("formazioni", formazioni);
+			session.setAttribute("formazioni", formazioni);
 			session.setAttribute("calendario", calendario);
 			session.setAttribute("aste", aste);
 		} catch (SQLException e) {

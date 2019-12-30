@@ -133,4 +133,20 @@ public class ScoutDAO {
 		return scout;
 	}
 
+	public synchronized Scout getScoutByEmail(String email) throws SQLException {
+		conn = DriverManagerConnectionPool.getConnection();
+		Scout scout = null;
+		String sql = "select * from scout where scout.email = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1,email);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			String nome = rs.getString("Nome");
+			String cognome = rs.getString("Cognome");
+			String password = rs.getString("pass");
+			String usernamet = rs.getString("username");
+			scout = new Scout(nome,cognome,email,usernamet,password);
+		}
+		return scout;
+	}
 }

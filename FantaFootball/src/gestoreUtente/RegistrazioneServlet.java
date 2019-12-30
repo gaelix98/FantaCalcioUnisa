@@ -40,13 +40,17 @@ public class RegistrazioneServlet extends HttpServlet {
 		Allenatore allenatore=null;
 		String redirect="";
 		
-		if (valida(nome, cognome, email, username, password)) {
-			allenatore=new Allenatore(nome, cognome, email, username, password);
-			try {
-				risultato=allenatoreDAO.addAllenatore(allenatore);
-			} catch (SQLException e) {
-				e.printStackTrace();
+		try {
+			if (valida(nome, cognome, email, username, password)&& allenatoreDAO.getAllenatoreByUsername(username)==null && allenatoreDAO.getAllenatoreByEmail(email)==null) {
+				allenatore=new Allenatore(nome, cognome, email, username, password);
+				try {
+					risultato=allenatoreDAO.addAllenatore(allenatore);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		
 		if (!risultato) {
@@ -69,7 +73,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private boolean valida(String nome, String cognome, String email, String username, String password) {
+	private boolean valida(String nome, String cognome, String email, String username, String password) throws SQLException {
 		boolean valido=true;
 		String expNome="^[A-Za-z ]{2,50}$";
 		String expCognome="^[A-Za-z ]{2,50}$";
@@ -96,6 +100,7 @@ public class RegistrazioneServlet extends HttpServlet {
 			valido=false;
 			System.out.print(email);
 		}
+		
 		return valido;
 	}
 

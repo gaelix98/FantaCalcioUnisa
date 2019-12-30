@@ -47,6 +47,23 @@ public class AllenatoreDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public Allenatore getAllenatoreByEmail(String email) throws SQLException{
+
+		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
+			Allenatore u=null;
+			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, password, username FROM allenatore where email=?");
+			ps.setString(1, email);
+			ResultSet rs= ps.executeQuery();
+			while (rs.next()) {
+				u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
+			}
+			return u;
+
+		}catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 
 	public boolean addAllenatore(Allenatore allenatore) throws SQLException {

@@ -1,0 +1,4 @@
+<web-app>
+	<context-param>
+		<param-name>giornata</param-name>
+		<param-value>1</param-value></context-param></web-app>

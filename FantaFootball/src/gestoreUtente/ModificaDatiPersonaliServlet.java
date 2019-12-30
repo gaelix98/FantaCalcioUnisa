@@ -35,21 +35,23 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		String tipoUtente=(String) session.getAttribute("tipoUente");
+		String tipoUtente=(String) session.getAttribute("tipoUtente");
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
-		String redirect="errorPage.jsp";
+		String redirect="modificaDati.jsp";
 
 		if (valida(email, password)) {
 			if (tipoUtente.equals("scout")) {
 				Scout scout=(Scout) session.getAttribute("utente");
 				ScoutDAO scoutDAO=new ScoutDAO();
-				scout.setEmail(email);
-				scout.setPassword(password);
 				try {
-					scoutDAO.updateScout(scout);
-					session.setAttribute("utente", scout);
-					redirect="areaPersonaleScout.jsp";
+					if (email.equals(scout.getEmail()) || scoutDAO.getScoutByEmail(email)==null) {
+						scout.setEmail(email);
+						scout.setPassword(password);
+						scoutDAO.updateScout(scout);
+						session.setAttribute("utente", scout);
+						redirect="areaPersonaleScout.jsp";
+					}
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -57,18 +59,23 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 			else if (tipoUtente.equals("allenatore")) {
 				Allenatore allenatore=(Allenatore) session.getAttribute("utente");
 				AllenatoreDAO allenatoreDAO=new AllenatoreDAO();
-				allenatore.setPassword(password);
-				allenatore.setEmail(email);
 				try {
-					allenatoreDAO.updateAllenatore(allenatore);
-					session.setAttribute("utente", allenatore);
-					redirect="areaPersonaleAllenatore.jsp";
+					if (email.equals(allenatore.getEmail()) || allenatoreDAO.getAllenatoreByEmail(email)==null) {
+						allenatore.setPassword(password);
+						allenatore.setEmail(email);
+						allenatoreDAO.updateAllenatore(allenatore);
+						session.setAttribute("utente", allenatore);
+						redirect="areaPersonaleAllenatore.jsp";
+					}
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}			
 			}
 		}
-		
+
+		if (redirect.equals("modificaDati.jsp")) {
+			request.setAttribute("message", "Dati non modificati");
+		}
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}
@@ -87,11 +94,9 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 		String expPassword="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{5,}$";
 		if (!Pattern.matches(expPassword, password)) {
 			valido=false;
-			System.out.print(password);
 		}
 		if (!Pattern.matches(expEmail, email)) {
 			valido=false;
-			System.out.print(email);
 		}
 		return valido;
 	}
