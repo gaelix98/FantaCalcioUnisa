@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <% Allenatore utente = request.getAttrbute("utente");
-	if(nomeLega == null || nomeLega.isEmpty()){
+	if(utente == null || utente.isEmpty()){
 		response.sendRedirect("index.jsp");
 	}
 	%>
