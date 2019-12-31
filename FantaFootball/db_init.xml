@@ -1,121 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
 <allenatore
-	nome="maria"
-	cognome="natale"
-	email="maria_natale98@yahoo.it"
-	password="maria"
-	username="maria98"
+	nome="Pasquale"
+	cognome="Caramante"
+	email="pasquale@gmail.com"
+	password="pasquale12"
+	username="pasquale98"
 />
 <allenatore
-	nome="gaetano"
-	cognome="casillo"
-	email="gaetano.casillo@gmail.com"
-	password="gaetanoc"
-	username="tae98"
+	nome="Giovanni"
+	cognome="Mucciaccia"
+	email="artattack@hotmail.it"
+	password="Capoo22"
+	username="Artattack"
+/>
+<allenatore
+	nome="Carlo"
+	cognome="Conti"
+	email="scossaaaa@gmail.com"
+	password="tantantan1"
+	username="Sc00S54"
 />
 <lega
-	NomeLega="memeroni"
-    Logo="" 
-    MaxAllenatori="5"
-    quotaMensile="20"
-    budget="250"
-    primoPosto="50"
-    secondoPosto="30"
-    terzoPosto="20"
-    Presidente="tae98"
+	nomeLega="Memeroni"
+	logo=""
+	maxAllenatori="7"
+	quotaMensile="10"
+	budget="150"
+	primoPosto="50"
+	secondoPosto="30"
+	terzoPosto="20"
+	presidente="pasquale98"
+/>
+<lega
+	nomeLega="NotMemeroni"
+	logo=""
+	maxAllenatori="5"
+	quotaMensile="20"
+	budget="250"
+	primoPosto="60"
+	secondoPosto="20"
+	terzoPosto="20"
+	presidente="pasquale98"
 />
 <invito
-	allenatore="maria98"
-	nomeLega="memeroni"
-	risposta="true"/>
-<squadra
-	NomeSquadra="squadraMaria"
-    Lega="memeroni"
-    Logo="" 
-    Allenatore="maria98"
-    Punti="0"
-    BudgetRimanente="150"
+	allenatore="ArtAttack"
+	nomeLega="Memeroni"
+	risposta="1"
+/>
+<invito
+	allenatore="Sc00S54"
+	nomeLega="NotMemeroni"
+	risposta="1"
 />
 <squadra
-	NomeSquadra="squadraTae"
-    Lega="memeroni"
-    Logo="" 
-    Allenatore="tae98"
-    Punti="0"
-    BudgetRimanente="50"
+	nomeSquadra="PippoSquad"
+	lega="NotMemeroni"
+	logo=""
+	allenatore="pasquale98"
+	punti="37"
+	budgetRimanente="50"
+/>
+<squadra
+	nomeSquadra="FantaCola"
+	lega="Memeroni"
+	logo=""
+	allenatore="pasquale98"
+	punti="45"
+	budgetRimanente="0"
+/>
+<squadra
+	nomeSquadra="Zoe4Evah"
+	lega="Memeroni"
+	logo=""
+	allenatore="ArtAttack"
+	punti="45"
+	budgetRimanente="0"
+/>
+<squadra
+	nomeSquadra="Fiorellina"
+	lega="NotMemeroni"
+	logo=""
+	allenatore="Sc00S54"
+	punti="10"
+	budgetRimanente="20"
 />
 <asta
-	dataInizio="2019-12-22"
-	nomeLega="memeroni"
-	ora="12:35:00"
-	dataFine="2019-12-23"/>
-<giocatore
-    Nome="Federico"
-    Cognome="Bernardeschi"
-    Ruolo="CEN"
-    SquadraReale="Juventus" 
-    Presenze="0"
-    VotoMedio="0"
-    Goal="0"
-    Assist="0"
-    Ammonizioni="0" 
-    Espulsioni="0"
-    RigoriSegnati="0"
-    RigoriSbagliati="0"
-    RigoriParati="0"/>
-<giocatore
-    Nome="Cristiano"
-    Cognome="Ronaldo"
-    Ruolo="ATT"
-    SquadraReale="Juventus" 
-    Presenze="0"
-    VotoMedio="0"
-    Goal="0"
-    Assist="0"
-    Ammonizioni="0" 
-    Espulsioni="0"
-    RigoriSegnati="0"
-    RigoriSbagliati="0"
-    RigoriParati="0"/>
-<giocatore
-    Nome="Gianluigi"
-    Cognome="Buffon"
-    Ruolo="POR"
-    SquadraReale="Juventus" 
-    Presenze="0"
-    VotoMedio="0"
-    Goal="0"
-    Assist="0"
-    Ammonizioni="0" 
-    Espulsioni="0"
-    RigoriSegnati="0"
-    RigoriSbagliati="0"
-    RigoriParati="0"/>
-<offerta
-	squadra="squadraMaria"
-	dataInizio="2019-12-22"
-	nomeLega="memeroni"
-	giocatore="1"
-	somma="20"/>
-<offerta
-	squadra="squadraMaria"
-	dataInizio="2019-12-22"
-	nomeLega="memeroni"
-	giocatore="2"
-	somma="30"/>
-<offerta
-	squadra="squadraTae"
-	dataInizio="2019-12-22"
-	nomeLega="memeroni"
-	giocatore="2"
-	somma="40"/>
-<squadragiocatore
-	nomeSquadra="squadraMaria"
-	nomeLega="memeroni"
-	id="1"/>
-<squadragiocatore
-	nomeSquadra="squadraTae"
-	nomeLega="memeroni"
-	id="2"/>
+	dataInizio="2019-12-25"
+	nomeLega="Memeroni"
+	ora="15:30:00"
+	dataFine="2020-02-01"
+/>
+<asta
+	dataInizio="2019-02-15"
+	nomeLega="Memeroni"
+	ora="09:00:00"
+	dataFine="2019-02-28"
+/>
+
 </dataset>

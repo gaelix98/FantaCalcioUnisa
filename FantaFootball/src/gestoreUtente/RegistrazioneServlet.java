@@ -56,11 +56,11 @@ public class RegistrazioneServlet extends HttpServlet {
 		if (!risultato) {
 			request.setAttribute("message", "Registrazione non effettuata");
 			redirect="registrazione.jsp";
-			throw new IllegalArgumentException("Formato errato dati");
+			response.getWriter().write("Formato errato dati");
 		}
 		else {
 			redirect="login.jsp";
-			response.setContentType("json");
+			request.setAttribute("result", "successo");
 		}
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);

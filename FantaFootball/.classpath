@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="C:/Users/maria/Documents/jar_files/spring-jcl-5.2.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/maria/Documents/javax.servlet-api-3.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/maria/Documents/spring-test-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/dbunit"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

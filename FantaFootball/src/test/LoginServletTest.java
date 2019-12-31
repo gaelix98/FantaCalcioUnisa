@@ -4,8 +4,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -19,10 +19,12 @@ public class LoginServletTest extends Mockito{
 	private LoginServlet servlet;
 	private MockHttpServletRequest request;
 	private MockHttpServletResponse response;
-	final String message = "Username o password errati";
-
+	final String message ="Email e/o password non validi";
+	final String successMessage="successo";
+	
 	@BeforeEach
 	public void setUp() throws Exception {
+		DriverManagerConnectionPool.setTest(true);
 		servlet=new LoginServlet();
 		request = new MockHttpServletRequest();
 		response = new MockHttpServletResponse();
@@ -31,43 +33,38 @@ public class LoginServletTest extends Mockito{
 	//TC_1.1.1 username errato
 	@Test
 	public void testCase_1() throws ServletException, IOException {
-		DriverManagerConnectionPool.setTest(true);
 		request.addParameter("username", "Salve");
 		request.addParameter("password", "Condor1234");
 
-		IllegalArgumentException exceptionThrown =  assertThrows(IllegalArgumentException.class,()-> {
-			servlet.doPost(request, response);
-		});
+		servlet.doPost(request, response);
 		
-		assertEquals(message, exceptionThrown.getMessage());
-		DriverManagerConnectionPool.setTest(false);
+		assertEquals(message, response.getContentAsString());
 	}
 
 	//TC_1.1.2 password sbagliata
 	@Test
 	public void testCase_2() throws ServletException, IOException {
-		DriverManagerConnectionPool.setTest(true);
 		request.addParameter("username", "Gaelix98");
 		request.addParameter("password", "Terra!");
 
-		IllegalArgumentException exceptionThrown =  assertThrows(IllegalArgumentException.class,()-> {
-			servlet.doPost(request, response);
-		});
-
-		assertEquals(message, exceptionThrown.getMessage());
-		DriverManagerConnectionPool.setTest(false);
+		servlet.doPost(request, response);
+		
+		assertEquals(message, response.getContentAsString());
 	}
 
 	//TC_1.1.3 username e password corretti
 	@Test
 	public void testCase_3() throws ServletException, IOException {
-		DriverManagerConnectionPool.setTest(true);
 		request.addParameter("username", "Gaelix98");
 		request.addParameter("password", "Condor1234");
 
 		servlet.doPost(request, response);
 
-		assertEquals("json", response.getContentType());
+		assertEquals(successMessage, (String) request.getAttribute("result"));
+	}
+	
+	@AfterEach
+	public void tearDown() throws Exception{
 		DriverManagerConnectionPool.setTest(false);
 	}
 }

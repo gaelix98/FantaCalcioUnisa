@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 			if (allenatoreDAO.checkLogin(username, password)) {
 				allenatore=allenatoreDAO.getAllenatoreByUsername(username);
 				redirect="index.jsp";
-				response.setContentType("json");
+				request.setAttribute("result", "successo");
 				
 				LegaDAO legaDAO=new LegaDAO();
 				//cerco le leghe di cui l'allenatore è presidente
@@ -96,7 +96,7 @@ public class LoginServlet extends HttpServlet {
 			else if(scoutDAO.checkLogin(username, password)) {
 				scout=scoutDAO.getScoutByUsername(username);
 				redirect="index.jsp";
-				response.setContentType("json");
+				request.setAttribute("result", "successo");
 				
 				PostDAO postDAO=new PostDAO();
 				ArrayList<Post> post=postDAO.getPostByScout(scout.getUsername());
@@ -107,7 +107,8 @@ public class LoginServlet extends HttpServlet {
 			else {
 				redirect="login.jsp";
 				request.setAttribute("message", "Username o password errati!");
-				throw new IllegalArgumentException("Username o password errati");
+				//throw new IllegalArgumentException("Username o password errati");
+				response.getWriter().write("Email e/o password non validi");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

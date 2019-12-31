@@ -41,9 +41,9 @@
 						<%
 							}
 						%>
-						<button class="genric-btn primary circle arrow">
-							Crea nuova lega<a href="creaLega"></a>
-						</button>
+						<a href="crealega.jsp"><button class="genric-btn primary circle arrow">
+							Crea nuova lega
+						</button></a>
 					</div>
 					<div class="blog_details">
 						<h2>Messaggi</h2>
@@ -58,12 +58,12 @@
 							Invito di unione alla lega
 							<%=invito.getLega().getNome()%></p></div>
 							<div class="col-lg-5 col-md-5">
-							<button class="genric-btn primary circle arrow">
-								Unisciti alla lega<a href="uniscitiAllaLega"></a>
-							</button>
-							<button class="genric-btn primary circle arrow">
-								Rifiuta<a href="rifiutaUnioneLega"></a>
-							</button>
+							<a href="uniscitiAllaLega"><button class="genric-btn primary circle arrow">
+								Unisciti alla lega
+							</button></a>
+							<a href="rifiutaUnioneLega"><button class="genric-btn primary circle arrow">
+								Rifiuta
+							</button></a>
 							</div>
 						</div>
 							<%
@@ -98,12 +98,12 @@
 							<%=scambio.getPrezzoOfferto()%>
 							</p></div>
 							<div class="col-lg-5 col-md-5">
-							<button class="genric-btn primary circle arrow">
-								Accetta scambio<a href="accettaScambio"></a>
-							</button>
-							<button class="genric-btn primary circle arrow">
-								Rifiuta scambio<a href="rifiutaScambio"></a>
-							</button>
+							<a href="accettaScambio"><button class="genric-btn primary circle arrow">
+								Accetta scambio
+							</button></a>
+							<a href="rifiutaScambio"><button class="genric-btn primary circle arrow">
+								Rifiuta scambio
+							</button></a>
 							</div></div>
 							<%
 								}
@@ -127,12 +127,12 @@
 							<%=lega.getNome() %>
 							</p></div>
 							<div class="col-lg-7 col-md-7">
-							<button class="genric-btn primary circle arrow">
-								Invita partecipanti<a href="invitaPartecipanti.jsp"></a>
-							</button>
-							<button class="genric-btn primary circle arrow">
-								Organizza asta<a href="organizzaAsta.jsp"></a>
-							</button>
+							<a href="invitaPartecipanti.jsp"><button class="genric-btn primary circle arrow">
+								Invita partecipanti
+							</button></a>
+							<a href="organizzaAsta.jsp"><button class="genric-btn primary circle arrow">
+								Organizza asta
+							</button></a>
 							</div></div>
 							<%
 								}
@@ -185,9 +185,9 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-			<button class="button rounded-0 primary-bg text-white w-100">
-				Cancella account<a href="cancellaAccount"></a>
-			</button>
+			<a href="cancellaAccount"><button class="button rounded-0 primary-bg text-white w-100">
+				Cancella account
+			</button></a>
 			</div>
 		</div>
 	</div>
