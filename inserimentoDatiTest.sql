@@ -12,9 +12,9 @@ values ('Carlo','Conti','scossaaaa@gmail.com','tantantan1','Sc00S54');
 INSERT INTO squadra(NomeSquadra,Lega,Logo,Allenatore,Punti,BudgetRimanente)
 values ('PippoSquad','NotMemeroni','C:\Media\Immagini\panda.png','pasquale98',37,1);
 INSERT INTO squadra
-values ('FantaCola','Memeroni','C:\Media\Immagini\giovannino.png','pasquale98',100,0);
+values ('FantaCola','MemeroniX','C:\Media\Immagini\giovannino.png','pasquale98',100,0);
 INSERT INTO squadra
-values ('Zoe4Evah','Memeroni','C:\Media\Immagini\mandolino.png','Artattack',0,45);
+values ('Zoe4Evah','MemeroniX','C:\Media\Immagini\mandolino.png','Artattack',0,45);
 INSERT INTO squadra
 values ('Fiorellina','NotMemeroni','C:\Media\Immagini\inferno.png','Sc00S54',66,6);
 
@@ -24,19 +24,19 @@ INSERT INTO lega
 values ('NotMemeroni','C:\Media\Immagini\Campo.png',10,45,200,80,10,10,'pasquale98');
 
 INSERT INTO invito(Allenatore,NomeLega,risposta)
-values ('ArtAttack','Memeroni',1);
+values ('ArtAttack','MemeroniX',1);
 INSERT INTO invito
 values ('Sc00S54','NotMemeroni',1);
 
 INSERT INTO asta(DataInizio,NomeLega,Ora,DataFine)
-values ('2019-12-25','Memeroni','15:30:00','2020-02-01');
+values ('2019-12-25','MemeroniX','15:30:00','2020-02-01');
 INSERT INTO asta
-values ('2019-02-15','Memeroni','09:00:00','2019-02-29');
+values ('2019-02-15','MemeroniX','09:00:00','2019-02-29');
 
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
-values ('FantaCola','Zoe4Evah','Memeroni',10,0,3);
+values ('FantaCola','Zoe4Evah','MemeroniX',10,0,3);
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
-values ('FantaCola','Zoe4Evah','Memeroni',10,0,2);
+values ('FantaCola','Zoe4Evah','MemeroniX',10,0,2);
 
 
 INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati)
@@ -54,28 +54,28 @@ INSERT INTO scambio
 values (1,4,80,'FantaCola','Zoe4Evah','Memeroni');
 
 INSERT INTO formazione 
-values (1,0,'Zoe4Evah','Memeroni');
+values (1,0,'Zoe4Evah','MemeroniX');
 INSERT INTO formazione
 values (1,0,'Fiorellina','NotMemeroni');
 
 INSERT INTO offerta(Squadra,DataInizio,NomeLega,Giocatore,somma)
-values ('Zoe4Evah','2019-12-25','Memeroni',4,30);
+values ('Zoe4Evah','2019-12-25','MemeroniX',4,30);
 INSERT INTO offerta
-values ('FantaCola','2019-12-25','Memeroni',2,23);
+values ('FantaCola','2019-12-25','MemeroniX',2,23);
 INSERT INTO offerta
-values ('Zoe4Evah','2019-12-25','Memeroni',3,23);
+values ('Zoe4Evah','2019-12-25','MemeroniX',3,23);
 
 INSERT INTO squadragiocatore
-values ('FantaCola','Memeroni',2);
+values ('FantaCola','MemeroniX',2);
 INSERT INTO squadragiocatore
-values ('Zoe4Evah','Memeroni',3);
+values ('Zoe4Evah','MemeroniX',3);
 INSERT INTO squadragiocatore
-values ('Zoe4Evah','Memeroni',4);
+values ('Zoe4Evah','MemeroniX',4);
 
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
-values (1,'Zoe4Evah','Memeroni',3,1);
+values (1,'Zoe4Evah','MemeroniX',3,1);
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
-values (1,'Zoe4Evah','Memeroni',4,1);
+values (1,'Zoe4Evah','MemeroniX',4,1);
 
 INSERT INTO scout(Nome,Cognome,Username,email,pass)
 values ('Paolo','Conte','LoScarso','nonhopiuidee@perlemail.com','bingobangobongo1');
