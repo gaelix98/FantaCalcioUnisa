@@ -107,10 +107,15 @@ public class CreaLegaServlet extends HttpServlet {
 		String rexNome = "^.{4,50}$";
 		String rexLogo = "[^\\s]+(\\.(?i)(jpg|png|img|))$";
 		String rexQuota = "^[0-9]{0,2}*$";
+		boolean ok=false;
+		if(((Integer.parseInt(maxAllenatori)<9 && Integer.parseInt(maxAllenatori)>4) || Integer.parseInt(maxAllenatori)==10 )) {
+			ok=true;
+		}else {return false;}
+		
 		
 		
 		return Pattern.matches(rexNome, nome) && Pattern.matches(rexLogo, logo) && Pattern.matches(rexQuota, QuotaPrimoPosto) && Pattern.matches(rexQuota, QuotaSecondoPosto)
-				&& Pattern.matches(rexQuota, QuotaTerzoPosto) && Pattern.matches(rexQuota, QuotaMensile) && ((Integer.parseInt(maxAllenatori)<9 && Integer.parseInt(maxAllenatori)>4) || Integer.parseInt(maxAllenatori)==10 );
+				&& Pattern.matches(rexQuota, QuotaTerzoPosto) && Pattern.matches(rexQuota, QuotaMensile) && ok;
 	}
 
 	private String extractFileName(Part part) {
