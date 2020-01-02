@@ -21,7 +21,11 @@ import gestoreSquadra.Offerta;
 import gestoreSquadra.OffertaDAO;
 import gestoreSquadra.Squadra;
 import gestoreSquadra.SquadraDAO;
-
+/**
+ * 
+ * @author Maria Natale
+ *
+ */
 public class OffertaDAOTest {
 	private static OffertaDAO offertaDAO=new OffertaDAO();
 	

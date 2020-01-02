@@ -92,8 +92,8 @@ public class PartitaDAO {
 		ps.setInt(2, partita.getGoalSquadra2());
 		ps.setString(3, partita.getSquadra1().getNome());
 		ps.setString(4, partita.getSquadra2().getNome());
-		ps.setString(5, partita.getSquadra1().getLega().getNome());
-		ps.setInt(6, partita.getGiornata());
+		ps.setString(6, partita.getSquadra1().getLega().getNome());
+		ps.setInt(5, partita.getGiornata());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -141,7 +141,7 @@ public class PartitaDAO {
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setString(1, squadra.getNome());
 		ps.setString(2, squadra.getNome());
-		ps.setString(2, squadra.getLega().getNome());
+		ps.setString(3, squadra.getLega().getNome());
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()) {
 			Partita partita=null;

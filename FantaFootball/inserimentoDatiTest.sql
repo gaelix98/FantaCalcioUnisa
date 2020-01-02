@@ -47,7 +47,7 @@ INSERT INTO asta
 values ('2019-02-15','MemeroniX','09:00:00','2019-02-29');
 
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
-values ('FantaCola','Zoe4Evah','MemeroniX',10,0,3);
+values ('FantaCola','Zoe4Evah','MemeroniX',0,0,3);
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
 values ('FantaCola','Zoe4Evah','MemeroniX',10,0,2);
 

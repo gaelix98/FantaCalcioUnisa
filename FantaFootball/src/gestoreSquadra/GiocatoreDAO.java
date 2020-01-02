@@ -30,7 +30,8 @@ public class GiocatoreDAO {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
 		boolean inserito=false;
-		String sql="insert into asta values (?,?,?,?,?, ?,?,?,?,?,?,?,?,?, ?);";
+		String sql="insert into giocatore (Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,"
+				+ "RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase) values (?,?,?,?,?, ?,?,?,?,?,?,?,?,?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, giocatore.getNome());
 		ps.setString(2, giocatore.getCognome());
@@ -69,7 +70,7 @@ public class GiocatoreDAO {
 		boolean modificato=false;
 		int ris;
 		String sqlUp="update giocatore set presenze=?, votoMedio=?, goal=?, assist=?, ammonizioni=?, "
-				+ "espulsioni=?, rigoriSegnati=?, rigoriSbagliati=?, rigoriParati=? where id=?;";
+				+ "espulsioni=?, rigoriSegnati=?, rigoriSbagliati=?, rigoriParati=?, squadraReale=? where id=?;";
 		PreparedStatement ps = conn.prepareStatement(sqlUp);
 		ps.setInt(1, giocatore.getPresenze());
 		ps.setFloat(2, giocatore.getVotoMedio());
@@ -80,7 +81,8 @@ public class GiocatoreDAO {
 		ps.setInt(7, giocatore.getRigoriSegnati());
 		ps.setInt(8, giocatore.getRigoriSbagliati());
 		ps.setInt(9, giocatore.getRigoriParati());
-		ps.setInt(10, giocatore.getId());
+		ps.setString(10, giocatore.getSquadra());
+		ps.setInt(11, giocatore.getId());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -126,7 +128,8 @@ public class GiocatoreDAO {
 		conn = DriverManagerConnectionPool.getConnection();
 		Giocatore[] giocatori = new Giocatore[25];
 		int i = 0;
-		String sql = "select * from squadragiocatore where squadragiocatore.NomeLega = ? and squadragiocatore.NomeSquadra = ?";
+		String sql = "select * from squadragiocatore, giocatore where squadragiocatore.id=giocatore.id and"
+				+ " squadragiocatore.NomeLega = ? and squadragiocatore.NomeSquadra = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, nomeLega);
 		ps.setString(2, nomeSquadra);
@@ -157,7 +160,7 @@ public class GiocatoreDAO {
 	public synchronized List<Giocatore> getByPrezzoBase(int prezzo)throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		List<Giocatore> giocatoriFiltrati = new ArrayList<>();
-		String sql = "select * from giocatore where giocatore.prezzoBase>? ";
+		String sql = "select * from giocatore where giocatore.prezzoBase>=? ";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, prezzo);
 		ResultSet rs = ps.executeQuery();

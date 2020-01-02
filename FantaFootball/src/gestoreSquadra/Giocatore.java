@@ -49,6 +49,41 @@ public class Giocatore {
 		this.prezzoBase=prezzoBase;
 	}
 	
+	/**
+	 * 
+	 * @param nome
+	 * @param cognome
+	 * @param ruolo
+	 * @param squadra
+	 * @param presenze
+	 * @param votoMedio
+	 * @param goal
+	 * @param assist
+	 * @param ammonizioni
+	 * @param espulsioni
+	 * @param rigoriSegnati
+	 * @param rigoriSbagliati
+	 * @param rigoriParati
+	 * @param prezzoBase
+	 */
+	public Giocatore(String nome, String cognome, String ruolo, String squadra, int presenze, float votoMedio,
+			int goal, int assist, int ammonizioni, int espulsioni, int rigoriSegnati, int rigoriSbagliati,
+			int rigoriParati, int prezzoBase) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.ruolo = ruolo;
+		this.squadra = squadra;
+		this.presenze = presenze;
+		this.votoMedio = votoMedio;
+		this.goal = goal;
+		this.assist = assist;
+		this.ammonizioni = ammonizioni;
+		this.espulsioni = espulsioni;
+		this.rigoriSegnati = rigoriSegnati;
+		this.rigoriSbagliati = rigoriSbagliati;
+		this.rigoriParati = rigoriParati;
+		this.prezzoBase=prezzoBase;
+	}
 	
 	/**
 	 * 
