@@ -36,7 +36,8 @@ CREATE TABLE lega (
     terzoPosto INT NOT NULL,
     Presidente VARCHAR(50) NOT NULL,
     FOREIGN KEY (Presidente)
-        REFERENCES allenatore (Username),
+        REFERENCES allenatore (Username)
+        ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (NomeLega)
 );
 
@@ -147,7 +148,8 @@ CREATE TABLE offerta (
         REFERENCES squadra (NomeSquadra , Lega)
         ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (DataInizio , NomeLega)
-        REFERENCES asta (DataInizio , NomeLega),
+        REFERENCES asta (DataInizio , NomeLega)
+        ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (Squadra , DataInizio , NomeLega , Giocatore)
 );
 
@@ -167,7 +169,8 @@ CREATE TABLE post (
     Testo TEXT NOT NULL,
     Scout VARCHAR(50) NOT NULL,
     FOREIGN KEY (Scout)
-        REFERENCES scout (Username),
+        REFERENCES scout (Username)
+        ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (idPost)
 );
 

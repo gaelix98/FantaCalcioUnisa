@@ -1,5 +1,18 @@
 use fantacalciounisaTest;
-
+delete from allenatore;
+delete from invito;
+delete from lega;
+delete from squadra;
+delete from giocatore;
+delete from squadragiocatore;
+delete from asta;
+delete from partita;
+delete from scout;
+delete from post;
+delete from formazione;
+delete from offerta;
+delete from scambio;
+delete from giocatoreformazione;
 delete from allenatore where username="Gaelix98";
 INSERT INTO allenatore
 values ('Pasquale','Caramante','pasquale@gmail.com','pasquale12','pasquale98');
@@ -7,7 +20,6 @@ INSERT INTO allenatore
 values ('Giovanni','Mucciaccia','artattack@hotmail.it','Capoo22','Artattack');
 INSERT INTO allenatore
 values ('Carlo','Conti','scossaaaa@gmail.com','tantantan1','Sc00S54');
-
 
 INSERT INTO squadra(NomeSquadra,Lega,Logo,Allenatore,Punti,BudgetRimanente)
 values ('PippoSquad','NotMemeroni','C:\Media\Immagini\panda.png','pasquale98',37,1);
@@ -19,7 +31,7 @@ INSERT INTO squadra
 values ('Fiorellina','NotMemeroni','C:\Media\Immagini\inferno.png','Sc00S54',66,6);
 
 INSERT INTO lega(NomeLega,Logo,MaxAllenatori,quotaMensile,budget,primoPosto,secondoPosto,terzoPosto,Presidente)
-values ('Memeroni','C:\Media\Immagini\italia.png',7,15,100,50,30,20,'pasquale98');
+values ('MemeroniX','C:\Media\Immagini\italia.png',7,15,100,50,30,20,'pasquale98');
 INSERT INTO lega
 values ('NotMemeroni','C:\Media\Immagini\Campo.png',10,45,200,80,10,10,'pasquale98');
 
@@ -49,9 +61,9 @@ INSERT INTO giocatore
 value (4,'Fabiano','Pecorelli','Att','UnisaF.C.',20,8.9,14,10,0,0,3,0,0);
 
 INSERT INTO scambio(Giocatore1,Giocatore2,PrezzoOfferto,Squadra1,Squadra2,NomeLega)
-values (1,2,50,'Zoe4Evah','FantaCola','Memeroni');
+values (1,2,50,'Zoe4Evah','FantaCola','MemeroniX');
 INSERT INTO scambio
-values (1,4,80,'FantaCola','Zoe4Evah','Memeroni');
+values (1,4,80,'FantaCola','Zoe4Evah','MemeroniX');
 
 INSERT INTO formazione 
 values (1,0,'Zoe4Evah','MemeroniX');
