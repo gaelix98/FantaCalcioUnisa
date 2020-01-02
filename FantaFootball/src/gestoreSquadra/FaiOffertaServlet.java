@@ -23,14 +23,14 @@ import gestoreLega.AstaDAO;
 @WebServlet("/FaiOffertaServlet")
 public class FaiOffertaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FaiOffertaServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public FaiOffertaServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,11 +45,11 @@ public class FaiOffertaServlet extends HttpServlet {
 		int sommaOfferta;
 		OffertaDAO offertaDAO=new OffertaDAO();
 		String redirect="errorPage.jsp";
-		
+
 		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null && somma!=null) {
 			idGiocatore=Integer.parseInt(idGiocatoreS);
 			sommaOfferta=Integer.parseInt(somma);
-			
+
 			//controllo il budget
 			SquadraDAO squadraDAO=new SquadraDAO();
 			AstaDAO astaDAO=new AstaDAO();
@@ -58,19 +58,21 @@ public class FaiOffertaServlet extends HttpServlet {
 				Squadra squadra=squadraDAO.getSquadraById(nomeSquadra, lega);
 				Asta asta=astaDAO.getAstaByKey(data, lega);
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
-				if (squadra.getBudgetRimanente()>=sommaOfferta) {
-					Offerta offerta=new Offerta(squadra, asta, giocatore, sommaOfferta);
-					offertaDAO.addOfferta(offerta);
-					//aggiorno il budget della squadra
-					squadra.setBudgetRimanente(squadra.getBudgetRimanente()-sommaOfferta);
-					squadraDAO.updateSquadra(squadra);
-					redirect="";
+				if (squadra.getBudgetRimanente()>=sommaOfferta+25) {
+					if (offertaDAO.getOffertaByKey(giocatore.getId(), data, lega, nomeSquadra)==null) {
+						Offerta offerta=new Offerta(squadra, asta, giocatore, sommaOfferta);
+						offertaDAO.addOfferta(offerta);
+						//aggiorno il budget della squadra
+						squadra.setBudgetRimanente(squadra.getBudgetRimanente()-sommaOfferta);
+						squadraDAO.updateSquadra(squadra);
+						redirect="";
+					}
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}

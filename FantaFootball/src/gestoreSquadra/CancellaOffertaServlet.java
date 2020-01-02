@@ -52,7 +52,7 @@ public class CancellaOffertaServlet extends HttpServlet {
 				Squadra squadra=squadraDAO.getSquadraById(nomeSquadra, lega);
 				Asta asta=astaDAO.getAstaByKey(data, lega);
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
-				Offerta offerta=offertaDAO.getOffertaGiocatoreSquadra(idGiocatore, data, lega, nomeSquadra);
+				Offerta offerta=offertaDAO.getOffertaByKey(idGiocatore, data, lega, nomeSquadra);
 				offertaDAO.deleteOfferta(offerta);
 				squadra.setBudgetRimanente(squadra.getBudgetRimanente()+offerta.getSomma());
 				squadraDAO.updateSquadra(squadra);

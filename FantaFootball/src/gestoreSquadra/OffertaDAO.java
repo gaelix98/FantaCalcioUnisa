@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
+import gestoreLega.Asta;
+import gestoreLega.AstaDAO;
 
 /**
  * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Offerta.
@@ -106,20 +108,20 @@ public class OffertaDAO {
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setString(1, allenatore);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Offerta offerta=new Offerta();
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			Giocatore giocatoreDAO=new GiocatoreDAO();
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
 			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
 			offerta.setAsta(asta);
 			offerta.setSquadra(squadra);
 			offerta.setGiocatore(giocatore);
 			offerta.setSomma(rs.getInt("somma"));
 			offerte.add(offerta);
-		}*/
+		}
 		conn.close();
 		return offerte;
 	}
@@ -139,20 +141,20 @@ public class OffertaDAO {
 		ps.setString(1, dataInizioAsta.toString());
 		ps.setString(2, nomeLega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Offerta offerta=new Offerta();
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			Giocatore giocatoreDAO=new GiocatoreDAO();
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
 			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
 			offerta.setAsta(asta);
 			offerta.setSquadra(squadra);
 			offerta.setGiocatore(giocatore);
 			offerta.setSomma(rs.getInt("somma"));
 			offerte.add(offerta);
-		}*/
+		}
 		conn.close();
 		return offerte;
 	}
@@ -172,20 +174,20 @@ public class OffertaDAO {
 		ps.setString(1, nomeSquadra);
 		ps.setString(2, nomeLega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Offerta offerta=new Offerta();
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			Giocatore giocatoreDAO=new GiocatoreDAO();
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
 			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
 			offerta.setAsta(asta);
 			offerta.setSquadra(squadra);
 			offerta.setGiocatore(giocatore);
 			offerta.setSomma(rs.getInt("somma"));
 			offerte.add(offerta);
-		}*/
+		}
 		conn.close();
 		return offerte;
 	}
@@ -207,20 +209,20 @@ public class OffertaDAO {
 		ps.setString(2, dataInizioAsta.toString());
 		ps.setString(3, nomeLega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Offerta offerta=new Offerta();
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			Giocatore giocatoreDAO=new GiocatoreDAO();
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
 			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
 			offerta.setAsta(asta);
 			offerta.setSquadra(squadra);
 			offerta.setGiocatore(giocatore);
 			offerta.setSomma(rs.getInt("somma"));
 			offerte.add(offerta);
-		}*/
+		}
 		conn.close();
 		return offerte;
 	}
@@ -233,29 +235,29 @@ public class OffertaDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized ArrayList<Offerta> getAllOfferteGiocatoreAsta(int giocatore, Date dataInizioAsta, String nomeLega) throws SQLException{
+	public synchronized ArrayList<Offerta> getAllOfferteGiocatoreAsta(int giocatoreId, Date dataInizioAsta, String nomeLega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Offerta> offerte=new ArrayList<>();
 		String sql="select offerta.* from offerta where offerta.giocatore=? and offerta.dataInizo=? and offerta.nomeLega=?";
 		PreparedStatement ps=conn.prepareStatement(sql);
-		ps.setInt(1, giocatore);
+		ps.setInt(1, giocatoreId);
 		ps.setString(2, dataInizioAsta.toString());
 		ps.setString(3, nomeLega);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			Offerta offerta=new Offerta();
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			Giocatore giocatoreDAO=new GiocatoreDAO();
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
 			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
 			offerta.setAsta(asta);
 			offerta.setSquadra(squadra);
 			offerta.setGiocatore(giocatore);
 			offerta.setSomma(rs.getInt("somma"));
 			offerte.add(offerta);
-		}*/
+		}
 		conn.close();
 		return offerte;
 	}
@@ -269,29 +271,28 @@ public class OffertaDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public synchronized Offerta getOffertaGiocatoreSquadra(int giocatore, Date dataInizioAsta, String nomeLega, String nomeSquadra) throws SQLException{
+	public synchronized Offerta getOffertaByKey(int giocatoreId, Date dataInizioAsta, String nomeLega, String nomeSquadra) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		Offerta offerta=null;
 		String sql="select offerta.* where offerta.giocatore=? and offerta.dataInizo=? and offerta.nomeLega=? and offerta.squadra=nomeSquadra";
 		PreparedStatement ps=conn.prepareStatement(sql);
-		ps.setInt(1, giocatore);
+		ps.setInt(1, giocatoreId);
 		ps.setString(2, dataInizioAsta.toString());
 		ps.setString(3, nomeLega);
 		ps.setString(4, nomeSquadra);
 		ResultSet rs=ps.executeQuery();
-		/*while(rs.next()) {
+		while(rs.next()) {
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();
 			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			Giocatore giocatoreDAO=new GiocatoreDAO();
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
 			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
 			offerta.setAsta(asta);
 			offerta.setSquadra(squadra);
 			offerta.setGiocatore(giocatore);
 			offerta.setSomma(rs.getInt("somma"));
-			offerte.add(offerta);
-		}*/
+		}
 		conn.close();
 		return offerta;
 	}

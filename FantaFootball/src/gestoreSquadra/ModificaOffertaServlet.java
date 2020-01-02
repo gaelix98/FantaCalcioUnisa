@@ -58,8 +58,8 @@ public class ModificaOffertaServlet extends HttpServlet {
 				Squadra squadra=squadraDAO.getSquadraById(nomeSquadra, lega);
 				Asta asta=astaDAO.getAstaByKey(data, lega);
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
-				if (squadra.getBudgetRimanente()>=sommaOfferta) {
-					Offerta offerta=offertaDAO.getOffertaGiocatoreSquadra(idGiocatore, data, lega, nomeSquadra);
+				if (squadra.getBudgetRimanente()>=sommaOfferta+25) {
+					Offerta offerta=offertaDAO.getOffertaByKey(idGiocatore, data, lega, nomeSquadra);
 					int diff=offerta.getSomma()-sommaOfferta;
 					offerta.setSomma(sommaOfferta);
 					offertaDAO.addOfferta(offerta);

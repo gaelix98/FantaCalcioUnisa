@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.List;
 
 import db.DriverManagerConnectionPool;
 import gestoreLega.Asta;
@@ -29,7 +30,7 @@ public class GiocatoreDAO {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
 		boolean inserito=false;
-		String sql="insert into asta values (?,?,?,?,?, ?,?,?,?,?,?,?,?,?);";
+		String sql="insert into asta values (?,?,?,?,?, ?,?,?,?,?,?,?,?,?, ?);";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, giocatore.getNome());
 		ps.setString(2, giocatore.getCognome());
@@ -44,6 +45,7 @@ public class GiocatoreDAO {
 		ps.setInt(11, giocatore.getRigoriSegnati());
 		ps.setInt(12, giocatore.getRigoriSbagliati());
 		ps.setInt(13, giocatore.getRigoriParati());
+		ps.setInt(14, giocatore.getPrezzoBase());
 		try {
 			ris=ps.executeUpdate();
 			if (ris==1)
@@ -113,7 +115,8 @@ public class GiocatoreDAO {
 			int rigoriSegnati=rs.getInt("rigoriSegnati");
 			int rigoriSbagliati=rs.getInt("rigoriSbagliati");
 			int rigoriParati=rs.getInt("rigoriParati");
-			giocatore=new Giocatore(id, nome, cognome, ruolo, squadra, presenze, votoMedio, goal, assist, ammonizioni, espulsioni, rigoriSegnati, rigoriSbagliati, rigoriParati);
+			int prezzoBase=rs.getInt("prezzoBase");
+			giocatore=new Giocatore(id, nome, cognome, ruolo, squadra, presenze, votoMedio, goal, assist, ammonizioni, espulsioni, rigoriSegnati, rigoriSbagliati, rigoriParati, prezzoBase);
 		}
 		conn.close();
 		return giocatore;
@@ -144,10 +147,40 @@ public class GiocatoreDAO {
 			int rigoriSegnati=rs.getInt("rigoriSegnati");
 			int rigoriSbagliati=rs.getInt("rigoriSbagliati");
 			int rigoriParati=rs.getInt("rigoriParati");
-			Giocatore giocatore=new Giocatore(id, nome, cognome, ruolo, squadra, presenze, votoMedio, goal, assist, ammonizioni, espulsioni, rigoriSegnati, rigoriSbagliati, rigoriParati);
+			int prezzoBase=rs.getInt("prezzoBase");
+			Giocatore giocatore=new Giocatore(id, nome, cognome, ruolo, squadra, presenze, votoMedio, goal, assist, ammonizioni, espulsioni, rigoriSegnati, rigoriSbagliati, rigoriParati, prezzoBase);
 			giocatori[i++] = giocatore;
 		}
 		return giocatori;
+	}
+	
+	public synchronized List<Giocatore> getByPrezzoBase(int prezzo)throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		List<Giocatore> giocatoriFiltrati = new ArrayList<>();
+		String sql = "select * from giocatore where giocatore.prezzoBase>? ";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, prezzo);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			int id = rs.getInt("id");
+			String nome=rs.getString("nome");
+			String cognome=rs.getString("cognome");
+			String ruolo=rs.getString("ruolo");
+			String squadra=rs.getString("squadraReale");
+			int presenze=rs.getInt("presenze");
+			float votoMedio=rs.getFloat("votoMedio");
+			int goal=rs.getInt("goal");
+			int assist=rs.getInt("assist");
+			int ammonizioni=rs.getInt("ammonizioni");
+			int espulsioni=rs.getInt("espulsioni");
+			int rigoriSegnati=rs.getInt("rigoriSegnati");
+			int rigoriSbagliati=rs.getInt("rigoriSbagliati");
+			int rigoriParati=rs.getInt("rigoriParati");
+			int prezzoBase=rs.getInt("prezzoBase");
+			Giocatore giocatore=new Giocatore(id, nome, cognome, ruolo, squadra, presenze, votoMedio, goal, assist, ammonizioni, espulsioni, rigoriSegnati, rigoriSbagliati, rigoriParati, prezzoBase);
+			giocatoriFiltrati.add(giocatore);
+		}
+		return giocatoriFiltrati;
 	}
 	
 }

@@ -20,6 +20,7 @@ public class Giocatore {
 	private int rigoriSegnati;
 	private int rigoriSbagliati;
 	private int rigoriParati;
+	private int prezzoBase;
 	
 	
 	/**
@@ -28,8 +29,9 @@ public class Giocatore {
 	 * @param cognome
 	 * @param ruolo
 	 * @param squadra
+	 * @param prezzoBase
 	 */
-	public Giocatore(int id, String nome, String cognome, String ruolo, String squadra) {
+	public Giocatore(int id, String nome, String cognome, String ruolo, String squadra, int prezzoBase) {
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -44,6 +46,7 @@ public class Giocatore {
 		this.rigoriSegnati = 0;
 		this.rigoriSbagliati = 0;
 		this.rigoriParati = 0;
+		this.prezzoBase=prezzoBase;
 	}
 	
 	
@@ -63,10 +66,11 @@ public class Giocatore {
 	 * @param rigoriSegnati
 	 * @param rigoriSbagliati
 	 * @param rigoriParati
+	 * @param prezzoBase
 	 */
 	public Giocatore(int id, String nome, String cognome, String ruolo, String squadra, int presenze, float votoMedio,
 			int goal, int assist, int ammonizioni, int espulsioni, int rigoriSegnati, int rigoriSbagliati,
-			int rigoriParati) {
+			int rigoriParati, int prezzoBase) {
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -81,8 +85,19 @@ public class Giocatore {
 		this.rigoriSegnati = rigoriSegnati;
 		this.rigoriSbagliati = rigoriSbagliati;
 		this.rigoriParati = rigoriParati;
+		this.prezzoBase=prezzoBase;
 	}
 
+
+
+	public int getPrezzoBase() {
+		return prezzoBase;
+	}
+
+
+	public void setPrezzoBase(int prezzoBase) {
+		this.prezzoBase = prezzoBase;
+	}
 
 
 	/**
