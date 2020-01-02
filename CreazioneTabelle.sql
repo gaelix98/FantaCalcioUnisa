@@ -85,6 +85,7 @@ CREATE TABLE partita (
 CREATE TABLE giocatore (
     Id INT AUTO_INCREMENT NOT NULL,
     Nome VARCHAR(50) NOT NULL,
+    prezzoBase INT NOT NULL,
     Cognome VARCHAR(50) NOT NULL,
     Ruolo VARCHAR(10) NOT NULL,
     SquadraReale VARCHAR(10) NOT NULL,
