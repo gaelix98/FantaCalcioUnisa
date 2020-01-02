@@ -47,11 +47,11 @@ INSERT INTO asta
 values ('2019-02-15','MemeroniX','09:00:00','2019-02-29');
 
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
-values ('FantaCola','Zoe4Evah','MemeroniX',10,0,3);
+values ('FantaCola','Zoe4Evah','MemeroniX',0,0,3);
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
 values ('FantaCola','Zoe4Evah','MemeroniX',10,0,2);
 
-
+select * from giocatore;
 INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (1,'Cristiano','Ronaldo','Att','Juventus',15,8.0,10,8,0,0,7,3,0, 5);
 INSERT INTO giocatore
