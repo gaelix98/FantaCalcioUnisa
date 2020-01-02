@@ -95,36 +95,6 @@ public class OffertaDAO {
 		return modificato;
 	}
 
-	/**
-	 * 
-	 * @param allenatore
-	 * @return
-	 * @throws SQLException
-	 */
-	public synchronized ArrayList<Offerta> getAllOfferteByAllenatore(String allenatore) throws SQLException{
-		conn = DriverManagerConnectionPool.getConnection();
-		ArrayList<Offerta> offerte=new ArrayList<>();
-		String sql="select offerta.* from offerta, squadra where offerta.squadra=squadra.nomeSquadra and squadra.allenatore=?; ";
-		PreparedStatement ps=conn.prepareStatement(sql);
-		ps.setString(1, allenatore);
-		ResultSet rs=ps.executeQuery();
-		while(rs.next()) {
-			Offerta offerta=new Offerta();
-			AstaDAO astaDAO=new AstaDAO();
-			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
-			SquadraDAO squadraDAO=new SquadraDAO();
-			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
-			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
-			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
-			offerta.setAsta(asta);
-			offerta.setSquadra(squadra);
-			offerta.setGiocatore(giocatore);
-			offerta.setSomma(rs.getInt("somma"));
-			offerte.add(offerta);
-		}
-		conn.close();
-		return offerte;
-	}
 	
 	/**
 	 * 
@@ -203,7 +173,7 @@ public class OffertaDAO {
 	public synchronized ArrayList<Offerta> getAllOfferteByAstaAllenatore(Date dataInizioAsta, String nomeLega, String allenatore) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Offerta> offerte=new ArrayList<>();
-		String sql="select offerta.* from offerta, squadra where offerta.squadra=squadra.nomeSquadra and squadra.allenatore=? and offerta.dataInizio=dataInizioAsta and offerta.nomeLega=nomeLega;";
+		String sql="select offerta.* from offerta, squadra where offerta.squadra=squadra.nomeSquadra and squadra.allenatore=? and offerta.dataInizio=? and offerta.nomeLega=?;";
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setString(1, allenatore);
 		ps.setString(2, dataInizioAsta.toString());
@@ -238,7 +208,7 @@ public class OffertaDAO {
 	public synchronized ArrayList<Offerta> getAllOfferteGiocatoreAsta(int giocatoreId, Date dataInizioAsta, String nomeLega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Offerta> offerte=new ArrayList<>();
-		String sql="select offerta.* from offerta where offerta.giocatore=? and offerta.dataInizo=? and offerta.nomeLega=?";
+		String sql="select offerta.* from offerta where offerta.giocatore=? and offerta.dataInizio=? and offerta.nomeLega=?";
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setInt(1, giocatoreId);
 		ps.setString(2, dataInizioAsta.toString());
@@ -273,15 +243,16 @@ public class OffertaDAO {
 	 */
 	public synchronized Offerta getOffertaByKey(int giocatoreId, Date dataInizioAsta, String nomeLega, String nomeSquadra) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
-		Offerta offerta=null;
-		String sql="select offerta.* where offerta.giocatore=? and offerta.dataInizo=? and offerta.nomeLega=? and offerta.squadra=nomeSquadra";
+		String sql="select offerta.* from offerta where offerta.giocatore=? and offerta.dataInizio=? and offerta.nomeLega=? and offerta.squadra=?";
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setInt(1, giocatoreId);
 		ps.setString(2, dataInizioAsta.toString());
 		ps.setString(3, nomeLega);
 		ps.setString(4, nomeSquadra);
+		Offerta offerta=null;
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()) {
+			offerta=new Offerta();
 			AstaDAO astaDAO=new AstaDAO();
 			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
 			SquadraDAO squadraDAO=new SquadraDAO();

@@ -34,7 +34,7 @@ public class LoginServletTest extends Mockito{
 	@Test
 	public void testCase_1() throws ServletException, IOException {
 		request.addParameter("username", "Salve");
-		request.addParameter("password", "Condor1234");
+		request.addParameter("password", "pasquale12");
 
 		servlet.doPost(request, response);
 		
@@ -44,7 +44,7 @@ public class LoginServletTest extends Mockito{
 	//TC_1.1.2 password sbagliata
 	@Test
 	public void testCase_2() throws ServletException, IOException {
-		request.addParameter("username", "Gaelix98");
+		request.addParameter("username", "pasquale98");
 		request.addParameter("password", "Terra!");
 
 		servlet.doPost(request, response);
@@ -55,8 +55,8 @@ public class LoginServletTest extends Mockito{
 	//TC_1.1.3 username e password corretti
 	@Test
 	public void testCase_3() throws ServletException, IOException {
-		request.addParameter("username", "Gaelix98");
-		request.addParameter("password", "Condor1234");
+		request.addParameter("username", "pasquale98");
+		request.addParameter("password", "pasquale12");
 
 		servlet.doPost(request, response);
 

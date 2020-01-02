@@ -98,6 +98,7 @@ CREATE TABLE giocatore (
     RigoriSegnati INT NOT NULL,
     RigoriSbagliati INT NOT NULL,
     RigoriParati INT NOT NULL,
+    prezzoBase INT NOT NULL,
     PRIMARY KEY (Id)
 );
 

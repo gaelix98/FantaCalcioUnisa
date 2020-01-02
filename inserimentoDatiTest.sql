@@ -1,4 +1,5 @@
 use fantacalciounisaTest;
+SET SQL_SAFE_UPDATES = 0;
 delete from allenatore;
 delete from invito;
 delete from lega;
@@ -51,14 +52,14 @@ INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
 values ('FantaCola','Zoe4Evah','MemeroniX',10,0,2);
 
 
-INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati)
-values (1,'Cristiano','Ronaldo','Att','Juventus',15,8.0,10,8,0,0,7,3,0);
+INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
+values (1,'Cristiano','Ronaldo','Att','Juventus',15,8.0,10,8,0,0,7,3,0, 5);
 INSERT INTO giocatore
-values (2,'Lionel','Messi','Att','Barcellona',14,7.8,8,12,2,1,2,5,0);
+values (2,'Lionel','Messi','Att','Barcellona',14,7.8,8,12,2,1,2,5,0,6);
 INSERT INTO giocatore 
-values (3,'Gianluigi','Buffon','Por','Juventus',11,8.8,0,0,0,0,0,0,27);
+values (3,'Gianluigi','Buffon','Por','Juventus',11,8.8,0,0,0,0,0,0,27,10);
 INSERT INTO giocatore
-value (4,'Fabiano','Pecorelli','Att','UnisaF.C.',20,8.9,14,10,0,0,3,0,0);
+value (4,'Fabiano','Pecorelli','Att','UnisaF.C.',20,8.9,14,10,0,0,3,0,0,2);
 
 INSERT INTO scambio(Giocatore1,Giocatore2,PrezzoOfferto,Squadra1,Squadra2,NomeLega)
 values (1,2,50,'Zoe4Evah','FantaCola','MemeroniX');

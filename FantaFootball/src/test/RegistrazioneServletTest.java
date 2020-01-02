@@ -40,7 +40,7 @@ public class RegistrazioneServletTest {
 		request.addParameter("nome", "Pasquale");
 		request.addParameter("cognome", "Coralluzzo");
 
-
+		
 		servlet.doPost(request, response);
 
 		assertEquals(message, response.getContentAsString());
