@@ -1,33 +1,28 @@
 package test;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import db.DriverManagerConnectionPool;
-import org.dbunit.database.DatabaseConnection;
-import org.dbunit.database.IDatabaseConnection;
-import org.dbunit.dataset.xml.FlatXmlDataSet;
-import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
-import org.dbunit.operation.DatabaseOperation;
+
+import org.apache.ibatis.jdbc.ScriptRunner;
+
 
 public class DatabaseHelper {
-	public static void initializeDatabase() throws SQLException {
+	public static void initializeDatabase() throws SQLException, FileNotFoundException {
 
 		DriverManagerConnectionPool.setTest(true);
 		Connection conn = DriverManagerConnectionPool.getConnection();
-		
-		try {
-	        IDatabaseConnection connection = new DatabaseConnection(conn);
-	        FlatXmlDataSet dataSet = new FlatXmlDataSetBuilder().build(new File("db_init.xml"));
-	        DatabaseOperation.CLEAN_INSERT.execute(connection, dataSet);
-
-	        
-
-		} catch (Exception e) {
-			System.err.println("Assicurati che il server sia spento e nessun altro stia usando il db\n"+"The error is " + e.getMessage());
-		}
+		ScriptRunner sr = new ScriptRunner(conn);
+		java.io.Reader reader = new BufferedReader(new FileReader("inserimentoDatiTest.sql"));
+		sr.runScript(reader);
 		
 		DriverManagerConnectionPool.releaseConnection(conn);
+		
+		
 	}
 }

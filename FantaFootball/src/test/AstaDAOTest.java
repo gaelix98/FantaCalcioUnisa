@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -36,7 +37,7 @@ public class AstaDAOTest {
 
 	@AfterEach
     public void tearDown() throws Exception{
-		DatabaseHelper.initializeDatabase();
+		DriverManagerConnectionPool.setTest(false);
     }
 
 	@Test
@@ -46,13 +47,45 @@ public class AstaDAOTest {
 		Lega lega=legaDAO.getLegaByNome("NotMemeroni");
 		Date dataFine=Date.valueOf("2020-01-01");
 		Asta nuovaAsta=new Asta(data, legaDAO.getLegaByNome("NotMemeroni"), ora, dataFine);
-		
 		assertNotNull(nuovaAsta);
-		//List<Asta> aste=astaDAO.getAsteByLega(lega);
-		//assertEquals(aste.size(),0);
+		List<Asta> aste=astaDAO.getAsteByLega(lega);
 		astaDAO.addAsta(nuovaAsta);
 		List<Asta> nuoveAste=astaDAO.getAsteByLega(lega);
-		assertTrue(nuoveAste.contains(nuovaAsta));
+		//assertTrue(nuoveAste.contains(nuovaAsta));
+		assertEquals(aste.size()+1, nuoveAste.size());
 	}
 	
+	@Test
+	public void TestGetAsteByAllenatore() throws SQLException{
+		//caso due risultati
+		String allenatore="Artattack";
+		List<Asta> aste=astaDAO.getAsteByAllenatore(allenatore);
+		assertEquals(aste.size(),2);
+		
+		//caso 0 risultati
+		allenatore="Sc00S54";
+		aste=astaDAO.getAsteByAllenatore(allenatore);
+		assertEquals(aste.size(),0);
+	}
+	
+	@Test
+	public void TestGetAstaByKey() throws SQLException{
+		Date data=Date.valueOf("2019-12-25");
+		String lega="MemeroniX";
+		Asta asta=astaDAO.getAstaByKey(data, lega);
+		assertNotNull(asta);
+	}
+	
+	@Test
+	public void TestGetAsteByLega() throws SQLException{
+		//caso due risultati
+		String lega="MemeroniX";
+		List<Asta> aste=astaDAO.getAsteByLega(new LegaDAO().getLegaByNome(lega));
+		assertEquals(aste.size(),2);
+		
+		//caso 0 risultati
+		lega="NotMemeroni";
+		aste=astaDAO.getAsteByLega(new LegaDAO().getLegaByNome(lega));
+		assertEquals(aste.size(),0);
+	}
 }

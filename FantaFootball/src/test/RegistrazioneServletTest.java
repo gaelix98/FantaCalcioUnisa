@@ -25,10 +25,10 @@ public class RegistrazioneServletTest {
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		DriverManagerConnectionPool.setTest(true);
 		servlet=new RegistrazioneServlet();
 		request = new MockHttpServletRequest();
 		response = new MockHttpServletResponse();
+		DatabaseHelper.initializeDatabase();
 	}
 
 	//TC_1.2.1 username errato

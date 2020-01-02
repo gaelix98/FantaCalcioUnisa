@@ -24,10 +24,10 @@ public class LoginServletTest extends Mockito{
 	
 	@BeforeEach
 	public void setUp() throws Exception {
-		DriverManagerConnectionPool.setTest(true);
 		servlet=new LoginServlet();
 		request = new MockHttpServletRequest();
 		response = new MockHttpServletResponse();
+		DatabaseHelper.initializeDatabase();
 	}
 
 	//TC_1.1.1 username errato

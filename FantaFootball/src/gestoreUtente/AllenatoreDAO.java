@@ -14,7 +14,7 @@ public class AllenatoreDAO {
 
 
 	public List<Allenatore> getAllAllenatori() throws SQLException{
-
+		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, passowrd, username FROM allenatore ");
 			ArrayList<Allenatore> utenti = new ArrayList<>();
@@ -22,8 +22,6 @@ public class AllenatoreDAO {
 			while(rs.next()) {
 				Allenatore u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 				utenti.add(u);
-
-
 			}
 			return utenti;
 		}catch(SQLException e) {
@@ -32,10 +30,10 @@ public class AllenatoreDAO {
 	}
 
 	public Allenatore getAllenatoreByUsername(String username) throws SQLException{
-
+		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			Allenatore u=null;
-			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, password, username FROM allenatore where username=?");
+			PreparedStatement ps=conn.prepareStatement("SELECT * FROM allenatore where username=?");
 			ps.setString(1, username);
 			ResultSet rs= ps.executeQuery();
 			while (rs.next()) {
