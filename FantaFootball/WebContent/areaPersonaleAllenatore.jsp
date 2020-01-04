@@ -20,8 +20,10 @@
 	<%@ include file="menu.jsp"%>
 	<div class="container">
 		<div class="row">
+		<div class="col-lg-9 col-md-9">
 			<h4><%=a.getNome()%>
 				<%=a.getCognome()%></h4>
+		</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-8 col-md-8">
@@ -58,10 +60,10 @@
 							Invito di unione alla lega
 							<%=invito.getLega().getNome()%></p></div>
 							<div class="col-lg-5 col-md-5">
-							<a href="uniscitiAllaLega"><button class="genric-btn primary circle arrow">
+							<a href="UniscitiAllaLega?q=1"><button class="genric-btn primary circle arrow">
 								Unisciti alla lega
 							</button></a>
-							<a href="rifiutaUnioneLega"><button class="genric-btn primary circle arrow">
+							<a href="UniscitiAllaLega?q=0"><button class="genric-btn primary circle arrow">
 								Rifiuta
 							</button></a>
 							</div>
@@ -72,7 +74,7 @@
 							%>
 						
 						<p>
-							Non hai nuovi inviti%>
+							Non hai nuovi inviti
 							<%
 													}
 												%>
@@ -98,10 +100,10 @@
 							<%=scambio.getPrezzoOfferto()%>
 							</p></div>
 							<div class="col-lg-5 col-md-5">
-							<a href="accettaScambio"><button class="genric-btn primary circle arrow">
+							<a href="accettaScambio?q=1"><button class="genric-btn primary circle arrow">
 								Accetta scambio
 							</button></a>
-							<a href="rifiutaScambio"><button class="genric-btn primary circle arrow">
+							<a href="accettaScambio?q=0"><button class="genric-btn primary circle arrow">
 								Rifiuta scambio
 							</button></a>
 							</div></div>

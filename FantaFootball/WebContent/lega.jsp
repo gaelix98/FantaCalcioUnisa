@@ -21,7 +21,9 @@
 	<%@ include file="menu.jsp"%>
 	<div class="container">
 		<div class="row">
+		<div class="col-lg-9 col-md-9">
 			<h1><%=lega.getNome()%></h1>
+		</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-9 col-md-9">
@@ -71,10 +73,10 @@
 			<div class="col-lg-1 col-md-1"></div>
 			<div class="col-lg-2 col-md-2">
 				<aside class="single_sidebar_widget search_widget">
-					<h4>Classifica</h4>
-					<h4>Formazioni</h4>
-					<h4>Aste</h4>
-					<h4>Calendario</h4>
+					<h4><a href="classificaLega.jsp">Classifica</a></h4>
+					<h4><a href="formazioni.jsp">Formazioni</a></h4>
+					<h4><a href="aste.jsp">Aste</a></h4>
+					<h4><a href="calendario.jsp">Calendario</a></h4>
 				</aside>
 			</div>
 		</div>
