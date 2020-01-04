@@ -89,11 +89,11 @@ values ('ScossaF.C.','PippoSquad','LegaNatalizia',10,0,8);
 
 INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (1,'Cristiano','Ronaldo','Att','Juventus',15,8.0,10,8,0,0,7,3,0, 5);
-INSERT INTO giocatore
+INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (2,'Lionel','Messi','Att','Barcellona',14,7.8,8,12,2,1,2,5,0,6);
-INSERT INTO giocatore 
+INSERT INTO giocatore (Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (3,'Gianluigi','Buffon','Por','Juventus',11,8.8,0,0,0,0,0,0,27,10);
-INSERT INTO giocatore
+INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 value (4,'Fabiano','Pecorelli','Att','UnisaF.C.',20,8.9,14,10,0,0,3,0,0,2);
 
 

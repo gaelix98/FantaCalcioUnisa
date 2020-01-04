@@ -60,10 +60,10 @@
 			</div>
 			<div class="col-lg-3 col-md-3">
 				<aside class="single_sidebar_widget search_widget">
-					<h4>Classifica</h4>
-					<h4>Formazioni</h4>
-					<h4>Aste</h4>
-					<h4>Calendario</h4>
+					<h4><a href="classificaLega.jsp">Classifica</a></h4>
+					<h4><a href="formazioni.jsp">Formazioni</a></h4>
+					<h4><a href="aste.jsp">Aste</a></h4>
+					<h4><a href="calendario.jsp">Calendario</a></h4>
 				</aside>
 			</div>
 		</div>
