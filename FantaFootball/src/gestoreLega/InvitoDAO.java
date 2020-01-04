@@ -50,6 +50,24 @@ public class InvitoDAO {
 		return ok;
 	}
 	
+	public boolean deleteInvito(String username,String NomeLega) throws SQLException {
+		boolean ok=false;
+		try(Connection con= DriverManagerConnectionPool.getConnection()){
+			PreparedStatement ps = con.prepareStatement("Delete from invito  where allenatore=? AND NomeLega=?");
+
+			ps.setString(1,username);
+			ps.setString(2, NomeLega);
+			ps.executeUpdate();
+			con.close();}
+		catch(SQLException x) {x.printStackTrace();
+		return ok;
+
+		}
+		ok=true;
+
+		return ok;
+	}
+	
 	public List<Invito> getInvitoByAllenatore(String allenatore) throws SQLException{
 
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
