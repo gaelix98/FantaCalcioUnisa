@@ -132,7 +132,7 @@
 							<a href="invitaPartecipanti.jsp"><button class="genric-btn primary circle arrow">
 								Invita partecipanti
 							</button></a>
-							<a href="organizzaAsta.jsp"><button class="genric-btn primary circle arrow">
+							<a href="organizzaAsta.jsp?nome=<%=lega.getNome()%>"><button class="genric-btn primary circle arrow">
 								Organizza asta
 							</button></a>
 							</div></div>
