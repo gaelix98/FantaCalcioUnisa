@@ -60,10 +60,10 @@
 							Invito di unione alla lega
 							<%=invito.getLega().getNome()%></p></div>
 							<div class="col-lg-5 col-md-5">
-							<a href="UniscitiAllaLega?q=1"><button class="genric-btn primary circle arrow">
+							<a href="UniscitiAllaLega?q=1&nome=<%= invito.getLega().getNome()%>"><button class="genric-btn primary circle arrow">
 								Unisciti alla lega
 							</button></a>
-							<a href="UniscitiAllaLega?q=0"><button class="genric-btn primary circle arrow">
+							<a href="UniscitiAllaLega?q=0&nome=<%= invito.getLega().getNome()%>"><button class="genric-btn primary circle arrow">
 								Rifiuta
 							</button></a>
 							</div>
@@ -132,7 +132,7 @@
 							<a href="invitaPartecipanti.jsp"><button class="genric-btn primary circle arrow">
 								Invita partecipanti
 							</button></a>
-							<a href="organizzaAsta.jsp?nome=<%=lega.getNome()%>"><button class="genric-btn primary circle arrow">
+							<a href="organizzaAsta.jsp"><button class="genric-btn primary circle arrow">
 								Organizza asta
 							</button></a>
 							</div></div>
