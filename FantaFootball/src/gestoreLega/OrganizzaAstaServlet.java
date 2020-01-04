@@ -45,10 +45,6 @@ public class OrganizzaAstaServlet extends HttpServlet {
 			Lega lega = new LegaDAO().getLegaByNome(nomeLega);
 			astaDAO.addAsta(new Asta(dataInizioAsta,lega,oraInizioAsta,dataFineAsta));
 			redirect = "areaPersonaleAllenatore.jsp";
-			
-			ScheduledExecutorService scheduler =
-				    	(ScheduledExecutorService) getServletContext().getAttribute("executor");
-			scheduler.schedule(new Runnable(){public void run() {System.out.println("SCHEDULERSSSS POTENTE"); } },20L, TimeUnit.SECONDS);
 		}
 		}catch(SQLException e) {
 			e.printStackTrace();

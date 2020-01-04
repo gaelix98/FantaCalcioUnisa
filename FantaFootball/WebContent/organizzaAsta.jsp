@@ -56,17 +56,17 @@
 
 
 						</div>
-
-					</div>
-					<input type="hidden" name="nomeLega" value="<%=nomeLega%>">
+				<input type="hidden" name="nomeLega" value="<%=nomeLega%>">
 					<button type="submit" class="genric-btn primary circle arrow"
 						value="submit">
 						Conferma<span class="lnr lnr-arrow-right"></span>
 					</button>
 				</form>
+					</div>
+				
 			</div>
 		</div>
-	</div>
+
 
 	<%@ include file="footer.jsp"%>
 </body>
@@ -75,7 +75,7 @@
 	$(function() {
 		setDataInizioMinima();
 		checkDivOrarioFine();
-		$("#dataInizio").change( checkDivOrarioFine);
+		$("#dataInizio").change(checkDivOrarioFine);
 	});
 	
 
