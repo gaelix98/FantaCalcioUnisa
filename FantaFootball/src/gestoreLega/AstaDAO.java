@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
@@ -111,6 +112,23 @@ public class AstaDAO {
 		while(rs.next()) {
 			Asta asta=null;
 			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), lega, Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
+			aste.add(asta);
+		}
+		conn.close();
+		return aste;
+	}
+	
+	public synchronized ArrayList<Asta> getAsteScaduteOggi() throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		ArrayList<Asta> aste=new ArrayList<>();
+		LegaDAO legaDAO = new LegaDAO();
+		String sql="select asta.* from asta where asta.DataFine=?";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setString(1, LocalDate.now().toString());
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			Asta asta=null;
+			asta=new Asta(Date.valueOf(rs.getString("dataInizio")), legaDAO.getLegaByNome(rs.getString("nomeLega")), Time.valueOf(rs.getString("ora")), Date.valueOf(rs.getString("dataFine")));
 			aste.add(asta);
 		}
 		conn.close();

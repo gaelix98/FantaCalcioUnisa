@@ -61,12 +61,5 @@ public class OrganizzaAstaServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private long inMillis(Time time) {
-		long millis=0;
-		String[] orario = time.toString().split(":");
-		millis = (Integer.parseInt(orario[0])*60*60*1000) + (Integer.parseInt(orario[1])*60*1000) + (Integer.parseInt(orario[2])*1000);
-		System.out.println(millis);
-		return millis;
-	}
 
 }

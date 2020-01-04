@@ -131,6 +131,39 @@ public class OffertaDAO {
 	
 	/**
 	 * 
+	 * @param dataInizioAsta
+	 * @param nomeLega
+	 * @return
+	 * @throws SQLException
+	 */
+	public synchronized ArrayList<Offerta> getOfferteVincentiByAsta(Date dataInizioAsta, String nomeLega) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		ArrayList<Offerta> offerte=new ArrayList<>();
+		String sql="select * from offerta where offerta.dataInizio=? and offerta.nomeLega=? and (offerta.giocatore,offerta.somma) IN (select giocatore,max(somma) from offerta group by giocatore)";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setString(1, dataInizioAsta.toString());
+		ps.setString(2, nomeLega);
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			Offerta offerta=new Offerta();
+			AstaDAO astaDAO=new AstaDAO();
+			Asta asta=astaDAO.getAstaByKey(Date.valueOf(rs.getString("dataInizio")), rs.getString("nomeLega"));
+			SquadraDAO squadraDAO=new SquadraDAO();
+			Squadra squadra=squadraDAO.getSquadraById(rs.getString("squadra"),  rs.getString("nomeLega"));
+			GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
+			Giocatore giocatore=giocatoreDAO.getGiocatoreById(rs.getInt("giocatore"));
+			offerta.setAsta(asta);
+			offerta.setSquadra(squadra);
+			offerta.setGiocatore(giocatore);
+			offerta.setSomma(rs.getInt("somma"));
+			offerte.add(offerta);
+		}
+		conn.close();
+		return offerte;
+	}
+	
+	/**
+	 * 
 	 * @param nomeSquadra
 	 * @param nomeLega
 	 * @return
