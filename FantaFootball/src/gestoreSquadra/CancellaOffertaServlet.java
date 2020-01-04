@@ -3,6 +3,7 @@ package gestoreSquadra;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,9 +11,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import gestoreLega.Asta;
 import gestoreLega.AstaDAO;
+import gestoreUtente.Allenatore;
 
 /**
  * 
@@ -37,11 +40,13 @@ public class CancellaOffertaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Date data=Date.valueOf(request.getParameter("data"));
 		String lega=request.getParameter("lega");
+		Allenatore user=(Allenatore) request.getSession().getAttribute("utente");
 		String nomeSquadra=request.getParameter("squadra");
 		String idGiocatoreS=request.getParameter("giocatore");
 		int idGiocatore;
 		OffertaDAO offertaDAO=new OffertaDAO();
 		String redirect="errorPage.jsp";
+		
 
 		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null) {
 			idGiocatore=Integer.parseInt(idGiocatoreS);
@@ -61,7 +66,13 @@ public class CancellaOffertaServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-
+         HttpSession sessione = request.getSession();
+         try {
+			sessione.setAttribute("offerte", offertaDAO.getAllOfferteByAstaAllenatore(data, lega,user.getUsername()));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}

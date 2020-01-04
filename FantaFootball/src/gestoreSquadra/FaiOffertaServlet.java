@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import gestoreLega.Asta;
 import gestoreLega.AstaDAO;
+import gestoreUtente.Allenatore;
 
 /**
  * 
@@ -39,6 +40,7 @@ public class FaiOffertaServlet extends HttpServlet {
 		Date data=Date.valueOf(request.getParameter("data"));
 		String lega=request.getParameter("lega");
 		String nomeSquadra=request.getParameter("squadra");
+		Allenatore user=(Allenatore) request.getSession().getAttribute("utente");
 		String idGiocatoreS=request.getParameter("giocatore");
 		String somma=request.getParameter("sommaOfferta");
 		int idGiocatore;
@@ -71,6 +73,13 @@ public class FaiOffertaServlet extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		}
+		 HttpSession sessione = request.getSession();
+         try {
+			sessione.setAttribute("offerte", offertaDAO.getAllOfferteByAstaAllenatore(data, lega,user.getUsername()));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
