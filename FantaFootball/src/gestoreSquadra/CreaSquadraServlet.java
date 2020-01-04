@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import gestoreLega.InvitoDAO;
 import gestoreLega.Lega;
 import gestoreLega.LegaDAO;
 import gestoreUtente.Allenatore;
@@ -52,6 +53,7 @@ public class CreaSquadraServlet extends HttpServlet {
 		String nomeSquadra = request.getParameter("nome");
 		LegaDAO legadao = new LegaDAO();
 		SquadraDAO squadradao = new SquadraDAO();
+		InvitoDAO invitod = new InvitoDAO();
 		Lega lega = null;
 		Allenatore allenatore = (Allenatore) request.getSession().getAttribute("utente");
 		String redirect="index.jsp";
@@ -74,6 +76,7 @@ public class CreaSquadraServlet extends HttpServlet {
 						p.write(pathLogo + File.separator + nomeFile);
 						request.setAttribute("lega",lega);
 						redirect = "lega.jsp"; // da creare : pagina destinazione se la creazione squadra ha successo	
+						invitod.deleteInvito(allenatore.getUsername(), nomeLega); //creato gaetano, in pratica se la squadra ha successo elimina l'invito
 					}
 					else {
 						request.setAttribute("message", "Squadra non creata");
