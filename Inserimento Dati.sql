@@ -187,7 +187,7 @@ values ('Zoe4Evah','Memeroni',2);
 
 
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
-values (12,'Zoe4Evah','Memeroni',3,1);
+values (12,'Zoe4Evah','Memeroni',1,1);
 INSERT INTO giocatoreformazione
 values (15,'Zoe4Eavh','Memeroni',2,9);
 INSERT INTO giocatoreformazione
@@ -196,10 +196,6 @@ INSERT INTO giocatoreformazione
 values (19,'FantaCola','Memeroni',4,11);
 INSERT INTO giocatoreformazione
 values (18,'Fiorellina','NotMemeroni',3,1);
-INSERT INTO giocatoreformazione
-values (18,'Fiorellina','NotMemeroni',2,10);
-INSERT INTO giocatoreformazione
-values (18,'Fiorellina','NotMemeroni',2,10);
 
 
 

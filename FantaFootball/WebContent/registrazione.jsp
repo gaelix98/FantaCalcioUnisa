@@ -37,12 +37,15 @@
 						</div>
 						<div class="mt-10">
 							<input type="text" name="email" required="required"
-								placeholder="Email" id="email" class="single-input"> <span
+								placeholder="Email" id="email" class="single-input">
+								<span class="error">E-mail non disponibile</span><br>
+								 <span
 								class="error">Formato errato email</span><br>
 						</div>
 						<div class="mt-10">
 							<input type="text" name="username" required="required"
 								placeholder="Username" id="username" class="single-input">
+								<span class="error">Username non disponibile</span><br>
 							<span class="error">Formato errato username</span><br>
 						</div>
 						<div class="mt-10">
@@ -73,6 +76,8 @@
 			}
 		}
 	</script>
+	<script src="scripts/verificaUsername.js"></script>
+<script src="scripts/verificaEmail.js"></script>
 	<script src="scripts/validaRegistrazione.js"></script>
 </body>
 </html>

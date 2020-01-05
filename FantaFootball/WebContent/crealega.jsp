@@ -50,8 +50,8 @@
 						</div>
 
 						<div class="single-element-widget mt-10">
-							<div class="default-select" name="maxAllenatori">
-								Max allenatori: <select>
+							<div class="default-select" >
+								Max allenatori: <select name="maxAllenatori">
 									<%for (int i=4;i<=10;i++){%>
 									<option value=<%=i%>><%=i%></option>
 									<%} %>
@@ -64,7 +64,7 @@
 								placeholder="Quota mensile" id="quotaMensile" class="single-input">
 						</div>
 						<div class="mt-10">
-							<select name="budget" id="budget">
+							Budget squadra: <select name="budget" id="budget">
 								<option value="1">260 FM</option>
 								<option value="2">500 FM</option>
 								<option value="3">1000 FM</option>

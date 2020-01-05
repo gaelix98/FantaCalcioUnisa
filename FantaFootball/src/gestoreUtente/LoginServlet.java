@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			if (allenatoreDAO.checkLogin(username, password)) {
 				allenatore=allenatoreDAO.getAllenatoreByUsername(username);
-				redirect="index.jsp";
+				redirect="areaPersonaleAllenatore.jsp";
 				request.setAttribute("result", "successo");
 				
 				LegaDAO legaDAO=new LegaDAO();
@@ -66,12 +66,10 @@ public class LoginServlet extends HttpServlet {
 				
 				SquadraDAO squadraDAO=new SquadraDAO();
 				ArrayList<Squadra> squadreAllenatore=squadraDAO.getSquadreByAllenatore(allenatore.getUsername());
-				//cerco le leghe di cui l'allenatore fa parte ma non è il presidente
+				//cerco le leghe
 				ArrayList<Lega> leghe=new ArrayList<>();
 				for (Squadra squadra: squadreAllenatore) {
-					if (!squadra.getAllenatore().getUsername().equals(squadra.getLega().getPresidente().getUsername())) {
-						leghe.add(squadra.getLega());
-					}
+					leghe.add(squadra.getLega());
 				}
 				
 				//cerco gli scambi da accettare
@@ -84,7 +82,16 @@ public class LoginServlet extends HttpServlet {
 				
 				//cerco inviti da accettare
 				InvitoDAO invitoDAO=new InvitoDAO();
-				ArrayList<Invito> inviti=(ArrayList<Invito>) invitoDAO.getInvitoByAllenatore(allenatore.getUsername());
+				ArrayList<Invito> allInviti=(ArrayList<Invito>) invitoDAO.getInvitoByAllenatore(allenatore.getUsername());
+				ArrayList<Invito> inviti=new ArrayList<>();
+				for (Invito invito:allInviti) {
+					if (!invito.isRisposta()) {
+						inviti.add(invito);
+						if (invito.getLega().getPresidente().getUsername().equals(username)) {
+							redirect="creasquadra.jsp?nomeLega="+invito.getLega().getNome();
+						}
+					}
+				}
 				
 				session.setAttribute("utente", allenatore);
 				session.setAttribute("tipoUtente", "allenatore");
@@ -95,7 +102,7 @@ public class LoginServlet extends HttpServlet {
 			}
 			else if(scoutDAO.checkLogin(username, password)) {
 				scout=scoutDAO.getScoutByUsername(username);
-				redirect="index.jsp";
+				redirect="areaPersonaleScout.jsp";
 				request.setAttribute("result", "successo");
 				
 				PostDAO postDAO=new PostDAO();

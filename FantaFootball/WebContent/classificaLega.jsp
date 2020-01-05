@@ -40,7 +40,7 @@
 								%>
 								<tr>
 									<th scope="row"><%=i+1 %></th>
-									<td><%=squadra.getNome()%></td>
+									<td><a href="getRosaServlet?s=<%=squadra.getNome()%>"><%=squadra.getNome()%></a></td>
 									<td><%=squadra.getPunti()%></td>
 								</tr>
 								<%

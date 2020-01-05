@@ -10,8 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
-import gestoreSquadra.Offerta;
-import gestoreSquadra.OffertaDAO;
+
 
 /**
  * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Asta.

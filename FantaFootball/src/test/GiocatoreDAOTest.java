@@ -57,7 +57,10 @@ public class GiocatoreDAOTest {
 		Giocatore[] giocatori=giocatoreDAO.getGiocatoriBySquadra("MemeroniX", "Zoe4Evah");
 		assertEquals(3, giocatori[0].getId());
 		assertEquals(4, giocatori[1].getId());
-		assertEquals(null, giocatori[2]);
+		
+		for (int i=2;i<giocatori.length;i++) {
+			assertEquals(null, giocatori[i]);
+		}
 	}
 	
 	@Test 

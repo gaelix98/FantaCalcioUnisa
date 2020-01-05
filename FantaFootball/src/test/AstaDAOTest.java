@@ -88,4 +88,10 @@ public class AstaDAOTest {
 		aste=astaDAO.getAsteByLega(new LegaDAO().getLegaByNome(lega));
 		assertEquals(aste.size(),0);
 	}
+	
+	@Test
+	public void testAsteScaduteOggi()throws SQLException{
+		List<Asta> aste=astaDAO.getAsteScaduteOggi();
+		assertEquals(aste.size(),0);
+	}
 }

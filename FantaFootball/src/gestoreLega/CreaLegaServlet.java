@@ -3,6 +3,7 @@ package gestoreLega;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import gestoreSquadra.Squadra;
@@ -42,7 +44,7 @@ public class CreaLegaServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nomeLega = request.getParameter("nomeLega");
+		String nomeLega = request.getParameter("nome");
 		String QuotaPrimoPosto = request.getParameter("primoPosto");
 		String QuotaSecondoPosto = request.getParameter("secondoPosto");
 		String QuotaTerzoPosto = request.getParameter("terzoPosto");
@@ -50,7 +52,7 @@ public class CreaLegaServlet extends HttpServlet {
 		String MaxAllenatori = request.getParameter("maxAllenatori");
 		String budget = request.getParameter("budget");
 		LegaDAO legadao = new LegaDAO();
-		
+		HttpSession session=request.getSession();
 		
 		Allenatore allenatore = (Allenatore) request.getSession().getAttribute("utente");
 		String redirect="index.jsp";
@@ -64,6 +66,9 @@ public class CreaLegaServlet extends HttpServlet {
 		}
 		for(Part p: request.getParts()) {
 			String nomeFile = extractFileName(p);
+			if (nomeFile==null) {
+				System.out.println("nome file null");
+			}
 			if(valida(nomeLega,nomeFile,MaxAllenatori,QuotaPrimoPosto,QuotaSecondoPosto,QuotaTerzoPosto,QuotaMensile)) {
 				try{
 					boolean legaExists = (legadao.getLegaByNome(nomeLega)!= null);
@@ -74,10 +79,18 @@ public class CreaLegaServlet extends HttpServlet {
 						legadao.addLega(lega);
 						p.write(pathLogo + File.separator + nomeFile);
 						request.setAttribute("lega",lega);
-						redirect = "lega.jsp"; // da creare : pagina destinazione se la creazione squadra ha successo	
+						Invito invito=new Invito(allenatore, lega, false);
+						new InvitoDAO().addInvito(invito);
+						ArrayList<Lega> legheCreate=(ArrayList<Lega>) session.getAttribute("legheCreate");
+						legheCreate.add(lega);
+						ArrayList<Lega> leghe=(ArrayList<Lega>) session.getAttribute("leghe");
+						leghe.add(lega);
+						session.setAttribute("legheCreate", legheCreate);
+						session.setAttribute("leghe", leghe);
+						redirect = "creasquadra.jsp?nomeLega="+nomeLega; // da creare : pagina destinazione se la creazione squadra ha successo	
 					}
 					else {
-						request.setAttribute("message", "Squadra non creata");
+						request.setAttribute("message", "Lega non creata");
 						redirect = "crealega.jsp";
 					}
 				}catch(SQLException e) {
@@ -106,16 +119,16 @@ public class CreaLegaServlet extends HttpServlet {
 	private boolean valida(String nome,String logo,String maxAllenatori,String QuotaPrimoPosto,String QuotaSecondoPosto,String QuotaTerzoPosto,String QuotaMensile) {
 		String rexNome = "^.{4,50}$";
 		String rexLogo = "[^\\s]+(\\.(?i)(jpg|png|img|))$";
-		String rexQuota = "^[0-9]{0,2}*$";
+		String rexQuota = "^[0-9]{0,2}$";
 		boolean ok=false;
-		if(((Integer.parseInt(maxAllenatori)<9 && Integer.parseInt(maxAllenatori)>4) || Integer.parseInt(maxAllenatori)==10 )) {
+		if(Integer.parseInt(maxAllenatori)>=4 && Integer.parseInt(maxAllenatori)<=10) {
 			ok=true;
 		}else {return false;}
 		
-		
-		
-		return Pattern.matches(rexNome, nome) && Pattern.matches(rexLogo, logo) && Pattern.matches(rexQuota, QuotaPrimoPosto) && Pattern.matches(rexQuota, QuotaSecondoPosto)
-				&& Pattern.matches(rexQuota, QuotaTerzoPosto) && Pattern.matches(rexQuota, QuotaMensile) && ok;
+		return Pattern.matches(rexNome, nome) && Pattern.matches(rexLogo, logo) && Pattern.matches(rexQuota, QuotaPrimoPosto) &&
+				Pattern.matches(rexQuota, QuotaSecondoPosto) && Pattern.matches(rexQuota, QuotaTerzoPosto) 
+				&& Pattern.matches(rexQuota, QuotaMensile)
+				&& ok;
 	}
 
 	private String extractFileName(Part part) {

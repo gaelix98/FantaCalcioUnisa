@@ -34,7 +34,7 @@ public class InvitoDAO {
 	public  boolean updateInvito(Invito invito) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("Update invito SET risposta=? and where allenatore=? AND NomeLega=?");
+			PreparedStatement ps = con.prepareStatement("Update invito SET risposta=? where allenatore=? AND NomeLega=?");
 			ps.setBoolean(1, invito.isRisposta());
 			ps.setString(2, invito.getAllenatore().getUsername());
 			ps.setString(3, invito.getLega().getNome());
@@ -89,6 +89,22 @@ public class InvitoDAO {
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public Invito getInvitoById(Allenatore allenatore, Lega lega) throws SQLException {
+		boolean ok=false;
+		Invito invito=null;
+		try(Connection con= DriverManagerConnectionPool.getConnection()){
+			PreparedStatement ps = con.prepareStatement("select * from invito where allenatore=? and lega=?");
+			ps.setString(1, allenatore.getUsername());
+			ps.setString(2, lega.getNome());
+			ResultSet rs= ps.executeQuery();			
+			while(rs.next()) {
+				invito=new Invito(allenatore, lega, rs.getBoolean(3));
+			}
+			con.close();
+		}
+		return invito;
 	}
 
 
