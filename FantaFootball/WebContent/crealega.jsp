@@ -32,8 +32,8 @@
 						enctype="multipart/form-data">
 						<h2>Registrazione di una nuova Lega</h2>
 						<div class="mt-10">
-							<input type="text" name="nome" required="required"
-								placeholder="Nome lega" id="nome" class="single-input">
+							<input type="text" name="name" required="required"
+								placeholder="Nome lega" id="name" class="single-input">
 							<span class="error">Il nome della lega deve contenere solo
 								lettere dell'alfabeto e deve avere una lughezza compresa tra i 4
 								e i 50 caratteri</span><br>
@@ -99,11 +99,30 @@
 
 						</div>
 						<input type="hidden" name="utente" value="<%=utente%>">
+						
+<h2>Iscrizione Prima Squadra alla Lega</h2>
+						<div class="mt-10">
+							<input type="text" name="nome" required="required"
+								placeholder="Nome Squadra" id="nome" class="single-input"> <span
+								class="error">Il nome della squadra deve contenere solo lettere
+								dell'alfabeto e deve avere lughezza minima 2</span><br>
+						</div>
+						<div class="mt-10" >
+						
+						<label for="logoSquadra" >Scegli un logo per la tua squadra: </label>
+							<input type="file" name="logoSquadra" required="required"
+								placeholder="Seleziona un logo" id="logoSquadra" class="single-input " accept="image/jpeg, image/jpg, image/png, image/img"> 
+							
+							<span class="error">Il logo deve essere un'immagine .jpg,.png o .img </span><br>
+						
+						</div>
+						
 						<button type="submit" class="genric-btn primary circle arrow"
 							value="submit">
+							
+						
 							Conferma<span class="lnr lnr-arrow-right"></span>
 						</button>
-
 					</form>
 				</div>
 			</div>

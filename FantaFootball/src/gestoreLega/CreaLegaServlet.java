@@ -44,7 +44,7 @@ public class CreaLegaServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nomeLega = request.getParameter("nome");
+		String nomeLega = request.getParameter("name");
 		String QuotaPrimoPosto = request.getParameter("primoPosto");
 		String QuotaSecondoPosto = request.getParameter("secondoPosto");
 		String QuotaTerzoPosto = request.getParameter("terzoPosto");
@@ -91,7 +91,7 @@ public class CreaLegaServlet extends HttpServlet {
 					}
 					else {
 						request.setAttribute("message", "Lega non creata");
-						redirect = "crealega.jsp";
+						redirect = "/CreaSquadraServlet";
 					}
 				}catch(SQLException e) {
 					e.printStackTrace();
@@ -102,7 +102,7 @@ public class CreaLegaServlet extends HttpServlet {
 		}
 
 
-
+       
 		request.getRequestDispatcher(redirect).forward(request,response);
 	}
 

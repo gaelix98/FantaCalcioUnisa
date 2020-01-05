@@ -116,6 +116,7 @@ public class CreaSquadraServlet extends HttpServlet {
 	private boolean valida(String nome,String logo) {
 		String rexNome = "^.{4,50}$";
 		String rexLogo = "[^\\s]+(\\.(?i)(jpg|png|img|))$";
+		
 		return Pattern.matches(rexNome, nome) && Pattern.matches(rexLogo, logo);
 	}
 

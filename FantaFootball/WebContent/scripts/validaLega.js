@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 
 	function validate(namef){
-		if (namef=="nome")
+		if (namef=="name")
 			return validateName();
 		if (namef=="logoLega")
 			return validateLogo();
@@ -33,6 +33,10 @@ $(document).ready(function() {
 			return validatemaxAllenatori();
 		if(namef="budget")
 			return validatebudget();
+		if (namef=="nome")
+			return validateNameS();
+		if (namef=="logoSquadra")
+			return validateLogoS();
 		
 	}  
 	
@@ -125,12 +129,12 @@ $(document).ready(function() {
 	
 	function validateName(){
 		var nameformat = /^.{4,50}$/;
-		if (document.getElementById("nome").value.match(nameformat)){
+		if (document.getElementById("name").value.match(nameformat)){
 			console.log("corretto");
 			return true;
 		}
 		else{
-			document.getElementById("nome").focus();
+			document.getElementById("name").focus();
 			console.log("non corretto");
 			return false;
 		}
@@ -144,6 +148,30 @@ $(document).ready(function() {
 		else{
 			document.getElementById("logoLega").focus();
 			console.log(document.getElementById("logoLega").value);
+			return false;
+		}
+	}
+	function validateNameS(){
+		var nameformat = /^.{4,50}$/;
+		if (document.getElementById("nome").value.match(nameformat)){
+			console.log("corretto");
+			return true;
+		}
+		else{
+			document.getElementById("nome").focus();
+			console.log("non corretto");
+			return false;
+		}
+	}
+
+	function validateLogoS(){
+		var logoformat = /([^\s]+(\.(jpe?g|png|img|))$)/;
+		var logobj = document.getElementById("logoSquadra");
+		if (logobj.value.match(logoformat))
+			return true;
+		else{
+			document.getElementById("logoSquadra").focus();
+			console.log(document.getElementById("logoSquadra").value);
 			return false;
 		}
 	}
