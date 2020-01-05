@@ -46,7 +46,7 @@
 						<div class="mt-10">
 							<input type="text" name="userall" required="required"
 								placeholder="Username" id="userall" class="single-input"> <span
-								class="error">L'username non è corretto</span><br>
+								class="error">L'username non Ã¨ corretto</span><br>
 						</div>
 						<button type="submit" class="genric-btn primary circle arrow">
 							Invita l'allenatore<span class="lnr lnr-arrow-right"></span>
@@ -60,24 +60,13 @@
 						<div class="mt-10">
 							<input type="text" name="emailall" required="required"
 								placeholder="Email" id="emaiall" class="single-input"> <span
-								class="error">L'email non è corretto</span><br>
+								class="error">L'email non Ã¨ corretto</span><br>
 								</div>
 						<button type="submit" class="genric-btn primary circle arrow">
 							Invita l'allenatore<span class="lnr lnr-arrow-right"></span>
 						</button>
 						</form>
-						<%} 
-						 else {
-							%>
-						
-						<p>
-							Scegli una tipologia di invito
-							<%
-													}
-												%>
-								
-								
-								
+					
 								
 								
 								
