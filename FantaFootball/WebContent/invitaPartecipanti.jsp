@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Invita Partecipanti</title>
 <%@include file="header.html"%>
 </head>
 <body>
@@ -35,7 +35,7 @@
 						String s=request.getParameter("sceltainvito");
 						int x = s.compareTo("Tramite Username");
 							if(s!=null){ 
-								if(x==0){
+								if(x==0)
 								%>
 								
 								
@@ -52,8 +52,8 @@
 							Invita l'allenatore<span class="lnr lnr-arrow-right"></span>
 						</button>
 						</form>
-						<% }
-								else{%>
+						<% 
+								else%>
 								
 								<form action="InvitoServlet" method="post" id="form1">
 						<h2>Invita tramite Email</h2>
@@ -66,7 +66,15 @@
 							Invita l'allenatore<span class="lnr lnr-arrow-right"></span>
 						</button>
 						</form>
-						
+						<%
+						 
+							}
+							%>
+					</div>
+				</div>
+			</div>
+				
+				
 								
 								
 								
@@ -75,9 +83,6 @@
 								
 								
 								
-								
-						
-						
 						
 						
 						
