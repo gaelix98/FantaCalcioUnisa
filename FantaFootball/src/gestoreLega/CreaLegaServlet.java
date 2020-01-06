@@ -44,7 +44,7 @@ public class CreaLegaServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nomeLega = request.getParameter("name");
+		String nomeLega = request.getParameter("nome");
 		String QuotaPrimoPosto = request.getParameter("primoPosto");
 		String QuotaSecondoPosto = request.getParameter("secondoPosto");
 		String QuotaTerzoPosto = request.getParameter("terzoPosto");
@@ -65,10 +65,11 @@ public class CreaLegaServlet extends HttpServlet {
 			saveDir.mkdir();
 		}
 		for(Part p: request.getParts()) {
-			String nomeFile = extractFileName(p);
-			if (nomeFile==null) {
-				System.out.println("nome file null");
-			}
+			String nomeFile=extractFileName(p);
+				if (nomeFile==null) {
+					System.out.println("nome file null");
+					nomeFile="logoDefault.jpg";
+				}
 			if(valida(nomeLega,nomeFile,MaxAllenatori,QuotaPrimoPosto,QuotaSecondoPosto,QuotaTerzoPosto,QuotaMensile)) {
 				try{
 					boolean legaExists = (legadao.getLegaByNome(nomeLega)!= null);
@@ -76,22 +77,21 @@ public class CreaLegaServlet extends HttpServlet {
 						Lega lega = new Lega(nomeLega, nomeFile, Integer.parseInt(MaxAllenatori), Integer.parseInt(QuotaMensile),
 								Integer.parseInt(budget),Integer.parseInt(QuotaPrimoPosto) 
 								,Integer.parseInt(QuotaSecondoPosto),Integer.parseInt(QuotaTerzoPosto), allenatore);
-						legadao.addLega(lega);
+						//legadao.addLega(lega);
 						p.write(pathLogo + File.separator + nomeFile);
-						request.setAttribute("lega",lega);
-						Invito invito=new Invito(allenatore, lega, false);
-						new InvitoDAO().addInvito(invito);
+						session.setAttribute("legadaCreare",lega);
+						/*new InvitoDAO().addInvito(invito);
 						ArrayList<Lega> legheCreate=(ArrayList<Lega>) session.getAttribute("legheCreate");
 						legheCreate.add(lega);
 						ArrayList<Lega> leghe=(ArrayList<Lega>) session.getAttribute("leghe");
 						leghe.add(lega);
 						session.setAttribute("legheCreate", legheCreate);
-						session.setAttribute("leghe", leghe);
+						session.setAttribute("leghe", leghe);*/
 						redirect = "creasquadra.jsp?nomeLega="+nomeLega; // da creare : pagina destinazione se la creazione squadra ha successo	
 					}
 					else {
 						request.setAttribute("message", "Lega non creata");
-						redirect = "/CreaSquadraServlet";
+						redirect = "crealega.jsp";
 					}
 				}catch(SQLException e) {
 					e.printStackTrace();
@@ -125,7 +125,7 @@ public class CreaLegaServlet extends HttpServlet {
 			ok=true;
 		}else {return false;}
 		
-		return Pattern.matches(rexNome, nome) && Pattern.matches(rexLogo, logo) && Pattern.matches(rexQuota, QuotaPrimoPosto) &&
+		return Pattern.matches(rexNome, nome) && (Pattern.matches(rexLogo, logo)) && Pattern.matches(rexQuota, QuotaPrimoPosto) &&
 				Pattern.matches(rexQuota, QuotaSecondoPosto) && Pattern.matches(rexQuota, QuotaTerzoPosto) 
 				&& Pattern.matches(rexQuota, QuotaMensile)
 				&& ok;

@@ -54,7 +54,7 @@
 							<span class="error">Formato errato password (lunghezza
 								minima 5 caratteri)</span><br>
 						</div>
-						<input type="checkbox" onclick="showPassword()">Show
+						<input type="checkbox" onclick="showPassword()" name="bottone">Show
 						Password
 						<hr>
 						<button type="submit" class="genric-btn primary circle arrow">

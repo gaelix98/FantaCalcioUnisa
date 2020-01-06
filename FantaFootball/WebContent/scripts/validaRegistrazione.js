@@ -16,6 +16,7 @@ $(document).ready(function() {
 		return ris;
 	});
 
+
 	function validate(namef){
 		if (namef=="nome")
 			return validateName();
@@ -27,12 +28,14 @@ $(document).ready(function() {
 			return validateEmail();
 		if (namef=="password")
 			return validatePassword();
+		if (namef=="bottone")
+			return true;
 	}
 
 	function validateName(){
 		var nameformat = /^^[A-Za-z ]{2,50}$/;
 		if (document.getElementById("nome").value.match(nameformat)){
-			console.log("corretto");
+			console.log("nome corretto");
 			return true;
 		}
 
@@ -45,8 +48,10 @@ $(document).ready(function() {
 
 	function validateSurname(){
 		var surnameformat = /^[A-Za-z ]{2,50}$/;
-		if (document.getElementById("cognome").value.match(surnameformat))
+		if (document.getElementById("cognome").value.match(surnameformat)){
+			console.log("cognome corretto");
 			return true;
+		}
 		else{
 			document.getElementById("cognome").focus();
 			return false;
@@ -55,8 +60,10 @@ $(document).ready(function() {
 
 	function validateUsername(){
 		var usernameformat = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
-		if (document.getElementById("username").value.match(usernameformat))
+		if (document.getElementById("username").value.match(usernameformat)){
+			console.log("username corretto");
 			return true;
+		}
 		else{
 			document.getElementById("username").focus();
 			return false;
@@ -64,9 +71,11 @@ $(document).ready(function() {
 	}
 
 	function validateEmail(){
-		var mailformat = /^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$/;
-		if (document.getElementById("email").value.match(mailformat))
+		var mailformat = /^^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+		if (document.getElementById("email").value.match(mailformat)){
+			console.log("email corretto");
 			return true;
+		}
 		else{
 			document.getElementById("email").focus();
 			return false;
@@ -74,8 +83,9 @@ $(document).ready(function() {
 	}
 
 	function validatePassword(){
-		var passformat = /^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{5,}$/;
+		var passformat = /^([A-Za-z0-9]){5,}$/;
 		if (document.getElementById("password").value.match(passformat)){
+			console.log("password corretto");
 			return true;
 		}
 		else{

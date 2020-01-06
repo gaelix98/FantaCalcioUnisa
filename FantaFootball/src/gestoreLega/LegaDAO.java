@@ -82,5 +82,21 @@ public class LegaDAO {
 		return leghe;
 	}
 	
+	public boolean deleteLega(Lega lega) throws SQLException {
+		boolean ok=false;
+		try(Connection con= DriverManagerConnectionPool.getConnection()){
+			PreparedStatement ps = con.prepareStatement("Delete from lega  where NomeLega=?");
+			ps.setString(1, lega.getNome());
+			ps.executeUpdate();
+			con.close();}
+		catch(SQLException x) {x.printStackTrace();
+		return ok;
+
+		}
+		ok=true;
+
+		return ok;
+	}
+	
 
 }

@@ -85,12 +85,7 @@ public class LoginServlet extends HttpServlet {
 				ArrayList<Invito> allInviti=(ArrayList<Invito>) invitoDAO.getInvitoByAllenatore(allenatore.getUsername());
 				ArrayList<Invito> inviti=new ArrayList<>();
 				for (Invito invito:allInviti) {
-					if (!invito.isRisposta()) {
 						inviti.add(invito);
-						if (invito.getLega().getPresidente().getUsername().equals(username)) {
-							redirect="creasquadra.jsp?nomeLega="+invito.getLega().getNome();
-						}
-					}
 				}
 				
 				session.setAttribute("utente", allenatore);

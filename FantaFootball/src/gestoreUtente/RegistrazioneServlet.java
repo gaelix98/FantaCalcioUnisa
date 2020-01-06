@@ -81,7 +81,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		String expCognome="^[A-Za-z ]{2,50}$";
 		String expEmail="^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
 		String expUsername="^[a-zA-Z0-9]+([a-zA-Z0-9](_|-|)[a-zA-Z0-9])*[a-zA-Z0-9]+$";
-		String expPassword="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{5,}$";
+		String expPassword="^([A-Za-z0-9]){5,}$";
 		if (!Pattern.matches(expNome, nome)) {
 			valido=false;
 			System.out.print(nome);

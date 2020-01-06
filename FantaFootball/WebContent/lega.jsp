@@ -17,12 +17,15 @@
 		List<Asta> aste = (List<Asta>) session.getAttribute("aste");
 		int ultimaGiornata = Integer.parseInt(getServletContext().getInitParameter("giornata")) - 1;
 		int prossimaGiornata = Integer.parseInt(getServletContext().getInitParameter("giornata"));
+		String path=getServletContext().getInitParameter("path-loghi-leghe");
+		String pathFile=path+"\\"+lega.getLogo();
 	%>
 	<%@ include file="menu.jsp"%>
 	<div class="container">
 		<div class="row">
 		<div class="col-lg-9 col-md-9">
 			<h1><%=lega.getNome()%></h1>
+			<img src="getFoto?=<%=pathFile%>">
 		</div>
 		</div>
 		<div class="row">

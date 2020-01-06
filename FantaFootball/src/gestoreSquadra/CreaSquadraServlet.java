@@ -70,25 +70,47 @@ public class CreaSquadraServlet extends HttpServlet {
 		}
 		for(Part p: request.getParts()) {
 			String nomeFile = extractFileName(p);
+			if (nomeFile==null) {
+				System.out.println("nome file null");
+			}
+			
 			if(valida(nomeLega,nomeFile)) {
 				try{
+					
+					//controllo se è la prima squadra della lega. La lega verrà creata solo se può essere creata la squadra
+					Lega legaDaCreare=(Lega)session.getAttribute("legadaCreare");
+					
+					if(legaDaCreare!=null) {
+						legadao.addLega(legaDaCreare);
+						ArrayList<Lega> legheCreate=(ArrayList<Lega>) session.getAttribute("legheCreate");
+						legheCreate.add(legaDaCreare);
+						ArrayList<Lega> leghe=(ArrayList<Lega>) session.getAttribute("leghe");
+						leghe.add(legaDaCreare);
+						session.setAttribute("legheCreate", legheCreate);
+						session.setAttribute("leghe", leghe);
+						session.setAttribute("legadaCreare", null);
+					}
+					
 					lega = legadao.getLegaByNome(nomeLega);
 					boolean squadraExists = (squadradao.getSquadraById(nomeSquadra, nomeLega) != null);
 					if(!squadraExists && lega != null && allenatore !=null) {
 						squadradao.creaSquadra(new Squadra(nomeSquadra,nomeFile,allenatore,lega,0,lega.getBudget()));
 						p.write(pathLogo + File.separator + nomeFile);
-						request.setAttribute("lega",lega);
-						redirect = "areaPersonaleAllenatore.jsp"; 	
-						Invito invito=invitod.getInvitoById(allenatore, lega);
-						ArrayList<Invito> inviti=(ArrayList<Invito>) session.getAttribute("inviti");
-						inviti.remove(invito);
-						invito.setRisposta(true);
-						invitod.updateInvito(invito); 
-						session.setAttribute("inviti", inviti);
+						redirect = "areaPersonaleAllenatore.jsp"; 
+						
+						if(!allenatore.getUsername().equals(lega.getPresidente().getUsername())) {
+							Invito invito=invitod.getInvitoById(allenatore, lega);
+							ArrayList<Invito> inviti=(ArrayList<Invito>) session.getAttribute("inviti");
+							inviti.remove(invito);
+							invito.setRisposta(true);
+							invitod.updateInvito(invito); 
+							session.setAttribute("inviti", inviti);
+						}	
 					}
 					else {
 						request.setAttribute("message", "Squadra non creata");
 						redirect = "creasquadra.jsp";
+						legadao.deleteLega(lega);
 					}
 				}catch(SQLException e) {
 					e.printStackTrace();

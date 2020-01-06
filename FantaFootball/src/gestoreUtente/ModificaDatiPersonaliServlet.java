@@ -91,7 +91,7 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 	private boolean valida(String email,String password) {
 		boolean valido=true;
 		String expEmail="^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
-		String expPassword="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{5,}$";
+		String expPassword="^([A-Za-z0-9]){5,}$";
 		if (!Pattern.matches(expPassword, password)) {
 			valido=false;
 		}
