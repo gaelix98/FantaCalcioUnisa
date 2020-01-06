@@ -54,10 +54,12 @@ public class filtraGiocatoriServlet extends HttpServlet {
 		try {
 			giocatori=giocatoreDAO.getByPrezzoBase(prezzoBase);
 			if (!squadra.equals("")) {
-				getGiocatoriSquadra(giocatori, squadra);
+				giocatori=getGiocatoriSquadra(giocatori, squadra);
+				System.out.println("Tette1");
 			}
 			if (!ruolo.equals("")) {
-				getGiocatoriRuolo(giocatori, ruolo);
+				giocatori=getGiocatoriRuolo(giocatori, ruolo);
+				System.out.println("Tette2");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -69,6 +71,9 @@ public class filtraGiocatoriServlet extends HttpServlet {
 		}
 
 		session.setAttribute("giocatori", giocatori);
+		for(int i=0;i<giocatori.size();i++) {
+			System.out.println(giocatori.get(i).getNome());
+		}
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}
@@ -94,7 +99,7 @@ public class filtraGiocatoriServlet extends HttpServlet {
 	private List<Giocatore> getGiocatoriRuolo(List<Giocatore> giocatori, String ruolo){
 		List<Giocatore> giocatoriFiltrati=new ArrayList<>();
 		for(Giocatore giocatore: giocatori) {
-			if (giocatore.getSquadra().equals(ruolo)) {
+			if (giocatore.getRuolo().equals(ruolo)) {
 				giocatoriFiltrati.add(giocatore);
 			}
 		}

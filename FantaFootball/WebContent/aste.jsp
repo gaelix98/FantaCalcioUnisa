@@ -68,8 +68,9 @@
 					<%
 						if (astaInCorso != null) {
 					%>
-					<a href="#"><button class="genric-btn primary circle arrow">Accedi
-							all'asta</button></a>
+					<a href="filtraGiocatoriServlet?squadra=&p=0&data=<%=astaInCorso.getDataInizio() %>&prezzoBase=&ruolo="><button class="genric-btn primary circle arrow">Fai offerte per
+							l'asta</button></a>
+							
 					<%
 						} else {
 					%>

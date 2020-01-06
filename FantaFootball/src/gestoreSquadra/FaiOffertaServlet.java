@@ -37,10 +37,21 @@ public class FaiOffertaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SquadraDAO squad = new SquadraDAO();
+		Allenatore allenatore =(Allenatore) request.getSession().getAttribute("utente");
+		String nomeSquadra=null;
+		try {
+			nomeSquadra = squad.getSquadraByUserELega(allenatore.getUsername(),request.getParameter("lega")).getNome();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		Date data=Date.valueOf(request.getParameter("data"));
 		String lega=request.getParameter("lega");
-		String nomeSquadra=request.getParameter("squadra");
+		
 		Allenatore user=(Allenatore) request.getSession().getAttribute("utente");
+		
 		String idGiocatoreS=request.getParameter("giocatore");
 		String somma=request.getParameter("sommaOfferta");
 		int idGiocatore;
@@ -50,6 +61,7 @@ public class FaiOffertaServlet extends HttpServlet {
 
 		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null && somma!=null) {
 			idGiocatore=Integer.parseInt(idGiocatoreS);
+			System.out.println("Sto qua bello");
 			sommaOfferta=Integer.parseInt(somma);
 
 			//controllo il budget
@@ -59,6 +71,7 @@ public class FaiOffertaServlet extends HttpServlet {
 			try {
 				Squadra squadra=squadraDAO.getSquadraById(nomeSquadra, lega);
 				Asta asta=astaDAO.getAstaByKey(data, lega);
+				System.out.println("Ora sono qui bello");
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
 				if (squadra.getBudgetRimanente()>=sommaOfferta+25) {
 					if (offertaDAO.getOffertaByKey(giocatore.getId(), data, lega, nomeSquadra)==null) {
@@ -81,7 +94,7 @@ public class FaiOffertaServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+        
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}

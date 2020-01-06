@@ -5,7 +5,16 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,11 +71,48 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 					invitd.addInvito(new Invito(invitato, leghe.get(i), false));
 					 }
 				if(email!=null) {
-					invitato= allenatord.getAllenatoreByEmail(email);
-					invitd.addInvito(new Invito(invitato, leghe.get(i), false));
+					final String usernameM = "professore6puntipls@outlook.com";
+			        final String password = "Esame1401";
+
+			        Properties props = new Properties();
+			        props.put("mail.smtp.auth", "true");
+			        props.put("mail.smtp.starttls.enable", "true");
+			        props.put("mail.smtp.host", "smtp-mail.outlook.com");
+			        props.put("mail.smtp.port", "587");
+
+			        Session session = Session.getInstance(props,
+			          new javax.mail.Authenticator() {
+			            protected PasswordAuthentication getPasswordAuthentication() {
+			                return new PasswordAuthentication(usernameM, password);
+			            }
+			          });
+
+			        try {
+
+			            Message message = new MimeMessage(session);
+			            message.setFrom(new InternetAddress("professore6puntipls@outlook.com"));
+			            message.setRecipients(Message.RecipientType.TO,
+			                InternetAddress.parse(email));
+			            message.setSubject("Partecipa alla fantasticalega!");
+			            message.setText("Fra partecipa a questa fantastica lega di" + allenatore.getUsername()
+			                + "\n\n No spam to my email, please!");
+
+			            Transport.send(message);
+
+			            System.out.println("Done");} catch (AddressException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (MessagingException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			            finally {}
+				}}
+				
+
 					
-				}
-			}
+				
+			
 				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
