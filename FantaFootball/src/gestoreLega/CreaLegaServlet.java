@@ -87,11 +87,13 @@ public class CreaLegaServlet extends HttpServlet {
 						leghe.add(lega);
 						session.setAttribute("legheCreate", legheCreate);
 						session.setAttribute("leghe", leghe);*/
-						redirect = "creasquadra.jsp?nomeLega="+nomeLega; // da creare : pagina destinazione se la creazione squadra ha successo	
+						redirect = "creasquadra.jsp?nomeLega="+nomeLega;
+						request.setAttribute("result", "successo");
 					}
 					else {
 						request.setAttribute("message", "Lega non creata");
 						redirect = "crealega.jsp";
+						response.getWriter().write("Lega non creata");
 					}
 				}catch(SQLException e) {
 					e.printStackTrace();
@@ -109,7 +111,7 @@ public class CreaLegaServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

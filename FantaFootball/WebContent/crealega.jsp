@@ -65,9 +65,9 @@
 						</div>
 						<div class="mt-10">
 							Budget squadra: <select name="budget" id="budget">
-								<option value="1">260 FM</option>
-								<option value="2">500 FM</option>
-								<option value="3">1000 FM</option>
+								<option value="260">260 FM</option>
+								<option value="500">500 FM</option>
+								<option value="1000">1000 FM</option>
 							</select>
 						</div>
 

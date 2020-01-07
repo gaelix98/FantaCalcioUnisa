@@ -35,7 +35,7 @@
 			<h1></h1>
 		</div>
 		<div class="row">
-			<div class="col-lg-8 col-md-9">
+			<div class="col-lg-8 col-md-8">
 				<div class="blog_left_sidebar">
 					<div style="overflow: scroll; height: 20em">
 						<table class="table">
@@ -68,7 +68,7 @@
 				</div>
 			</div>
 			Filtra qui i tuoi giocatori!
-			<div>
+			<div class="col-lg-4 col-md-4">
 				<form action="filtraGiocatoriServlet?p=0" method="post" id="form1">
 
 

@@ -58,7 +58,8 @@
 					<div class="blog_details"></div>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-3">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-2 col-md-2">
 				<aside class="single_sidebar_widget search_widget">
 					<h4><a href="classificaLega.jsp">Classifica</a></h4>
 					<h4><a href="formazioni.jsp">Formazioni</a></h4>

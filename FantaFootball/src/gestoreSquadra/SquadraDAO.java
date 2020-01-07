@@ -113,7 +113,8 @@ public class SquadraDAO {
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
 			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
-			squadre.add(squadra);
+			if (squadra!=null)
+				squadre.add(squadra);
 		}
 		return squadre;
 	}
@@ -147,6 +148,34 @@ public class SquadraDAO {
 		return squadra;
 	}
 	
+	public ArrayList<Squadra> getSquadreByLega(String nomeLega) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
+		String sql = "select * from squadra where squadra.Lega = ? order by squadra.punti desc";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, nomeLega);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
+			squadre.add(squadra);
+		}
+		return squadre;
+	}
+	
+	public ArrayList<Squadra> getSquadreGiocatore(Giocatore giocatore) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
+		String sql = "select * from squadra,squadragiocatore where squadragiocatore.Id = ? and squadragiocatore.NomeSquadra = squadra.NomeSquadra and squadragiocatore.NomeLega = squadra.Lega";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, giocatore.getId());
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
+			squadre.add(squadra);
+		}
+		return squadre;
+	}
+	
 	public Squadra getSquadraByUserELega(String User, String nomeLega) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Squadra squadra = null;
@@ -174,33 +203,5 @@ public class SquadraDAO {
 		}
 		
 		return squadra;
-	}
-	
-	public ArrayList<Squadra> getSquadreByLega(String nomeLega) throws SQLException{
-		conn = DriverManagerConnectionPool.getConnection();
-		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
-		String sql = "select * from squadra where squadra.Lega = ? order by squadra.punti desc";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(1, nomeLega);
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
-			squadre.add(squadra);
-		}
-		return squadre;
-	}
-	
-	public ArrayList<Squadra> getSquadreGiocatore(Giocatore giocatore) throws SQLException{
-		conn = DriverManagerConnectionPool.getConnection();
-		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
-		String sql = "select * from squadra,squadragiocatore where squadragiocatore.Id = ? and squadragiocatore.NomeSquadra = squadra.NomeSquadra and squadragiocatore.NomeLega = squadra.Lega";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, giocatore.getId());
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
-			squadre.add(squadra);
-		}
-		return squadre;
 	}
 }

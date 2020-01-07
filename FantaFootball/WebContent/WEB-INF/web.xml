@@ -6,4 +6,13 @@
     version="4.0">
 	<context-param>
 		<param-name>giornata</param-name>
-		<param-value>1</param-value></context-param></web-app>
+		<param-value>1</param-value>
+	</context-param>
+	<context-param>
+		<param-name>path-loghi-leghe</param-name>
+		<param-value>img\leghe</param-value>
+	</context-param>
+	<context-param>
+		<param-name>path-loghi-squadre</param-name>
+		<param-value>img\squadre</param-value>
+	</context-param></web-app>

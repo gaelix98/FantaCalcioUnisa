@@ -12,7 +12,6 @@
 	<%
 		Squadra squadra = (Squadra) session.getAttribute("squadra");
 		Giocatore[] rosa = (Giocatore[]) session.getAttribute("rosa");
-		String path=getServletContext().getInitParameter("path-loghi-leghe");
 	%>
 	<%@ include file="menu.jsp"%>
 	<div class="container">
@@ -26,13 +25,7 @@
 						<h2><%=squadra.getNome()%></h2>
 						<div class="row">
 							<div class="col-lg-4 col-md-4">
-								<%String nomeFile=squadra.getLogo();
-								if (nomeFile==null){
-									path=path+"logoDefault.jpg";
-								}
-								else{
-									path=path+nomeFile;
-								}
+								<%String path=getServletContext().getInitParameter("path-loghi-squadre")+"\\"+squadra.getLogo();
 								%>
 								<img src="<%=path%>">
 							</div>

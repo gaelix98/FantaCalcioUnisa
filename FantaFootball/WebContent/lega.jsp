@@ -17,16 +17,44 @@
 		List<Asta> aste = (List<Asta>) session.getAttribute("aste");
 		int ultimaGiornata = Integer.parseInt(getServletContext().getInitParameter("giornata")) - 1;
 		int prossimaGiornata = Integer.parseInt(getServletContext().getInitParameter("giornata"));
-		String path=getServletContext().getInitParameter("path-loghi-leghe");
-		String pathFile=path+"\\"+lega.getLogo();
+		String path = getServletContext().getInitParameter("path-loghi-leghe") + "\\" + lega.getLogo();
 	%>
 	<%@ include file="menu.jsp"%>
 	<div class="container">
 		<div class="row">
-		<div class="col-lg-9 col-md-9">
-			<h1><%=lega.getNome()%></h1>
-			<img src="getFoto?=<%=pathFile%>">
-		</div>
+			<div class="col-lg-9 col-md-9">
+				<h1><%=lega.getNome()%></h1>
+				<div class="row">
+					<div class="col-lg-6 col-md-6">
+						<img src="<%=path%>"
+							class="grid-item grid-item--height2 bg_img img-gal">
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<p>
+							<b>Presidente</b>:
+							<%=lega.getPresidente().getUsername()%><br>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-2 col-md-2">
+				<aside class="single_sidebar_widget search_widget">
+					<h4>
+						<a href="classificaLega.jsp">Classifica</a>
+					</h4>
+					<h4>
+						<a href="formazioni.jsp">Formazioni</a>
+					</h4>
+					<h4>
+						<a href="aste.jsp">Aste</a>
+					</h4>
+					<h4>
+						<a href="calendario.jsp">Calendario</a>
+					</h4>
+				</aside>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-9 col-md-9">
@@ -73,15 +101,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-1 col-md-1"></div>
-			<div class="col-lg-2 col-md-2">
-				<aside class="single_sidebar_widget search_widget">
-					<h4><a href="classificaLega.jsp">Classifica</a></h4>
-					<h4><a href="formazioni.jsp">Formazioni</a></h4>
-					<h4><a href="aste.jsp">Aste</a></h4>
-					<h4><a href="calendario.jsp">Calendario</a></h4>
-				</aside>
-			</div>
+			
 		</div>
 		<div class="row">
 			<div class="col-lg-5 col-md-5">
@@ -99,8 +119,8 @@
 				</div>
 			</div>
 		</div>
-</div>
-		<%@include file="footer.jsp"%>
+	</div>
+	<%@include file="footer.jsp"%>
 </body>
 </html>
 </body>
