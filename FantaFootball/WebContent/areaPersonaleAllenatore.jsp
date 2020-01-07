@@ -150,7 +150,7 @@
 			</div>
 
 			<div class="col-lg-4 col-md-4">
-				<aside class="single_sidebar_widget search_widget">
+				<div class="blog_left_sidebar">
 					<h2>Bacheca</h2>
 					<%
 							if (post.size() > 0) {
@@ -182,7 +182,7 @@
 						%>
 					<button class="button rounded-0 primary-bg text-white w-100">Visualizza
 						altro</button>
-				</aside>
+				</div>
 			</div>
 		</div>
 		<div class="row">

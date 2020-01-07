@@ -71,6 +71,7 @@ public class LoginServlet extends HttpServlet {
 				for (Squadra squadra: squadreAllenatore) {
 					leghe.add(squadra.getLega());
 				}
+				leghe.addAll(legheCreate);
 				
 				//cerco gli scambi da accettare
 				ScambioDAO scambioDAO=new ScambioDAO();

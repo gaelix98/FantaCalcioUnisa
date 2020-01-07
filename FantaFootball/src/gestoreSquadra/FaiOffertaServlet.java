@@ -41,6 +41,8 @@ public class FaiOffertaServlet extends HttpServlet {
 		Allenatore allenatore =(Allenatore) request.getSession().getAttribute("utente");
 		String nomeSquadra=null;
 		try {
+			System.out.println(allenatore.getUsername());
+			
 			nomeSquadra = squad.getSquadraByUserELega(allenatore.getUsername(),request.getParameter("lega")).getNome();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -49,8 +51,6 @@ public class FaiOffertaServlet extends HttpServlet {
 		
 		Date data=Date.valueOf(request.getParameter("data"));
 		String lega=request.getParameter("lega");
-		
-		Allenatore user=(Allenatore) request.getSession().getAttribute("utente");
 		
 		String idGiocatoreS=request.getParameter("giocatore");
 		String somma=request.getParameter("sommaOfferta");
@@ -73,14 +73,14 @@ public class FaiOffertaServlet extends HttpServlet {
 				Asta asta=astaDAO.getAstaByKey(data, lega);
 				
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
-				if (squadra.getBudgetRimanente()>=sommaOfferta+25) {
+				if (squadra.getBudgetRimanente()>=sommaOfferta+25 && sommaOfferta>=giocatore.getPrezzoBase()) {
 					if (offertaDAO.getOffertaByKey(giocatore.getId(), data, lega, nomeSquadra)==null) {
 						Offerta offerta=new Offerta(squadra, asta, giocatore, sommaOfferta);
 						offertaDAO.addOfferta(offerta);
 						//aggiorno il budget della squadra
 						squadra.setBudgetRimanente(squadra.getBudgetRimanente()-sommaOfferta);
 						squadraDAO.updateSquadra(squadra);
-						redirect="";
+						redirect="leMieOfferte.jsp";
 					}
 				}
 			} catch (SQLException e) {
@@ -89,7 +89,7 @@ public class FaiOffertaServlet extends HttpServlet {
 		}
 		 HttpSession sessione = request.getSession();
          try {
-			sessione.setAttribute("offerte", offertaDAO.getAllOfferteByAstaAllenatore(data, lega,user.getUsername()));
+			sessione.setAttribute("offerte", offertaDAO.getAllOfferteByAstaAllenatore(data, lega,allenatore.getUsername()));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

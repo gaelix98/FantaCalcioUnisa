@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"
 	import="gestoreLega.*, java.util.*, gestoreSquadra.*, gestoreLega.*, gestoreUtente.*"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head><%@include file="header.html"%>
-</head>
-<body>
 <meta charset="ISO-8859-1">
 <title>Mie Offerte</title>
+</head>
+<body>
+	
 
-<%
+	<%
 		ArrayList<Offerta> offerte = (ArrayList<Offerta>) request.getAttribute("offerte");
 	%>
+	<%@ include file="menu.jsp"%>
 	<div class="container">
 		<div class="row">
 			<h1></h1>
@@ -39,47 +41,49 @@
 									for (int i = 0; i < offerte.size(); i++) {
 								%>
 								<tr>
-									<td><a href="CancellaOffertaServlet?data=<%=offerte.get(i).getAsta().getDataInizio() %>
-									&lega=<%=offerte.get(i).getSquadra().getLega().getNome() %>
+									<td><a
+										href="CancellaOffertaServlet?data=<%=offerte.get(i).getAsta().getDataInizio()%>
+									&lega=<%=offerte.get(i).getSquadra().getLega().getNome()%>
 									&squadra=<%=offerte.get(i).getSquadra().getNome()%>
 									&giocatore=<%=offerte.get(i).getGiocatore().getId()%>">X
-									</a><%=offerte.get(i).getGiocatore().getNome()%>
-											<%=offerte.get(i).getGiocatore().getCognome() %></td>
+									</a><%=offerte.get(i).getGiocatore().getNome()%> <%=offerte.get(i).getGiocatore().getCognome()%></td>
 									<td><%=offerte.get(i).getGiocatore().getRuolo()%></td>
 									<td><%=offerte.get(i).getGiocatore().getSquadra()%></td>
-									<td><%=offerte.get(i).getGiocatore().getPrezzoBase() %></td>
-									<td><%=offerte.get(i).getSomma() %></td>
-									<td><%=offerte.get(i).getGiocatore().getVotoMedio() %></td>
+									<td><%=offerte.get(i).getGiocatore().getPrezzoBase()%></td>
+									<td><%=offerte.get(i).getSomma()%></td>
+									<td><%=offerte.get(i).getGiocatore().getVotoMedio()%></td>
 									<td><%=offerte.get(i).getGiocatore().getPresenze()%></td>
-									<td><form action="ModificaOffertaServlet?giocatore=<%=offerte.get(i).getGiocatore().getId()%>
-									&data=<%=offerte.get(i).getAsta().getDataInizio() %>
+									<td><form
+											action="ModificaOffertaServlet?giocatore=<%=offerte.get(i).getGiocatore().getId()%>
+									&data=<%=offerte.get(i).getAsta().getDataInizio()%>
 									&squadra=<%=offerte.get(i).getSquadra().getNome()%>
-									&lega=<%=offerte.get(i).getSquadra().getLega().getNome()%>" method="post" id="form1">
+									&lega=<%=offerte.get(i).getSquadra().getLega().getNome()%>"
+											method="post" id="form1">
 
 
-				
-				
-				<input type="number" name="sommaOfferta" placeholder="Cambi offerta?" id="sommaOfferta">
 
 
-				<hr>
-				<button type="submit" class="genric-btn primary circle arrow">
-					Offri!<span class="lnr lnr-arrow-right"></span>
-				</button>
-			</form>
-									</td>
+											<input type="number" name="sommaOfferta"
+												placeholder="Cambi offerta?" id="sommaOfferta">
+
+
+											<hr>
+											<button type="submit" class="genric-btn primary circle arrow">
+												Offri!<span class="lnr lnr-arrow-right"></span>
+											</button>
+										</form></td>
 								</tr>
 								<%
 									}
 								%>
 							</tbody>
 						</table>
-						</div>
-						</div>
-						</div>
-						</div>
-						</div>
-						
-<%@include file="footer.jsp"%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%@include file="footer.jsp"%>
 </body>
 </html>

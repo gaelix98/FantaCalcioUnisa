@@ -9,6 +9,7 @@
 <%@include file="header.html"%>
 </head>
 <body>
+<%@ include file="menu.jsp"%>
 <%
 		Lega lega = (Lega) session.getAttribute("lega");
 		List<Asta> aste = (List<Asta>) session.getAttribute("aste");
@@ -32,7 +33,7 @@
 	%>
 	<div class="container">
 		<div class="row">
-			<h1></h1>
+			<h2>Seleziona giocatore</h2>
 		</div>
 		<div class="row">
 			<div class="col-lg-8 col-md-8">
@@ -67,15 +68,26 @@
 					</div>
 				</div>
 			</div>
-			Filtra qui i tuoi giocatori!
+			
 			<div class="col-lg-4 col-md-4">
+			<aside class="single_sidebar_widget search_widget">
+			<h3>Filtra qui i tuoi giocatori!</h3><br>
 				<form action="filtraGiocatoriServlet?p=0" method="post" id="form1">
-
-
-					<input type="text" name="ruolo" placeholder="ruolo" id="ruolo"><br>
+					<div class="mt-10">
+					Seleziona ruolo: <select name="ruolo" id="ruolo">
+								<option value="Por">Portiere</option>
+								<option value="Att">Attaccante</option>
+								<option value="Cen">Centrocampista</option>
+								<option value="Dif">Difensore</option>
+							</select>
+							</div>
+					<br>
+					<div class="mt-10">
 					<input type="text" name="squadra" placeholder="squadra"
-						id="squadra"> <br> <input type="number"
-						name="prezzoBase" placeholder="prezzo" id="prezzoBase"><br>
+						id="squadra" class="single-input "></div><br> 
+						<div class="mt-10">
+					<input type="number"
+						name="prezzoBase" placeholder="prezzo base da" id="prezzoBase" class="single-input"></div><br>
 
 
 					<hr>
@@ -83,6 +95,7 @@
 						Filtra!<span class="lnr lnr-arrow-right"></span>
 					</button>
 				</form>
+				</aside>
 			</div>
 		</div><a
 href="PrendiOfferteServlet?&data=<%=astaInCorso.getDataInizio()%>&lega=<%=astaInCorso.getLega().getNome()%>">Per visualizzare tue offerte clicca qui<br></a>
