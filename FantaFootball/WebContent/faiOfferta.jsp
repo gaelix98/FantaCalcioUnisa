@@ -9,9 +9,26 @@
 <%@include file="header.html"%>
 </head>
 <body>
+<%
+		Lega lega = (Lega) session.getAttribute("lega");
+		List<Asta> aste = (List<Asta>) session.getAttribute("aste");
+		List<Asta> prossimeAste = new ArrayList<>();
+		Asta astaInCorso = null;
+		List<Asta> astePrecedenti = new ArrayList<>();
+		Date dataAttuale = new Date();
+		for (Asta asta : aste) {
+			if (asta.getDataFine().before(dataAttuale)) {
+				astePrecedenti.add(asta);
+			} else if (asta.getDataInizio().after(dataAttuale)) {
+				prossimeAste.add(asta);
+			} else {
+				astaInCorso = asta;
+				
+			}
+		}
+	%>
 	<%
-ArrayList<Giocatore> giocatori = (ArrayList<Giocatore>)session.getAttribute("giocatori");
-		
+		ArrayList<Giocatore> giocatori = (ArrayList<Giocatore>) session.getAttribute("giocatori");
 	%>
 	<div class="container">
 		<div class="row">
@@ -40,7 +57,7 @@ ArrayList<Giocatore> giocatori = (ArrayList<Giocatore>)session.getAttribute("gio
 											<%=giocatori.get(i).getCognome()%></a></td>
 									<td><%=giocatori.get(i).getRuolo()%></td>
 									<td><%=giocatori.get(i).getSquadra()%></td>
-									<td><%=giocatori.get(i).getPrezzoBase() %></td>
+									<td><%=giocatori.get(i).getPrezzoBase()%></td>
 								</tr>
 								<%
 									}
@@ -51,22 +68,26 @@ ArrayList<Giocatore> giocatori = (ArrayList<Giocatore>)session.getAttribute("gio
 				</div>
 			</div>
 			Filtra qui i tuoi giocatori!
-			 <div>
-			<form action="filtraGiocatoriServlet?p=0" method="post" id="form1">
+			<div>
+				<form action="filtraGiocatoriServlet?p=0" method="post" id="form1">
 
 
-				<input type="text" name="ruolo" placeholder="ruolo" id="ruolo"><br>
-				<input type="text" name="squadra" placeholder="squadra" id="squadra"> <br>
-				<input type="number" name="prezzoBase" placeholder="prezzo" id="prezzoBase"><br>
+					<input type="text" name="ruolo" placeholder="ruolo" id="ruolo"><br>
+					<input type="text" name="squadra" placeholder="squadra"
+						id="squadra"> <br> <input type="number"
+						name="prezzoBase" placeholder="prezzo" id="prezzoBase"><br>
 
 
-				<hr>
-				<button type="submit" class="genric-btn primary circle arrow">
-					Filtra!<span class="lnr lnr-arrow-right"></span>
-				</button>
-			</form>
+					<hr>
+					<button type="submit" class="genric-btn primary circle arrow">
+						Filtra!<span class="lnr lnr-arrow-right"></span>
+					</button>
+				</form>
 			</div>
-		</div>
+		</div><a
+href="PrendiOfferteServlet?&data=<%=astaInCorso.getDataInizio()%>&lega=<%=astaInCorso.getLega().getNome()%>">Per visualizzare tue offerte clicca qui<br></a>
+		
+
 	</div>
 
 	<%@include file="footer.jsp"%>

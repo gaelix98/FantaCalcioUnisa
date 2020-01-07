@@ -4,7 +4,9 @@
 	
 <!DOCTYPE html>
 <html>
-<head>
+<head><%@include file="header.html"%>
+</head>
+<body>
 <meta charset="ISO-8859-1">
 <title>Conferma Offerta</title>
 	<%  Allenatore allenatore=(Allenatore)request.getAttribute("utente");
@@ -61,15 +63,13 @@
 
 				<hr>
 				<button type="submit" class="genric-btn primary circle arrow">
-					Filtra!<span class="lnr lnr-arrow-right"></span>
+					Offri!<span class="lnr lnr-arrow-right"></span>
 				</button>
 			</form>
 						</div>
 					
 				
-<%@include file="header.html"%>
-</head>
-<body>
+
 
 <%@include file="footer.jsp"%>
 </body>

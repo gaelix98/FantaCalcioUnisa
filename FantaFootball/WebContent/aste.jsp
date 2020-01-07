@@ -23,6 +23,7 @@
 				prossimeAste.add(asta);
 			} else {
 				astaInCorso = asta;
+				
 			}
 		}
 	%>

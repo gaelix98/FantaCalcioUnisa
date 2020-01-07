@@ -64,7 +64,7 @@ public class ModificaOffertaServlet extends HttpServlet {
 					Offerta offerta=offertaDAO.getOffertaByKey(idGiocatore, data, lega, nomeSquadra);
 					int diff=offerta.getSomma()-sommaOfferta;
 					offerta.setSomma(sommaOfferta);
-					offertaDAO.addOfferta(offerta);
+					offertaDAO.updateOfferta(offerta);
 					squadra.setBudgetRimanente(squadra.getBudgetRimanente()+diff);
 					squadraDAO.updateSquadra(squadra);
 					redirect="";
