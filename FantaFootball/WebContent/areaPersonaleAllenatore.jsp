@@ -168,7 +168,7 @@
 							<%=p.getData() %>
 							</h3>
 							</div>
-							<p><%=p.getTesto()%></p>
+							<p><%=p.getTesto()%><p>
 							</div>
 							<hr><br>
 							<%

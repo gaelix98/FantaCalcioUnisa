@@ -52,11 +52,16 @@ public class getLegaServlet extends HttpServlet {
 			List<Squadra> classifica=squadraDAO.getSquadreByLega(lega.getNome());
 			
 			ArrayList<Formazione> formazioni=new ArrayList<>();
-			for (int giornata=1;giornata<giornataAttuale;giornata++) {
+			for (int giornata=1;giornata<=giornataAttuale;giornata++) {
 				for (Squadra squadra: classifica) {
-					formazioni.add(formazioneDAO.getFormazioneBySquadraGiornata(squadra, giornata));
+					Formazione x=formazioneDAO.getFormazioneBySquadraGiornata(squadra, giornata);
+					if (x.isSchierata()) {
+						formazioni.add(x);
+					}
+					
 				}
 			}
+			
 			List<Partita> calendario=partitaDAO.getAllPartiteLega(lega.getNome());
 			List<Asta> aste=astaDAO.getAsteByLega(lega);
 			

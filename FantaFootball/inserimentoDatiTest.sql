@@ -22,6 +22,7 @@ values ('Giovanni','Mucciaccia','artattack@hotmail.it','Capoo22','Artattack');
 INSERT INTO allenatore
 values ('Carlo','Conti','scossaaaa@gmail.com','tantantan1','Sc00S54');
 
+
 INSERT INTO squadra(NomeSquadra,Lega,Logo,Allenatore,Punti,BudgetRimanente)
 values ('PippoSquad','NotMemeroni','C:\Media\Immagini\panda.png','pasquale98',37,1);
 INSERT INTO squadra
@@ -51,14 +52,14 @@ values ('FantaCola','Zoe4Evah','MemeroniX',0,0,3);
 INSERT INTO partita(Squadra1,Squadra2,NomeLega,Goal1,Goal2,giornata)
 values ('FantaCola','Zoe4Evah','MemeroniX',10,0,2);
 
-
+select * from giocatore;
 INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (1,'Cristiano','Ronaldo','Att','Juventus',15,8.0,10,8,0,0,7,3,0, 5);
-INSERT INTO giocatore
+INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (2,'Lionel','Messi','Att','Barcellona',14,7.8,8,12,2,1,2,5,0,6);
-INSERT INTO giocatore 
+INSERT INTO giocatore (Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 values (3,'Gianluigi','Buffon','Por','Juventus',11,8.8,0,0,0,0,0,0,27,10);
-INSERT INTO giocatore
+INSERT INTO giocatore(Id,Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,RigoriSegnati,RigoriSbagliati,RigoriParati, prezzoBase)
 value (4,'Fabiano','Pecorelli','Att','UnisaF.C.',20,8.9,14,10,0,0,3,0,0,2);
 
 INSERT INTO scambio(Giocatore1,Giocatore2,PrezzoOfferto,Squadra1,Squadra2,NomeLega)
@@ -67,9 +68,9 @@ INSERT INTO scambio
 values (1,4,80,'FantaCola','Zoe4Evah','MemeroniX');
 
 INSERT INTO formazione 
-values (1,0,'Zoe4Evah','MemeroniX');
+values (1,1,'Zoe4Evah','MemeroniX');
 INSERT INTO formazione
-values (1,0,'Fiorellina','NotMemeroni');
+values (1,1,'Fiorellina','NotMemeroni');
 
 INSERT INTO offerta(Squadra,DataInizio,NomeLega,Giocatore,somma)
 values ('Zoe4Evah','2019-12-25','MemeroniX',4,30);
@@ -88,7 +89,8 @@ values ('Zoe4Evah','MemeroniX',4);
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
 values (1,'Zoe4Evah','MemeroniX',3,1);
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
-values (1,'Zoe4Evah','MemeroniX',4,1);
+values (1,'Zoe4Evah','MemeroniX',4,2);
+
 
 INSERT INTO scout(Nome,Cognome,Username,email,pass)
 values ('Paolo','Conte','LoScarso','nonhopiuidee@perlemail.com','bingobangobongo1');

@@ -33,10 +33,6 @@ $(document).ready(function() {
 			return validatemaxAllenatori();
 		if(namef="budget")
 			return validatebudget();
-		if (namef=="nome")
-			return validateNameS();
-		if (namef=="logoSquadra")
-			return validateLogoS();
 		
 	}  
 	
@@ -151,30 +147,7 @@ $(document).ready(function() {
 			return false;
 		}
 	}
-	function validateNameS(){
-		var nameformat = /^.{4,50}$/;
-		if (document.getElementById("nome").value.match(nameformat)){
-			console.log("corretto");
-			return true;
-		}
-		else{
-			document.getElementById("nome").focus();
-			console.log("non corretto");
-			return false;
-		}
-	}
-
-	function validateLogoS(){
-		var logoformat = /([^\s]+(\.(jpe?g|png|img|))$)/;
-		var logobj = document.getElementById("logoSquadra");
-		if (logobj.value.match(logoformat))
-			return true;
-		else{
-			document.getElementById("logoSquadra").focus();
-			console.log(document.getElementById("logoSquadra").value);
-			return false;
-		}
-	}
+	
 
 
 });

@@ -22,6 +22,14 @@ public class Formazione {
 		this.squadra = squadra;
 	}
 	
+	public Formazione(int giornata, Squadra squadra) {
+		this.giornata = giornata;
+		this.schierata = schierata;
+		this.giocatori = new Giocatore[11];
+		this.panchina = new Giocatore[7];
+		this.squadra = squadra;
+	}
+	
 	/**
 	 * @return giornata giornata di campionato in cui viene schierata la formazione
 	 */
