@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,14 +22,14 @@ import gestoreUtente.Scout;
  * @author Maria Natale
  *
  */
-@WebServlet("/inserisciPostServlet")
-public class inserisciPostServlet extends HttpServlet {
+@WebServlet("/InserisciPostServlet")
+public class InserisciPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public inserisciPostServlet() {
+    public InserisciPostServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,8 +47,10 @@ public class inserisciPostServlet extends HttpServlet {
 		ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
 		ArrayList<Post> postScout=(ArrayList<Post>) session.getAttribute("post");
 		PostDAO postDAO=new PostDAO();
+		String regexTesto="^.{20,}$";
+		String redirect="inserisciPost.jsp";
 		
-		if (titolo!=null && testo!=null) {
+		if (titolo!=null && Pattern.matches(regexTesto, testo)) {
 			post=new Post(data, titolo, testo, scout);
 			try {
 				postDAO.addPost(post);
@@ -55,19 +58,24 @@ public class inserisciPostServlet extends HttpServlet {
 				postScout.add(post);
 				session.setAttribute("allPost", allPost);
 				session.setAttribute("post", postScout);
+				redirect="areaPersonaleScout.jsp";
+				request.setAttribute("result", "Post inserito");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		if (redirect.equals("inserisciPost.jsp")) {
+			request.setAttribute("message", "Post non inserito");
+			response.getWriter().write("Post non inserito");
+		}
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

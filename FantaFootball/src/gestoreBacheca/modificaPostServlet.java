@@ -3,6 +3,7 @@ package gestoreBacheca;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,8 +42,9 @@ public class modificaPostServlet extends HttpServlet {
 		PostDAO postDAO=new PostDAO();
 		int idPost;
 		String testo=request.getParameter("testo");
+		String regexTesto="^.{20,}$";
 		
-		if (request.getParameter("idPost")!=null && testo!=null) {
+		if (request.getParameter("idPost")!=null && Pattern.matches(regexTesto, testo)) {
 			idPost=Integer.parseInt(request.getParameter("idPost"));
 			try {
 				oldPost=postDAO.getPostById(idPost);
