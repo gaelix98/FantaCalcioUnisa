@@ -77,7 +77,7 @@ public class ScoutDAO {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean modificato = false;
 		int ris;
-		String sql = "update scout set scout.Nome = ?,scout.Cognome = ?, scout.email = ?, scout.password= ?,scout.username = ? where scout.username = ?" ;
+		String sql = "update scout set scout.Nome = ?,scout.Cognome = ?, scout.email = ?, scout.pass= ? where scout.username = ?" ;
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1,scout.getNome());
 		ps.setString(2, scout.getCognome());
