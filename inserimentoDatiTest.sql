@@ -97,10 +97,10 @@ values ('Angelo','Coralluzzo','LoScarso2','vogliofarejungler@mannaggiagaetano.it
 INSERT INTO scout
 values ('Nardo','Nardiello','Narducci2000','mipiaceflammarti@tutto.it','Irefusetogooo1');
 
-INSERT INTO post(DataPubblicazione,Titolo,Testo,Scout)
-values ('2019-12-24','COME GUADAGNARE',"primo post",'LoScarso');
-INSERT INTO post(DataPubblicazione,Titolo,Testo,Scout)
-values ('2019-12-25',"CHI PRENDE PIU' PUNTI QUEST'ANNO?","secondo post",'LoScarso');
-INSERT INTO post(DataPubblicazione,Titolo,Testo,Scout)
-values ('2019-12-01','6 PERSONAGGI IN CERCA DI ALLENATORE',"pinco, pallino",'Narducci2000');
+INSERT INTO post(IdPost,DataPubblicazione,Titolo,Testo,Scout)
+values (1,'2019-12-24','COME GUADAGNARE',"primo post",'LoScarso');
+INSERT INTO post(IdPost,DataPubblicazione,Titolo,Testo,Scout)
+values (2,'2019-12-25',"CHI PRENDE PIU' PUNTI QUEST'ANNO?","secondo post",'LoScarso');
+INSERT INTO post(IdPost,DataPubblicazione,Titolo,Testo,Scout)
+values (3,'2019-12-01','6 PERSONAGGI IN CERCA DI ALLENATORE',"pinco, pallino",'Narducci2000');
 
