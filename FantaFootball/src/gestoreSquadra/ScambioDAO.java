@@ -1,13 +1,14 @@
 package gestoreSquadra;
 
-import java.sql.Connection;
+import java.sql.Connection
+;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import db.DriverManagerConnectionPool;
-import gestoreLega.Partita;
+
 
 /**
  * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Scambio.
@@ -47,7 +48,7 @@ public class ScambioDAO {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
 		boolean accettato = false;
-		String sql = "delete from scambio where scambio.Giocatore1 = ? and scambio.Giocatore2 = ? and scambio.Squadra1 = ? and scambio.Squadra2 = ? and scambio.lega = ?";
+		String sql = "delete from scambio where scambio.Giocatore1 = ? and scambio.Giocatore2 = ? and scambio.Squadra1 = ? and scambio.Squadra2 = ? and scambio.nomeLega = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, scambio.getGiocatore1().getId());
 		ps.setInt(2, scambio.getGiocatore2().getId());
@@ -70,9 +71,9 @@ public class ScambioDAO {
 	
 	public synchronized void rifiutaScambio(Scambio scambio) throws SQLException  {
 		conn = DriverManagerConnectionPool.getConnection();
-		int ris;
 		
-		String sql = "delete from scambio where scambio.Giocatore1 = ? and scambio.Giocatore2 = ? and scambio.Squadra1 = ? and scambio.Squadra2 = ? and scambio.lega = ?";
+		
+		String sql = "delete from scambio where scambio.Giocatore1 = ? and scambio.Giocatore2 = ? and scambio.Squadra1 = ? and scambio.Squadra2 = ? and scambio.nomeLega = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, scambio.getGiocatore1().getId());
 		ps.setInt(2, scambio.getGiocatore2().getId());
@@ -81,7 +82,7 @@ public class ScambioDAO {
 		ps.setString(5, scambio.getSquadra1().getLega().getNome());
 		
 		try{
-			ris = ps.executeUpdate();
+			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -115,7 +116,7 @@ public class ScambioDAO {
 	public synchronized Scambio getScambioById(Giocatore giocatore1,Giocatore giocatore2, Squadra squadra1,Squadra squadra2) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Scambio scambio = null;
-		String sql="select * from scambio where scambio.giocatore1 = ? and scambio.giocatore2 = ? and scambio.squadra1 = ? and scambio.squadra2=? and scambio.lega= ?";
+		String sql="select * from scambio where scambio.giocatore1 = ? and scambio.giocatore2 = ? and scambio.squadra1 = ? and scambio.squadra2=? and scambio.nomeLega= ?";
 		
 		PreparedStatement ps=conn.prepareStatement(sql);
 		ps.setInt(1, giocatore1.getId());
