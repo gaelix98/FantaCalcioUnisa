@@ -45,7 +45,7 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*boolean èpresidente=false;
+		boolean epresidente=false;
 		LegaDAO legad = new LegaDAO();
 		InvitoDAO invitd = new InvitoDAO();
 		AllenatoreDAO allenatord= new AllenatoreDAO();
@@ -61,11 +61,11 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 			int i=0;
 			for(i=0;i<leghe.size();i++) { //checko if presidente
 				if (leghe.get(i).getNome()==lega) {
-					èpresidente=true;
+					epresidente=true;
 					break;
 				}
 			}
-			if (èpresidente && (username!= null || email!=null)) {
+			if (epresidente && (username!= null || email!=null)) {
 				if(username!=null) {
 					invitato = allenatord.getAllenatoreByUsername(username);
 					invitd.addInvito(new Invito(invitato, leghe.get(i), false));
@@ -121,7 +121,7 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 			
 		}
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
-		requestDispatcher.forward(request, response);*/
+		requestDispatcher.forward(request, response);
 	}
 
 	/**
