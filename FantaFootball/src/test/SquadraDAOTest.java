@@ -134,4 +134,13 @@ public class SquadraDAOTest {
 		ArrayList<Squadra> squadre = squadraDAO.getSquadreGiocatore(giocatore);
 		assertEquals(1,squadre.size());
 	}
+	
+	@Test
+	public void testGetSquadraByUserELega() throws SQLException{
+		String user = "pasquale98";
+		String lega = "MemeroniX";
+		Squadra squadra = squadraDAO.getSquadraByUserELega(user, lega);
+		assertNotNull(squadra);
+		assertEquals("FantaCola",squadra.getNome());
+	}
 }
