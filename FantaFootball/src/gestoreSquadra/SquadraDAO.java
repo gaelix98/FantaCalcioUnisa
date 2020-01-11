@@ -12,7 +12,7 @@ import gestoreLega.LegaDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 /**
- * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Squadra.
+ * Questa classe ï¿½ un manager che si occupa di interagire con il database. Gestisce le query riguardanti Squadra.
  * @author Pasquale Caramante
  *
  */
@@ -112,7 +112,8 @@ public class SquadraDAO {
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
 			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
-			squadre.add(squadra);
+			if (squadra!=null)
+				squadre.add(squadra);
 		}
 		return squadre;
 	}
@@ -155,7 +156,8 @@ public class SquadraDAO {
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
 			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
-			squadre.add(squadra);
+			if (squadra!=null)
+				squadre.add(squadra);
 		}
 		return squadre;
 	}
@@ -169,8 +171,39 @@ public class SquadraDAO {
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
 			Squadra squadra = getSquadraById(rs.getString("NomeSquadra"),rs.getString("Lega"));
-			squadre.add(squadra);
+			if (squadra!=null)
+				squadre.add(squadra);
 		}
 		return squadre;
+	}
+	
+
+	public Squadra getSquadraByUserELega(String User, String nomeLega) throws SQLException {
+		conn = DriverManagerConnectionPool.getConnection();
+		Squadra squadra = null;
+		String sql = "select * from squadra where squadra.Allenatore = ? and squadra.lega = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, User);
+		ps.setString(2, nomeLega);
+
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			LegaDAO legaDAO = new LegaDAO();
+			AllenatoreDAO allenatoreDAO = new AllenatoreDAO();
+			GiocatoreDAO giocatoreDAO = new GiocatoreDAO();
+			String nome = rs.getString("NomeSquadra");
+			String logo = rs.getString("Logo");
+			Lega lega = legaDAO.getLegaByNome(rs.getString("Lega"));
+			Allenatore allenatoreobj = allenatoreDAO.getAllenatoreByUsername(rs.getString("Allenatore"));
+			Giocatore[] giocatori = giocatoreDAO.getGiocatoriBySquadra(rs.getString("NomeSquadra"),lega.getNome());
+			int punti = rs.getInt("Punti");
+			int budget = rs.getInt("BudgetRimanente");
+			squadra = new Squadra(rs.getString("NomeSquadra"),logo,allenatoreobj,lega,punti,budget);
+			squadra.setGiocatori(giocatori);
+			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
+			squadra.setGiocatori(giocatori);
+		}
+
+		return squadra;
 	}
 }
