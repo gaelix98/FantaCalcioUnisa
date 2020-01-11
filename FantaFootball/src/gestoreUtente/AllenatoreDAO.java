@@ -16,7 +16,7 @@ public class AllenatoreDAO {
 	public List<Allenatore> getAllAllenatori() throws SQLException{
 		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
-			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, passowrd, username FROM allenatore ");
+			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, password, username FROM allenatore ");
 			ArrayList<Allenatore> utenti = new ArrayList<>();
 			ResultSet rs= ps.executeQuery();
 			while(rs.next()) {
@@ -106,7 +106,7 @@ public class AllenatoreDAO {
 	public  boolean updateAllenatore(Allenatore allenatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("Update allenatore SET password=? and email=? where username=?");
+			PreparedStatement ps = con.prepareStatement("Update allenatore SET password=?, email=? where username=?");
 			ps.setString(1,allenatore.getPassword());
 			ps.setString(2, allenatore.getEmail());
 			ps.setString(3, allenatore.getUsername());

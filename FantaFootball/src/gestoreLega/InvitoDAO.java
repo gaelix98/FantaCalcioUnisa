@@ -95,7 +95,7 @@ public class InvitoDAO {
 		boolean ok=false;
 		Invito invito=null;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("select * from invito where allenatore=? and lega=?");
+			PreparedStatement ps = con.prepareStatement("select * from invito where allenatore=? and nomeLega=?");
 			ps.setString(1, allenatore.getUsername());
 			ps.setString(2, lega.getNome());
 			ResultSet rs= ps.executeQuery();			

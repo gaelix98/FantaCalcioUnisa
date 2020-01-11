@@ -24,7 +24,6 @@ public class Formazione {
 	
 	public Formazione(int giornata, Squadra squadra) {
 		this.giornata = giornata;
-		this.schierata = schierata;
 		this.giocatori = new Giocatore[11];
 		this.panchina = new Giocatore[7];
 		this.squadra = squadra;

@@ -88,7 +88,7 @@ values ('Zoe4Evah','MemeroniX',4);
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
 values (1,'Zoe4Evah','MemeroniX',3,1);
 INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione)
-values (1,'Zoe4Evah','MemeroniX',4,1);
+values (1,'Zoe4Evah','MemeroniX',4,2);
 
 INSERT INTO scout(Nome,Cognome,Username,email,pass)
 values ('Paolo','Conte','LoScarso','nonhopiuidee@perlemail.com','bingobangobongo1');

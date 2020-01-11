@@ -204,4 +204,7 @@ CREATE TABLE giocatoreformazione (
     PRIMARY KEY (Giornata , NomeSquadra , NomeLega,Id)
 );
 
-
+select * from giocatoreformazione;
+SELECT * FROM formazione, giocatoreformazione where formazione.squadra=giocatoreformazione.nomeSquadra 
+and formazione.nomeLega=giocatoreformazione.nomeLega and squadra="Zoe4Evah" and formazione.NomeLega="Memeroni" and 
+formazione.giornata=1 ORDER BY posizione;

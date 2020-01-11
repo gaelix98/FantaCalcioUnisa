@@ -81,16 +81,13 @@ public class FormazioneDAO {
 		boolean ok=false;
 		int posizione;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
-			PreparedStatement ps=con.prepareStatement("Select posizione from giocatoreformazione where where Id=? AND Giornata=? AND NomeLega=? AND NomeSquadra=?");
-			ps.setInt(1, giocatore1.getId());
-			ps.setInt(2, formazione.getGiornata());
-			ps.setString(3, formazione.getSquadra().getLega().getNome());
-			ps.setString(4, formazione.getSquadra().getNome());
-			ResultSet rs = ps.executeQuery();
-			posizione=rs.getInt(1);
-			deleteGiocatoreFormazione(formazione,giocatore1);
-			addGiocatoreFormazione(formazione, giocatore2,posizione);
-
+			PreparedStatement ps=con.prepareStatement("update giocatoreformazione set id=? where Id=? AND Giornata=? AND NomeLega=? AND NomeSquadra=?");
+			ps.setInt(1, giocatore2.getId());
+			ps.setInt(2, giocatore1.getId());
+			ps.setInt(3, formazione.getGiornata());
+			ps.setString(4, formazione.getSquadra().getLega().getNome());
+			ps.setString(5, formazione.getSquadra().getNome());
+			ps.executeUpdate();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -141,18 +138,25 @@ public class FormazioneDAO {
 			ps.setString(2, squadra.getLega().getNome());
 			ps.setInt(3, giornata);
 			ResultSet rs= ps.executeQuery(); 
-			Formazione u=new Formazione(giornata, squadra);
+			Formazione u=null;
+			boolean exists=false;
+			boolean schierata=false;
 			while(rs.next()){
-				u.setSchierata(rs.getBoolean("schierata"));
+				schierata=rs.getBoolean("schierata");
 				if(rs.getInt("posizione")<=11) {
 					giocatori[i]=gd.getGiocatoreById(rs.getInt("Id"));
 				}else {
 					panchina[i]=gd.getGiocatoreById(rs.getInt("Id"));
 				}
+				exists=true;
 				i++;
 			}
-			u.setGiocatori(giocatori);
-			u.setPanchina(panchina);
+			if (exists) {
+				u=new Formazione(giornata, squadra);
+				u.setSchierata(schierata);
+				u.setGiocatori(giocatori);
+				u.setPanchina(panchina);
+			}
 			return u;
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
