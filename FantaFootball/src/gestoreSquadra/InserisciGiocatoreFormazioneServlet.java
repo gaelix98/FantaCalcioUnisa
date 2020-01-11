@@ -68,8 +68,25 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
 			}
 			else {
-				int i=0;
-				for (;i<formazione.getPanchina().length && formazione.getPanchina()[i]!=null; i++) {
+				int i=0, j=0;
+				switch(giocatore.getRuolo()) {
+				case "Por":
+					formazione.getGiocatori()[0]=giocatore;
+					break;
+				case "Dif":
+					i=1;
+					j=i+2;
+					break;
+				case "Cen":
+					i=3;
+					j=i+2;
+					break;
+				case "Att":
+					i=5;
+					j=i+2;
+					break;
+				}
+				for (;i<j && formazione.getPanchina()[i]!=null; i++) {
 				}
 				formazione.getPanchina()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
