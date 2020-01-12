@@ -55,7 +55,7 @@ public class getLegaServlet extends HttpServlet {
 			for (int giornata=1;giornata<=giornataAttuale;giornata++) {
 				for (Squadra squadra: classifica) {
 					Formazione x=formazioneDAO.getFormazioneBySquadraGiornata(squadra, giornata);
-					if (x.isSchierata()) {
+					if (x!=null && x.isSchierata()) {
 						formazioni.add(x);
 					}
 					

@@ -88,19 +88,24 @@
 						if (astePrecedenti.size() > 0) {
 							for (Asta a : astePrecedenti) {
 					%>
-					<div class="col-md-6">
+					<div class="row">
+					<div class="col-md-4">
 					<p>
 						Data inizio:
 						<%=a.getDataInizio()%><br>
 						Orario inizio:
 						<%=a.getOra()%><br>
 						Data fine:
-						<%=a.getDataFine()%><br>
-					<a href="getRisultatiAsta?q=<%=a.getDataInizio()%>"><button class="genric-btn primary circle arrow">
-							Risultati Asta
-						</button></a></p>
+						<%=a.getDataFine()%><br></p>
 					</div>
-				</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-6">
+					<a href="getRisultatiAstaServlet?q=<%=a.getDataInizio()%>"><button class="genric-btn primary circle arrow">
+							Risultati Asta
+						</button></a>
+					</div>
+					</div>
+				
 				<%
 					}
 					} else {
@@ -110,6 +115,7 @@
 				<%
 					}
 				%>
+				</div>
 			</div>
 
 
