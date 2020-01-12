@@ -25,11 +25,11 @@ values ('Carlo','Conti','scossaaaa@gmail.com','tantantan1','Sc00S54');
 INSERT INTO squadra(NomeSquadra,Lega,Logo,Allenatore,Punti,BudgetRimanente)
 values ('PippoSquad','NotMemeroni','C:\Media\Immagini\panda.png','pasquale98',37,1);
 INSERT INTO squadra
-values ('FantaCola','MemeroniX','C:\Media\Immagini\giovannino.png','pasquale98',100,0);
+values ('FantaCola','MemeroniX','C:\Media\Immagini\giovannino.png','pasquale98',2,250);
 INSERT INTO squadra
 values ('Zoe4Evah','MemeroniX','C:\Media\Immagini\mandolino.png','Artattack',0,45);
 INSERT INTO squadra
-values ('Fiorellina','NotMemeroni','C:\Media\Immagini\inferno.png','Sc00S54',66,6);
+values ('Fiorellina','NotMemeroni','C:\Media\Immagini\inferno.png','Sc00S54',25,0);
 
 INSERT INTO lega(NomeLega,Logo,MaxAllenatori,quotaMensile,budget,primoPosto,secondoPosto,terzoPosto,Presidente)
 values ('MemeroniX','C:\Media\Immagini\italia.png',7,15,100,50,30,20,'pasquale98');

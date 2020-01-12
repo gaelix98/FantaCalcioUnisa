@@ -3,6 +3,7 @@ package gestoreSquadra;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,7 +42,6 @@ public class FaiOffertaServlet extends HttpServlet {
 		Allenatore allenatore =(Allenatore) request.getSession().getAttribute("utente");
 		String nomeSquadra=null;
 		try {
-			System.out.println(allenatore.getUsername());
 			
 			nomeSquadra = squad.getSquadraByUserELega(allenatore.getUsername(),request.getParameter("lega")).getNome();
 		} catch (SQLException e1) {
@@ -58,8 +58,10 @@ public class FaiOffertaServlet extends HttpServlet {
 		int sommaOfferta;
 		OffertaDAO offertaDAO=new OffertaDAO();
 		String redirect="errorPage.jsp";
+		String regex="^[0-9]{1,3}$";
+		
 
-		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null && somma!=null) {
+		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null && somma!=null && Pattern.matches(regex,somma)) {
 			idGiocatore=Integer.parseInt(idGiocatoreS);
 			
 			sommaOfferta=Integer.parseInt(somma);
@@ -72,8 +74,13 @@ public class FaiOffertaServlet extends HttpServlet {
 				Squadra squadra=squadraDAO.getSquadraById(nomeSquadra, lega);
 				Asta asta=astaDAO.getAstaByKey(data, lega);
 				
+				int numGiocatori=0;
+				for (int i=0;squadra.getGiocatori()[i]!=null;i++) {
+					numGiocatori++;
+				}
+	
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
-				if (squadra.getBudgetRimanente()>=sommaOfferta+25 && sommaOfferta>=giocatore.getPrezzoBase()) {
+				if (squadra.getBudgetRimanente()>=sommaOfferta+(25-numGiocatori) && sommaOfferta>=giocatore.getPrezzoBase()) {
 					if (offertaDAO.getOffertaByKey(giocatore.getId(), data, lega, nomeSquadra)==null) {
 						Offerta offerta=new Offerta(squadra, asta, giocatore, sommaOfferta);
 						offertaDAO.addOfferta(offerta);
@@ -81,11 +88,21 @@ public class FaiOffertaServlet extends HttpServlet {
 						squadra.setBudgetRimanente(squadra.getBudgetRimanente()-sommaOfferta);
 						squadraDAO.updateSquadra(squadra);
 						redirect="leMieOfferte.jsp";
+						request.setAttribute("result", "successo");
 					}
+					else {
+						response.getWriter().write("Offerta non effettuata");
+					}
+				}
+				else {
+					response.getWriter().write("Offerta non effettuata");
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		}
+		else {
+			response.getWriter().write("Offerta non effettuata");
 		}
 		 HttpSession sessione = request.getSession();
          try {
@@ -102,7 +119,7 @@ public class FaiOffertaServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

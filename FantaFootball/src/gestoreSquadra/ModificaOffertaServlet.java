@@ -3,6 +3,7 @@ package gestoreSquadra;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,8 +48,9 @@ public class ModificaOffertaServlet extends HttpServlet {
 		int sommaOfferta;
 		OffertaDAO offertaDAO=new OffertaDAO();
 		String redirect="errorPage.jsp";
+		String regex="^[0-9]{1,3}$";
 		
-		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null && somma!=null) {
+		if (data!=null && lega!=null && nomeSquadra!=null && idGiocatoreS!=null && somma!=null && Pattern.matches(regex,somma)) {
 			idGiocatore=Integer.parseInt(idGiocatoreS);
 			sommaOfferta=Integer.parseInt(somma);
 			
@@ -60,14 +62,20 @@ public class ModificaOffertaServlet extends HttpServlet {
 				Squadra squadra=squadraDAO.getSquadraById(nomeSquadra, lega);
 				Asta asta=astaDAO.getAstaByKey(data, lega);
 				Giocatore giocatore=giocatoreDAO.getGiocatoreById(idGiocatore);
-				if (squadra.getBudgetRimanente()>=sommaOfferta+25 && sommaOfferta>=giocatore.getPrezzoBase()) {
+				
+				int numGiocatori=0;
+				for (int i=0;squadra.getGiocatori()[i]!=null;i++) {
+					numGiocatori++;
+				}
+				
+				if (squadra.getBudgetRimanente()>=sommaOfferta+(25-numGiocatori) && sommaOfferta>=giocatore.getPrezzoBase()) {
 					Offerta offerta=offertaDAO.getOffertaByKey(idGiocatore, data, lega, nomeSquadra);
 					int diff=offerta.getSomma()-sommaOfferta;
 					offerta.setSomma(sommaOfferta);
 					offertaDAO.updateOfferta(offerta);
 					squadra.setBudgetRimanente(squadra.getBudgetRimanente()+diff);
 					squadraDAO.updateSquadra(squadra);
-					redirect="";
+					redirect="leMieOfferte.jsp";
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
