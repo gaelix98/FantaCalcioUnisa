@@ -51,7 +51,7 @@ public class getRisultatiAstaServlet extends HttpServlet {
 				offerte = offertaDAO.getOfferteVincentiByAsta(data, lega.getNome());
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}  
 			
 		}
 		
