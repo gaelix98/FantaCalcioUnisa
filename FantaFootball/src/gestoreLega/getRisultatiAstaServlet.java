@@ -55,7 +55,7 @@ public class getRisultatiAstaServlet extends HttpServlet {
 			
 		}
 		
-		request.setAttribute("risultatiAsta", offerte);
+		request.setAttribute("risultatiAsta", offerte); 
 		request.setAttribute("asta", asta);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);

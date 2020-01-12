@@ -13,7 +13,7 @@
 		Lega lega = (Lega) session.getAttribute("lega");
 		List<Asta> aste = (List<Asta>) session.getAttribute("aste");
 		List<Asta> prossimeAste = new ArrayList<>();
-		Asta astaInCorso = null;
+		Asta astaInCorso = null; 
 		List<Asta> astePrecedenti = new ArrayList<>();
 		Date dataAttuale = new Date();
 		for (Asta asta : aste) {

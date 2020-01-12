@@ -26,7 +26,7 @@
 		</div>
 		<div style="height: 20px"></div>
 		<div class="row">
-			<div class="col-lg-9 col-md-9">
+			<div class="col-lg-9 col-md-9"> 
 				<div class="blog_left_sidebar">
 					<h3>
 						Asta del
