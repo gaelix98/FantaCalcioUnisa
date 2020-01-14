@@ -15,7 +15,7 @@ import gestoreUtente.AllenatoreDAO;
 
 public class FormazioneDAO {
 
-	public boolean addFormazione(Formazione formazione) throws SQLException {
+	public synchronized boolean addFormazione(Formazione formazione) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO formazione(Giornata,Schierata,Squadra,NomeLega) VALUES(?,?,?,?)");
@@ -35,7 +35,7 @@ public class FormazioneDAO {
 	}
 
 
-	public boolean addGiocatoreFormazione(Formazione formazione,Giocatore giocatore, int posizione) throws SQLException {
+	public synchronized boolean addGiocatoreFormazione(Formazione formazione,Giocatore giocatore, int posizione) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione) VALUES(?,?,?,?,?)");
@@ -57,7 +57,7 @@ public class FormazioneDAO {
 
 
 
-	public boolean deleteGiocatoreFormazione(Formazione formazione, Giocatore giocatore) throws SQLException {
+	public synchronized boolean deleteGiocatoreFormazione(Formazione formazione, Giocatore giocatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Delete from giocatoreformazione where Id=? AND Giornata=? AND NomeLega=? AND NomeSquadra=?");
@@ -77,7 +77,7 @@ public class FormazioneDAO {
 		return ok;
 	}
 
-	public  boolean updateGiocatoreFormazione(Formazione formazione, Giocatore giocatore1, Giocatore giocatore2) throws SQLException {
+	public synchronized boolean updateGiocatoreFormazione(Formazione formazione, Giocatore giocatore1, Giocatore giocatore2) throws SQLException {
 		boolean ok=false;
 		int posizione;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -88,6 +88,7 @@ public class FormazioneDAO {
 			ps.setString(4, formazione.getSquadra().getLega().getNome());
 			ps.setString(5, formazione.getSquadra().getNome());
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -99,7 +100,7 @@ public class FormazioneDAO {
 	}
 
 
-	public  boolean updateFormazione(Formazione formazione) throws SQLException {
+	public synchronized boolean updateFormazione(Formazione formazione) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Update formazione SET schierata=? where Giornata=? and Squadra=? and NomeLega=?");
@@ -109,6 +110,7 @@ public class FormazioneDAO {
 			ps.setString(4, formazione.getSquadra().getLega().getNome());
 
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -123,7 +125,7 @@ public class FormazioneDAO {
 
 
 
-	public Formazione getFormazioneBySquadraGiornata(Squadra squadra, int giornata) throws SQLException{
+	public synchronized Formazione getFormazioneBySquadraGiornata(Squadra squadra, int giornata) throws SQLException{
 		AllenatoreDAO alld= new AllenatoreDAO();
 		LegaDAO legD= new LegaDAO();
 		GiocatoreDAO gd = new GiocatoreDAO();
@@ -157,6 +159,7 @@ public class FormazioneDAO {
 				u.setGiocatori(giocatori);
 				u.setPanchina(panchina);
 			}
+			conn.close();
 			return u;
 		}catch(SQLException e) {
 			throw new RuntimeException(e);

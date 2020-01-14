@@ -40,6 +40,7 @@ public class InvitoDAO {
 			ps.setString(3, invito.getLega().getNome());
 			
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -63,6 +64,7 @@ public class InvitoDAO {
 		return ok;
 
 		}
+		
 		ok=true;
 
 		return ok;
@@ -82,6 +84,7 @@ public class InvitoDAO {
 				Invito u=new Invito(cavia,daol.getLegaByNome(rs.getString(2)),rs.getBoolean(3));
 				inviti.add(u);
 			}
+			conn.close();
 			return inviti;
 
 

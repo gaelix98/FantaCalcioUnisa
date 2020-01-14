@@ -38,6 +38,7 @@ public class ScoutDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+		conn.close();
 		return inserito;
 	}
 	
@@ -51,6 +52,7 @@ public class ScoutDAO {
 		if(ps.executeQuery().next()) {
 			login = true;
 		}
+		conn.close();
 		return login;
 	}
 	
@@ -70,6 +72,7 @@ public class ScoutDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+		conn.close();
 		return eliminato;		
 	}
 	
@@ -93,6 +96,7 @@ public class ScoutDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+		conn.close();
 		return modificato;		
 	}
 	public synchronized ArrayList<Scout> getAllScout() throws SQLException {
@@ -112,6 +116,7 @@ public class ScoutDAO {
 			scout = new Scout(nome,cognome,email,username,password);
 			scoutList.add(scout);
 		}
+		conn.close();
 		return scoutList;
 		
 	}
@@ -130,6 +135,7 @@ public class ScoutDAO {
 			String usernamet = rs.getString("username");
 			scout = new Scout(nome,cognome,email,usernamet,password);
 		}
+		conn.close();
 		return scout;
 	}
 
@@ -147,6 +153,7 @@ public class ScoutDAO {
 			String usernamet = rs.getString("username");
 			scout = new Scout(nome,cognome,email,usernamet,password);
 		}
+		conn.close();
 		return scout;
 	}
 }

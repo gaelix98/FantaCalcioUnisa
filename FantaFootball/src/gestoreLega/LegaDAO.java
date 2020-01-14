@@ -17,7 +17,7 @@ import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
 public class LegaDAO {
-	public Lega getLegaByNome(String lega) throws SQLException{
+	public synchronized Lega getLegaByNome(String lega) throws SQLException{
 		AllenatoreDAO dao = new AllenatoreDAO();
 		Lega u=null;
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
@@ -34,7 +34,7 @@ public class LegaDAO {
 		return u;
 	}
 	
-	public boolean addLega(Lega lega) throws SQLException {
+	public synchronized boolean addLega(Lega lega) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO lega(NomeLega,Logo,MaxAllenatori,quotaMensile,budget,primoPosto,secondoPosto,terzoPosto,Presidente) VALUES(?,?,?,?,?,?,?,?,?)");
@@ -58,7 +58,7 @@ public class LegaDAO {
 		return ok;
 	}
 
-	public ArrayList<Lega> getLegheByPresidente(Allenatore allenatore) throws SQLException{
+	public synchronized ArrayList<Lega> getLegheByPresidente(Allenatore allenatore) throws SQLException{
 		Connection conn =  DriverManagerConnectionPool.getConnection();
 		Lega lega=null;
 		ArrayList<Lega> leghe=new ArrayList<>();
@@ -82,7 +82,7 @@ public class LegaDAO {
 		return leghe;
 	}
 	
-	public boolean deleteLega(Lega lega) throws SQLException {
+	public synchronized boolean deleteLega(Lega lega) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Delete from lega  where NomeLega=?");

@@ -38,6 +38,7 @@ public class PostDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+		conn.close();
 		return inserito;
 	}
 	
@@ -57,6 +58,7 @@ public class PostDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+		conn.close();
 		return rimosso;
 		
 	}
@@ -82,6 +84,7 @@ public class PostDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+		conn.close();
 		return modificato;
 	}
 	
@@ -106,7 +109,7 @@ public class PostDAO {
 			
 			post.add(tmp);
 		}
-		
+		conn.close();
 		return post;
 		
 	}
@@ -130,7 +133,7 @@ public class PostDAO {
 			
 			post.add(tmp);
 		}
-		
+		conn.close();
 		return post;
 		
 	}
@@ -153,7 +156,7 @@ public class PostDAO {
 			Scout scouttmp = new ScoutDAO().getScoutByUsername(rs.getString("Scout"));
 			post = new Post(id,data,titolo,testo,scouttmp);
 		}
-		
+		conn.close();
 		return post;
 		
 	}
