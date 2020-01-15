@@ -26,7 +26,7 @@ import gestoreSquadra.SquadraDAO;
 import gestoreUtente.Allenatore;
 
 /**
- * Servlet implementation class getRisultatiMiaAstaServlet
+ * Questa classe è un control che si occupa di prendere i risultati di una certa Asta di un certo Allenatore.
  */
 @WebServlet("/getRisultatiMiaAstaServlet")
 public class getRisultatiMiaAstaServlet extends HttpServlet {
@@ -41,7 +41,10 @@ public class getRisultatiMiaAstaServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and request.getParameter(“q”)!=null and request.getSession().getAttribute(“lega”)!=null
+	 * @post request.getAttribute(“giocatoreSquadra”)!=null and request.setAttribute(“asta”)!=null
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Lega lega= (Lega)request.getSession().getAttribute("lega");

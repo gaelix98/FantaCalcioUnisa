@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import gestoreUtente.Allenatore;
 
 /**
- * Servlet implementation class rimuoviGiocatoreFormazioneServlet
+ * Questa classe è un control che si occupa di passare a FormazioneDAO i dati di un giocatore da rimuovere dalla formazione.
  */
 @WebServlet("/rimuoviGiocatoreFormazioneServlet")
 public class RimuoviGiocatoreFormazioneServlet extends HttpServlet {
@@ -27,8 +27,11 @@ public class RimuoviGiocatoreFormazioneServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and request.getParameter(“giocatore”)!=null and SquadraDAO.getSquadraByKey(squadra).getGiocatori().contains(giocatore) == true
+	 * @postcondition  SquadraDAO.getSquadraById(squadra.nome, squadra.nomeLega().getNome()).getFormazione().getGiocatori().contains(giocatore) == false
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="inserisciFormazione.jsp";

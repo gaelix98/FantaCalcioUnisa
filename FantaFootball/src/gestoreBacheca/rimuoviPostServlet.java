@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * 
+ * Questa classe è un control che si occupa di passare a PostDAO i dati di un post da rimuovere. 
  * @author Maria Natale
  *
  */
@@ -30,7 +30,12 @@ public class rimuoviPostServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getParameter(“idPost”) != null   And request.getSession().getAttribute(“utente”)!=null and
+					 Request.getSession().getAttribute(“tipo”).equals(“scout”)
+
+	 * @postcondition PostDAO.getPostById(idPost)==null    
+	 * @throws ServletException, IOException 
+
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();

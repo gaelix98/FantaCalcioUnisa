@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import gestoreUtente.Allenatore;
 
 /**
- * Servlet implementation class PrendiOfferteServlet
+ * Questa classe è un control che si occupa di prendere le offerte di una squadra in una certa asta.
+ * @author Gaetano Casillo
  */
 @WebServlet("/PrendiOfferteServlet")
 public class PrendiOfferteServlet extends HttpServlet {
@@ -30,7 +31,10 @@ public class PrendiOfferteServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”)
+	 *  and request.getParameter(“data”)!=null and request.getParameter(“lega”)!=null
+	 *  @postcondition request.getAttribute(“offerte”)!=null
+	 *  @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Allenatore allenatore=(Allenatore) request.getSession().getAttribute("utente");
@@ -61,9 +65,6 @@ public class PrendiOfferteServlet extends HttpServlet {
 	}
 	
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

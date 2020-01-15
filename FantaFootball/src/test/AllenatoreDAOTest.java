@@ -6,9 +6,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.sql.SQLException;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import db.DriverManagerConnectionPool;
 import gestoreUtente.Allenatore;
@@ -38,6 +41,7 @@ public class AllenatoreDAOTest {
 		assertNotNull(allenatoreDAO.getAllenatoreByUsername(username));
 		username="pasquale";
 		assertNull(allenatoreDAO.getAllenatoreByUsername(username));
+
 	}
 	
 	@Test
@@ -46,6 +50,7 @@ public class AllenatoreDAOTest {
 		assertNotNull(allenatoreDAO.getAllenatoreByEmail(email));
 		email="pasqualeeee@gmail.com";
 		assertNull(allenatoreDAO.getAllenatoreByEmail(email));
+
 	}
 	
 	@Test
@@ -54,6 +59,7 @@ public class AllenatoreDAOTest {
 		assertNull(allenatoreDAO.getAllenatoreByUsername("gaelix98"));
 		allenatoreDAO.addAllenatore(allenatore);
 		assertNotNull(allenatoreDAO.getAllenatoreByUsername("gaelix98"));
+
 	}
 	
 	@Test
@@ -72,6 +78,7 @@ public class AllenatoreDAOTest {
 		allenatore.setPassword("pasquale1234");
 		allenatoreDAO.updateAllenatore(allenatore);
 		assertEquals("pasquale1234", allenatoreDAO.getAllenatoreByUsername("pasquale98").getPassword());
+
 	}
 	
 	@Test
@@ -86,6 +93,7 @@ public class AllenatoreDAOTest {
 		username="pasquale988";
 		password="pasquale12";
 		assertFalse(allenatoreDAO.checkLogin(username, password));
+		
 	}
 	
 }

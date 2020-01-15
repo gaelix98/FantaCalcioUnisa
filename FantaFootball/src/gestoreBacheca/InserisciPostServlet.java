@@ -34,8 +34,13 @@ public class InserisciPostServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @precondition request.getParameter(“testo”)!=null  and request.getParameter(“titolo”)!=null
+					 and request.getSession().getAttribute(“utente”)!=null and
+					 request.getSession().getAttribute(“tipo”).equals(“scout”)
+	 * @postcondition PostDAO.getPostById(idPost)!=null    
+	 * @throws ServletException, IOException 
+
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();

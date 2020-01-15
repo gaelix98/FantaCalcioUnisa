@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class salvaFormazione
+ * Questa classe è un control che si occupa di passare a FormazioneDAO i dati di una formazione da salvare.
  */
 @WebServlet("/salvaFormazione")
 public class SalvaFormazione extends HttpServlet {
@@ -25,8 +25,12 @@ public class SalvaFormazione extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getFormazione().getGiocatori().lenght==11 and
+	 * SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getFormazione().getPanchina().lenght==7
+	 * @postcondition SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getFormazione().getSchierata()==true
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="inserisciFormazione.jsp";

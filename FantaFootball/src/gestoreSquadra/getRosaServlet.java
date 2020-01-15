@@ -14,22 +14,22 @@ import javax.servlet.http.HttpSession;
 import gestoreLega.Lega;
 
 /**
- * Servlet implementation class getRosaServlet
+ * Questa classe è un control che si occupa di passare a SquadraDAO i dati di una squadra da visualizzare
  */
 @WebServlet("/getRosaServlet")
 public class getRosaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public getRosaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and request.getParameter(“s”) != null 
+	 * @postcondition request.getSession().getAttribute(“rosa”)!=null and request.getSession().getAttribute(“squadra”)!=null
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeSquadra=request.getParameter("s");

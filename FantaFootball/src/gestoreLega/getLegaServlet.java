@@ -36,7 +36,13 @@ public class getLegaServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getParameter(“q”)!=null and request.getSession().getAttribute(“utente”)!=null 
+	 * and request.getSession().getAttribute(“tipo”).equals(“allenatore”)
+	 * @postcondition request.getSession().getAttribute(“lega”)!=null and request.getSession().getAttribute(“classifica”)!=null and 
+	 * request.getSession().getAttribute(“formazioni”)!=null and request.getSession().getAttribute(“calendario”)!=null and 
+	 * request.getSession().getAttribute(“aste”)!=null
+	 * @throws ServletException, IOException
+
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();

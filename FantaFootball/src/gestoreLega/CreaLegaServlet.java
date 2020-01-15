@@ -20,6 +20,12 @@ import gestoreSquadra.Squadra;
 import gestoreSquadra.SquadraDAO;
 import gestoreUtente.Allenatore;
 
+/**
+ * Questa classe è un control che si occupa di verificare se i dati inseriti per la creazione della lega sono validi, se validi, il control invocherà il DAO
+ *  adatto alla memorizzazione della lega.
+ * @author Gaetano Casillo
+ *
+ */
 @WebServlet(name = "/CreaLegaServlet",
 urlPatterns = "/CreaLegaServlet",
 initParams = {@WebInitParam(name = "path-loghi-leghe",value = "img\\leghe")}
@@ -43,6 +49,16 @@ public class CreaLegaServlet extends HttpServlet {
 		super();
 	}
 
+	/**
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 *  and request.getParameter(“Nome”)!=null and rispetta il formato “^{4,50}$” and non deve essere presente nella lega. Request.getParameter(“logo”) rispetta il formato “([^\s]+(\.(?i)(jpg|png|img|))$)”.
+	 *  Request.getParameter(“Quota”)!=null and rispetta il formato “^[0-9]{0,2}*$” and request.getParameter(“primoPosto”)!=null and rispetta il formato “^[0-9]{0,2}*$”.
+	 *  Request.getParameter(“secondoPosto”)!=null and rispetta il formato “^[0-9]{0,2}*$”.
+	 *  Request.getParameter(“terzoPosto”)!=null and rispetta il formato “^[0-9]{0,2}*$”.
+	 *  Request.getParameter(“maxAllenatori”)!=null and 4<=maxAllenatori<=10 
+	 *  @postcondition LegaDAO.getLegaByNome(nome)!=null
+	 *  @throws ServletException, IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeLega = request.getParameter("nome");
 		String QuotaPrimoPosto = request.getParameter("primoPosto");

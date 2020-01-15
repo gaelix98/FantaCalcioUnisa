@@ -24,7 +24,8 @@ import gestoreSquadra.Squadra;
 import gestoreSquadra.SquadraDAO;
 
 /**
- * 
+ * Questa classe è un control che si occupa di passare le credenziali di login al DAO addetto alla verifica di quest’ultime (checkLogin) 
+ * e se verificate provvederà a creare una sessione per l’utente
  * @author Maria Natale
  *
  */
@@ -32,18 +33,17 @@ import gestoreSquadra.SquadraDAO;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */ 
     public LoginServlet() {  
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition Request.getParamter(“username”)!=null Request.getParameter(“password”)!=null 
+	 * @postcondition AllenatoreDAO.request.getSession().getAttribute(“utente”)!=null
+	 * @throws ServletException, IOException
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IllegalArgumentException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
@@ -110,7 +110,6 @@ public class LoginServlet extends HttpServlet {
 			else {
 				redirect="login.jsp";
 				request.setAttribute("message", "Username o password errati!");
-				//throw new IllegalArgumentException("Username o password errati");
 				response.getWriter().write("Email e/o password non validi");
 			}
 		} catch (SQLException e) {

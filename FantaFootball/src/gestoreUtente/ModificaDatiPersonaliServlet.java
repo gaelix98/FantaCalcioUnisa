@@ -31,7 +31,11 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and Request.getParameter(“password”)!=null and 
+	 * rispetta il formato “^([A-Za-z0-9]){5,}$” and Request.getParameter(“email”)!=null and
+	 * rispetta il formato “^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$”. 
+	 * @postcondition password e/o email sono stati aggiornati
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
