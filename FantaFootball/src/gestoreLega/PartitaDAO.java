@@ -23,8 +23,11 @@ public class PartitaDAO {
 	
 	/**
 	 * 
-	 * @param partita
-	 * @return
+	 * @param partita partita da aggiungere
+	 * @return true if database.partita->includes(select(p|partita.nomeSquadra1=partita.getSquadra1.getNome() and 
+	 * partita.nomSquadra2=partita.getSquadra2().getNome() and partita.giornata=partita.getGiornata() and 
+	 * partita.nomeLega=partita.getSquadra1().getLega().getNome() and partita.nomeLega= partita.getSquadra2().getLega().getNome())),
+	 * else altrimenti
 	 * @throws SQLException
 	 */
 	public synchronized boolean addPartita(Partita partita) throws SQLException {
@@ -51,10 +54,11 @@ public class PartitaDAO {
 	
 	/**
 	 * 
-	 * @param squadra1
-	 * @param squadra2
-	 * @param giornata
-	 * @return
+	 * @param squadra1 
+	 * @param squadra2 
+	 * @param giornata giornata in cui viene giocata la partita
+	 * @return partita->select(p|partita.squadra1=squadra1.getNome() and partita.squadra2=squadra2.getNome() and 
+	 * partita.giornata=giornata and partita.nomeLega=squadra1.getNomeLega() or partita.nomeLega=squadra2.getNome())
 	 * @throws SQLException
 	 */
 	public synchronized Partita getPartitaById(Squadra squadra1, Squadra squadra2, int giornata) throws SQLException{
@@ -78,8 +82,8 @@ public class PartitaDAO {
 	
 	/**
 	 * 
-	 * @param partita
-	 * @return
+	 * @param partita partita di cui aggiornare il risultato
+	 * @return true se la partita è stata aggiornata, false altrimenti
 	 * @throws SQLException
 	 */
 	public synchronized boolean updatePartita(Partita partita) throws SQLException {
@@ -106,6 +110,12 @@ public class PartitaDAO {
 		return modificato;
 	}
 	
+	/**
+	 * 
+	 * @param lega lega di cui cercare il calendario delle partite
+	 * @return partite->select(p|partita.squadra1.nomeLega=lega)
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Partita> getAllPartiteLega(String lega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Partita> partite=new ArrayList<>();
@@ -130,8 +140,9 @@ public class PartitaDAO {
 	
 	/**
 	 * 
-	 * @param squadra
-	 * @return
+	 * @param squadra squadra di cui cercare le partite
+	 * @return partite-> select(p|partita.nomeSquadra1=squadra.getNome() and partita.nomeLega=squadra.getLega().getNome() or
+	 *  partita.nomeSquadra2=squadra.getNome())
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<Partita> getAllPartiteSquadra(Squadra squadra) throws SQLException{
@@ -160,9 +171,9 @@ public class PartitaDAO {
 	
 	/**
 	 * 
-	 * @param giornata
-	 * @param lega
-	 * @return
+	 * @param giornata giornata di cui si vogliono cercare le partite
+	 * @param lega nome della lega di cui cercare le partite
+	 * @return partite->select(p|partita.giornata=giornata and partita.nomeLega=lega)
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<Partita> getAllPartiteByGiornataLega(int giornata, String lega) throws SQLException{

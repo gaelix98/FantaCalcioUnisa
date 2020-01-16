@@ -17,6 +17,12 @@ import db.DriverManagerConnectionPool;
 public class ScoutDAO {
 	Connection conn = null;
 	
+	/**
+	 * 
+	 * @param scout scout da aggiungere
+	 * @return true if database.scout->includes(select(s|scout.username=username)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean addScout( Scout scout ) throws SQLException{
 		conn= DriverManagerConnectionPool.getConnection();
 		boolean inserito = false;
@@ -38,10 +44,16 @@ public class ScoutDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		conn.close();
 		return inserito;
 	}
 	
+	/**
+	 * 
+	 * @param username username dello scout che vuole accedere al sistema
+	 * @param password password dello scout che vuole accedere al sistema
+	 * @return  true if database.scout ->includes (select(s|scout.username=username and scout.password=password)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean checkLogin (String username ,String password) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean login = false;
@@ -52,10 +64,15 @@ public class ScoutDAO {
 		if(ps.executeQuery().next()) {
 			login = true;
 		}
-		conn.close();
 		return login;
 	}
 	
+	/**
+	 * 
+	 * @param username username dello scout da eliminare
+	 * @return true if database.scout->not includes(select(s|scout.username=username)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean deleteScout(String username) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean eliminato = false;
@@ -72,10 +89,15 @@ public class ScoutDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		conn.close();
 		return eliminato;		
 	}
 	
+	/**
+	 * 
+	 * @param scout scout da aggiornare
+	 * @return true se lo scout è stato aggiornato, false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean updateScout(Scout scout) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean modificato = false;
@@ -96,9 +118,14 @@ public class ScoutDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		conn.close();
 		return modificato;		
 	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Scout> getAllScout() throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Scout> scoutList = new ArrayList<Scout>();
@@ -116,10 +143,16 @@ public class ScoutDAO {
 			scout = new Scout(nome,cognome,email,username,password);
 			scoutList.add(scout);
 		}
-		conn.close();
 		return scoutList;
 		
 	}
+	
+	/**
+	 * 
+	 * @param username
+	 * @return scout->select(s|scout.username=username)
+	 * @throws SQLException
+	 */
 	public synchronized Scout getScoutByUsername(String username) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Scout scout = null;
@@ -135,10 +168,15 @@ public class ScoutDAO {
 			String usernamet = rs.getString("username");
 			scout = new Scout(nome,cognome,email,usernamet,password);
 		}
-		conn.close();
 		return scout;
 	}
-
+	
+	/**
+	 * 
+	 * @param email email dello scout da cercare
+	 * @return scout->select(s|scout.email=email)
+	 * @throws SQLException
+	 */
 	public synchronized Scout getScoutByEmail(String email) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Scout scout = null;
@@ -153,7 +191,6 @@ public class ScoutDAO {
 			String usernamet = rs.getString("username");
 			scout = new Scout(nome,cognome,email,usernamet,password);
 		}
-		conn.close();
 		return scout;
 	}
 }

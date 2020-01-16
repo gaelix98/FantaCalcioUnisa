@@ -22,8 +22,8 @@ public class GiocatoreDAO {
 	
 	/**
 	 * 
-	 * @param giocatore
-	 * @return
+	 * @param giocatore giocatore da aggiungere
+	 * @return true if database.giocatore->includes(select(g|g.id=giocatore.id)), false altrimenti
 	 * @throws SQLException
 	 */
 	public synchronized boolean addGiocatore(Giocatore giocatore) throws SQLException {
@@ -61,8 +61,8 @@ public class GiocatoreDAO {
 	
 	/**
 	 * 
-	 * @param giocatore
-	 * @return
+	 * @param giocatore da aggiornare
+	 * @return true se il giocatore è stato aggiornato, false altrimenti
 	 * @throws SQLException
 	 */
 	public synchronized boolean aggiornaGiocatore (Giocatore giocatore) throws SQLException {
@@ -95,7 +95,12 @@ public class GiocatoreDAO {
 		return modificato;
 	}
 	
-	
+	/**
+	 * 
+	 * @param id id del giocatore da cercare
+	 * @return giocatore->select(g|giocatore.id=id)
+	 * @throws SQLException
+	 */
 	public synchronized Giocatore getGiocatoreById(int id) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		Giocatore giocatore=null;
@@ -124,6 +129,13 @@ public class GiocatoreDAO {
 		return giocatore;
 	}
 	
+	/**
+	 * 
+	 * @param nomeLega nome della lega di cui fa parte la squadra
+	 * @param nomeSquadra nome della squadra di cui si vogliono cercare i giocatori
+	 * @return
+	 * @throws SQLException
+	 */
 	public synchronized Giocatore[] getGiocatoriBySquadra(String nomeLega,String nomeSquadra) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		Giocatore[] giocatori = new Giocatore[25];
@@ -157,6 +169,12 @@ public class GiocatoreDAO {
 		return giocatori;
 	}
 	
+	/**
+	 * 
+	 * @param prezzo prezzo minimo dei giocatori
+	 * @return giocatori->select(g|giocatore.prezzoBase>prezzo)
+	 * @throws SQLException
+	 */
 	public synchronized List<Giocatore> getByPrezzoBase(int prezzo)throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		List<Giocatore> giocatoriFiltrati = new ArrayList<>();

@@ -9,10 +9,17 @@ import java.util.List;
 
 import db.DriverManagerConnectionPool;
 
-
+/**
+ * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Allenatore.
+ * @author 
+ *
+ */
 public class AllenatoreDAO {
 
-
+	/**
+	 * @return
+	 * @throws SQLException
+	 */
 	public synchronized List<Allenatore> getAllAllenatori() throws SQLException{
 		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
@@ -31,6 +38,12 @@ public class AllenatoreDAO {
 		}
 	}
 
+	/**
+	 * 
+	 * @param username username di un allenatore che si vuole cercare
+	 * @return allenatore->select(a|allenatore.username=username))
+	 * @throws SQLException
+	 */
 	public synchronized Allenatore getAllenatoreByUsername(String username) throws SQLException{
 		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
@@ -49,6 +62,12 @@ public class AllenatoreDAO {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param email email allenatore da cercare
+	 * @return allenatore->select(a|allenatore.email=email))
+	 * @throws SQLException
+	 */
 	public synchronized Allenatore getAllenatoreByEmail(String email) throws SQLException{
 
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
@@ -67,7 +86,12 @@ public class AllenatoreDAO {
 		}
 	}
 
-
+	/**
+	 * 
+	 * @param allenatore allenatore da registrare
+	 * @return true if database.allenatore->includes(select(a|allenatore.username=allenatore.getUsername())), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean addAllenatore(Allenatore allenatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
@@ -88,6 +112,12 @@ public class AllenatoreDAO {
 		return ok;
 	}
 
+	/**
+	 * 
+	 * @param username username dell'allenatore da rimuovere
+	 * @return true if database.allenatore-> not includes(select(a|allenatore.username=username)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean deleteAllenatore(String username) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -105,7 +135,12 @@ public class AllenatoreDAO {
 		return ok;
 	}
 
-
+	/**
+	 * 
+	 * @param allenatore allenatore da aggiornare
+	 * @return true se i dati sono stati aggiornati, false altrimenti
+	 * @throws SQLException
+	 */
 	//pass e email 
 	public synchronized boolean updateAllenatore(Allenatore allenatore) throws SQLException {
 		boolean ok=false;
@@ -128,7 +163,13 @@ public class AllenatoreDAO {
 
 
 
-
+	/**
+	 * 
+	 * @param username username dell'allenatore che vuole accedere al sistema
+	 * @param password password dell'allenatore che vuole accedere al sistema
+	 * @return true if database.allenatore->includes (select(a|allenatore.username=username and allenatore.password=password)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean checkLogin (String username, String password) throws SQLException {
 		Connection conn = DriverManagerConnectionPool.getConnection();
 		boolean login = false;

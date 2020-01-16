@@ -12,13 +12,20 @@ import gestoreLega.LegaDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 /**
- * Questa classe ï¿½ un manager che si occupa di interagire con il database. Gestisce le query riguardanti Squadra.
+ * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Squadra.
  * @author Pasquale Caramante
  *
  */
 public class SquadraDAO {
 	Connection conn;
 	
+	/**
+	 * 
+	 * @param squadra squadra da aggiungere
+	 * @return true if database.squadra->includes(select(s|squadra.nome=squadra.getNome() and squadra.nomeLega=squadra.getLega.getNome())),
+	 * false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean creaSquadra(Squadra squadra) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
@@ -44,6 +51,12 @@ public class SquadraDAO {
 		return inserita;	
 	}
 	
+	/**
+	 * 
+	 * @param squadra squadra da aggiornare
+	 * @return true se i dati della squadra sono stati aggiornati, false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean updateSquadra(Squadra squadra) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean modificato=false;
@@ -65,6 +78,15 @@ public class SquadraDAO {
 		return modificato;
 	}
 	
+	/**
+	 * 
+	 * @param nomeSquadra nome della squadra 
+	 * @param nomeLega nome della lega di cui fa parte la squadra
+	 * @param idGiocatore id del giocatore da aggiungere alla squadra
+	 * @return true if database.squadraGiocatore->includes(select(x|squadraGiocatore.giocatore=giocatore and squadraGiocatore.squadra=nomeSquadra 
+	 * and squadraGiocatore.nomeLega=nomeLega)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean addGiocatoreSquadra(String nomeSquadra, String nomeLega, int idGiocatore) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		int ris;
@@ -86,7 +108,13 @@ public class SquadraDAO {
 		return inserito;	
 	}
 	
-	
+	/**
+	 * 
+	 * @param nomeSquadra nome della squadra 
+	 * @param nomeLega nome della lega di cui fa parte la squadra
+	 * @param idGiocatore id del giocatore da rimuovere
+	 * @throws SQLException
+	 */
 	public synchronized void deleteGiocatoreSquadra(String nomeSquadra,String nomeLega, int idGiocatore) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		
@@ -104,6 +132,12 @@ public class SquadraDAO {
 		conn.close();
 	}
 	
+	/**
+	 * 
+	 * @param allenatore username dell'allenatore di cui si vogliono cercare le squadre
+	 * @return squadre->select(s|squadra.allenatore=allenatore)
+	 * @throws SQLException
+	 */
 	public  synchronized ArrayList<Squadra> getSquadreByAllenatore(String allenatore) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
@@ -119,7 +153,13 @@ public class SquadraDAO {
 		return squadre;
 	}
 	
-	
+	/**
+	 * 
+	 * @param nomeSquadra nome della squadra da cercare
+	 * @param nomeLega nome della lega di cui fa parte la squadra
+	 * @return squadre->select(s|squadra.nome=nome and squadra.nomeLega=lega)
+	 * @throws SQLException
+	 */
 	public synchronized Squadra getSquadraById(String nomeSquadra, String nomeLega) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Squadra squadra = null;
@@ -147,6 +187,12 @@ public class SquadraDAO {
 		return squadra;
 	}
 	
+	/**
+	 * 
+	 * @param nomeLega nome della lega di cui si vogliono cercare le squadre
+	 * @return squadre->select(s|squadra.lega=lega)
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Squadra> getSquadreByLega(String nomeLega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
@@ -163,6 +209,12 @@ public class SquadraDAO {
 		return squadre;
 	}
 	
+	/**
+	 * 
+	 * @param giocatore giocatore di cui si vogliono cercare le squadre
+	 * @return squadre->select(s|squadragiocatore.giocatore=giocatore.id)
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Squadra> getSquadreGiocatore(Giocatore giocatore) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Squadra> squadre = new ArrayList<Squadra>();
@@ -180,7 +232,13 @@ public class SquadraDAO {
 		return squadre;
 	}
 	
-
+	/**
+	 * 
+	 * @param User allenatore della squadra
+	 * @param nomeLega nome della lega di cui fa parte la squadra 
+	 * @return squadra->select(s|squadra.allenatore=user and squadra.lega=nomeLega) 
+	 * @throws SQLException
+	 */
 	public synchronized Squadra getSquadraByUserELega(String User, String nomeLega) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		Squadra squadra = null;

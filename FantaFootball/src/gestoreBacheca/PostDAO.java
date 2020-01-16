@@ -19,6 +19,12 @@ import gestoreUtente.ScoutDAO;
 public class PostDAO {
 	Connection conn = null;
 	
+	/**
+	 * 
+	 * @param post post da aggiungere
+	 * @return true if database.post-> includes(select(p| p.id=post.getId())), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean addPost(Post post) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean inserito = false;
@@ -42,6 +48,12 @@ public class PostDAO {
 		return inserito;
 	}
 	
+	/**
+	 * 
+	 * @param id id del post da rimuovere
+	 * @return true if database.post->not includes(select(p| p.id=id)), false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean removePost(int id) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean rimosso = false;
@@ -63,7 +75,12 @@ public class PostDAO {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param post post da aggiornare 
+	 * @return true se il post è stato aggiornato, false altrimenti
+	 * @throws SQLException
+	 */
 	public synchronized boolean updatePost(Post post) throws SQLException {
 		conn = DriverManagerConnectionPool.getConnection();
 		boolean modificato = false;
@@ -88,7 +105,12 @@ public class PostDAO {
 		return modificato;
 	}
 	
-	
+	/**
+	 * 
+	 * @param scout username dello scout di cui si vogliono cercare i post
+	 * @return post->select(p|post.scout=scout)
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Post> getPostByScout(String scout) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Post> post = new ArrayList<Post>();
@@ -111,8 +133,13 @@ public class PostDAO {
 		}
 		conn.close();
 		return post;
-		
 	}
+	
+	/**
+	 * 
+	 * @return database.post
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Post> getAllPost() throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Post> post = new ArrayList<Post>();
@@ -138,6 +165,12 @@ public class PostDAO {
 		
 	}
 
+	/**
+	 * 
+	 * @param idPost id del post da cercare
+	 * @return post->select(p|post.idPost=idPost)
+	 * @throws SQLException
+	 */
 	public synchronized Post getPostById(int idPost) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		Post post=null;
