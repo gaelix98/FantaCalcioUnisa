@@ -16,8 +16,19 @@ import gestoreSquadra.Squadra;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
+/**
+ * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Lega.
+ * @author Gaetano Casillo
+ *
+ */
 public class LegaDAO {
-	public Lega getLegaByNome(String lega) throws SQLException{
+	/**
+	 * 
+	 * @param lega nome della lega da cercare
+	 * @return lega->select(l|lega.l=nome))
+	 * @throws SQLException
+	 */
+	public synchronized Lega getLegaByNome(String lega) throws SQLException{
 		AllenatoreDAO dao = new AllenatoreDAO();
 		Lega u=null;
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
@@ -34,7 +45,13 @@ public class LegaDAO {
 		return u;
 	}
 	
-	public boolean addLega(Lega lega) throws SQLException {
+	/**
+	 * 
+	 * @param lega lega da aggiungere
+	 * @return true if database.lega->includes(select(l|lega.nome=lega.getNome())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean addLega(Lega lega) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO lega(NomeLega,Logo,MaxAllenatori,quotaMensile,budget,primoPosto,secondoPosto,terzoPosto,Presidente) VALUES(?,?,?,?,?,?,?,?,?)");
@@ -58,7 +75,13 @@ public class LegaDAO {
 		return ok;
 	}
 
-	public ArrayList<Lega> getLegheByPresidente(Allenatore allenatore) throws SQLException{
+	/**
+	 * 
+	 * @param allenatore allenatore di cui si vogliono cercare le leghe di cui è presidente
+	 * @return leghe->select(l|lega.presidente=allenatore.getUsername()))
+	 * @throws SQLException
+	 */
+	public synchronized ArrayList<Lega> getLegheByPresidente(Allenatore allenatore) throws SQLException{
 		Connection conn =  DriverManagerConnectionPool.getConnection();
 		Lega lega=null;
 		ArrayList<Lega> leghe=new ArrayList<>();
@@ -82,7 +105,13 @@ public class LegaDAO {
 		return leghe;
 	}
 	
-	public boolean deleteLega(Lega lega) throws SQLException {
+	/**
+	 * 
+	 * @param lega lega da cancellare
+	 * @return true if database.lega-> not includes(select(l|lega.nome=lega.getNome())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean deleteLega(Lega lega) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Delete from lega  where NomeLega=?");

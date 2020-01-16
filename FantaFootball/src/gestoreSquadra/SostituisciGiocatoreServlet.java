@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SostituisciGiocatoreServlet
+ * 
+ * Questa classe è un control che si occupa di passare a FormazioneDAO i dati due giocatori da scambiare nella formazione
+ *
  */
+
 @WebServlet("/SostituisciGiocatoreServlet")
 public class SostituisciGiocatoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,8 +28,13 @@ public class SostituisciGiocatoreServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”)
+	 * and request.getParameter(“giocatore1”)!=null and request.getParameter(“giocatore2”)!=null and 
+	 * SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getGiocatori().contains(giocatore1) == true
+	 * @postcondition  SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getFormazione().getGiocatori().contains(giocatore1) == false and
+	 * SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getFormazione().getGiocatori().contains(giocatore2) == true
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="inserisciFormazione.jsp";

@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class OrganizzaAsta
+ * Questa classe è un control che si occupa di verificare se i dati inseriti dall’utente siano accettabili,
+ * se positivi, il control chiamerà il DAO addetto alla creazione dell’asta(AddAsta).
+ * @author Pasquale Caramante 
  */
 @WebServlet("/OrganizzaAstaServlet")
 public class OrganizzaAstaServlet extends HttpServlet {
@@ -29,7 +31,11 @@ public class OrganizzaAstaServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @preconditon request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”)
+	 *  and request.getParameter(“dataInizioAsta”)!=null and request.getParameter(“oraInizioAsta”)!=null and 
+	 *  request.getParamter(“dataFineAsta”)!=null and  dataFineAsta>dataInizioAsta and request.getParameter(“nomeLega”)!=null
+	 *  @postcondition AstaDAO.getAstaByKey(dataInizioAsta, nomeLega)!=null
+	 *  @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
@@ -53,9 +59,7 @@ public class OrganizzaAstaServlet extends HttpServlet {
 		request.getRequestDispatcher(redirect).forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

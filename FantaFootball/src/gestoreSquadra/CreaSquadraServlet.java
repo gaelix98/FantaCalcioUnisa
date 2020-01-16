@@ -25,6 +25,8 @@ import gestoreUtente.Allenatore;
 
 /**
  * @autor Pasquale Caramante
+ * Questa classe è un control che si occupa di verificare se i dati inseriti per la creazione della squadra sono validi, 
+ * se validi, il control invocherà il DAO adatto alla memorizzazione della squadra. (CreaSquadra)
  */
 @WebServlet(name = "/CreaSquadraServlet",
 urlPatterns = "/CreaSquadraServlet",
@@ -47,9 +49,13 @@ public class CreaSquadraServlet extends HttpServlet {
 	public CreaSquadraServlet() {
 		super();
 	}
-
+	
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and Request.getSession().getAttribute(“tipo”).equals(“allenatore”) and 
+	 * request.getParameter(“Nome”)!=null and rispetta il formato “^{4,50}$” and non deve essere presente nella lega.
+	 * Request.getParameter(“logo”) rispetta il formato “([^\s]+(\.(?i)(jpg|png|img|))$)” and request.getParameter(“nomeLega”)!=null
+	 * @postcondition SquadraDAO.getSquadraById(nome, nomeLega)!=null
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeLega = request.getParameter("nomeLega");

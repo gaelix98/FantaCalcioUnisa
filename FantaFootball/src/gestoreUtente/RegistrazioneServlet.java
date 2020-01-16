@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Questa classe è un control che si occupa di verificare se le credenziali inserite dall’utente sono valide per poi passarle al DAO per
+ * registrare l'allenatore.
  * @author Maria Natale
  */
 @WebServlet("/RegistrazioneServlet")
@@ -26,9 +28,16 @@ public class RegistrazioneServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+     * @precondition request.getParameter(“nome”)!=null and rispetta il formato “^[A-Za-z ]{2,50}$”AND Request.getParameter(“cognome”)!=null
+     *  e rispetta il formato “^[A-Za-z ]{2,50}$” AND Request.getParameter(“username”)!=null e
+     *   rispetta il formato ^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$”  AND 
+     *   Request.getParameter(“password”)!=null and rispetta il formato “^([A-Za-z0-9]){5,}$” AND
+     *   Request.getParameter(“email”)!=null e rispetta il formato “^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$” AND
+     *   allenatoreDAO.getAllenatoreByUsername(username)==null AND allenatoreDAO.getAllenatoreByEmail(email)==null)
+     * @postcondition AllenatoreDAO.getAllenatoreByUsername(username)!=null
+     * @throws ServletException, IOException
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome=request.getParameter("nome");
 		String cognome=request.getParameter("cognome");
@@ -66,10 +75,6 @@ public class RegistrazioneServlet extends HttpServlet {
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -29,7 +29,9 @@ public class CancellaProfiloServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null 
+	 * @postcondition AllenatoreDAO.getAllenatoreByUsername(username)==null
+	 * @throws ServletException, IOException 
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();

@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import gestoreUtente.Allenatore;
 
 /**
- * Servlet implementation class InserisciGiocatoreFormazioneServlet
+ * 
+ * Questa classe è un control che si occupa di passare a FormazioneDAO i dati di un giocatore da aggiungere ad una formazione
+ *
  */
 @WebServlet("/InserisciGiocatoreFormazioneServlet")
 public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
@@ -27,8 +29,12 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and request.getParameter(“modulo”)!=null and request.getParameter(“titolare”)!=null and request.getParameter(“giocatore”)!=null
+	 * @postcondition  SquadraDAO.getSquadraById(squadra.getNome(), squadra.getLega().getNome()).getFormazione().contains(giocatore) == true
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="inserisciFormazione.jsp";

@@ -39,7 +39,7 @@ $(document).ready(function() {
 	}
 
 	function validateNameReg(){
-		var nameformat = /^^[A-Za-z ]{2,50}$/;
+		var nameformat = /^[A-Za-z ]{2,50}$/;
 		if (document.getElementById("nome").value.match(nameformat)){
 			console.log("nome corretto");
 			return true;
@@ -77,7 +77,7 @@ $(document).ready(function() {
 	}
 
 	function validateEmail(){
-		var mailformat = /^^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+		var mailformat = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 		if (document.getElementById("email").value.match(mailformat)){
 			console.log("email corretto");
 			return true;

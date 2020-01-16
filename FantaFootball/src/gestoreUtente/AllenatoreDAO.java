@@ -9,11 +9,18 @@ import java.util.List;
 
 import db.DriverManagerConnectionPool;
 
-
+/**
+ * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Allenatore.
+ * @author 
+ *
+ */
 public class AllenatoreDAO {
 
-
-	public List<Allenatore> getAllAllenatori() throws SQLException{
+	/**
+	 * @return
+	 * @throws SQLException
+	 */
+	public synchronized List<Allenatore> getAllAllenatori() throws SQLException{
 		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			PreparedStatement ps=conn.prepareStatement("SELECT Nome, Cognome, email, password, username FROM allenatore ");
@@ -23,13 +30,21 @@ public class AllenatoreDAO {
 				Allenatore u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 				utenti.add(u);
 			}
+			conn.close();
 			return utenti;
+			
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public Allenatore getAllenatoreByUsername(String username) throws SQLException{
+	/**
+	 * 
+	 * @param username username di un allenatore che si vuole cercare
+	 * @return allenatore->select(a|allenatore.username=username))
+	 * @throws SQLException
+	 */
+	public synchronized Allenatore getAllenatoreByUsername(String username) throws SQLException{
 		
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			Allenatore u=null;
@@ -39,14 +54,21 @@ public class AllenatoreDAO {
 			while (rs.next()) {
 				u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 			}
+			conn.close();
 			return u;
-
+			
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
 	
-	public Allenatore getAllenatoreByEmail(String email) throws SQLException{
+	/**
+	 * 
+	 * @param email email allenatore da cercare
+	 * @return allenatore->select(a|allenatore.email=email))
+	 * @throws SQLException
+	 */
+	public synchronized Allenatore getAllenatoreByEmail(String email) throws SQLException{
 
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			Allenatore u=null;
@@ -56,6 +78,7 @@ public class AllenatoreDAO {
 			while (rs.next()) {
 				u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 			}
+			conn.close();
 			return u;
 
 		}catch(SQLException e) {
@@ -63,8 +86,13 @@ public class AllenatoreDAO {
 		}
 	}
 
-
-	public boolean addAllenatore(Allenatore allenatore) throws SQLException {
+	/**
+	 * 
+	 * @param allenatore allenatore da registrare
+	 * @return true if database.allenatore->includes(select(a|allenatore.username=allenatore.getUsername())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean addAllenatore(Allenatore allenatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO allenatore(Nome,Cognome,email, password, username) VALUES(?,?,?,?,?)");
@@ -84,7 +112,13 @@ public class AllenatoreDAO {
 		return ok;
 	}
 
-	public boolean deleteAllenatore(String username) throws SQLException {
+	/**
+	 * 
+	 * @param username username dell'allenatore da rimuovere
+	 * @return true if database.allenatore-> not includes(select(a|allenatore.username=username)), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean deleteAllenatore(String username) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Delete from allenatore where username=?");
@@ -101,9 +135,14 @@ public class AllenatoreDAO {
 		return ok;
 	}
 
-
+	/**
+	 * 
+	 * @param allenatore allenatore da aggiornare
+	 * @return true se i dati sono stati aggiornati, false altrimenti
+	 * @throws SQLException
+	 */
 	//pass e email 
-	public  boolean updateAllenatore(Allenatore allenatore) throws SQLException {
+	public synchronized boolean updateAllenatore(Allenatore allenatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Update allenatore SET password=?, email=? where username=?");
@@ -111,6 +150,7 @@ public class AllenatoreDAO {
 			ps.setString(2, allenatore.getEmail());
 			ps.setString(3, allenatore.getUsername());
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -123,8 +163,14 @@ public class AllenatoreDAO {
 
 
 
-
-	public boolean checkLogin (String username, String password) throws SQLException {
+	/**
+	 * 
+	 * @param username username dell'allenatore che vuole accedere al sistema
+	 * @param password password dell'allenatore che vuole accedere al sistema
+	 * @return true if database.allenatore->includes (select(a|allenatore.username=username and allenatore.password=password)), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean checkLogin (String username, String password) throws SQLException {
 		Connection conn = DriverManagerConnectionPool.getConnection();
 		boolean login = false;
 		String sql = "Select username,password from allenatore where username = ? and password = ?";
@@ -134,6 +180,7 @@ public class AllenatoreDAO {
 		if(ps.executeQuery().next()) {
 			login = true;
 		}
+		conn.close();
 		return login;
 	}
 }

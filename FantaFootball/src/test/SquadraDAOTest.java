@@ -61,7 +61,7 @@ public class SquadraDAOTest {
 	public void testUpdateSquadra() throws SQLException{
 		Squadra squadra = squadraDAO.getSquadraById("FantaCola", "MemeroniX");
 		assertNotNull(squadra);
-		assertEquals(0,squadra.getBudgetRimanente());
+		assertEquals(250,squadra.getBudgetRimanente());
 		squadra.setBudgetRimanente(100);
 		squadraDAO.updateSquadra(squadra);
 		squadra=squadraDAO.getSquadraById("FantaCola", "MemeroniX");

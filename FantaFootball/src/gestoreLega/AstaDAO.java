@@ -22,8 +22,9 @@ public class AstaDAO {
 	
 	/**
 	 *  
-	 * @param asta
-	 * @return
+	 * @param asta asta da aggiungere
+	 * @return true if database.asta->includes(select(a|asta.dataInizio= asta.getDataInizio()< and asta.ora=asta.getOra()
+	 *  and asta.dataFine= asta.getDataFine() and asta.nomeLega=asta.getLega().getNomeLega())), false altrimenti
 	 * @throws SQLException
 	 */
 	public synchronized boolean addAsta(Asta asta) throws SQLException {
@@ -51,8 +52,8 @@ public class AstaDAO {
 	
 	/**
 	 * 
-	 * @param allenatore
-	 * @return
+	 * @param allenatore username dell'allenatore di cui si vogliono cercare le asta a cui ha partecipato
+	 * @return aste->select(a|offerta.allenatore.getNome()=allenatore)
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<Asta> getAsteByAllenatore(String allenatore) throws SQLException{
@@ -76,9 +77,9 @@ public class AstaDAO {
 	
 	/**
 	 * 
-	 * @param dataInizio
-	 * @param nomeLega
-	 * @return
+	 * @param dataInizio data inizio asta da cercare
+	 * @param nomeLega nome della lega che ha organizzato l'asta
+	 * @return asta->select(a|asta.dataInizio=dataInizio and asta.nomeLega=nomeLega)
 	 * @throws SQLException
 	 */
 	public synchronized Asta getAstaByKey(Date dataInizio, String nomeLega) throws SQLException{
@@ -100,7 +101,12 @@ public class AstaDAO {
 		return asta;
 	}
 	
-	
+	/**
+	 * 
+	 * @param lega lega di cui si vogliono cercare le aste
+	 * @return aste->select(a|asta.nomeLega=lega.getNome())
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Asta> getAsteByLega(Lega lega) throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Asta> aste=new ArrayList<>();
@@ -117,6 +123,11 @@ public class AstaDAO {
 		return aste;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Asta> getAsteScaduteOggi() throws SQLException{
 		conn = DriverManagerConnectionPool.getConnection();
 		ArrayList<Asta> aste=new ArrayList<>();

@@ -11,8 +11,20 @@ import db.DriverManagerConnectionPool;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
+/**
+ * Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Invito.
+ * @author Gaetano Casillo
+ *
+ */
 public class InvitoDAO {
 
+	/**
+	 * 
+	 * @param invito invito da aggiungere
+	 * @return true if database.invito->includes(select(i|invito.allenatore=invito.getAllenatore().getUsername()
+	 *  and invito.nomeLega=invito.getLega().getNome())), else altrimenti
+	 * @throws SQLException
+	 */
 	public boolean addInvito(Invito invito) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
@@ -31,6 +43,12 @@ public class InvitoDAO {
 		return ok;
 	}
 	
+	/**
+	 * 
+	 * @param invito invito da aggiornare
+	 * @return true se i dati sono stati aggiornati correttamente, else altrimenti
+	 * @throws SQLException
+	 */
 	public  boolean updateInvito(Invito invito) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -40,6 +58,7 @@ public class InvitoDAO {
 			ps.setString(3, invito.getLega().getNome());
 			
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -50,6 +69,14 @@ public class InvitoDAO {
 		return ok;
 	}
 	
+	/**
+	 * 
+	 * @param username username dell'allenatore invitato
+	 * @param NomeLega nome della lega dell'invito
+	 * @return  true if database.invito-> not includes(select(i|invito.allenatore=invito.getAllenatore().getUsername()
+	 *  and invito.nomeLega=invito.getLega().getNome())), false altrimenti
+	 * @throws SQLException
+	 */
 	public boolean deleteInvito(String username,String NomeLega) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -63,11 +90,18 @@ public class InvitoDAO {
 		return ok;
 
 		}
+		
 		ok=true;
 
 		return ok;
 	}
 	
+	/**
+	 * 
+	 * @param allenatore username dell'allenatore invitato
+	 * @return inviti->select(i|invito.allenatore=allenatore)
+	 * @throws SQLException
+	 */
 	public List<Invito> getInvitoByAllenatore(String allenatore) throws SQLException{
 
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
@@ -82,6 +116,7 @@ public class InvitoDAO {
 				Invito u=new Invito(cavia,daol.getLegaByNome(rs.getString(2)),rs.getBoolean(3));
 				inviti.add(u);
 			}
+			conn.close();
 			return inviti;
 
 
@@ -91,6 +126,13 @@ public class InvitoDAO {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param allenatore allenatore invitato
+	 * @param lega lega a cui è invitato l'allenatore
+	 * @return invito->select (i| invito.allenatore=allenatore and invito.lega=lega)
+	 * @throws SQLException
+	 */
 	public Invito getInvitoById(Allenatore allenatore, Lega lega) throws SQLException {
 		boolean ok=false;
 		Invito invito=null;

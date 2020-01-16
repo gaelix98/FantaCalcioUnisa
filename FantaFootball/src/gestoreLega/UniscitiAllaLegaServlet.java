@@ -16,6 +16,13 @@ import javax.servlet.http.Part;
 
 import gestoreUtente.Allenatore;
 
+/**
+ * Questa classe è un control che si occupa di verificare la risposta dell’allenatore all’invito ad una lega. 
+ * Se positiva, verrà chiamato il DAO addetto all’associazione di un allenatore ad una lega (UpdateInvito), 
+ * se negativa,  verrà chiamato il DAO addetto all’eliminazione dell’invito.
+ * @author Gaetano Casillo
+ *
+ */
 @WebServlet(name = "/UniscitiAllaLega")
 public class UniscitiAllaLegaServlet extends HttpServlet {
 
@@ -27,6 +34,12 @@ public class UniscitiAllaLegaServlet extends HttpServlet {
 		super();
 	}
 
+	/**
+	 * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and request.getParameter(“Risposta”)!=null and typeof(Risposta)=boolean and request.getParameter(“Lega”)!=null. 
+	 * @postcondition InvitoDAO.getInvitoById(utente, Lega).getRisposta()==true
+	 * @throws ServletException, IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome = request.getParameter("nome");
 		Allenatore allenatore = (Allenatore) request.getSession().getAttribute("utente");

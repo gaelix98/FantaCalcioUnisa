@@ -56,7 +56,7 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 		Allenatore invitato = null;
 		Allenatore allenatore = (Allenatore) request.getSession().getAttribute("utente");
 		ArrayList<Lega> leghe;
-		try {
+	/*	try {
 			leghe = legad.getLegheByPresidente(allenatore);
 			int i=0;
 			for(i=0;i<leghe.size();i++) { //checko if presidente
@@ -119,7 +119,7 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 			e.printStackTrace();
 			 redirect="errorPage.jsp";
 			
-		}
+		}*/
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}

@@ -13,9 +13,22 @@ import gestoreLega.LegaDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
+/**
+ * 
+ * @author Gaetano Casillo
+ *
+ */
 public class FormazioneDAO {
 
-	public boolean addFormazione(Formazione formazione) throws SQLException {
+	/**
+	 * 
+	 * @param formazione formazione da aggiungere
+	 * @return true if database.formazione->includes(select(f|formazione.nomeSquadra=formazione.getSquadra().getNome() and 
+	 * formazione.nomeLega=formazione.getSquadra().getLega().getNome() and formazione.modulo=formazione.getModulo() and 
+	 * formazione.giornata=formazione.getGiornata() and formazione.schierata=formazione.getSchierata())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean addFormazione(Formazione formazione) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO formazione(Giornata,Schierata,Squadra,NomeLega) VALUES(?,?,?,?)");
@@ -35,7 +48,17 @@ public class FormazioneDAO {
 	}
 
 
-	public boolean addGiocatoreFormazione(Formazione formazione,Giocatore giocatore, int posizione) throws SQLException {
+	/**
+	 * 
+	 * @param formazione formazione a cui aggiungere il giocatore
+	 * @param giocatore giocatore da aggiungere alla formazione
+	 * @param posizione posizione del giocatore nella formazione
+	 * @return true if database.giocatoreFormazione->includes(select(f|giocatoreFormazione.nomeSquadra=formazione.getSquadra().getNome() 
+	 * and giocatoreFormazione.nomeLega= formazione.getSquadra().getLega().getNome() and 
+	 * giocatoreFormazione.giornata= formazione.getGiornata() and giocatoreFormazione.giocatore=giocatore.getId())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean addGiocatoreFormazione(Formazione formazione,Giocatore giocatore, int posizione) throws SQLException {
 		boolean ok=false;
 		try(Connection con =  DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps =con.prepareStatement("INSERT INTO giocatoreformazione(Giornata,NomeSquadra,NomeLega,Id,posizione) VALUES(?,?,?,?,?)");
@@ -55,9 +78,16 @@ public class FormazioneDAO {
 		return ok;
 	}
 
-
-
-	public boolean deleteGiocatoreFormazione(Formazione formazione, Giocatore giocatore) throws SQLException {
+	/**
+	 * 
+	 * @param formazione formazione a cui rimuovere il giocatore
+	 * @param giocatore giocatore da rimuovere nella formazione 
+	 * @return true if database.giocatoreFormazione-> not includes(select(f|giocatoreFormazione.nomeSquadra=formazione.getSquadra().getNome()
+	 *  and giocatoreFormazione.nomeLega= formazione.getSquadra().getLega().getNome() and 
+	 *  giocatoreFormazione.giornata= formazione.getGiornata() and giocatoreFormazione.giocatore=giocatore.getId())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean deleteGiocatoreFormazione(Formazione formazione, Giocatore giocatore) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Delete from giocatoreformazione where Id=? AND Giornata=? AND NomeLega=? AND NomeSquadra=?");
@@ -77,7 +107,17 @@ public class FormazioneDAO {
 		return ok;
 	}
 
-	public  boolean updateGiocatoreFormazione(Formazione formazione, Giocatore giocatore1, Giocatore giocatore2) throws SQLException {
+	/**
+	 * 
+	 * @param formazione formazione in cui effettuare lo scambio giocatori
+	 * @param giocatore1 giocatore da sostituire
+	 * @param giocatore2 giocatore sostituto
+	 * @return true if database.giocatoreFormazione-> includes(select(f|giocatoreFormazione.nomeSquadra=formazione.getSquadra().getNome()
+	 *  and giocatoreFormazione.nomeLega= formazione.getSquadra().getLega().getNome() and 
+	 *  giocatoreFormazione.giornata= formazione.getGiornata() and giocatoreFormazione.giocatore=giocatore2.getId())), false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean updateGiocatoreFormazione(Formazione formazione, Giocatore giocatore1, Giocatore giocatore2) throws SQLException {
 		boolean ok=false;
 		int posizione;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
@@ -88,6 +128,7 @@ public class FormazioneDAO {
 			ps.setString(4, formazione.getSquadra().getLega().getNome());
 			ps.setString(5, formazione.getSquadra().getNome());
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -98,8 +139,13 @@ public class FormazioneDAO {
 		return ok;
 	}
 
-
-	public  boolean updateFormazione(Formazione formazione) throws SQLException {
+	/**
+	 * 
+	 * @param formazione formazione da aggiornare
+	 * @return true se la formazione è stata aggiornata, false altrimenti
+	 * @throws SQLException
+	 */
+	public synchronized boolean updateFormazione(Formazione formazione) throws SQLException {
 		boolean ok=false;
 		try(Connection con= DriverManagerConnectionPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("Update formazione SET schierata=? where Giornata=? and Squadra=? and NomeLega=?");
@@ -109,6 +155,7 @@ public class FormazioneDAO {
 			ps.setString(4, formazione.getSquadra().getLega().getNome());
 
 			ps.executeUpdate();
+			con.close();
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -120,10 +167,15 @@ public class FormazioneDAO {
 	}
 
 
-
-
-
-	public Formazione getFormazioneBySquadraGiornata(Squadra squadra, int giornata) throws SQLException{
+	/**
+	 * 
+	 * @param squadra squadra di cui si vuole cercare la formazione
+	 * @param giornata giornata di cui si vuole cercare la formazione della squadra
+	 * @return formazione-> select(f|formazione.nomeSquadra=squadra.getNome() and formazione.nomeLega=squadra.getLega().getNome() 
+	 * and formazione.giornata=giornata)
+	 * @throws SQLException
+	 */
+	public synchronized Formazione getFormazioneBySquadraGiornata(Squadra squadra, int giornata) throws SQLException{
 		AllenatoreDAO alld= new AllenatoreDAO();
 		LegaDAO legD= new LegaDAO();
 		GiocatoreDAO gd = new GiocatoreDAO();
@@ -157,6 +209,7 @@ public class FormazioneDAO {
 				u.setGiocatori(giocatori);
 				u.setPanchina(panchina);
 			}
+			conn.close();
 			return u;
 		}catch(SQLException e) {
 			throw new RuntimeException(e);

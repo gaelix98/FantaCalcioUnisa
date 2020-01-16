@@ -11,6 +11,20 @@
 <%@include file="menu.jsp"%>
 <%ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
 if (allPost==null) {response.sendRedirect("getAllPostServlet");}%>
+<section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h1>FantaFootball</h1>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <%@include file="footer.jsp"%>
 </body>
 </html>

@@ -14,7 +14,9 @@ import gestoreLega.Lega;
 import gestoreUtente.Allenatore;
 
 /**
- * Servlet implementation class getFormazioneSquadra
+ * Questa classe è un control che si occupa di salvare in sessione la formazione attuale della squadra
+ * @author Maria Natale
+ *
  */
 @WebServlet("/getFormazioneSquadra")
 public class getFormazioneSquadra extends HttpServlet {
@@ -28,8 +30,12 @@ public class getFormazioneSquadra extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @preconditionrequest.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+	 * and request.getSession().getAttribute(“lega”)!=null
+	 * @postcondition request.getSession().getAttribute(“formazione”)!=null
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SquadraDAO squadraDAO = new SquadraDAO();

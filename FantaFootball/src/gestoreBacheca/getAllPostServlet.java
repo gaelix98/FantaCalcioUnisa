@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class getAllPostServlet
+ * Questa classe è un control che si occupa di prendere tutti i post 
+ * @author Maria Natale
+ *
  */
 @WebServlet("/getAllPostServlet")
 public class getAllPostServlet extends HttpServlet {
@@ -27,7 +29,8 @@ public class getAllPostServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @postcondition request.getSession().getAttribute(“allPost”)!=null
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();

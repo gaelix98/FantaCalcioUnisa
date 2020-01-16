@@ -18,7 +18,7 @@ import gestoreLega.AstaDAO;
 import gestoreUtente.Allenatore;
 
 /**
- * 
+ * Questa classe è un control che si occupa di passare a OffertaDAO i dati di un’offerta da modificare.
  * @author Maria Natale
  *
  */
@@ -26,17 +26,19 @@ import gestoreUtente.Allenatore;
 public class ModificaOffertaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public ModificaOffertaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+     * @precondition request.getSession().getAttribute(“utente”)!=null and request.getSession().getAttribute(“tipo”).equals(“allenatore”) 
+     * and request.getParameter(“data”)!= null and request.getParameter(“lega”)!=null and request.getParameter(“giocatore”) != null and 
+     * request.getParameter(“sommaOfferta”) != null and OffertaDAO.getOffertaGiocatoreAllenatore(giocatore, data, lega, squadra)!=null 
+     * @postcondition OffertaDAO.getOffertaGiocatoreAllenatore(giocatore, data, lega, squadra).getSomma()=sommaOfferta
+     * @throws ServletException, IOException
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Date data=Date.valueOf(request.getParameter("data"));
 		String lega=request.getParameter("lega");
@@ -93,9 +95,7 @@ public class ModificaOffertaServlet extends HttpServlet {
 		requestDispatcher.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

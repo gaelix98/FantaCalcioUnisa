@@ -13,16 +13,15 @@ import org.apache.ibatis.jdbc.ScriptRunner;
 
 
 public class DatabaseHelper {
+	static Connection conn;
 	public static void initializeDatabase() throws SQLException, FileNotFoundException {
-
 		DriverManagerConnectionPool.setTest(true);
-		Connection conn = DriverManagerConnectionPool.getConnection();
+		conn = DriverManagerConnectionPool.getConnection();
 		ScriptRunner sr = new ScriptRunner(conn);
 		java.io.Reader reader = new BufferedReader(new FileReader("inserimentoDatiTest.sql"));
 		sr.runScript(reader);
 		
-		DriverManagerConnectionPool.releaseConnection(conn);
-		
-		
+		//DriverManagerConnectionPool.releaseConnection(conn);
+		conn.close();
 	}
 }

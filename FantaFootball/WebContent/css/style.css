@@ -5527,11 +5527,11 @@ h6 {
 
 /* line 1, E:/166 Basketball/Basketball_Template/sass/_breadcrumb.scss */
 .breadcrumb_bg {
-  background-image: url("../img/breadcrumb.png");
+  background-image: url("../img/pallone.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+  }
 
 /* line 4, E:/166 Basketball/Basketball_Template/sass/_breadcrumb.scss */
 .breadcrumb {
