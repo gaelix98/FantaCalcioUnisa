@@ -80,7 +80,7 @@ public class filtraGiocatoriServlet extends HttpServlet {
 				Squadra sq = sD.getSquadraByUserELega(a.getUsername(),l.getNome() );
 				System.out.println(sq.getNome());
 				Giocatore[] x= sq.getGiocatori(); //uno mi da l'array e l'altro è una lista, faccio bordelli 
-				for(int i=0;i<x.length;i++) {
+				for(int i=0;i<x.length && x[i]!=null;i++) {
 					giocatori.add(x[i]); //ho riempito la lista, ma ho fatto na bestemmia;
 					System.out.println(giocatori.get(i));
 					//qua mi da null

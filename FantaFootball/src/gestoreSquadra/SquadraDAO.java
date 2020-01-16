@@ -256,7 +256,7 @@ public class SquadraDAO {
 			String logo = rs.getString("Logo");
 			Lega lega = legaDAO.getLegaByNome(rs.getString("Lega"));
 			Allenatore allenatoreobj = allenatoreDAO.getAllenatoreByUsername(rs.getString("Allenatore"));
-			Giocatore[] giocatori = giocatoreDAO.getGiocatoriBySquadra(rs.getString("NomeSquadra"),lega.getNome());
+			Giocatore[] giocatori = giocatoreDAO.getGiocatoriBySquadra(lega.getNome(),rs.getString("nomeSquadra"));
 			int punti = rs.getInt("Punti");
 			int budget = rs.getInt("BudgetRimanente");
 			squadra = new Squadra(rs.getString("NomeSquadra"),logo,allenatoreobj,lega,punti,budget);
