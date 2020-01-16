@@ -12,7 +12,7 @@
 	<div class="container ">
 		<div class="row align-items-center">
 		<div class="col-lg-3 col-md-3"></div>
-				<div class="col-lg-6 col-md-6 well box-login has-footer"">
+				<div class="col-lg-6 col-md-6 well box-login has-footer">
 					<%
 						String message = (String) request.getAttribute("message");
 						if (message != null && !message.equals("")) {
@@ -38,15 +38,12 @@
 						<div class="mt-10">
 							<input type="text" name="email" required="required"
 								placeholder="Email" id="email" class="single-input">
-								<span class="error">E-mail non disponibile</span><br>
-								 <span
-								class="error">Formato errato email</span><br>
+								<span class="error">E-mail non disponibile o formato errato</span><br>
 						</div>
 						<div class="mt-10">
 							<input type="text" name="username" required="required"
 								placeholder="Username" id="username" class="single-input">
-								<span class="error">Username non disponibile</span><br>
-							<span class="error">Formato errato username</span><br>
+								<span class="error">Username non disponibile o formato errato</span><br>
 						</div>
 						<div class="mt-10">
 							<input type="password" name="password" required="required"

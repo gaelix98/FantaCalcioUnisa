@@ -18,8 +18,8 @@
 
 	<div class="container ">
 		<div class="row align-items-center">
-			<div class="col-md-12 col-md-offset-3">
-				<div class="col-lg-8 col-md-8">
+		<div class="col-lg-3 col-md-3"></div>
+				<div class="col-lg-6 col-md-6 well box-login has-footer"">
 					<%
 						String message = (String) request.getAttribute("message");
 						if (message != null && !message.equals("")) {
@@ -30,13 +30,11 @@
 					%>
 					<form action="CreaLegaServlet" method="post" id="form1"
 						enctype="multipart/form-data">
-						<h2>Registrazione di una nuova Lega</h2>
+						<h3 class="mb-30" align="center">Crea nuova lega</h3>
 						<div class="mt-10">
 							<input type="text" name="nome" required="required"
 								placeholder="Nome lega" id="nome" class="single-input">
-							<span class="error">Il nome della lega deve contenere solo
-								lettere dell'alfabeto e deve avere una lughezza compresa tra i 4
-								e i 50 caratteri</span><br>
+							<span class="error">Lega già presente o formato errato</span><br>
 						</div>
 						<div class="mt-10">
 							<label for="logoLega">Scegli un logo per la tua lega: </label> <input
@@ -76,17 +74,11 @@
 							<input type="number" name="primoPosto" required="required"
 								placeholder="Percentuale vincita primo posto" id="primoPosto" class="single-input ">
 
-							<span class="error">La percentuale deve essere espressa
-								con un numero da 0 a 100 </span><br>
-
 						</div>
 						<div class="mt-10">
 
 							<input type="number" name="secondoPosto" required="required"
 								placeholder="Percentuale vincita secondo posto" id="secondoPosto" class="single-input ">
-
-							<span class="error">La percentuale deve essere espressa
-								con un numero da 0 a 100 </span><br>
 
 						</div>
 						<div class="mt-10">
@@ -94,22 +86,21 @@
 							<input type="number" name="terzoPosto" required="required"
 								placeholder="Percentuale vincita terzo posto" id="terzoPosto" class="single-input ">
 
-							<span class="error">La percentuale deve essere espressa
-								con un numero da 0 a 100 </span><br>
-
 						</div>
 						<input type="hidden" name="utente" value="<%=utente%>">
+						<div align="center"  style="padding-top:20px">
 						<button type="submit" class="genric-btn primary circle arrow"
 							value="submit">
 							Conferma<span class="lnr lnr-arrow-right"></span>
-						</button>
+						</button></div>
 
 					</form>
 				</div>
+				<div class="col-lg-3 col-md-3"></div>
 			</div>
 		</div>
-	</div>
 	<%@include file="footer.jsp"%>
+	<script src="scripts/verificaNomeLega.js"></script>
 	<script src="scripts/validaLega.js"></script>
 </body>
 </html>

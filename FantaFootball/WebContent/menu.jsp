@@ -24,7 +24,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 			<div class="row align-items-center">
 				<div class="col-md-4 col-xl-6">
 					<div id="logo">
-						<a href="index.html"><img src="img/Logo.png" alt="" title="" /></a>
+						<a href="index.html"><img src="img/l.PNG" alt="" title="" /></a>
 					</div>
 				</div>
 				<%if (tipoUtente==null){ %>
@@ -39,7 +39,9 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 		</div>
 	</div>
 	<div class="main_menu">
-	<div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
 					<nav class="navbar navbar-expand-lg navbar-light">
 						<button class="navbar-toggler" type="button"
 							data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -93,6 +95,8 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 						</ul>
 					</div>
 				</div></div>
+				</div>
+				</div>
 </header>
 <section class="breadcrumb breadcrumb_bg">
         <div class="container">

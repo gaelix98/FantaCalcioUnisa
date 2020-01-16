@@ -18,7 +18,7 @@
 					String message = (String) request.getAttribute("message");
 					if (message != null && !message.equals("")) {
 				%>
-				<h4 class="alert alert-danger"><%=message%></h4>
+				<h4 class="alert alert-danger" id="message"><%=message%></h4>
 				<%
 					}
 				%>
