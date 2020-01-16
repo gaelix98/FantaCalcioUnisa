@@ -70,7 +70,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					break;
 				}
 
-				for (;i<j && formazione.getGiocatori()[i]!=null; i++) {
+				for (;i<j && formazione.getGiocatori()[i]!=null && i<formazione.getGiocatori().length && j<formazione.getGiocatori().length; i++) {
 				}
 				formazione.getGiocatori()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
@@ -94,7 +94,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					j=i+2;
 					break;
 				}
-				for (;i<j && formazione.getPanchina()[i]!=null; i++) {
+				for (;i<j && formazione.getPanchina()[i]!=null && i<formazione.getGiocatori().length && j<formazione.getGiocatori().length; i++) {
 				}
 				formazione.getPanchina()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);

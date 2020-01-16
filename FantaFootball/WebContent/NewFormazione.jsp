@@ -9,8 +9,23 @@
 </head>
 <%@include file="header.html"%>
 <%@ include file="menu.jsp"%>
-<%
-	List<Giocatore> giocatori = (List<Giocatore>) session.getAttribute("giocatori");
+<%Formazione formazione=(Formazione) session.getAttribute("formazione");
+List<Giocatore> giocatori = (List<Giocatore>) session.getAttribute("giocatori");
+List<Giocatore> formazioneg = new ArrayList<Giocatore>();
+if (formazione==null)
+{response.sendRedirect("getFormazioneSquadra");
+}
+else{
+
+
+
+for(int i=0;i<formazione.getGiocatori().length && formazione.getGiocatori()[i]!=null;i++){
+if(formazioneg.contains(formazione.getGiocatori()[i])){
+	continue;
+}
+formazioneg.add(formazione.getGiocatori()[i]);
+}
+}
 %>
 <h2>i tuoi giocatori</h2>
 <style type="text/css">
@@ -109,6 +124,7 @@
 	}
 }
 </style>
+
 <div class="tg-wrap">
 <select id="test" name="form_select" onchange="showDiv('hidden_div', this)">
    <option value="0">Scegli modulo</option>
@@ -133,7 +149,24 @@
 		<tr>
 			<%
 				int i = 1;
+			
+			
+			for(int x=0;x<formazioneg.size();x++){
+				for(int s=0;s<giocatori.size();s++){
+					
+					if(formazioneg.get(x).getId()
+							==giocatori.get(s).getId() ){
+						giocatori.remove(s);
+						s--;
+					}
+					
+				}
+			
+			}
 				for (Giocatore g : giocatori) {
+					
+					
+					
 			%>
 			<td class="tg-0pky"><%=i++%></td>
 			<td class="tg-0pky"><button onclick="inseriscigiocatore(<%=g.getId()%>,true)"><%=g.getNome()%></button></td>
@@ -151,7 +184,38 @@
 
 <div id="hidden_div">This is a hidden div</div>
 </div>
+<table id="tg-wDj3P" class="tg">
+		<tr>
 
+			<th class="tg-0pky" colspan="6">I tuoi giocatori schierati</th>
+		</tr>
+
+		<tr>
+			<td class="tg-pcvp">No</td>
+			<td class="tg-pcvp">Nome</td>
+			<td class="tg-pcvp">Ruolo</td>
+			<td class="tg-pcvp">Punteggio</td>
+			<td class="tg-pcvp">Presenze</td>
+			<td class="tg-pcvp">Goal</td>
+		</tr>
+		<tr>
+			<%
+				int f = 1;
+				for (Giocatore g : formazioneg) {
+					
+			%>
+			<td class="tg-0pky"><%=f++%></td>
+			<td class="tg-0pky"><%=g.getNome()%></td>
+			<td class="tg-0pky"><%=g.getRuolo()%></td>
+			<td class="tg-0pky"><%=g.getVotoMedio()%></td>
+			<td class="tg-0pky"><%=g.getPresenze()%></td>
+			<td class="tg-0pky"><%=g.getGoal()%></td>
+		</tr>
+		<%
+			}
+		%>
+
+	</table>
 
 
 
