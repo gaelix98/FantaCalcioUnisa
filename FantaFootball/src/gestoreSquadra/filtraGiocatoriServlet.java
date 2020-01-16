@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import gestoreLega.Lega;
+import gestoreUtente.Allenatore;
+
 /**
  * 
  * @author Maria Natale
@@ -37,37 +40,69 @@ public class filtraGiocatoriServlet extends HttpServlet {
 		String prezzoBaseStr=request.getParameter("prezzoBase");
 		String squadra=request.getParameter("squadra");
 		String ruolo=request.getParameter("ruolo");
+
 		String redirect="";
 		String p=request.getParameter("p");
 		int prezzoBase;
 		List<Giocatore> giocatori=new ArrayList<>();
-		GiocatoreDAO giocatoreDAO=new GiocatoreDAO();
+
 		HttpSession session=request.getSession();
 
-		if (prezzoBaseStr.equals("")) {
-			prezzoBase=0;
-		}
-		else {
-			prezzoBase=Integer.parseInt(prezzoBaseStr);
-		}
-
-		try {
-			giocatori=giocatoreDAO.getByPrezzoBase(prezzoBase);
-			if (!squadra.equals("")) {
-				giocatori=getGiocatoriSquadra(giocatori, squadra);
-				System.out.println("Tette1");
-			}
-			if (!ruolo.equals("")) {
-				giocatori=getGiocatoriRuolo(giocatori, ruolo);
-				System.out.println("Tette2");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 
 		switch(p) {
-			case "0": redirect="faiOfferta.jsp"; break;
-			case "1": redirect="inserisciFormazione.jsp"; break;
+		case "0":
+			GiocatoreDAO giocatoreDAO = new GiocatoreDAO();
+			if (prezzoBaseStr.equals("")) {
+				prezzoBase=0;
+			}
+			else {
+				prezzoBase=Integer.parseInt(prezzoBaseStr);
+			}
+
+			try {
+				giocatori=giocatoreDAO.getByPrezzoBase(prezzoBase);
+				if (!squadra.equals("")) {
+					giocatori=getGiocatoriSquadra(giocatori, squadra);
+
+				}
+				if (!ruolo.equals("")) {
+					giocatori=getGiocatoriRuolo(giocatori, ruolo);
+
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}; break;
+		case "1":
+			SquadraDAO sD= new SquadraDAO();
+			Allenatore a=(Allenatore) session.getAttribute("utente");
+			Lega l=(Lega) session.getAttribute("lega");
+			try {
+				Squadra sq = sD.getSquadraByUserELega(a.getUsername(),l.getNome() );
+				System.out.println(sq.getNome());
+				Giocatore[] x= sq.getGiocatori(); //uno mi da l'array e l'altro è una lista, faccio bordelli 
+				for(int i=0;i<x.length;i++) {
+					giocatori.add(x[i]); //ho riempito la lista, ma ho fatto na bestemmia;
+					System.out.println(giocatori.get(i));
+					//qua mi da null
+
+				}
+				if (!ruolo.equals("")) {
+					giocatori=getGiocatoriRuolo(giocatori, ruolo);
+
+				}
+
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			;
+			break;
+		}
+		switch(p) {
+		case "0": redirect="faiOfferta.jsp"; break;
+		case "1": redirect="NewFormazione.jsp"; break;
 		}
 
 		session.setAttribute("giocatori", giocatori);
