@@ -39,9 +39,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 		</div>
 	</div>
 	<div class="main_menu">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
+	<div class="container">
 					<nav class="navbar navbar-expand-lg navbar-light">
 						<button class="navbar-toggler" type="button"
 							data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -94,10 +92,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 							<li><a href="#"><i class="ti-skype"></i></a></li>
 						</ul>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				</div></div>
 </header>
 <section class="breadcrumb breadcrumb_bg">
         <div class="container">
@@ -112,5 +107,5 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
                 </div>
             </div>
         </div>
-    </section>
+   </section>
     <div style="height: 30px"></div>

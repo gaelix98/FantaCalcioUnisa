@@ -11,8 +11,8 @@
 	<%@ include file="menu.jsp"%>
 	<div class="container ">
 		<div class="row align-items-center">
-			<div class="col-md-12 col-md-offset-3">
-				<div class="col-lg-8 col-md-8">
+		<div class="col-lg-3 col-md-3"></div>
+				<div class="col-lg-6 col-md-6 well box-login has-footer"">
 					<%
 						String message = (String) request.getAttribute("message");
 						if (message != null && !message.equals("")) {
@@ -22,7 +22,7 @@
 						}
 					%>
 					<form action="RegistrazioneServlet" method="post" id="form1">
-						<h2>Registrati</h2>
+						<h3 class="mb-30" align="center">Registrati</h3>
 						<div class="mt-10">
 							<input type="text" name="nome" required="required"
 								placeholder="Nome" id="nome" class="single-input"> <span
@@ -54,17 +54,19 @@
 							<span class="error">Formato errato password (lunghezza
 								minima 5 caratteri)</span><br>
 						</div>
+						<div align="center">
 						<input type="checkbox" onclick="showPassword()" name="bottone">Show
-						Password
+						Password</div>
 						<hr>
+						<div align="center"  style="padding-top:20px">
 						<button type="submit" class="genric-btn primary circle arrow">
 							Registrati<span class="lnr lnr-arrow-right"></span>
-						</button>
+						</button></div>
 					</form>
 				</div>
 			</div>
+			<div class="col-lg-3 col-md-3"></div>
 		</div>
-	</div>
 	<%@include file="footer.jsp"%>
 	<script>
 		function showPassword() {
