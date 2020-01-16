@@ -40,8 +40,9 @@ public class getFormazioneSquadra extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SquadraDAO squadraDAO = new SquadraDAO();
 		Allenatore allenatore =(Allenatore) request.getSession().getAttribute("utente");
+		System.out.println("porcodio");
 		Squadra squadra=null;
-		String redirect="inserisciFormazione.jsp";
+		String redirect="NewFormazione.jsp";
 		Lega lega=(Lega) request.getSession().getAttribute("lega");
 
 		try {
@@ -54,6 +55,10 @@ public class getFormazioneSquadra extends HttpServlet {
 		if (squadra!=null) {
 			try {
 				Formazione formazione=new FormazioneDAO().getFormazioneBySquadraGiornata(squadra, giornata);
+				if(formazione==null) {
+					System.out.print("Porco dioGETfORMAZIONE");
+					formazione= new Formazione(giornata, squadra);
+				}
 				request.getSession().setAttribute("formazione", formazione);
 			} catch (SQLException e) {
 				e.printStackTrace();

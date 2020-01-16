@@ -37,7 +37,7 @@ public class SostituisciGiocatoreServlet extends HttpServlet {
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String redirect="inserisciFormazione.jsp";
+		String redirect="NewFormazione.jsp";
 		int idGiocatore1=Integer.parseInt(request.getParameter("giocatore1"));
 		int idGiocatore2=Integer.parseInt(request.getParameter("giocatore2"));
 		
