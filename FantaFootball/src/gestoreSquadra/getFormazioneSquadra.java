@@ -54,6 +54,9 @@ public class getFormazioneSquadra extends HttpServlet {
 		if (squadra!=null) {
 			try {
 				Formazione formazione=new FormazioneDAO().getFormazioneBySquadraGiornata(squadra, giornata);
+				if(formazione==null) {
+					formazione= new Formazione(giornata, squadra);
+				}
 				request.getSession().setAttribute("formazione", formazione);
 			} catch (SQLException e) {
 				e.printStackTrace();

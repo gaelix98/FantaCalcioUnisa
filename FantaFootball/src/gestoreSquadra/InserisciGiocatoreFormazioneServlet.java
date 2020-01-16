@@ -37,7 +37,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String redirect="inserisciFormazione.jsp";
+		String redirect="NewFormazione.jsp";
 		String modulo=request.getParameter("modulo");
 		int difensori=modulo.charAt(0);
 		int centrocampisti=modulo.charAt(2);
@@ -45,9 +45,11 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 		String titolare=request.getParameter("titolare");
 
 		int idGiocatore=Integer.parseInt(request.getParameter("giocatore"));
+		
 		try {
 			Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
 			Giocatore giocatore=new GiocatoreDAO().getGiocatoreById(idGiocatore);
+			
 			if (titolare.equals("true")) {
 				int i=0, j=0;
 				switch(giocatore.getRuolo()) {
