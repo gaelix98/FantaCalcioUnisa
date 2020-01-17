@@ -3,6 +3,7 @@ package gestoreBacheca;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,40 +13,63 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Questa classe � un control che si occupa di prendere tutti i post 
- * @author Maria Natale
- *
- */
-@WebServlet("/getAllPostServlet")
-public class getAllPostServlet extends HttpServlet {
+import gestoreLega.Asta;
+import gestoreLega.AstaDAO;
+import gestoreLega.Lega;
+import gestoreLega.LegaDAO;
+import gestoreLega.Partita;
+import gestoreLega.PartitaDAO;
+import gestoreSquadra.Formazione;
+import gestoreSquadra.FormazioneDAO;
+import gestoreSquadra.Giocatore;
+import gestoreSquadra.GiocatoreDAO;
+import gestoreSquadra.Squadra;
+import gestoreSquadra.SquadraDAO;
+import gestoreUtente.ScoutDAO;
+
+
+@WebServlet("/getPostServlet")
+public class getPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public getAllPostServlet() {
+    public getPostServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @postcondition request.getSession().getAttribute(�allPost�)!=null
-	 * @throws ServletException, IOException
-	 */
+	
+    
+    
+ 
+
+
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
 		PostDAO postDAO=new PostDAO();
-		ArrayList<Post> post=null;
-		try {
-			post=postDAO.getAllPost();
+		String post=request.getParameter("p");
+		HttpSession session=request.getSession();
+		Post post1=null;
+		int x;
+			if(post!=null) {
+		 x=Integer.parseInt(post);
+		 try {
+			 post1=postDAO.getPostById(x);
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+			}
 		
-		session.setAttribute("allPost", post);
-		response.sendRedirect("visualizzaTuttiPost.jsp");
+		session.setAttribute("post1",post1);
+	
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("post.jsp");
+		requestDispatcher.forward(request, response);
 	}
+
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
