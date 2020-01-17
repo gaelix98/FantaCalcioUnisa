@@ -33,8 +33,16 @@
 						<%
 							if (leghe.size() > 0) {
 								for (Lega lega : leghe) {
+									String path = getServletContext().getInitParameter("path-loghi-leghe") + "\\" + lega.getLogo();
 						%>
+						<div class="row">
+						<div class="col-md-4 col-lg-4">
+						<img src="<%=path%>">
+						</div>
+						<div class="col-md-4 col-lg-4">
 						<p><a href="getLegaServlet?q=<%=lega.getNome()%>"><%=lega.getNome() %></a></p>
+						</div>
+						</div>
 						<%
 							}
 							} else {
@@ -79,43 +87,6 @@
 													}
 												%>
 						
-						<hr>
-						<h3>Richieste di scambio</h3>
-						<%
-							if (scambi.size() > 0) {
-								for (Scambio scambio : scambi) {
-						%>
-						<div class="row">
-						<div class="col-lg-7 col-md-7">
-						<p>
-							L'allenatore
-							<%=scambio.getSquadra1().getAllenatore().getUsername()%>
-							ti propone uno scambio per
-							<%=scambio.getGiocatore1().getNome()%>
-							<%=scambio.getGiocatore1().getCognome()%>
-							per
-							<%=scambio.getGiocatore2().getNome()%>
-							<%=scambio.getGiocatore2().getCognome()%>
-							e
-							<%=scambio.getPrezzoOfferto()%>
-							</p></div>
-							<div class="col-lg-5 col-md-5">
-							<a href="accettaScambio?q=1"><button class="genric-btn primary circle arrow">
-								Accetta scambio
-							</button></a>
-							<a href="accettaScambio?q=0"><button class="genric-btn primary circle arrow">
-								Rifiuta scambio
-							</button></a>
-							</div></div>
-							<%
-								}
-								} else {
-							%>
-						
-						<p>Non hai nuove proposte di scambio</p>
-						<%
-							}
-						%>
 					</div>
 					<div class="blog_details">
 						<h2>Leghe create</h2>
@@ -153,7 +124,7 @@
 				<div class="blog_left_sidebar">
 					<h2>Bacheca</h2>
 					<%
-							if (post.size() > 0) {
+							if (post!=null && post.size() > 0) {
 								for (int i=0;i<5 && i<post.size();i++) {
 									Post p=post.get(i);
 						%>
@@ -170,7 +141,7 @@
 							
 							</div>
 					
-							<p><%=p.getTesto()%><p>
+							<p style="padding-left: 20px; padding-right: 20px"><%=p.getTesto()%><p>
 							</div>
 							<hr><br>
 							<%

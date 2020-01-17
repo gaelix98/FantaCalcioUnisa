@@ -26,12 +26,25 @@
 				
 			}
 		}
+		String path = getServletContext().getInitParameter("path-loghi-leghe") + "\\" + lega.getLogo();
 	%>
 	<%@ include file="menu.jsp"%>
 	<div class="container">
 		<div class="row">
 		<div class="col-lg-9 col-md-9">
-			<h1><%=lega.getNome()%></h1>
+				<h1><%=lega.getNome()%></h1>
+				<div class="row">
+					<div class="col-lg-6 col-md-6">
+						<img src="<%=path%>"
+							class="grid-item grid-item--height2 bg_img img-gal">
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<p>
+							<b>Presidente</b>:
+							<%=lega.getPresidente().getUsername()%><br>
+						</p>
+					</div>
+				</div>
 		</div>
 		</div>
 		<div class="row">
@@ -43,15 +56,16 @@
 							if (prossimeAste.size() > 0) {
 								for (Asta a : prossimeAste) {
 						%>
-						<p>
-							Data inizio:
-							<%=a.getDataInizio()%></p>
-						<p>
-							Orario inizio:
-							<%=a.getOra()%></p>
-						<p>
-							Data fine:
+						<hr><p>
+							<b>Data inizio</b>:
+							<%=a.getDataInizio()%><br>
+						
+							<b>Orario inizio</b>:
+							<%=a.getOra()%><br>
+						
+							<b>Data fine</b>:
 							<%=a.getDataFine()%></p>
+							<hr>
 						<%
 							}
 							} else {
