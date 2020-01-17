@@ -21,14 +21,14 @@ import gestoreUtente.Allenatore;
 @WebServlet("/getFormazioneSquadra")
 public class getFormazioneSquadra extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public getFormazioneSquadra() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public getFormazioneSquadra() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 
 	/**
@@ -50,14 +50,26 @@ public class getFormazioneSquadra extends HttpServlet {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		int giornata=Integer.parseInt(getServletContext().getInitParameter("giornata"));
 		if (squadra!=null) {
 			try {
 				Formazione formazione=new FormazioneDAO().getFormazioneBySquadraGiornata(squadra, giornata);
 				if(formazione==null) {
-					
 					formazione= new Formazione(giornata, squadra);
+				}
+				else {
+					FormazioneDAO formazioneDAO=new FormazioneDAO();
+					for (int i=0;i<formazione.getGiocatori().length;i++) {
+						if (formazione.getGiocatori()[i]!=null) {
+							formazioneDAO.deleteGiocatoreFormazione(formazione, formazione.getGiocatori()[i]);
+						}
+					}
+					for (int i=0;i<formazione.getPanchina().length;i++) {
+						if (formazione.getPanchina()[i]!=null) {
+							formazioneDAO.deleteGiocatoreFormazione(formazione, formazione.getPanchina()[i]);
+						}
+					}
 				}
 				request.getSession().setAttribute("formazione", formazione);
 			} catch (SQLException e) {
@@ -67,10 +79,10 @@ public class getFormazioneSquadra extends HttpServlet {
 		else {
 			redirect="errorPage.jsp";
 		}
-		
+
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
-				
+
 	}
 
 	/**

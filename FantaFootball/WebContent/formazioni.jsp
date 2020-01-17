@@ -26,6 +26,7 @@
 					<br>
 					<div class="row">
 					<%
+					if (formazioni!=null){
 						for (int i = 0; i < formazioni.size();i++) {
 							if (i % 2 == 0) {
 					%>
@@ -73,6 +74,8 @@
 					<div class="col-lg-2 col-md-2"></div>
 					<%
 						}
+						
+					}
 					%>
 					</div>
 				</div>
