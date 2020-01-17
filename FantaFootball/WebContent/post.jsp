@@ -13,7 +13,10 @@
 	<%
 		Post post = (Post) session.getAttribute("post1");
 	session.setAttribute("POSTA", post);
-	Scout scouto=(Scout)session.getAttribute("utente");
+	Scout scouto=null;
+	if(session.getAttribute("tipoUtente").equals("scout") ){
+      scouto=(Scout)session.getAttribute("utente");
+	}
 		
 	%>
 	<%@ include file="menu.jsp"%>
@@ -45,7 +48,7 @@
 							</div>
 						</div>
 						<%String tipo=(String)session.getAttribute("tipoUtente");
-					    
+						if(session.getAttribute("tipoUtente").equals("scout")){
 						if (tipo.equals("scout")&& post.getScout().getUsername().equals(scouto.getUsername())){ %>
 							<div class="col-lg-4 col-md-4">
 							<a href="modificaPost.jsp"> <button class="genric-btn primary circle arrow">
@@ -55,7 +58,7 @@
 							
 						%>
 								
-                           <%}
+                           <%}}
 						%>
 			<%} %>
 				</div>
