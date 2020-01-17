@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import gestoreSquadra.SquadraDAO;
 import gestoreUtente.Allenatore;
 
 /**
@@ -50,7 +51,7 @@ public class UniscitiAllaLegaServlet extends HttpServlet {
 		int risposta = Integer.parseInt(q);
 		
 		LegaDAO legadao = new LegaDAO();
-		String redirect="index.jsp";
+		String redirect="errorPage.jsp";
 		InvitoDAO invitod= new InvitoDAO();
 		try {
 			List<Invito> invito = invitod.getInvitoByAllenatore(allenatore.getUsername());
@@ -60,9 +61,14 @@ public class UniscitiAllaLegaServlet extends HttpServlet {
 				}
 			}
 			
-			if(risposta==0) {
+			Lega lega=legadao.getLegaByNome(nome);
+			int partecipanti=new SquadraDAO().getSquadreByLega(nome).size();
+			
+			//per potersi unire alla lega, non deve essere stato raggiunto il numero massimo di partecipanti!
+			if(risposta==0 || lega.getMaxAllenatori()>=partecipanti) {
               invitod.deleteInvito(allenatore.getUsername(), nome);
 			}
+			
 			if(risposta==1) {
 				redirect="creasquadra.jsp";
 			}

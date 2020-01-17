@@ -35,7 +35,7 @@
 						String s=request.getParameter("sceltainvito");
 						int x = s.compareTo("Tramite Username");
 							if(s!=null){ 
-								if(x==0)
+								if(x==0){
 								%>
 								
 								
@@ -46,14 +46,14 @@
 						<div class="mt-10">
 							<input type="text" name="userall" required="required"
 								placeholder="Username" id="userall" class="single-input"> <span
-								class="error">L'username non Ã¨ corretto</span><br>
+								class="error">L'username non è corretto</span><br>
 						</div>
 						<button type="submit" class="genric-btn primary circle arrow">
 							Invita l'allenatore<span class="lnr lnr-arrow-right"></span>
 						</button>
 						</form>
 						<% 
-								else%>
+								}else{%>
 								
 								<form action="InvitoServlet" method="post" id="form1">
 						<h2>Invita tramite Email</h2>
@@ -66,7 +66,7 @@
 							Invita l'allenatore<span class="lnr lnr-arrow-right"></span>
 						</button>
 						</form>
-						<%
+						<%}
 						 
 							}
 							%>

@@ -56,7 +56,7 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 		Allenatore invitato = null;
 		Allenatore allenatore = (Allenatore) request.getSession().getAttribute("utente");
 		ArrayList<Lega> leghe;
-	/*	try {
+		try {
 			leghe = legad.getLegheByPresidente(allenatore);
 			int i=0;
 			for(i=0;i<leghe.size();i++) { //checko if presidente
@@ -66,11 +66,11 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 				}
 			}
 			if (epresidente && (username!= null || email!=null)) {
-				if(username!=null) {
+				if(!username.equals("") && allenatord.getAllenatoreByUsername(username)!=null) {
 					invitato = allenatord.getAllenatoreByUsername(username);
 					invitd.addInvito(new Invito(invitato, leghe.get(i), false));
 					 }
-				if(email!=null) {
+			/*	else if(!email.equals("")) {
 					final String usernameM = "professore6puntipls@outlook.com";
 			        final String password = "Esame1401";
 
@@ -107,19 +107,18 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 							e.printStackTrace();
 						}
 			            finally {}
-				}}
-				
-
-					
-				
-			
-				
+				}*/
+				}
+			else {
+				request.setAttribute("message", "Nessun utente trovato");
+			}
+						
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			 redirect="errorPage.jsp";
 			
-		}*/
+		}
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}

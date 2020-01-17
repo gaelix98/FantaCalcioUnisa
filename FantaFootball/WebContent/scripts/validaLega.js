@@ -21,7 +21,7 @@ $(document).ready(function() {
 			return validateName() && (!($("#nome").hasClass("er")));
 		if (namef=="logoLega")
 			return validateLogo();
-		if (namef=="primoPosto" || namef=="secondoPosto" || namef=="terzoPosto" || namef=="quotaMensile")
+		
 			return true;
 	}  
 	
@@ -42,11 +42,14 @@ $(document).ready(function() {
 	function validateLogo(){
 		var logoformat = /([^\s]+(\.(jpe?g|png|img|))$)/;
 		var logobj = document.getElementById("logoLega");
-		if (logobj.value.match(logoformat))
+		if (logobj.value.match(logoformat)){
+			console.log("logo valido");
 			return true;
+		}
 		else{
 			document.getElementById("logoLega").focus();
 			console.log(document.getElementById("logoLega").value);
+			console.log("logo non valido");
 			return false;
 		}
 	}
