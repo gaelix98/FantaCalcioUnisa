@@ -49,7 +49,7 @@ public class RegistrazioneServletTest {
 	//TC_1.2.2 password errata
 	@Test
 	public void testCase_2() throws ServletException, IOException {
-		request.addParameter("username", "Gae lix98");
+		request.addParameter("username", "Gaelix98");
 		request.addParameter("password", "Cond or1234");
 		request.addParameter("email", "maria.natale30@gmail.com");
 		request.addParameter("nome", "Pasquale");

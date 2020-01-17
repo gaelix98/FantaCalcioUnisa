@@ -23,17 +23,17 @@ $(document).ready(function() {
 		if (namef=="cognome")
 			return validateSurname();
 		if (namef=="username")
-			return validateUsername();
+			return validateUsername() && (!($("#username").hasClass("er")));
 		if (namef=="email")
-			return validateEmail();
+			return validateEmail() && (!($("#email").hasClass("er")));
 		if (namef=="password")
-			return validatePassword();
+			return validatePassword() 
 		if (namef=="bottone")
 			return true;
 	}
 
 	function validateName(){
-		var nameformat = /^^[A-Za-z ]{2,50}$/;
+		var nameformat = /^[A-Za-z ]{2,50}$/;
 		if (document.getElementById("nome").value.match(nameformat)){
 			console.log("nome corretto");
 			return true;
@@ -59,7 +59,7 @@ $(document).ready(function() {
 	}
 
 	function validateUsername(){
-		var usernameformat = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
+		var usernameformat = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-|)[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
 		if (document.getElementById("username").value.match(usernameformat)){
 			console.log("username corretto");
 			return true;
@@ -71,7 +71,7 @@ $(document).ready(function() {
 	}
 
 	function validateEmail(){
-		var mailformat = /^^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+		var mailformat = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 		if (document.getElementById("email").value.match(mailformat)){
 			console.log("email corretto");
 			return true;
