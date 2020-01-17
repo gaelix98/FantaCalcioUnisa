@@ -13,7 +13,7 @@ import gestoreUtente.Scout;
 import gestoreUtente.ScoutDAO;
 
 /**
- Questa classe è un manager che si occupa di interagire con il database. Gestisce le query riguardanti Post.
+ Questa classe ï¿½ un manager che si occupa di interagire con il database. Gestisce le query riguardanti Post.
  * @author Pasquale Caramante
  */
 public class PostDAO {
@@ -47,7 +47,7 @@ public class PostDAO {
 		conn.close();
 		return inserito;
 	}
-	
+
 	/**
 	 * 
 	 * @param id id del post da rimuovere
@@ -78,7 +78,7 @@ public class PostDAO {
 	/**
 	 * 
 	 * @param post post da aggiornare 
-	 * @return true se il post è stato aggiornato, false altrimenti
+	 * @return true se il post ï¿½ stato aggiornato, false altrimenti
 	 * @throws SQLException
 	 */
 	public synchronized boolean updatePost(Post post) throws SQLException {
@@ -133,6 +133,30 @@ public class PostDAO {
 		}
 		conn.close();
 		return post;
+	}
+	
+	public synchronized Post getUltimoPostByScout(String scout) throws SQLException{
+		conn = DriverManagerConnectionPool.getConnection();
+		
+		Scout scouttmp = new ScoutDAO().getScoutByUsername(scout);
+		String sql = "select * from post where post.scout= ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, scout);
+		ResultSet rs = ps.executeQuery();
+		Post tmp = null;
+		while(rs.next()) {
+			
+			int id = rs.getInt("idPost");
+			Date data = null;
+			data = Date.valueOf(rs.getString("dataPubblicazione"));
+			String titolo = rs.getString("Titolo");
+			String testo = rs.getString("Testo");
+			tmp = new Post(id,data,titolo,testo,scouttmp);
+			
+			
+		}
+		conn.close();
+		return tmp;
 	}
 	
 	/**

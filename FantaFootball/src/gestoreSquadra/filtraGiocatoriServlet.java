@@ -76,6 +76,8 @@ public class filtraGiocatoriServlet extends HttpServlet {
 			SquadraDAO sD= new SquadraDAO();
 			Allenatore a=(Allenatore) session.getAttribute("utente");
 			Lega l=(Lega) session.getAttribute("lega");
+			
+			request.getSession().setAttribute("modulo", request.getParameter("modulo"));
 			try {
 				Squadra sq = sD.getSquadraByUserELega(a.getUsername(),l.getNome() );
 				System.out.println(sq.getNome());

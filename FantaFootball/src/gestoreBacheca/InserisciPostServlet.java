@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import gestoreUtente.Scout;
 
 /**
- * Questa classe è un control che si occupa di passare a PostDAO i dati di un post da pubblicare.
+ * Questa classe ï¿½ un control che si occupa di passare a PostDAO i dati di un post da pubblicare.
  * @author Maria Natale
  *
  */
@@ -35,16 +35,18 @@ public class InserisciPostServlet extends HttpServlet {
     }
 
     /**
-	 * @precondition request.getParameter(“testo”)!=null  and request.getParameter(“titolo”)!=null
-					 and request.getSession().getAttribute(“utente”)!=null and
-					 request.getSession().getAttribute(“tipo”).equals(“scout”)
+	 * @precondition request.getParameter(ï¿½testoï¿½)!=null  and request.getParameter(ï¿½titoloï¿½)!=null
+					 and request.getSession().getAttribute(ï¿½utenteï¿½)!=null and
+					 request.getSession().getAttribute(ï¿½tipoï¿½).equals(ï¿½scoutï¿½)
 	 * @postcondition PostDAO.getPostById(idPost)!=null    
 	 * @throws ServletException, IOException 
 
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8"); //sennÃ² si legge buggato
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session=request.getSession();
-		Date data=new Date(Calendar.getInstance().getTime().getTime());
+		Date data=new Date(Calendar.getInstance().getTime().getTime()); 
 		String titolo=request.getParameter("titolo");
 		String testo=request.getParameter("testo");
 		Scout scout=(Scout) session.getAttribute("utente");
@@ -52,15 +54,17 @@ public class InserisciPostServlet extends HttpServlet {
 		ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
 		ArrayList<Post> postScout=(ArrayList<Post>) session.getAttribute("post");
 		PostDAO postDAO=new PostDAO();
-		String regexTesto="^.{20,}$";
-		String redirect="inserisciPost.jsp";
 		
-		if (titolo!=null && Pattern.matches(regexTesto, testo)) {
-			post=new Post(data, titolo, testo, scout);
+		String redirect="newPost.jsp";
+		
+		if (titolo!=null && testo.length()>20) {
+			post=new Post(data, titolo, testo, scout);  
 			try {
-				postDAO.addPost(post);
-				allPost.add(post);
-				postScout.add(post);
+				
+				postDAO.addPost(post); 
+			    Post vogliodormire=postDAO.getUltimoPostByScout(scout.getUsername()); //idea delle 05:42 ringraziamo dio gaetano 
+				allPost.add(vogliodormire);
+				postScout.add(vogliodormire);
 				session.setAttribute("allPost", allPost);
 				session.setAttribute("post", postScout);
 				redirect="areaPersonaleScout.jsp";
@@ -69,7 +73,7 @@ public class InserisciPostServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		if (redirect.equals("inserisciPost.jsp")) {
+		if (redirect.equals("newPost.jsp")) {
 			request.setAttribute("message", "Post non inserito");
 			response.getWriter().write("Post non inserito");
 		}

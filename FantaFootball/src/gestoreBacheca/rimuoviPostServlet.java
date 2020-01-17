@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Questa classe è un control che si occupa di passare a PostDAO i dati di un post da rimuovere. 
+ * Questa classe ï¿½ un control che si occupa di passare a PostDAO i dati di un post da rimuovere. 
  * @author Maria Natale
  *
  */
@@ -30,8 +30,8 @@ public class rimuoviPostServlet extends HttpServlet {
     }
 
 	/**
-	 * @precondition request.getParameter(“idPost”) != null   And request.getSession().getAttribute(“utente”)!=null and
-					 Request.getSession().getAttribute(“tipo”).equals(“scout”)
+	 * @precondition request.getParameter(ï¿½idPostï¿½) != null   And request.getSession().getAttribute(ï¿½utenteï¿½)!=null and
+					 Request.getSession().getAttribute(ï¿½tipoï¿½).equals(ï¿½scoutï¿½)
 
 	 * @postcondition PostDAO.getPostById(idPost)==null    
 	 * @throws ServletException, IOException 
@@ -42,16 +42,33 @@ public class rimuoviPostServlet extends HttpServlet {
 		Post post=null;
 		ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
 		ArrayList<Post> postScout=(ArrayList<Post>) session.getAttribute("post");
+		System.out.println(allPost.get(0).getTitolo());
 		PostDAO postDAO=new PostDAO();
 		int idPost;
+		
 		
 		if (request.getParameter("idPost")!=null) {
 			idPost=Integer.parseInt(request.getParameter("idPost"));
 			try {
-				postDAO.removePost(idPost);
 				post=postDAO.getPostById(idPost);
-				allPost.remove(post);
-				postScout.remove(post);
+				postDAO.removePost(idPost);
+				
+				int i=0; //piano delle 05:07
+				for(;i<allPost.size() && allPost.get(i)!=null;i++) {
+					if(allPost.get(i).getIdPost()==post.getIdPost()) {
+						break;
+						
+					}
+				}
+				int h=0;
+				for(;h<postScout.size() && postScout.get(h)!=null;h++) {
+					if(postScout.get(h).getIdPost()==post.getIdPost()) {
+						break;
+						
+					}
+				}
+				allPost.remove(i);
+				postScout.remove(h);
 				session.setAttribute("allPost", allPost);
 				session.setAttribute("post", postScout);
 			} catch (SQLException e) {
@@ -60,7 +77,7 @@ public class rimuoviPostServlet extends HttpServlet {
 			
 		}
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("areaPersonaleScout.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

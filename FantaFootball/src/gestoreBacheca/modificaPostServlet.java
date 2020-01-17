@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Questa classe è un control che si occupa di passare a PostDAO i dati di un post da modificare
+ * Questa classe ï¿½ un control che si occupa di passare a PostDAO i dati di un post da modificare
  * @author Maria Natale
  *
  */
@@ -31,41 +31,71 @@ public class modificaPostServlet extends HttpServlet {
     }
 
     /**
-	 * @precondition request.getParameter(“idPost”) != null and request.getParameter(“testo”) != null   
-	 * And request.getSession().getAttribute(“utente”)!=null and
-	 * Request.getSession().getAttribute(“tipo”).equals(“scout”)
+	 * @precondition request.getParameter(ï¿½idPostï¿½) != null and request.getParameter(ï¿½testoï¿½) != null   
+	 * And request.getSession().getAttribute(ï¿½utenteï¿½)!=null and
+	 * Request.getSession().getAttribute(ï¿½tipoï¿½).equals(ï¿½scoutï¿½)
 
 	 * @postcondition PostDAO.getPostById(idPost).testo == testo 
 	 * @throws ServletException, IOException 
 
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8"); //sennÃ² si legge buggato
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session=request.getSession();
 		Post oldPost=null;
-		Post newPost=oldPost;
+		Post newPost=null;
+		Post attuale=(Post) session.getAttribute("POSTA"); 
+		String testo=request.getParameter("text");
+		String id=request.getParameter("idpost");
+		System.out.println(id+"dioporco");
+		int idPost=Integer.parseInt(id);
+		System.out.println("la madonna"+ idPost);
 		ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
 		ArrayList<Post> postScout=(ArrayList<Post>) session.getAttribute("post");
 		PostDAO postDAO=new PostDAO();
-		int idPost;
-		String testo=request.getParameter("testo");
-		String regexTesto="^.{20,}$";
+		 
 		
-		if (request.getParameter("idPost")!=null && Pattern.matches(regexTesto, testo)) {
-			idPost=Integer.parseInt(request.getParameter("idPost"));
+	
+	
+
+		
+		
+		if (request.getParameter("idpost")!=null && testo.length()>20) {
+		
 			try {
 				oldPost=postDAO.getPostById(idPost);
+				newPost=oldPost;
 				newPost.setTesto(testo);
-				allPost.set(allPost.indexOf(oldPost), newPost);
-				postScout.set(allPost.indexOf(oldPost), newPost);
+				postDAO.updatePost(newPost);
+				int i=0;
+				for(;i<allPost.size() && allPost.get(i)!=null;i++) {
+					if(allPost.get(i).getIdPost()==newPost.getIdPost()) {
+						break;
+						
+					}
+				}
+				int h=0;
+				for(;h<postScout.size() && postScout.get(h)!=null ;h++) {
+					if(postScout.get(h).getIdPost()==newPost.getIdPost()) {
+						break;
+						
+					}
+				}
+				
+				
+				allPost.set(i, newPost); //qua mette  al posto del vecchio, quello nuovo solo che non trova ilvecchio
+				postScout.set(h, newPost);  //metti in moto il motore ho messo il for per forza, getindexof andava in -1 e questa Ã¨ l'idea delle 04:10. 
 				session.setAttribute("allPost", allPost);
 				session.setAttribute("post", postScout);
 			} catch (SQLException e) {
 				e.printStackTrace();
+	
 			}
 			
 		}
-		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+		//speriamo bene
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("areaPersonaleScout.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

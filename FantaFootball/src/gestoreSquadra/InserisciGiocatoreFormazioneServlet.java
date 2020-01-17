@@ -38,7 +38,8 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="NewFormazione.jsp";
-		String modulo=request.getParameter("modulo");
+		
+		String modulo=(String) request.getSession().getAttribute("modulo");
 		int difensori=modulo.charAt(0);
 		int centrocampisti=modulo.charAt(2);
 		int attaccanti=modulo.charAt(4);
@@ -70,7 +71,9 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					break;
 				}
 
-				for (;i<j && formazione.getGiocatori()[i]!=null && i<formazione.getGiocatori().length && j<formazione.getGiocatori().length; i++) {
+				for (;i<j && formazione.getGiocatori()[i]!=null && 
+						i<formazione.getGiocatori().length && j<formazione.getGiocatori().length; 
+						i++) {
 				}
 				formazione.getGiocatori()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
