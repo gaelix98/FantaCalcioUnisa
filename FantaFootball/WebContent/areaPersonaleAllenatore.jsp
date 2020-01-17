@@ -153,21 +153,23 @@
 				<div class="blog_left_sidebar">
 					<h2>Bacheca</h2>
 					<%
-							if (post!=null && post.size() > 0) {
+							if (post.size() > 0) {
 								for (int i=0;i<5 && i<post.size();i++) {
 									Post p=post.get(i);
 						%>
 						<div class="row">
 						<div class="col-lg-7 col-md-7">
 						<h3>
-							<%=p.getTitolo() %>
+							<a href="getPostServlet?p=<%=p.getIdPost()%>"><%=p.getTitolo() %></a>
 							</h3>
 							</div>
 							<div class="col-lg-5 col-md-5">
 							<h3>
 							<%=p.getData() %>
 							</h3>
+							
 							</div>
+					
 							<p><%=p.getTesto()%><p>
 							</div>
 							<hr><br>

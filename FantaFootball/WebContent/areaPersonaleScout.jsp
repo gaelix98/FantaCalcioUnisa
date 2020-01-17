@@ -21,6 +21,8 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 			<div class="col-lg-8 col-md-8">
 				<div class="blog_left_sidebar">
 						<h2>I tuoi post</h2>
+						<a href="newPost.jsp"> <button class="genric-btn primary circle arrow">
+							 Inserisci Post</button></a> 
 						<%
 							if (postScout.size() > 0) {
 								for (Post post : postScout) {
@@ -28,7 +30,9 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 						<div class="row">
 						<div class="col-lg-7 col-md-7">
 						<div class="col-lg-8 col-md-8">
-						<h3><%=post.getTitolo() %></h3>
+						<h3> <%=post.getIdPost()%> 
+							<a href="getPostServlet?p=<%=post.getIdPost()%>"><%=post.getTitolo() %></a>
+							</h3>
 						</div>
 						<div class="col-lg-4 col-md-4">
 						<h4><%=post.getData() %></h4>
@@ -36,14 +40,12 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 						</div>
 							<div class="col-lg-8 col-md-8">
 							<p><%=post.getTesto()%>
-							</p></div>
+							</p></div> 
 							<div class="col-lg-4 col-md-4">
-							<button class="genric-btn primary circle arrow">
-								Elimina<a href="eliminaPost"></a>
-							</button>
-							<button class="genric-btn primary circle arrow">
-								Modifica<a href="modificaPost"></a>
-							</button>
+							<a href="rimuoviPostServlet?idPost=<%=post.getIdPost()%>"> <button class="genric-btn primary circle arrow">
+							 Elimina</button></a>
+							
+						
 							</div>
 						</div><hr><br>
 							<%
@@ -70,8 +72,10 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 						<div class="row">
 						<div class="col-lg-7 col-md-7">
 						<h3>
-							<%=p.getTitolo() %>
+							
+							<a href="getPostServlet?p=<%=p.getIdPost()%>"><%=p.getTitolo() %></a>
 							</h3>
+							
 							</div>
 							<div class="col-lg-5 col-md-5">
 							<h3>
@@ -80,7 +84,8 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 							</div>
 							<p><%=p.getTesto()%></p>
 							</div>
-							<hr><br>
+							<hr><br> 
+						
 							<%
 								}
 								} else {
@@ -90,8 +95,8 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 						<%
 							}
 						%>
-					<button class="button rounded-0 primary-bg text-white w-100">Visualizza
-						altro</button>
+					<a href="getAllPost"> <button class="genric-btn primary circle arrow">
+							 Visualizza Altro</button></a>
 				</aside>
 			</div>
 		</div>
