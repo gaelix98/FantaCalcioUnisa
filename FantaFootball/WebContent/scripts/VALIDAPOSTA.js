@@ -13,6 +13,17 @@ $(document).ready(function() {
 			}
 
 		});
+		$("#form1").find('textarea').each(function() {
+			if (!validate($(this).attr("name"))){
+				$(this).addClass("er").next().show();
+				ris=false;
+			}
+			else{
+				if($(this).hasClass("er"))
+					$(this).removeClass('er').next().hide();
+			}
+
+		});
 		return ris;
 	});
 
@@ -38,9 +49,9 @@ $(document).ready(function() {
 	}
 
 	function validateTesto(){
-		var logoformat = /^.{20,}$/;
-		var logobj = document.getElementById("testo");
-		if (logobj.value.match(logoformat))
+		var testoformat = /^.{20,}$/;
+		var testo = document.getElementById("testo");
+		if (testo.value.match(testoformat))
 			return true;
 		else{
 			document.getElementById("testo").focus();

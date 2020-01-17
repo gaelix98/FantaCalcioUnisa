@@ -24,7 +24,7 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 						<a href="newPost.jsp"> <button class="genric-btn primary circle arrow">
 							 Inserisci Post</button></a> 
 						<%
-							if (postScout.size() > 0) {
+							if (postScout!=null && postScout.size() > 0) {
 								for (Post post : postScout) {
 						%>
 						<div class="row">
@@ -65,7 +65,7 @@ ArrayList<Post> posts=(ArrayList<Post>) session.getAttribute("allPost");%>
 				<aside class="single_sidebar_widget search_widget">
 					<h2>Bacheca</h2>
 					<%
-							if (posts.size() > 0) {
+							if (posts!=null && posts.size() > 0) {
 								for (int i=0;i<5 && i<posts.size();i++) {
 									Post p=posts.get(i);
 						%>

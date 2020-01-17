@@ -13,11 +13,9 @@
 	
 	<%@ include file="menu.jsp"%>
 	<div class="container">
-		<div class="row">
-			<h1></h1>
-		</div>
-		<div class="row">
-			<div class="col-lg-9 col-md-9">
+	<div class="row">
+		<div class="col-lg-3 col-md-3"></div>
+				<div class="col-lg-6 col-md-6 well box-login has-footer">
 				<div class="blog_left_sidebar">
 					<div class="blog_details">
 							<%
@@ -36,13 +34,12 @@
 								class="error">Il titolo deve essere lungo almeno 5 caratteri</span><br>
 						</div>
 						<div class="mt-10" >
-						
-						<textarea name="testo" rows="50" cols="70"> 
+						<textarea name="testo" rows="50" cols="70" id="testo"> 
  						</textarea>
-										<span class="error">Il testo deve essere almeno di 20 caratteri</span><br>
+						<span class="error">Il testo deve essere almeno di 20 caratteri</span><br>
 						
 						</div>
-						
+						<div style="height:20px"></div>
 						<button type="submit" class="genric-btn primary circle arrow">
 							Conferma<span class="lnr lnr-arrow-right"></span>
 						</button>
@@ -51,6 +48,8 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-lg-3 col-md-3"></div>
+	</div>
 	</div>	
 
 		

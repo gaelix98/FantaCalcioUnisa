@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 	function validate(namef){
 		if (namef=="nome")
-			return validateName();
+			return validateName()  && (!($("#nome").hasClass("er")));
 		if (namef=="logoSquadra")
 			return validateLogo();
 		if (namef =="nomeLega")

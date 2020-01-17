@@ -41,13 +41,6 @@ public class getPostServlet extends HttpServlet {
     }
 
 	
-    
-    
- 
-
-
-	
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PostDAO postDAO=new PostDAO();
 		String post=request.getParameter("p");
@@ -59,7 +52,6 @@ public class getPostServlet extends HttpServlet {
 		 try {
 			 post1=postDAO.getPostById(x);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 			}
