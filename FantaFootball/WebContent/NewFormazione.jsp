@@ -126,12 +126,7 @@ formazioneg.add(formazione.getGiocatori()[i]);
 </style>
 
 <div class="tg-wrap">
-<select id="test" name="form_select" onchange="showDiv('hidden_div', this)">
-   <option value="0">Scegli modulo</option>
-   <option value="3-4-3">3-4-3</option>
-   <option value="4-4-2">4-4-2</option>
-   <option value="3-5-2">3-5-2</option>
-   </select>
+
 	<table id="tg-wDj3P" class="tg">
 		<tr>
 
