@@ -47,7 +47,7 @@ public class LogoutServlet extends HttpServlet {
 				FormazioneDAO formazioneDAO=new FormazioneDAO();
 				for (Squadra squadra: squadreAllenatore) {
 					Formazione formazione=formazioneDAO.getFormazioneBySquadraGiornata(squadra, giornata);
-					if (formazione!=null) {
+					if (formazione!=null && !formazione.isSchierata()) {
 						for (int i=0;i<formazione.getGiocatori().length;i++) {
 							if (formazione.getGiocatori()[i]!=null) {
 								formazioneDAO.deleteGiocatoreFormazione(formazione, formazione.getGiocatori()[i]);
