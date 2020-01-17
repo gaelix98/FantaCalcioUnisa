@@ -25,6 +25,7 @@ import javax.servlet.http.HttpSession;
 
 import gestoreLega.Asta;
 import gestoreLega.AstaDAO;
+import gestoreSquadra.SquadraDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
 
@@ -45,31 +46,38 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		boolean epresidente=false;
+		response.setCharacterEncoding("UTF-8"); 
+		request.setCharacterEncoding("UTF-8");
 		LegaDAO legad = new LegaDAO();
 		InvitoDAO invitd = new InvitoDAO();
 		AllenatoreDAO allenatord= new AllenatoreDAO();
+		SquadraDAO sq = new SquadraDAO();
 		String lega=request.getParameter("lega");
-        String username = request.getParameter("username");
-        String email = request.getParameter("email");
-        String redirect="";
-		Allenatore invitato = null;
-		Allenatore allenatore = (Allenatore) request.getSession().getAttribute("utente");
-		ArrayList<Lega> leghe;
-		try {
-			leghe = legad.getLegheByPresidente(allenatore);
-			int i=0;
-			for(i=0;i<leghe.size();i++) { //checko if presidente
-				if (leghe.get(i).getNome()==lega) {
-					epresidente=true;
-					break;
+        String username = request.getParameter("userall");
+        String email = request.getParameter("emailall");
+        String redirect="index.jsp";
+        Allenatore invitato = null;
+        System.out.println(lega);
+		
+		
+	
+			if ((username!= null || email!=null)) {
+				try {
+					if(!username.equals("") && allenatord.getAllenatoreByUsername(username)!=null && sq.getSquadraByUserELega(username, lega)==null) {
+						invitato = allenatord.getAllenatoreByUsername(username);
+						Lega legaa = legad.getLegaByNome(lega);
+						System.out.println(legaa.getNome());
+						try {
+							invitd.addInvito(new Invito(invitato,legaa, false));
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						 }
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			}
-			if (epresidente && (username!= null || email!=null)) {
-				if(!username.equals("") && allenatord.getAllenatoreByUsername(username)!=null) {
-					invitato = allenatord.getAllenatoreByUsername(username);
-					invitd.addInvito(new Invito(invitato, leghe.get(i), false));
-					 }
 			/*	else if(!email.equals("")) {
 					final String usernameM = "professore6puntipls@outlook.com";
 			        final String password = "Esame1401";
@@ -107,7 +115,7 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 							e.printStackTrace();
 						}
 			            finally {}
-				}*/
+				}
 				}
 			else {
 				request.setAttribute("message", "Nessun utente trovato");
@@ -119,8 +127,10 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 			 redirect="errorPage.jsp";
 			
 		}
+		*/
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
+			}
 	}
 
 	/**

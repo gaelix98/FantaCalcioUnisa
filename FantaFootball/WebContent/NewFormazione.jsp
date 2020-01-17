@@ -164,7 +164,7 @@ formazioneg.add(formazione.getGiocatori()[i]);
 					
 			%>
 			<td class="tg-0pky"><%=i++%></td>
-			<td class="tg-0pky"><button onclick="inseriscigiocatore(<%=g.getId()%>,true)"><%=g.getNome()%> <%=g.getCognome()%></button></td>
+			<td class="tg-0pky"><button onclick="inseriscigiocatore(<%=g.getId()%>,true)"><%=g.getNome()%></button></td>
 			<td class="tg-0pky"><%=g.getRuolo()%></td>
 			<td class="tg-0pky"><%=g.getVotoMedio()%></td>
 			<td class="tg-0pky"><%=g.getPresenze()%></td>

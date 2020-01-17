@@ -129,7 +129,7 @@
 							<%=lega.getNome() %>
 							</p></div>
 							<div class="col-lg-7 col-md-7">
-							<a href="invitaPartecipanti.jsp"><button class="genric-btn primary circle arrow">
+							<a href="invitaPartecipanti.jsp?nomelega=<%=lega.getNome()%>"><button class="genric-btn primary circle arrow">
 								Invita partecipanti
 							</button></a>
 							<a href="organizzaAsta.jsp"><button class="genric-btn primary circle arrow">
@@ -153,7 +153,7 @@
 				<div class="blog_left_sidebar">
 					<h2>Bacheca</h2>
 					<%
-							if (post!=null && post.size() > 0) {
+							if (post.size() > 0) {
 								for (int i=0;i<5 && i<post.size();i++) {
 									Post p=post.get(i);
 						%>
