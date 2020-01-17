@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
+
 import gestoreUtente.Allenatore;
 
 /**
@@ -51,6 +53,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 			Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
 			Giocatore giocatore=new GiocatoreDAO().getGiocatoreById(idGiocatore);
 			
+			
 			if (titolare.equals("true")) {
 				int i=0, j=0;
 				switch(giocatore.getRuolo()) {
@@ -73,8 +76,10 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 
 				for (;i<formazione.getGiocatori().length && i<j && formazione.getGiocatori()[i]!=null; i++) {
 				}
+				if(i<j) {
 				formazione.getGiocatori()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
+				}
 			}
 			else {
 				int i=0, j=0;
@@ -97,8 +102,10 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				}
 				for (; i<formazione.getPanchina().length && formazione.getPanchina()[i]!=null &&i<j; i++) {
 				}
+				if(i<j) {
 				formazione.getPanchina()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+				}
 			}
 
 			request.getSession().setAttribute("formazione", formazione);

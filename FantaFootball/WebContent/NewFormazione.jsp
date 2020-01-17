@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"
-	import="gestoreLega.*, java.util.*, gestoreSquadra.*, gestoreBacheca.*"%>
+	import="gestoreLega.*, java.util.*, gestoreSquadra.*, gestoreBacheca.*,gestoreUtente.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,26 +104,146 @@
 </style>
 </head>
 <%@include file="header.html"%>
-<%@ include file="menu.jsp"%>
+<%String tipoUtente=(String)session.getAttribute("tipoUtente");
+String username=null;
+String paginaPersonale=null;
+if (tipoUtente!=null &&tipoUtente.equals("allenatore")){
+	Allenatore allenatore=(Allenatore) session.getAttribute("utente");
+	if (allenatore!=null){
+		username=allenatore.getUsername();
+		paginaPersonale="areaPersonaleAllenatore.jsp";
+	}
+}
+else if (tipoUtente!=null && tipoUtente.equals("scout")){
+	Scout scout=(Scout) session.getAttribute("utente");
+	if (scout!=null){
+		username=scout.getUsername();
+	}
+	paginaPersonale="areaPersonaleScout.jsp";
+}%>
+<header class="header_area">
+	<div class="sub_header">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-4 col-xl-6">
+					
+				</div>
+				<%if (tipoUtente==null){ %>
+				<div class="col-md-8 col-xl-6">
+					<div class="sub_header_social_icon float-right">
+						<a href="registrazione.jsp" class="register_icon"><i
+							class="ti-arrow-right"></i>REGISTRATI</a>
+					</div>
+				</div>
+				<%} %>
+			</div>
+		</div>
+	</div>
+	<div class="main_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+					<nav class="navbar navbar-expand-lg navbar-light">
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item"><a class="nav-link active"
+									href="index.jsp">Home</a></li>
+								<li class="nav-item"><a href="#" class="nav-link">Live</a>
+								</li>
+								<li class="nav-item"><a href="#" class="nav-link">Il
+										Gioco</a></li>
+								<li class="nav-item"><a href="#" class="nav-link">Help</a>
+								</li>
+								<%if (tipoUtente==null || tipoUtente==""){ %>
+								<li class="nav-item"><a href="login.jsp" class="nav-link">Login</a>
+								</li>
+								<%}else{ %>
+								<li class="nav-item dropdown"><a
+									class="nav-link dropdown-toggle" id="navbarDropdown"
+									role="button" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false"> <%=username%>
+								</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href=<%=paginaPersonale%>>Area Personale</a>
+										<a class="dropdown-item" href="modificaDati.jsp">Modifica dati</a>
+										 <a class="dropdown-item" href="LogoutServlet">Logout</a>
+									</div></li>
+								<%} %>
+							</ul>
+							<div class="header_social_icon d-none d-lg-block">
+								<ul>
+									<li><a href="#"><i class="ti-facebook"></i></a></li>
+									<li><a href="#"> <i class="ti-twitter"></i></a></li>
+									<li><a href="#"><i class="ti-instagram"></i></a></li>
+									<li><a href="#"><i class="ti-skype"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+					<div class="header_social_icon d-block d-lg-none">
+						<ul>
+							<li><a href="#"><i class="ti-facebook"></i></a></li>
+							<li><a href="#"> <i class="ti-twitter"></i></a></li>
+							<li><a href="#"><i class="ti-instagram"></i></a></li>
+							<li><a href="#"><i class="ti-skype"></i></a></li>
+						</ul>
+					</div>
+				</div></div>
+				</div>
+				</div>
+</header>
+<section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h1>FantaFootball</h1>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <div style="height: 30px"></div>
 
 <%
 	String modulo=(String) session.getAttribute("modulo");
 	Formazione formazione = (Formazione) session.getAttribute("formazione");
 	List<Giocatore> giocatori = (List<Giocatore>) session.getAttribute("giocatori");
 	List<Giocatore> formazioneg = new ArrayList<Giocatore>();
+	List<Giocatore> panchinaro = new ArrayList<Giocatore>();
+	
+	
 	if (formazione == null) {
 		response.sendRedirect("getFormazioneSquadra");
 	} else {
-
-		for (int i = 0; i < formazione.getGiocatori().length && formazione.getGiocatori()[i] != null; i++) {
-			if (!formazioneg.contains(formazione.getGiocatori()[i])) {
-				formazioneg.add(formazione.getGiocatori()[i]);
+		int giocatoriincampo=0;
+		for ( giocatoriincampo=0;  giocatoriincampo < formazione.getGiocatori().length && formazione.getGiocatori()[giocatoriincampo] != null; giocatoriincampo++) {
+			if (!formazioneg.contains(formazione.getGiocatori()[giocatoriincampo])) {
+				formazioneg.add(formazione.getGiocatori()[giocatoriincampo]);
 			}
+		}
+		for(;giocatoriincampo<formazione.getPanchina().length && formazione.getPanchina()[giocatoriincampo]!=null;giocatoriincampo++){
+			if(!panchinaro.contains(formazione.getGiocatori()[giocatoriincampo])){
+				panchinaro.add(formazione.getPanchina()[giocatoriincampo]);
+			}
+		}
+			
 			
 		}
-	}
+	
 	
 %>
+
 
 <div class="container">
 
@@ -164,8 +284,7 @@
 							for (Giocatore g : giocatori) {
 						%>
 						<td class="tg-0pky"><%=i++%></td>
-						<td class="tg-0pky"><button
-								onclick="inseriscigiocatore(<%=g.getId()%>,true, <%=modulo%>)"><%=g.getNome()%></button></td>
+						<td class="tg-0pky"><a href="InserisciGiocatoreFormazioneServlet?giocatore=<%=g.getId()%>&titolare=true&modulo=<%=modulo %>)"><%=g.getNome()%></a></td>
 						<td class="tg-0pky"><%=g.getRuolo()%></td>
 						<td class="tg-0pky"><%=g.getVotoMedio()%></td>
 						<td class="tg-0pky"><%=g.getPresenze()%></td>
@@ -212,8 +331,85 @@
 
 				</table>
 			</div>
+			<table id="tg-wDj3P" class="tg">
+					<tr>
+			<th class="tg-0pky" colspan="6">I tuoi giocatori da mettere in panchina</th>
+					</tr>
+
+					<tr>
+						<td class="tg-pcvp">No</td>
+						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Ruolo</td>
+						<td class="tg-pcvp">Punteggio</td>
+						<td class="tg-pcvp">Presenze</td>
+						<td class="tg-pcvp">Goal</td>
+					</tr>
+					<tr>
+						<%
+							int V = 1;
+
+							for (int x = 0; x < formazioneg.size(); x++) {
+								for (int s = 0; s < giocatori.size(); s++) {
+
+									if (formazioneg.get(x).getId() == giocatori.get(s).getId()) {
+										giocatori.remove(s);
+										s--;
+									}
+
+								}
+
+							}
+							for (Giocatore g : giocatori) {
+						%>
+						<td class="tg-0pky"><%=V++%></td>
+						<td class="tg-0pky"><a href="InserisciGiocatoreFormazioneServlet?giocatore=<%=g.getId()%>&titolare=false&modulo=<%=modulo %>)"><%=g.getNome()%></a></td>
+						<td class="tg-0pky"><%=g.getRuolo()%></td>
+						<td class="tg-0pky"><%=g.getVotoMedio()%></td>
+						<td class="tg-0pky"><%=g.getPresenze()%></td>
+						<td class="tg-0pky"><%=g.getGoal()%></td>
+					</tr>
+					<%
+						}
+					%>
+
+				</table>
+				<table id="tg-wDj3P" class="tg">
+					<tr>
+
+						<th class="tg-0pky" colspan="6">I tuoi giocatori Panchinari</th>
+					</tr>
+
+					<tr>
+						<td class="tg-pcvp">No</td>
+						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Ruolo</td>
+						<td class="tg-pcvp">Punteggio</td>
+						<td class="tg-pcvp">Presenze</td>
+						<td class="tg-pcvp">Goal</td>
+					</tr>
+					<tr>
+						<%  
+							int b = 1;
+							for (int g=0;g<panchinaro.size();g++) {
+								
+						%>
+						<td class="tg-0pky"><%=b++%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g).getNome()%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
+					</tr>
+					<%
+							}
+					%>
+					
+					
+					
+				</table>
+			</div>
 		</div>
-	</div>
+	
 <script charset="utf-8">
 /*function showDiv(divId, element)
 {
@@ -228,15 +424,6 @@
         document.getElementById(divId).innerHTML = "XXXX";
         }
 }*/
-function inseriscigiocatore(id,titolare, modulo){
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    
-};
-xhr.open('GET', 'InserisciGiocatoreFormazioneServlet?giocatore='
-		+id+'&titolare='+titolare+'&modulo='+modulo,true);
-xhr.send();
-}
 
 </script>
 </body>
