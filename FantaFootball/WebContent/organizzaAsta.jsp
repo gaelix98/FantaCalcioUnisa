@@ -10,7 +10,7 @@
 <body>
 
 	<%
-		String nomeLega = request.getParameter("nome");
+		String nomeLega = request.getParameter("lega");
 		if (nomeLega == null || nomeLega.equals(""))
 			response.sendRedirect("errorPage.jsp");
 	%>
