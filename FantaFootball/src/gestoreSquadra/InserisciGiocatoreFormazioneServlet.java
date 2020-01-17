@@ -59,6 +59,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				switch(giocatore.getRuolo()) {
 				case "Por":
 					formazione.getGiocatori()[0]=giocatore;
+					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
 					break;
 				case "Dif":
 					i=1;
@@ -85,7 +86,8 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				int i=0, j=0;
 				switch(giocatore.getRuolo()) {
 				case "Por":
-					formazione.getGiocatori()[0]=giocatore;
+					formazione.getPanchina()[0]=giocatore;
+					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
 					break;
 				case "Dif":
 					i=1;

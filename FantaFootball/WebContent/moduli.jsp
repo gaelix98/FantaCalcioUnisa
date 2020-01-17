@@ -29,7 +29,8 @@
     	
       
         var tech = document.getElementById("modulo").value;
-        var url = "filtraGiocatoriServlet?p=1&ruolo=&squadra=&modulo=" + encodeURIComponent(tech);
+    //    var url = "filtraGiocatoriServlet?p=1&ruolo=&squadra=&modulo=" + encodeURIComponent(tech);
+    var url="getFormazioneSquadra?modulo="+ encodeURIComponent(tech);
         window.location.href = url;
     };
 </script>

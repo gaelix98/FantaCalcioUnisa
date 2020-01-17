@@ -40,11 +40,12 @@ public class getFormazioneSquadra extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SquadraDAO squadraDAO = new SquadraDAO();
 		Allenatore allenatore =(Allenatore) request.getSession().getAttribute("utente");
-		System.out.println("porcodio");
 		Squadra squadra=null;
-		String redirect="NewFormazione.jsp";
+		String redirect="filtraGiocatoriServlet?p=1&ruolo=&squadra=";
 		Lega lega=(Lega) request.getSession().getAttribute("lega");
-
+		String modulo=request.getParameter("modulo");
+		request.getSession().setAttribute("modulo", modulo);
+		System.out.println(modulo);
 		try {
 			squadra = squadraDAO.getSquadraByUserELega(allenatore.getUsername(), lega.getNome());
 		} catch (SQLException e1) {
@@ -63,11 +64,13 @@ public class getFormazioneSquadra extends HttpServlet {
 					for (int i=0;i<formazione.getGiocatori().length;i++) {
 						if (formazione.getGiocatori()[i]!=null) {
 							formazioneDAO.deleteGiocatoreFormazione(formazione, formazione.getGiocatori()[i]);
+							formazione.getGiocatori()[i]=null;
 						}
 					}
 					for (int i=0;i<formazione.getPanchina().length;i++) {
 						if (formazione.getPanchina()[i]!=null) {
 							formazioneDAO.deleteGiocatoreFormazione(formazione, formazione.getPanchina()[i]);
+							formazione.getPanchina()[i]=null;
 						}
 					}
 				}

@@ -222,24 +222,21 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 	List<Giocatore> formazioneg = new ArrayList<Giocatore>();
 	List<Giocatore> panchinaro = new ArrayList<Giocatore>();
 	
-	
 	if (formazione == null) {
 		response.sendRedirect("getFormazioneSquadra");
-	} else {
-		int giocatoriincampo=0;
-		for ( giocatoriincampo=0;  giocatoriincampo < formazione.getGiocatori().length && formazione.getGiocatori()[giocatoriincampo] != null; giocatoriincampo++) {
-			if (!formazioneg.contains(formazione.getGiocatori()[giocatoriincampo])) {
-				formazioneg.add(formazione.getGiocatori()[giocatoriincampo]);
+		 //response.setIntHeader("Refresh", 0);
+	} else{
+		for (int i=0;i<formazione.getGiocatori().length;i++){
+			if (formazione.getGiocatori()[i]!=null){
+				formazioneg.add(formazione.getGiocatori()[i]);
 			}
 		}
-		for(;giocatoriincampo<formazione.getPanchina().length && formazione.getPanchina()[giocatoriincampo]!=null;giocatoriincampo++){
-			if(!panchinaro.contains(formazione.getGiocatori()[giocatoriincampo])){
-				panchinaro.add(formazione.getPanchina()[giocatoriincampo]);
+		for (int i=0;i<formazione.getPanchina().length;i++){
+			if (formazione.getPanchina()[i]!=null){
+				panchinaro.add(formazione.getPanchina()[i]);
 			}
 		}
-			
-			
-		}
+	}
 	
 	
 %>
@@ -274,6 +271,18 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 								for (int s = 0; s < giocatori.size(); s++) {
 
 									if (formazioneg.get(x).getId() == giocatori.get(s).getId()) {
+										giocatori.remove(s);
+										s--;
+									}
+
+								}
+
+							}
+							
+							for (int x = 0; x < panchinaro.size(); x++) {
+								for (int s = 0; s < giocatori.size(); s++) {
+
+									if (panchinaro.get(x).getId() == giocatori.get(s).getId()) {
 										giocatori.remove(s);
 										s--;
 									}
@@ -348,17 +357,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 						<%
 							int V = 1;
 
-							for (int x = 0; x < formazioneg.size(); x++) {
-								for (int s = 0; s < giocatori.size(); s++) {
-
-									if (formazioneg.get(x).getId() == giocatori.get(s).getId()) {
-										giocatori.remove(s);
-										s--;
-									}
-
-								}
-
-							}
+							
 							for (Giocatore g : giocatori) {
 						%>
 						<td class="tg-0pky"><%=V++%></td>
@@ -395,10 +394,10 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 						%>
 						<td class="tg-0pky"><%=b++%></td>
 						<td class="tg-0pky"><%=panchinaro.get(g).getNome()%></td>
-						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
-						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
-						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
-						<td class="tg-0pky"><%=panchinaro.get(g)%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g).getRuolo()%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g).getVotoMedio()%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g).getPresenze()%></td>
+						<td class="tg-0pky"><%=panchinaro.get(g).getGoal()%></td>
 					</tr>
 					<%
 							}

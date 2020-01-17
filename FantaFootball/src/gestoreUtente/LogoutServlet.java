@@ -32,7 +32,7 @@ public class LogoutServlet extends HttpServlet {
 
 	/**
 	 * @precondition request.getSession().getAttribute(“utente”)!=null 
-	 * @postocondition request.getSession().getAttribute(“utente”)==null
+	 * @postcondition request.getSession().getAttribute(“utente”)==null
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

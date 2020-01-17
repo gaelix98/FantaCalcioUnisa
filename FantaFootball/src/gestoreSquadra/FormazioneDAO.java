@@ -181,7 +181,7 @@ public class FormazioneDAO {
 		GiocatoreDAO gd = new GiocatoreDAO();
 		Giocatore[] giocatori =new Giocatore[11];
 		Giocatore[] panchina  = new Giocatore[7];
-		int i=0;
+		int i=0, j=0;
 		try (Connection conn = DriverManagerConnectionPool.getConnection();) {
 			PreparedStatement ps=conn.prepareStatement("SELECT * FROM formazione, giocatoreformazione where formazione.squadra=giocatoreformazione.nomeSquadra "
 					+ "and formazione.nomeLega=giocatoreformazione.nomeLega and squadra=? and formazione.NomeLega=? and formazione.giornata=?"
@@ -195,13 +195,15 @@ public class FormazioneDAO {
 			boolean schierata=false;
 			while(rs.next()){
 				schierata=rs.getBoolean("schierata");
-				if(rs.getInt("posizione")<=11) {
+				if(rs.getInt("posizione")<11) {
 					giocatori[i]=gd.getGiocatoreById(rs.getInt("Id"));
+					i++;
 				}else {
-					panchina[i]=gd.getGiocatoreById(rs.getInt("Id"));
+					panchina[j]=gd.getGiocatoreById(rs.getInt("Id"));
+					j++;
 				}
 				exists=true;
-				i++;
+				
 			}
 			if (exists) {
 				u=new Formazione(giornata, squadra);
