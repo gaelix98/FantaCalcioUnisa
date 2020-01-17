@@ -56,7 +56,7 @@ public class getFormazioneSquadra extends HttpServlet {
 			try {
 				Formazione formazione=new FormazioneDAO().getFormazioneBySquadraGiornata(squadra, giornata);
 				if(formazione==null) {
-					System.out.print("Porco dioGETfORMAZIONE");
+					
 					formazione= new Formazione(giornata, squadra);
 				}
 				request.getSession().setAttribute("formazione", formazione);

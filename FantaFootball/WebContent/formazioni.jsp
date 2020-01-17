@@ -15,7 +15,7 @@
 		<div class="row">
 			<h4>
 				<a href="formazioni.jsp">Formazioni</a> | <a
-					href="filtraGiocatoriServlet?squadra=&prezzoBase=&ruolo=&p=1">Inserisci Formazione</a>
+					href="moduli.jsp">Inserisci Formazione</a>
 			</h4>
 		</div>
 		<div style="height:20px"></div>

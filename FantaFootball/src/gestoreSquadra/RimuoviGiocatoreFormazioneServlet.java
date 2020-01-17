@@ -34,7 +34,7 @@ public class RimuoviGiocatoreFormazioneServlet extends HttpServlet {
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String redirect="inserisciFormazione.jsp";
+		String redirect="NewFormzione.jsp";
 		int idGiocatore=Integer.parseInt(request.getParameter("giocatore"));
 		try {
 			Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
