@@ -50,9 +50,17 @@
 					<h4>
 						<a href="aste.jsp">Aste</a>
 					</h4>
+					<% if(!calendario.isEmpty()){ %>
 					<h4>
+					
 						<a href="calendario.jsp">Calendario</a>
 					</h4>
+					<%}else{ %>
+					<h4>
+					
+						<a href="OrganizzaPartiteServlet?nomeLega=<%=lega.getNome()%>">Inizia Campionato</a>
+					</h4>
+					<%} %>
 				</aside>
 			</div>
 		</div>

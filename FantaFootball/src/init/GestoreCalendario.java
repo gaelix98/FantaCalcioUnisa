@@ -1,16 +1,29 @@
 package init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import gestoreLega.Partita;
 import gestoreSquadra.Squadra;
+
 
 public class GestoreCalendario {
 	
 	
-	public Partita[] creaCalendario(Squadra[] squadre){
-		
-	    int numero_squadre = squadre.length;
-	    int giornate = numero_squadre - 1;
-	    Partita[] partite = new Partita[giornate];
+	public List<Partita> creaCalendario(Squadra[] squadre){
+		int numero_squadre = squadre.length;
+		if ( squadre.length % 2 != 0) {
+			numero_squadre++;
+			Squadra[] squadreConRiposo = new Squadra[numero_squadre];
+			for(int i = 0 ; i< squadre.length ; i++)
+				squadreConRiposo[i] = squadre[i];
+			squadreConRiposo[numero_squadre-1] = null;
+			squadre = squadreConRiposo;
+			
+		}
+			
+	    int giornate = 38;
+	    List<Partita> partite = new ArrayList<Partita>();
 	    
 	    /* crea gli array per le due liste in casa e fuori */
 	    Squadra[] casa = new Squadra[numero_squadre /2];
@@ -23,16 +36,15 @@ public class GestoreCalendario {
 	 
 	    for (int i = 0; i < giornate; i++) {
 	        /* stampa le partite di questa giornata */
-	        System.out.printf("%d^ Giornata\n",i+1);
-	 
+	    	
 	        /* alterna le partite in casa e fuori */
 	        if (i % 2 == 0) {
 	            for (int j = 0; j < numero_squadre /2 ; j++)
-	                 partite[i] = new Partita(trasferta[j],casa[j],i+1);
+	                 partite.add(new Partita(trasferta[j],casa[j],i+1));
 	        }
 	        else {
 	            for (int j = 0; j < numero_squadre /2 ; j++) 
-	            	 partite[i] = new Partita(casa[j],trasferta[j],i+1);
+	            	 partite.add(new Partita(casa[j],trasferta[j],i+1));
 	        }
 	 
 	        // Ruota in gli elementi delle liste, tenendo fisso il primo elemento
