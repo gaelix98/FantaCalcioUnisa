@@ -38,26 +38,26 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="NewFormazione.jsp";
-		
-		String modulo=(String) request.getSession().getAttribute("modulo");
-		int difensori=modulo.charAt(0);
-		int centrocampisti=modulo.charAt(2);
-		int attaccanti=modulo.charAt(4);
-		String titolare=request.getParameter("titolare");
 
+		String modulo=(String) request.getSession().getAttribute("modulo");
+		int difensori=Integer.parseInt(String.valueOf(modulo.charAt(0)));
+		int centrocampisti=Integer.parseInt(String.valueOf(modulo.charAt(2)));
+		int attaccanti=Integer.parseInt(String.valueOf(modulo.charAt(4)));
+		String titolare=request.getParameter("titolare");
+		System.out.println(titolare);
 		int idGiocatore=Integer.parseInt(request.getParameter("giocatore"));
-		
+
 		try {
 			Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
 			Giocatore giocatore=new GiocatoreDAO().getGiocatoreById(idGiocatore);
-			
+
 			if (titolare.equals("true")) {
 				int i=0, j=0;
 				switch(giocatore.getRuolo()) {
 				case "Por":
 					formazione.getGiocatori()[0]=giocatore;
 					break;
-				case "Dif":
+				case "Def":
 					i=1;
 					j=i+difensori;
 					break;
@@ -71,11 +71,14 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					break;
 				}
 
-				for (;i<j && formazione.getGiocatori()[i]!=null && 
-						i<formazione.getGiocatori().length && j<formazione.getGiocatori().length; 
+				for (; i<formazione.getGiocatori().length && i<j; 
 						i++) {
+					if(formazione.getGiocatori()[i]==null) {
+						formazione.getGiocatori()[i]=giocatore;
+						break;
+					}
 				}
-				formazione.getGiocatori()[i]=giocatore;
+
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
 			}
 			else {
@@ -84,7 +87,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				case "Por":
 					formazione.getGiocatori()[0]=giocatore;
 					break;
-				case "Dif":
+				case "Def":
 					i=1;
 					j=i+2;
 					break;
@@ -97,9 +100,12 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					j=i+2;
 					break;
 				}
-				for (;i<j && formazione.getPanchina()[i]!=null && i<formazione.getGiocatori().length && j<formazione.getGiocatori().length; i++) {
+				for (;i<formazione.getPanchina().length; i++) {
+					if(formazione.getPanchina()[i]==null) {
+						formazione.getPanchina()[i]=giocatore;
+						break;
+					}
 				}
-				formazione.getPanchina()[i]=giocatore;
 				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
 			}
 

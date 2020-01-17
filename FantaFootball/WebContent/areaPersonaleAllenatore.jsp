@@ -153,7 +153,7 @@
 				<div class="blog_left_sidebar">
 					<h2>Bacheca</h2>
 					<%
-							if (post.size() > 0) {
+							if (post!=null && post.size() > 0) {
 								for (int i=0;i<5 && i<post.size();i++) {
 									Post p=post.get(i);
 						%>
