@@ -6,33 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Formazione</title>
-</head>
-<%@include file="header.html"%>
-<%@ include file="menu.jsp"%>
-<%Formazione formazione=(Formazione) session.getAttribute("formazione");
-List<Giocatore> giocatori = (List<Giocatore>) session.getAttribute("giocatori");
-List<Giocatore> formazioneg = new ArrayList<Giocatore>();
-if (formazione==null)
-{response.sendRedirect("getFormazioneSquadra");
-}
-else{
-
-
-
-for(int i=0;i<formazione.getGiocatori().length && formazione.getGiocatori()[i]!=null;i++){
-if(formazioneg.contains(formazione.getGiocatori()[i])){
-	continue;
-}
-formazioneg.add(formazione.getGiocatori()[i]);
-}
-}
-%>
-<h2>i tuoi giocatori</h2>
 <style type="text/css">
-
 #hidden_div {
-    display: none;
+	display: none;
 }
+
 .tg {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -124,104 +102,120 @@ formazioneg.add(formazione.getGiocatori()[i]);
 	}
 }
 </style>
+</head>
+<%@include file="header.html"%>
+<%@ include file="menu.jsp"%>
 
-<div class="tg-wrap">
+<%
+	String modulo=(String) session.getAttribute("modulo");
+	Formazione formazione = (Formazione) session.getAttribute("formazione");
+	List<Giocatore> giocatori = (List<Giocatore>) session.getAttribute("giocatori");
+	List<Giocatore> formazioneg = new ArrayList<Giocatore>();
+	if (formazione == null) {
+		response.sendRedirect("getFormazioneSquadra");
+	} else {
 
-	<table id="tg-wDj3P" class="tg">
-		<tr>
-
-			<th class="tg-0pky" colspan="6">I tuoi giocatori</th>
-		</tr>
-
-		<tr>
-			<td class="tg-pcvp">No</td>
-			<td class="tg-pcvp">Nome</td>
-			<td class="tg-pcvp">Ruolo</td>
-			<td class="tg-pcvp">Punteggio</td>
-			<td class="tg-pcvp">Presenze</td>
-			<td class="tg-pcvp">Goal</td>
-		</tr>
-		<tr>
-			<%
-				int i = 1;
-			
-			
-			for(int x=0;x<formazioneg.size();x++){
-				for(int s=0;s<giocatori.size();s++){
-					
-					if(formazioneg.get(x).getId()
-							==giocatori.get(s).getId() ){
-						giocatori.remove(s);
-						s--;
-					}
-					
-				}
-			
+		for (int i = 0; i < formazione.getGiocatori().length && formazione.getGiocatori()[i] != null; i++) {
+			if (!formazioneg.contains(formazione.getGiocatori()[i])) {
+				formazioneg.add(formazione.getGiocatori()[i]);
 			}
-				for (Giocatore g : giocatori) {
-					
-					
-					
-			%>
-			<td class="tg-0pky"><%=i++%></td>
-			<td class="tg-0pky"><button onclick="inseriscigiocatore(<%=g.getId()%>,true)"><%=g.getNome()%></button></td>
-			<td class="tg-0pky"><%=g.getRuolo()%></td>
-			<td class="tg-0pky"><%=g.getVotoMedio()%></td>
-			<td class="tg-0pky"><%=g.getPresenze()%></td>
-			<td class="tg-0pky"><%=g.getGoal()%></td>
-		</tr>
-		<%
-			}
-		%>
-
-	</table>
+			
+		}
+	}
 	
+%>
 
-<div id="hidden_div">This is a hidden div</div>
-</div>
-<table id="tg-wDj3P" class="tg">
-		<tr>
+<div class="container">
 
-			<th class="tg-0pky" colspan="6">I tuoi giocatori schierati</th>
-		</tr>
+<h2>Inserisci formazione</h2>
+	<div class="row">
+		
+			<div class="col-md-6">
+			
+				<table id="tg-wDj3P" class="tg">
+					<tr>
 
-		<tr>
-			<td class="tg-pcvp">No</td>
-			<td class="tg-pcvp">Nome</td>
-			<td class="tg-pcvp">Ruolo</td>
-			<td class="tg-pcvp">Punteggio</td>
-			<td class="tg-pcvp">Presenze</td>
-			<td class="tg-pcvp">Goal</td>
-		</tr>
-		<tr>
-			<%
-				int f = 1;
-				for (Giocatore g : formazioneg) {
-					
-			%>
-			<td class="tg-0pky"><%=f++%></td>
-			<td class="tg-0pky"><%=g.getNome()%></td>
-			<td class="tg-0pky"><%=g.getRuolo()%></td>
-			<td class="tg-0pky"><%=g.getVotoMedio()%></td>
-			<td class="tg-0pky"><%=g.getPresenze()%></td>
-			<td class="tg-0pky"><%=g.getGoal()%></td>
-		</tr>
-		<%
-			}
-		%>
+						<th class="tg-0pky" colspan="6">I tuoi giocatori</th>
+					</tr>
 
-	</table>
+					<tr>
+						<td class="tg-pcvp">No</td>
+						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Ruolo</td>
+						<td class="tg-pcvp">Punteggio</td>
+						<td class="tg-pcvp">Presenze</td>
+						<td class="tg-pcvp">Goal</td>
+					</tr>
+					<tr>
+						<%
+							int i = 1;
 
+							for (int x = 0; x < formazioneg.size(); x++) {
+								for (int s = 0; s < giocatori.size(); s++) {
 
+									if (formazioneg.get(x).getId() == giocatori.get(s).getId()) {
+										giocatori.remove(s);
+										s--;
+									}
 
+								}
 
+							}
+							for (Giocatore g : giocatori) {
+						%>
+						<td class="tg-0pky"><%=i++%></td>
+						<td class="tg-0pky"><button
+								onclick="inseriscigiocatore(<%=g.getId()%>,true, <%=modulo%>)"><%=g.getNome()%></button></td>
+						<td class="tg-0pky"><%=g.getRuolo()%></td>
+						<td class="tg-0pky"><%=g.getVotoMedio()%></td>
+						<td class="tg-0pky"><%=g.getPresenze()%></td>
+						<td class="tg-0pky"><%=g.getGoal()%></td>
+					</tr>
+					<%
+						}
+					%>
 
+				</table>
+			</div>
+			<div class="col-md-6">
+			
 
+				<table id="tg-wDj3P" class="tg">
+					<tr>
 
+						<th class="tg-0pky" colspan="6">I tuoi giocatori schierati</th>
+					</tr>
 
+					<tr>
+						<td class="tg-pcvp">No</td>
+						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Ruolo</td>
+						<td class="tg-pcvp">Punteggio</td>
+						<td class="tg-pcvp">Presenze</td>
+						<td class="tg-pcvp">Goal</td>
+					</tr>
+					<tr>
+						<%
+							int f = 1;
+							for (Giocatore g : formazioneg) {
+						%>
+						<td class="tg-0pky"><%=f++%></td>
+						<td class="tg-0pky"><%=g.getNome()%></td>
+						<td class="tg-0pky"><%=g.getRuolo()%></td>
+						<td class="tg-0pky"><%=g.getVotoMedio()%></td>
+						<td class="tg-0pky"><%=g.getPresenze()%></td>
+						<td class="tg-0pky"><%=g.getGoal()%></td>
+					</tr>
+					<%
+						}
+					%>
 
+				</table>
+			</div>
+		</div>
+	</div>
 <script charset="utf-8">
-function showDiv(divId, element)
+/*function showDiv(divId, element)
 {
     document.getElementById(divId).style.display = element.value != 0 ? 'block' : 'none';
     if(document.getElementById("test").value=="3-4-3"){
@@ -233,14 +227,14 @@ function showDiv(divId, element)
     if(document.getElementById("test").value=="3-5-2"){
         document.getElementById(divId).innerHTML = "XXXX";
         }
-}
-function inseriscigiocatore(id,titolare){
+}*/
+function inseriscigiocatore(id,titolare, modulo){
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     
 };
 xhr.open('GET', 'InserisciGiocatoreFormazioneServlet?giocatore='
-		+id+'&titolare='+titolare+'&modulo='+document.getElementById("test").value,true);
+		+id+'&titolare='+titolare+'&modulo='+modulo,true);
 xhr.send();
 }
 
