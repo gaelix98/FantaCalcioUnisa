@@ -13,6 +13,7 @@
 	<%
 		HashMap giocatoreSquadra = (HashMap) request.getAttribute("giocatoreSquadra");
 		Asta asta = (Asta) request.getAttribute("asta");
+		Lega lega = (Lega) session.getAttribute("lega");
 	%>
 	<div class="container">
 		<div class="row">
@@ -73,7 +74,7 @@
 							<a href="aste.jsp">Aste</a>
 						</h4>
 						<h4>
-							<a href="calendario.jsp">Calendario</a>
+							<a href="VisualizzaCalendarioServlet?nomeLega=<%=lega.getNome()%>&giornata=<%=(int)getServletContext().getAttribute("giornata")%>"">Calendario</a>
 						</h4>
 					</aside>
 				</div>

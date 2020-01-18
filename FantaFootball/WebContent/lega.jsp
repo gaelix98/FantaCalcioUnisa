@@ -53,7 +53,7 @@
 					<% if(!calendario.isEmpty()){ %>
 					<h4>
 					
-						<a href="calendario.jsp">Calendario</a>
+						<a href="VisualizzaCalendarioServlet?nomeLega=<%=lega.getNome()%>&giornata=<%=(int)getServletContext().getAttribute("giornata")%>">Calendario</a>
 					</h4>
 					<%}else{ %>
 					<h4>
