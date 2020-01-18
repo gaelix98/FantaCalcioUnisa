@@ -2,6 +2,7 @@ package gestoreSquadra;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,6 +46,9 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 		int centrocampisti=Integer.parseInt(String.valueOf(modulo.charAt(2)));
 		int attaccanti=Integer.parseInt(String.valueOf(modulo.charAt(4)));
 		String titolare=request.getParameter("titolare");
+		
+		List<Giocatore> giocatori=(List<Giocatore>)request.getSession().getAttribute("giocatori");
+		
 
 		int idGiocatore=Integer.parseInt(request.getParameter("giocatore"));
 
@@ -60,6 +64,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					if (formazione.getGiocatori()[0]==null) {
 						formazione.getGiocatori()[0]=giocatore;
 						new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
+						giocatori.remove(giocatore);
 					}
 					break;
 				case "Dif":
@@ -81,6 +86,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				if(i<j) {
 					formazione.getGiocatori()[i]=giocatore;
 					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
+					giocatori.remove(giocatore);
 				}
 			}
 			else {
@@ -90,6 +96,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 					if (formazione.getPanchina()[0]==null) {
 						formazione.getPanchina()[0]=giocatore;
 						new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+						giocatori.remove(giocatore);
 					}
 					break;
 				case "Dif":
@@ -110,6 +117,7 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				if(i<j) {
 					formazione.getPanchina()[i]=giocatore;
 					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+					giocatori.remove(giocatore);
 				}
 				else {
 					System.out.println("non inserisco"+i);

@@ -403,7 +403,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 						
 						
 						%>
-						<button href="salvaFormazione">Salva!</button>
+						<a href="SalvaFormazioneServlet">><button>Salva</button></a>
 						
 						<%}
 						

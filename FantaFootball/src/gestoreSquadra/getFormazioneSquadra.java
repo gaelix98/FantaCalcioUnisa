@@ -46,6 +46,7 @@ public class getFormazioneSquadra extends HttpServlet {
 		String modulo=request.getParameter("modulo");
 		request.getSession().setAttribute("modulo", modulo);
 		System.out.println(modulo);
+		FormazioneDAO formazioneDAO=new FormazioneDAO();
 		try {
 			squadra = squadraDAO.getSquadraByUserELega(allenatore.getUsername(), lega.getNome());
 		} catch (SQLException e1) {
@@ -58,9 +59,10 @@ public class getFormazioneSquadra extends HttpServlet {
 				Formazione formazione=new FormazioneDAO().getFormazioneBySquadraGiornata(squadra, giornata);
 				if(formazione==null) {
 					formazione= new Formazione(giornata, squadra);
+					formazioneDAO.addFormazione(formazione);
 				}
 				else {
-					FormazioneDAO formazioneDAO=new FormazioneDAO();
+					
 					for (int i=0;i<formazione.getGiocatori().length;i++) {
 						if (formazione.getGiocatori()[i]!=null) {
 							formazioneDAO.deleteGiocatoreFormazione(formazione, formazione.getGiocatori()[i]);
