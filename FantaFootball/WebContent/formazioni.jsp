@@ -45,10 +45,10 @@
 								</tr>
 							</thead>
 							<tbody>
-							<%for (int j=0;j<formazione.getGiocatori().length && formazione.getGiocatori()[i]!=null; i++){ %>
+							<%for (int j=0;j<formazione.getGiocatori().length && formazione.getGiocatori()[j]!=null; j++){ %>
 							<tr>
-									<td><%=formazione.getGiocatori()[i].getNome()%> <%=formazione.getGiocatori()[i].getCognome()%></td>
-									<td><%=formazione.getGiocatori()[i].getRuolo()%></td>
+									<td><%=formazione.getGiocatori()[j].getNome()%> <%=formazione.getGiocatori()[j].getCognome()%></td>
+									<td><%=formazione.getGiocatori()[j].getRuolo()%></td>
 								</tr>
 							<%} %>
 							</tbody>
@@ -62,10 +62,10 @@
 								</tr>
 							</thead>
 							<tbody>
-							<%for (int j=0;j<formazione.getPanchina().length && formazione.getPanchina()[i]!=null; i++){ %>
+							<%for (int j=0;j<formazione.getPanchina().length && formazione.getPanchina()[j]!=null; j++){ %>
 							<tr>
-									<td><%=formazione.getPanchina()[i].getNome()%> <%=formazione.getPanchina()[i].getCognome()%></td>
-									<td><%=formazione.getPanchina()[i].getRuolo()%></td>
+									<td><%=formazione.getPanchina()[j].getNome()%> <%=formazione.getPanchina()[j].getCognome()%></td>
+									<td><%=formazione.getPanchina()[j].getRuolo()%></td>
 								</tr>
 							<%} %>
 							</tbody>
