@@ -10,7 +10,6 @@
 </head>
 <body>
 	<%
-		String nomeLega = ((Lega)session.getAttribute("lega")).getNome();
 		List<Squadra> classifica = (List<Squadra>) session.getAttribute("classifica");
 	%>
 	<%@ include file="menu.jsp"%>
@@ -65,7 +64,7 @@
 					<h4><a href="classificaLega.jsp">Classifica</a></h4>
 					<h4><a href="formazioni.jsp">Formazioni</a></h4>
 					<h4><a href="aste.jsp">Aste</a></h4>
-					<h4><a href="VisualizzaCalendarioServlet?nomeLega=<%=nomeLega%>&giornata=<%=(int)getServletContext().getAttribute("giornata")%>">Calendario</a></h4>
+					<h4><a href="calendario.jsp">Calendario</a></h4>
 				</aside>
 			</div>
 		</div>

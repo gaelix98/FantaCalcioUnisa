@@ -13,7 +13,6 @@
 	<%
 		List<Offerta> offerte = (List<Offerta>) request.getAttribute("risultatiAsta");
 		Asta asta = (Asta) request.getAttribute("asta");
-		Lega lega = (Lega) session.getAttribute("lega");
 		List<Squadra> squadre = (List<Squadra>) session.getAttribute("classifica");
 	%>
 	<div class="container">
@@ -90,7 +89,7 @@
 						<a href="aste.jsp">Aste</a>
 					</h4>
 					<h4>
-						<a href="VisualizzaCalendarioServlet?nomeLega=<%=lega.getNome()%>&giornata=<%=(int)getServletContext().getAttribute("giornata")%>">Calendario</a>
+						<a href="calendario.jsp">Calendario</a>
 					</h4>
 				</aside>
 			</div>
