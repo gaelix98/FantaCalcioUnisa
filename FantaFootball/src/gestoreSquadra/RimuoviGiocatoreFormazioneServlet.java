@@ -42,14 +42,14 @@ public class RimuoviGiocatoreFormazioneServlet extends HttpServlet {
 			
 			boolean rimosso=false;
 			for (int i=0;i<formazione.getGiocatori().length &&!rimosso;i++) {
-				if (formazione.getGiocatori()[i].getId()==idGiocatore) {
+				if (formazione.getGiocatori()[i]!=null && formazione.getGiocatori()[i].getId()==idGiocatore) {
 					formazione.getGiocatori()[i]=null;
 					rimosso=true;
 				}
 			}
 			
 			for (int i=0;i<formazione.getPanchina().length && !rimosso; i++) {
-				if (formazione.getPanchina()[i].getId()==idGiocatore) {
+				if (formazione.getPanchina()[i]!=null && formazione.getPanchina()[i].getId()==idGiocatore) {
 					formazione.getPanchina()[i]=null;
 					rimosso=true;
 				}

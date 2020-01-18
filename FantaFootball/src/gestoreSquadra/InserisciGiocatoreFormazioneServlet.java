@@ -48,18 +48,20 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 		String titolare=request.getParameter("titolare");
 
 		int idGiocatore=Integer.parseInt(request.getParameter("giocatore"));
-		
+
 		try {
 			Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
 			Giocatore giocatore=new GiocatoreDAO().getGiocatoreById(idGiocatore);
-			
-			
+
+
 			if (titolare.equals("true")) {
 				int i=0, j=0;
 				switch(giocatore.getRuolo()) {
 				case "Por":
-					formazione.getGiocatori()[0]=giocatore;
-					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
+					if (formazione.getGiocatori()[0]==null) {
+						formazione.getGiocatori()[0]=giocatore;
+						new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
+					}
 					break;
 				case "Dif":
 					i=1;
@@ -78,16 +80,18 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				for (;i<formazione.getGiocatori().length && i<j && formazione.getGiocatori()[i]!=null; i++) {
 				}
 				if(i<j) {
-				formazione.getGiocatori()[i]=giocatore;
-				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
+					formazione.getGiocatori()[i]=giocatore;
+					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i);
 				}
 			}
 			else {
 				int i=0, j=0;
 				switch(giocatore.getRuolo()) {
 				case "Por":
-					formazione.getPanchina()[0]=giocatore;
-					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+					if (formazione.getPanchina()[0]==null) {
+						formazione.getPanchina()[0]=giocatore;
+						new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+					}
 					break;
 				case "Dif":
 					i=1;
@@ -105,8 +109,8 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				for (; i<formazione.getPanchina().length && formazione.getPanchina()[i]!=null &&i<j; i++) {
 				}
 				if(i<j) {
-				formazione.getPanchina()[i]=giocatore;
-				new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+					formazione.getPanchina()[i]=giocatore;
+					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
 				}
 			}
 
