@@ -40,7 +40,6 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String redirect="NewFormazione.jsp";
-		System.out.println("sono nella servlet");
 		String modulo=(String) request.getSession().getAttribute("modulo");
 		int difensori=Integer.parseInt(String.valueOf(modulo.charAt(0)));
 		int centrocampisti=Integer.parseInt(String.valueOf(modulo.charAt(2)));
@@ -111,6 +110,9 @@ public class InserisciGiocatoreFormazioneServlet extends HttpServlet {
 				if(i<j) {
 					formazione.getPanchina()[i]=giocatore;
 					new FormazioneDAO().addGiocatoreFormazione(formazione, giocatore, i+11);
+				}
+				else {
+					System.out.println("non inserisco"+i);
 				}
 			}
 

@@ -2,6 +2,7 @@ package gestoreSquadra;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,7 +35,7 @@ public class RimuoviGiocatoreFormazioneServlet extends HttpServlet {
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String redirect="NewFormzione.jsp";
+		String redirect="NewFormazione.jsp";
 		int idGiocatore=Integer.parseInt(request.getParameter("giocatore"));
 		try {
 			Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
@@ -56,6 +57,8 @@ public class RimuoviGiocatoreFormazioneServlet extends HttpServlet {
 			}
 			
 			new FormazioneDAO().deleteGiocatoreFormazione(formazione, giocatore);
+			List<Giocatore> giocatori=(List<Giocatore>)request.getSession().getAttribute("giocatori");
+			giocatori.add(giocatore);
 			request.getSession().setAttribute("formazione", formazione);
 			
 		} catch (SQLException e) {

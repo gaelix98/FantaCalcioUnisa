@@ -37,6 +37,7 @@ public class SalvaFormazione extends HttpServlet {
 		Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
 		formazione.setSchierata(true);
 		boolean error=false;
+		System.out.println("sono nella servlet");
 		for (int i=0;i<formazione.getGiocatori().length && !error; i++) {
 			if (formazione.getGiocatori()[i]==null) {
 				error=true;
@@ -52,6 +53,7 @@ public class SalvaFormazione extends HttpServlet {
 		if (!error) {
 			try {
 				new FormazioneDAO().updateFormazione(formazione);
+				System.out.println("salvo");
 				request.getSession().setAttribute("formazione", formazione);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -59,6 +61,8 @@ public class SalvaFormazione extends HttpServlet {
 			}
 		}
 		else {
+			System.out.println("giocatori mancanti");
+			redirect="errorPage.jsp";
 			request.setAttribute("message", "Impossibile confermare la formazione. Giocatori mancanti");
 		}
 		

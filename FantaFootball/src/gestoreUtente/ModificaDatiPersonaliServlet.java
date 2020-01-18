@@ -43,18 +43,24 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
 		String redirect="modificaDati.jsp";
+		AllenatoreDAO allenatoreDAO=new AllenatoreDAO();
+		ScoutDAO scoutDAO=new ScoutDAO();
 
 		if (valida(email, password)) {
 			if (tipoUtente.equals("scout")) {
 				Scout scout=(Scout) session.getAttribute("utente");
-				ScoutDAO scoutDAO=new ScoutDAO();
+
 				try {
-					if (email.equals(scout.getEmail()) || scoutDAO.getScoutByEmail(email)==null) {
+					if (email.equals(scout.getEmail()) ||( scoutDAO.getScoutByEmail(email)==null && allenatoreDAO.getAllenatoreByEmail(email)==null)) {
 						scout.setEmail(email);
 						scout.setPassword(password);
 						scoutDAO.updateScout(scout);
 						session.setAttribute("utente", scout);
 						redirect="areaPersonaleScout.jsp";
+						request.setAttribute("result", "successo");
+					}
+					else {
+						redirect="modificaDati.jsp";
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -62,14 +68,18 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 			}
 			else if (tipoUtente.equals("allenatore")) {
 				Allenatore allenatore=(Allenatore) session.getAttribute("utente");
-				AllenatoreDAO allenatoreDAO=new AllenatoreDAO();
+
 				try {
-					if (email.equals(allenatore.getEmail()) || allenatoreDAO.getAllenatoreByEmail(email)==null) {
+					if (email.equals(allenatore.getEmail()) || (allenatoreDAO.getAllenatoreByEmail(email)==null && scoutDAO.getScoutByEmail(email)==null)) {
 						allenatore.setPassword(password);
 						allenatore.setEmail(email);
 						allenatoreDAO.updateAllenatore(allenatore);
 						session.setAttribute("utente", allenatore);
 						redirect="areaPersonaleAllenatore.jsp";
+						request.setAttribute("result", "successo");
+					}
+					else {
+						redirect="modificaDati.jsp";
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -79,6 +89,7 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 
 		if (redirect.equals("modificaDati.jsp")) {
 			request.setAttribute("message", "Dati non modificati");
+			response.getWriter().write("Formato errato dati");
 		}
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
@@ -87,7 +98,7 @@ public class ModificaDatiPersonaliServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

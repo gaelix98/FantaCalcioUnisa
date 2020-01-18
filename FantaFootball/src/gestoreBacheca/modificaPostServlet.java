@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Questa classe � un control che si occupa di passare a PostDAO i dati di un post da modificare
- * @author Maria Natale
+ * 
  *
  */
 @WebServlet("/modificaPostServlet")
@@ -45,22 +45,13 @@ public class modificaPostServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		Post oldPost=null;
 		Post newPost=null;
-		Post attuale=(Post) session.getAttribute("POSTA"); 
 		String testo=request.getParameter("text");
 		String id=request.getParameter("idpost");
-		System.out.println(id+"dioporco");
 		int idPost=Integer.parseInt(id);
-		System.out.println("la madonna"+ idPost);
 		ArrayList<Post> allPost=(ArrayList<Post>) session.getAttribute("allPost");
 		ArrayList<Post> postScout=(ArrayList<Post>) session.getAttribute("post");
 		PostDAO postDAO=new PostDAO();
 		 
-		
-	
-	
-
-		
-		
 		if (request.getParameter("idpost")!=null && testo.length()>20) {
 		
 			try {
@@ -68,6 +59,7 @@ public class modificaPostServlet extends HttpServlet {
 				newPost=oldPost;
 				newPost.setTesto(testo);
 				postDAO.updatePost(newPost);
+				request.setAttribute("result", "Post modificato");
 				int i=0;
 				for(;i<allPost.size() && allPost.get(i)!=null;i++) {
 					if(allPost.get(i).getIdPost()==newPost.getIdPost()) {
@@ -78,8 +70,7 @@ public class modificaPostServlet extends HttpServlet {
 				int h=0;
 				for(;h<postScout.size() && postScout.get(h)!=null ;h++) {
 					if(postScout.get(h).getIdPost()==newPost.getIdPost()) {
-						break;
-						
+						break;	
 					}
 				}
 				
@@ -94,6 +85,9 @@ public class modificaPostServlet extends HttpServlet {
 			}
 			
 		}
+		else {
+			response.getWriter().write("Post non modificato");
+		}
 		//speriamo bene
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("areaPersonaleScout.jsp");
 		requestDispatcher.forward(request, response);
@@ -102,7 +96,7 @@ public class modificaPostServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

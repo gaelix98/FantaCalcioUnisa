@@ -199,20 +199,6 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 				</div>
 				</div>
 </header>
-<section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item">
-                            <h1>FantaFootball</h1>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </section>
     <div style="height: 30px"></div>
 
 <%
