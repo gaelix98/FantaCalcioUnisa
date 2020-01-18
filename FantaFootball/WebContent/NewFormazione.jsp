@@ -257,7 +257,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 
 					<tr>
 						<td class="tg-pcvp">No</td>
-						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Cognome</td>
 						<td class="tg-pcvp">Ruolo</td>
 						<td class="tg-pcvp">Punteggio</td>
 						<td class="tg-pcvp">Presenze</td>
@@ -293,7 +293,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 							for (Giocatore g : giocatori) {
 						%>
 						<td class="tg-0pky"><%=i++%></td>
-						<td class="tg-0pky"><a href="InserisciGiocatoreFormazioneServlet?giocatore=<%=g.getId()%>&titolare=true&modulo=<%=modulo %>)"><%=g.getNome()%></a></td>
+						<td class="tg-0pky"><a href="InserisciGiocatoreFormazioneServlet?giocatore=<%=g.getId()%>&titolare=true&modulo=<%=modulo %>"><%=g.getCognome()%></a></td>
 						<td class="tg-0pky"><%=g.getRuolo()%></td>
 						<td class="tg-0pky"><%=g.getVotoMedio()%></td>
 						<td class="tg-0pky"><%=g.getPresenze()%></td>
@@ -316,7 +316,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 
 					<tr>
 						<td class="tg-pcvp">No</td>
-						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Cognome</td>
 						<td class="tg-pcvp">Ruolo</td>
 						<td class="tg-pcvp">Punteggio</td>
 						<td class="tg-pcvp">Presenze</td>
@@ -328,7 +328,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 							for (Giocatore g : formazioneg) {
 						%>
 						<td class="tg-0pky"><%=f++%></td>
-						<td class="tg-0pky"><%=g.getNome()%></td>
+						<td class="tg-0pky"><a href="rimuoviGiocatoreFormazioneServlet?giocatore=<%=g.getId()%>"><%=g.getCognome()%></a></td>
 						<td class="tg-0pky"><%=g.getRuolo()%></td>
 						<td class="tg-0pky"><%=g.getVotoMedio()%></td>
 						<td class="tg-0pky"><%=g.getPresenze()%></td>
@@ -347,7 +347,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 
 					<tr>
 						<td class="tg-pcvp">No</td>
-						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Cognome</td>
 						<td class="tg-pcvp">Ruolo</td>
 						<td class="tg-pcvp">Punteggio</td>
 						<td class="tg-pcvp">Presenze</td>
@@ -380,7 +380,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 
 					<tr>
 						<td class="tg-pcvp">No</td>
-						<td class="tg-pcvp">Nome</td>
+						<td class="tg-pcvp">Cognome</td>
 						<td class="tg-pcvp">Ruolo</td>
 						<td class="tg-pcvp">Punteggio</td>
 						<td class="tg-pcvp">Presenze</td>
@@ -393,7 +393,7 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 								
 						%>
 						<td class="tg-0pky"><%=b++%></td>
-						<td class="tg-0pky"><%=panchinaro.get(g).getNome()%></td>
+						<td class="tg-0pky"><a href="rimuoviGiocatoreFormazioneServlet?giocatore=<%=panchinaro.get(g).getId()%>"> <%=panchinaro.get(g).getCognome()%></a></td>
 						<td class="tg-0pky"><%=panchinaro.get(g).getRuolo()%></td>
 						<td class="tg-0pky"><%=panchinaro.get(g).getVotoMedio()%></td>
 						<td class="tg-0pky"><%=panchinaro.get(g).getPresenze()%></td>
@@ -405,7 +405,24 @@ else if (tipoUtente!=null && tipoUtente.equals("scout")){
 					
 					
 					
+					
+					
 				</table>
+				<%if(formazioneg.size()==11){
+						if(panchinaro.size()==7){
+							
+						
+					
+					
+						
+						
+						%>
+						<button href="salvaFormazione">Salva!</button>
+						
+						<%}
+						
+				}
+						%>
 			</div>
 		</div>
 	

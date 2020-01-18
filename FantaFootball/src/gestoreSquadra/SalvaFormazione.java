@@ -33,7 +33,7 @@ public class SalvaFormazione extends HttpServlet {
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String redirect="NewFormazione.jsp";
+		String redirect="index.jsp";
 		Formazione formazione=(Formazione) request.getSession().getAttribute("formazione");
 		formazione.setSchierata(true);
 		boolean error=false;
