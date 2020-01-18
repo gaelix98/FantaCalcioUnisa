@@ -27,6 +27,7 @@
 	}
 %>
 <body>
+
 	<header class="header_area">
 		<div class="sub_header">
 			<div class="container">
@@ -358,8 +359,8 @@
 				</aside>
 			</div>
 		</div>
-
 	</div>
+
 	<%@include file="footer.jsp"%>
 	<script charset="utf-8">
 		/*function showDiv(divId, element)

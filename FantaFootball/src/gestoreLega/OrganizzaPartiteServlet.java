@@ -49,6 +49,8 @@ public class OrganizzaPartiteServlet extends HttpServlet {
 						partitaDAO.addPartita(p);
 					}
 					request.getSession().setAttribute("calendario", partite);
+					int giornata=Integer.parseInt(getServletContext().getInitParameter("giornata"));
+					request.setAttribute("giornata", giornata);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

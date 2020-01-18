@@ -74,7 +74,9 @@ public class SquadraDAO {
 		catch(SQLException ex) {
 			ex.printStackTrace();
 		}
-		conn.close();
+		//conn.close();
+		DriverManagerConnectionPool.releaseConnection(conn);
+		ps.close();
 		return modificato;
 	}
 	
@@ -104,7 +106,9 @@ public class SquadraDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		conn.close();
+		DriverManagerConnectionPool.releaseConnection(conn);
+		ps.close();
+		//conn.close();
 		return inserito;	
 	}
 	
@@ -129,7 +133,8 @@ public class SquadraDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		conn.close();
+		DriverManagerConnectionPool.releaseConnection(conn);
+		ps.close();
 	}
 	
 	/**
@@ -150,6 +155,8 @@ public class SquadraDAO {
 			if (squadra!=null)
 				squadre.add(squadra);
 		}
+		DriverManagerConnectionPool.releaseConnection(conn);
+		ps.close();
 		return squadre;
 	}
 	
@@ -183,7 +190,9 @@ public class SquadraDAO {
 			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
 			squadra.setGiocatori(giocatori);
 		}
-		conn.close();
+		//conn.close();
+		ps.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return squadra;
 	}
 	
@@ -205,7 +214,8 @@ public class SquadraDAO {
 			if (squadra!=null)
 				squadre.add(squadra);
 		}
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return squadre;
 	}
 	
@@ -228,7 +238,8 @@ public class SquadraDAO {
 				squadre.add(squadra);
 		}
 		
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return squadre;
 	}
 	
@@ -264,7 +275,8 @@ public class SquadraDAO {
 			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
 			squadra.setGiocatori(giocatori);
 		}
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return squadra;
 	}
 }

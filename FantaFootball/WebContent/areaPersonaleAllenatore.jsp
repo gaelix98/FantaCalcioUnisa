@@ -106,10 +106,6 @@
 							<a href="organizzaAsta.jsp?nome=<%=lega.getNome()%>"><button class="genric-btn primary circle arrow">
 								Organizza asta
 							</button></a>
-							<% %>
-							<a href="organizzaAsta.jsp?nome=<%=lega.getNome()%>"><button class="genric-btn primary circle arrow" style="margin-top:5px; margin-bottom:5px">
-								Organizza asta
-							</button></a>
 							
 							</div></div>
 							<%

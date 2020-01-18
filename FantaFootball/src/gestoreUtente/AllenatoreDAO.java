@@ -30,7 +30,9 @@ public class AllenatoreDAO {
 				Allenatore u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 				utenti.add(u);
 			}
-			conn.close();
+			//conn.close();
+			DriverManagerConnectionPool.releaseConnection(conn);
+			ps.close();
 			return utenti;
 			
 		}catch(SQLException e) {
@@ -54,7 +56,9 @@ public class AllenatoreDAO {
 			while (rs.next()) {
 				u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 			}
-			conn.close();
+			//conn.close();
+			DriverManagerConnectionPool.releaseConnection(conn);
+			ps.close();
 			return u;
 			
 		}catch(SQLException e) {
@@ -78,7 +82,8 @@ public class AllenatoreDAO {
 			while (rs.next()) {
 				u=new Allenatore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getString(4));
 			}
-			conn.close();
+			//conn.close();
+			DriverManagerConnectionPool.releaseConnection(conn);
 			return u;
 
 		}catch(SQLException e) {
@@ -102,8 +107,9 @@ public class AllenatoreDAO {
 			ps.setString(4, allenatore.getPassword());
 			ps.setString(5, allenatore.getUsername());
 			ps.execute();
-			con.close();
-
+			//con.close();
+			DriverManagerConnectionPool.releaseConnection(con);
+ps.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return ok;
@@ -125,7 +131,8 @@ public class AllenatoreDAO {
 
 			ps.setString(1,username);
 			ps.executeUpdate();
-			con.close();}
+			//conn.close();
+			DriverManagerConnectionPool.releaseConnection(con);}
 		catch(SQLException x) {x.printStackTrace();
 		return ok;
 
@@ -150,7 +157,8 @@ public class AllenatoreDAO {
 			ps.setString(2, allenatore.getEmail());
 			ps.setString(3, allenatore.getUsername());
 			ps.executeUpdate();
-			con.close();
+			//con.close();
+			DriverManagerConnectionPool.releaseConnection(con);
 		}
 		catch(SQLException x) {
 			x.printStackTrace();
@@ -180,7 +188,8 @@ public class AllenatoreDAO {
 		if(ps.executeQuery().next()) {
 			login = true;
 		}
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return login;
 	}
 }

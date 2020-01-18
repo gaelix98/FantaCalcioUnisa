@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Questa classe è un control che si occupa di passare a FormazioneDAO i dati di una formazione da salvare.
+ * Servlet implementation class SalvaFormazioneServlet
  */
-@WebServlet("/salvaFormazione")
-public class SalvaFormazione extends HttpServlet {
+@WebServlet("/SalvaFormazioneServlet")
+public class SalvaFormazioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SalvaFormazione() {
+    public SalvaFormazioneServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

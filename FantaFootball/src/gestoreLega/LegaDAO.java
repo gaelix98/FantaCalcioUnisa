@@ -38,7 +38,9 @@ public class LegaDAO {
 			while(rs.next()) {
 				u=new Lega(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),dao.getAllenatoreByUsername(rs.getString(9)));
 			}
-		    conn.close();
+			//conn.close();
+			DriverManagerConnectionPool.releaseConnection(conn);
+			ps.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -67,7 +69,9 @@ public class LegaDAO {
 			ps.setInt(8, lega.getTerzoPosto());
 			ps.setString(9, lega.getPresidente().getUsername());
 			ps.execute();
-			con.close();
+			//con.close();
+			DriverManagerConnectionPool.releaseConnection(con);
+			ps.close();
 
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -103,7 +107,9 @@ public class LegaDAO {
 			lega=new Lega(nome, logo, maxAllenatori, quotaMensile, budget, primoPosto, secondoPosto, terzoPosto, allenatore);
 			leghe.add(lega);
 		}
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
+				ps.close();
 		return leghe;
 	}
 	
@@ -119,7 +125,9 @@ public class LegaDAO {
 			PreparedStatement ps = con.prepareStatement("Delete from lega  where NomeLega=?");
 			ps.setString(1, lega.getNome());
 			ps.executeUpdate();
-			con.close();}
+			//con.close();
+			DriverManagerConnectionPool.releaseConnection(con);
+			ps.close();}
 		catch(SQLException x) {x.printStackTrace();
 		return ok;
 

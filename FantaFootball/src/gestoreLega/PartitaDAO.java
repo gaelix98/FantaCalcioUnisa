@@ -48,7 +48,9 @@ public class PartitaDAO {
 		catch(SQLException ex) { 
 			ex.printStackTrace();
 		}
-		conn.close();
+		//conn.close();
+		ps.close();
+		DriverManagerConnectionPool.releaseConnection(conn);
 		return inserito; 
 	}
 	
@@ -76,7 +78,9 @@ public class PartitaDAO {
 			int goal2=rs.getInt("goal2");
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 		}
-		conn.close();
+		//conn.close();
+		ps.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return partita;
 	}
 	
@@ -106,7 +110,9 @@ public class PartitaDAO {
 		catch(SQLException ex) {
 			ex.printStackTrace();
 		}
-		conn.close();
+		ps.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return modificato;
 	}
 	
@@ -134,7 +140,9 @@ public class PartitaDAO {
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 			partite.add(partita);
 		}
-		conn.close();
+		ps.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return partite;
 	}
 	
@@ -165,7 +173,8 @@ public class PartitaDAO {
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 			partite.add(partita);
 		}
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return partite;
 	}
 	
@@ -194,7 +203,8 @@ public class PartitaDAO {
 			partita=new Partita(squadra1, squadra2, giornata, goal1, goal2);
 			partite.add(partita);
 		}
-		conn.close();
+		//conn.close();
+				DriverManagerConnectionPool.releaseConnection(conn);
 		return partite;
 	}
 }

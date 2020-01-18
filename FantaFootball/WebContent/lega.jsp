@@ -53,14 +53,9 @@
 					<% if(!calendario.isEmpty()){ %>
 					<h4>
 					
-						<a href="VisualizzaCalendarioServlet?nomeLega=<%=lega.getNome()%>&giornata=<%=(int)getServletContext().getAttribute("giornata")%>">Calendario</a>
+						<a href="calendario.jsp">Calendario</a>
 					</h4>
-					<%}else{ %>
-					<h4>
-					
-						<a href="OrganizzaPartiteServlet?nomeLega=<%=lega.getNome()%>">Inizia Campionato</a>
-					</h4>
-					<%} %>
+					<%}%>
 				</aside>
 			</div>
 		</div>
