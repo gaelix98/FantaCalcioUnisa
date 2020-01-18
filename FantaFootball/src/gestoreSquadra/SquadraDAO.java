@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import db.DriverManagerConnectionPool;
 import gestoreLega.Lega;
@@ -47,7 +48,7 @@ public class SquadraDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		conn.close();
+		DriverManagerConnectionPool.releaseConnection(conn);
 		return inserita;	
 	}
 	
@@ -74,9 +75,7 @@ public class SquadraDAO {
 		catch(SQLException ex) {
 			ex.printStackTrace();
 		}
-		//conn.close();
 		DriverManagerConnectionPool.releaseConnection(conn);
-		ps.close();
 		return modificato;
 	}
 	
@@ -107,8 +106,6 @@ public class SquadraDAO {
 			e.printStackTrace();
 		}
 		DriverManagerConnectionPool.releaseConnection(conn);
-		ps.close();
-		//conn.close();
 		return inserito;	
 	}
 	
@@ -134,7 +131,6 @@ public class SquadraDAO {
 			e.printStackTrace();
 		}
 		DriverManagerConnectionPool.releaseConnection(conn);
-		ps.close();
 	}
 	
 	/**
@@ -155,8 +151,6 @@ public class SquadraDAO {
 			if (squadra!=null)
 				squadre.add(squadra);
 		}
-		DriverManagerConnectionPool.releaseConnection(conn);
-		ps.close();
 		return squadre;
 	}
 	
@@ -190,9 +184,7 @@ public class SquadraDAO {
 			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
 			squadra.setGiocatori(giocatori);
 		}
-		//conn.close();
-		ps.close();
-				DriverManagerConnectionPool.releaseConnection(conn);
+		DriverManagerConnectionPool.releaseConnection(conn);
 		return squadra;
 	}
 	
@@ -214,8 +206,7 @@ public class SquadraDAO {
 			if (squadra!=null)
 				squadre.add(squadra);
 		}
-		//conn.close();
-				DriverManagerConnectionPool.releaseConnection(conn);
+		DriverManagerConnectionPool.releaseConnection(conn);
 		return squadre;
 	}
 	
@@ -238,8 +229,7 @@ public class SquadraDAO {
 				squadre.add(squadra);
 		}
 		
-		//conn.close();
-				DriverManagerConnectionPool.releaseConnection(conn);
+		DriverManagerConnectionPool.releaseConnection(conn);
 		return squadre;
 	}
 	
@@ -251,32 +241,35 @@ public class SquadraDAO {
 	 * @throws SQLException
 	 */
 	public synchronized Squadra getSquadraByUserELega(String User, String nomeLega) throws SQLException {
-		conn = DriverManagerConnectionPool.getConnection();
-		Squadra squadra = null;
-		String sql = "select * from squadra where squadra.Allenatore = ? and squadra.lega = ?";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(1, User);
-		ps.setString(2, nomeLega);
-
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			LegaDAO legaDAO = new LegaDAO();
-			AllenatoreDAO allenatoreDAO = new AllenatoreDAO();
-			GiocatoreDAO giocatoreDAO = new GiocatoreDAO();
-			String nome = rs.getString("NomeSquadra");
-			String logo = rs.getString("Logo");
-			Lega lega = legaDAO.getLegaByNome(rs.getString("Lega"));
-			Allenatore allenatoreobj = allenatoreDAO.getAllenatoreByUsername(rs.getString("Allenatore"));
-			Giocatore[] giocatori = giocatoreDAO.getGiocatoriBySquadra(lega.getNome(),rs.getString("nomeSquadra"));
-			int punti = rs.getInt("Punti");
-			int budget = rs.getInt("BudgetRimanente");
-			squadra = new Squadra(rs.getString("NomeSquadra"),logo,allenatoreobj,lega,punti,budget);
-			squadra.setGiocatori(giocatori);
-			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
-			squadra.setGiocatori(giocatori);
+	
+		List<Squadra> squadre = getSquadreByLega(User);
+		for (Squadra s : squadre){
+			if(s.getAllenatore().getNome().equals(User) )
+				return s;
 		}
-		//conn.close();
-				DriverManagerConnectionPool.releaseConnection(conn);
-		return squadra;
+//		String sql = "select * from squadra where squadra.Allenatore = ? and squadra.lega = ?";
+//		PreparedStatement ps = conn.prepareStatement(sql);
+//		ps.setString(1, User);
+//		ps.setString(2, nomeLega);
+//
+//		ResultSet rs = ps.executeQuery();
+//		while(rs.next()) {
+//			LegaDAO legaDAO = new LegaDAO();
+//			AllenatoreDAO allenatoreDAO = new AllenatoreDAO();
+//			GiocatoreDAO giocatoreDAO = new GiocatoreDAO();
+//			String nome = rs.getString("NomeSquadra");
+//			String logo = rs.getString("Logo");
+//			Lega lega = legaDAO.getLegaByNome(rs.getString("Lega"));
+//			Allenatore allenatoreobj = allenatoreDAO.getAllenatoreByUsername(rs.getString("Allenatore"));
+//			Giocatore[] giocatori = giocatoreDAO.getGiocatoriBySquadra(lega.getNome(),rs.getString("nomeSquadra"));
+//			int punti = rs.getInt("Punti");
+//			int budget = rs.getInt("BudgetRimanente");
+//			squadra = new Squadra(rs.getString("NomeSquadra"),logo,allenatoreobj,lega,punti,budget);
+//			squadra.setGiocatori(giocatori);
+//			squadra = new Squadra(nome,logo,allenatoreobj,lega,punti,budget);
+//			squadra.setGiocatori(giocatori);
+//		}
+	
+		return null;
 	}
 }
