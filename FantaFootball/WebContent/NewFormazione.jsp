@@ -170,7 +170,7 @@
 		</div>
 		<div style="height: 30px"></div>
 		<div class="row">
-			<div class="col-lg-9 col-md-9">
+			<div class="col-lg-10 col-md-10">
 				<div class="blog_left_sidebar">
 					<div class="row">
 						<div class="col-lg-5">
@@ -342,7 +342,7 @@
 
 			</div>
 			<div class="col-lg-1 col-md-1"></div>
-			<div class="col-lg-2 col-md-2">
+			<div class="col-lg-1 col-md-1">
 				<aside class="single_sidebar_widget search_widget">
 					<h4>
 						<a href="classificaLega.jsp">Classifica</a>
@@ -360,22 +360,8 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 	<%@include file="footer.jsp"%>
-	<script charset="utf-8">
-		/*function showDiv(divId, element)
-		 {
-		 document.getElementById(divId).style.display = element.value != 0 ? 'block' : 'none';
-		 if(document.getElementById("test").value=="3-4-3"){
-		 document.getElementById(divId).innerHTML = document.getElementById("test").value;
-		 }
-		 if(document.getElementById("test").value=="4-4-2"){
-		 document.getElementById(divId).innerHTML = "aaaaa";
-		 }
-		 if(document.getElementById("test").value=="3-5-2"){
-		 document.getElementById(divId).innerHTML = "XXXX";
-		 }
-		 }*/
-	</script>
+	
 </body>
 </html>
