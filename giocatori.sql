@@ -1,485 +1,486 @@
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Francesco','Acerbi','D','Lazio',18,'6,42',1,1,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bobby','Adekanye','A','Lazio',1,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Claude','Adjapong','D','Verona',1,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Adorante','A','Parma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lucien','Agoume','C','Inter',1,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kevin','Agudelo','C','Genoa',9,'5,83',1,0,3,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ola','Aina','D','Torino',16,'5,67',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabrizio','Alastra','P','Parma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sandro','Alfonso','P','Brescia',3,'5,83',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Enrico','Allan','C','Napoli',13,'6,04',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marques','Almici','D','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alberto','Amrabat','C','Verona',17,'6,26',0,0,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sofyan','Andrenacci','P','Brescia',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andre','Angella','D','Udinese',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lorenzo','Ankersen','D','Genoa',12,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Cristian','Ansaldi','C','Torino',13,'6,35',4,2,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mirko','Antonucci','A','Roma',2,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Guilherme','Arana','D','Atalanta',4,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kwadwo','Asamoah','D','Inter',8,'6,12',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Emil','Audero','P','Sampdoria',19,'6,03',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Emil','Augello','D','Sampdoria',2,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tommaso','Aye''','A','Brescia',10,'5,44',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Florian','Babacar','A','Lecce',15,'5,71',2,0,2,0,0,2,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Khouma','Badelj','C','Fiorentina',16,'5,77',1,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Milan','Badu','C','Verona',2,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Emmanuel','Bahlouli','A','Sampdoria',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mohamed','Balotelli','A','Brescia',14,'6,07',5,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mario','Bani','D','Bologna',16,'5,81',2,0,8,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mattia','Barak','C','Udinese',8,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonin','Baraye','A','Parma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicolo','Barella','C','Inter',14,'6,11',1,2,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonino','Barilla''','C','Parma',18,'5,76',1,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonio','Barreca','D','Genoa',7,'5,64',0,1,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Edgar','Barreto','C','Sampdoria',2,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Musa','Barrow','A','Bologna',7,'5,93',0,2,0,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniele','Baselli','C','Torino',15,'5,97',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Bastoni','D','Inter',10,'6',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Michel','Bastos','D','Lazio',6,'5,75',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Asmir','Begovic','P','Milan',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Valon','Behrami','C','Genoa',2,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Niki','Beloko','C','Fiorentina',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Belotti','A','Torino',17,'6,47',4,2,2,0,5,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','Benassi','C','Fiorentina',11,'5,83',1,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ismael','Bennacer','C','Milan',14,'5,82',0,0,8,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rodrigo','Bentancur','C','Juventus',13,'6,15',0,3,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Domenico','Berardi','A','Sassuolo',14,'6,57',8,2,3,1,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alex','Berenguer','C','Torino',12,'6,27',5,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('B.','Bereszynski','D','Sampdoria',12,'5,62',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Bernardeschi','C','Juventus',14,'5,42',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tommaso','Berni','P','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Bertolacci','C','Sampdoria',5,'5,88',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tommaso','Bessa','C','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Biancu','C','Cagliari',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniel','Bianda','D','Roma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lucas','Biglia','C','Milan',7,'5,43',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Cristiano','Biraghi','D','Inter',13,'5,79',0,2,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Davide','Biraschi','D','Genoa',8,'5,44',0,0,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Valter','Birsa','C','Cagliari',2,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Dimitri','Bisoli','C','Brescia',19,'5,87',0,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','Bleve','P','Lecce',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kevin-Prince','Boateng','A','Fiorentina',14,'5,79',1,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Salvatore','Bocchetti','D','Verona',5,'5,9',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jeremie','Boga','A','Sassuolo',18,'6,06',4,1,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leonardo','Bonaventura','C','Milan',12,'6,05',2,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Bonazzoli','A','Sampdoria',8,'6,07',1,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kevin','Bonifazi','D','Torino',3,'6,33',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leonardo','Bonucci','D','Juventus',19,'6,45',3,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabio','Borghetto','P','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Valero','Borini','C','Verona',2,'5,5',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Devid','Bouah','D','Roma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mehdi','Bourabia','C','Sassuolo',5,'5,4',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Brancolini','P','Fiorentina',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gleison','Bremer','D','Torino',11,'5,55',1,0,2,2,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marcelo','Brozovic','C','Inter',18,'6,28',2,5,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gaston','Brugman','C','Parma',11,'5,9',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alves','Buffon','P','Juventus',7,'6,14',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluigi','Buongiorno','D','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Burgio','C','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabrizio','Cacciatore','D','Cagliari',11,'5,68',0,0,0,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Martin','Caceres','D','Fiorentina',15,'5,97',1,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mattia','Caicedo','A','Lazio',13,'6,38',4,1,3,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Davide','Calabresi','D','Bologna',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Davide','Calabria','D','Milan',13,'5,46',0,1,2,2,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','Caldara','D','Atalanta',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Hadam','Calderoni','D','Lecce',16,'5,8',3,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jose','Calhanoglu','C','Milan',18,'6',2,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonio','Callejon','C','Napoli',18,'5,92',1,4,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianmarco','Cancelo','D','Juventus',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Paolo','Candela','D','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluca','Candreva','C','Inter',16,'6,33',2,4,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Francesco','Cangiano','A','Bologna',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tommaso','Caprari','A','Sampdoria',16,'5,86',3,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Francesco','Caputo','A','Sassuolo',17,'6,16',8,3,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Timothy','Cassandro','D','Bologna',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Samu','Cassata','C','Genoa',11,'5,3',0,0,4,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lucas','Castagne','D','Atalanta',13,'6,08',1,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gaetano','Castillejo','C','Milan',9,'6,17',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Danilo','Castro','C','Cagliari',14,'6,23',2,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Castrovilli','C','Fiorentina',18,'6,53',3,2,7,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luca','Cataldi','C','Lazio',10,'6,12',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alberto','Ceccherini','D','Fiorentina',5,'5,83',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Ceppitelli','D','Cagliari',9,'6,25',2,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Julian','Cerri','A','Cagliari',10,'5,88',1,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jhon','Cetin','D','Roma',4,'5,75',0,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giorgio','Chabot','D','Sampdoria',5,'6',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Chancellor','D','Brescia',16,'5,91',2,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Vlad','Chiellini','D','Juventus',1,'7',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianmarco','Chiesa','C','Fiorentina',16,'6,22',2,2,3,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luca','Chiriches','D','Sassuolo',4,'5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Thiago','Cigarini','C','Cagliari',16,'6,1',0,1,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Cionek','D','SPAL',15,'5,7',0,0,7,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ebrima','Cistana','D','Brescia',17,'5,76',1,0,6,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Omar','Colley','D','Sampdoria',16,'5,91',0,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Simone','Colombi','P','Parma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Consigli','P','Sassuolo',14,'6,29',0,0,0,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Conti','D','Milan',11,'5,75',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gabriele','Corbo','D','Bologna',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andreas','Cornelius','A','Parma',12,'6,15',6,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Joaquin','Correa','A','Lazio',17,'6,35',6,1,0,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessio','Coulibaly','C','Udinese',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Cragno','P','Cagliari',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Domenico','Crescenzi','D','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bryan','Criscito','D','Genoa',13,'6',0,0,5,0,4,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jaime','Cristante','C','Roma',9,'5,79',1,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tommaso','Cuadrado','C','Juventus',16,'6,03',0,1,4,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Patrick','Cucchietti','P','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Costa','Cutrone','A','Fiorentina',1,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Dabo','C','SPAL',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Henrique','Dalbert','D','Fiorentina',18,'5,92',0,3,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','D''Alessandro','C','SPAL',4,'5,75',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Danilo','D''Ambrosio','D','Inter',11,'6,11',1,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Larangeira','Danilo','D','Juventus',9,'5,89',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luiz','Danzi','C','Verona',1,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Darmian','D','Parma',15,'6',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Matteo','Dawidowicz','D','Verona',9,'5,75',0,0,1,2,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Pawel','Defrel','A','Sassuolo',8,'5,94',1,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Angelis','Deiola','C','Lecce',2,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ligt','Dell''Orco','D','Lecce',6,'5,25',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Maio','Demiral','D','Juventus',5,'6,3',1,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Paul','Demme','C','Napoli',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Roon','Denswil','D','Bologna',13,'5,54',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sciglio','Depaoli','D','Sampdoria',14,'5,92',0,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Silvestri','Dermaku','D','Parma',7,'6,14',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Vrij','Dessena','C','Brescia',6,'5,58',0,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gregoire','Destro','A','Genoa',5,'5,62',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Diawara','C','Roma',11,'6,1',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Cristian','Dijks','D','Bologna',4,'5,88',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Dimarco','D','Inter',2,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Diego','Djidji','D','Torino',9,'5,64',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stefano','Djimsiti','D','Atalanta',17,'6,06',1,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabio','Djuricic','C','Sassuolo',13,'6',3,1,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kastriot','Dominguez','C','Bologna',1,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniele','Donati','D','Lecce',2,'6,25',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mattia','Dragowski','P','Fiorentina',19,'6,05',0,0,1,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Carmine','Duarte','D','Milan',5,'5,6',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Francesco','Dubickas','A','Lecce',1,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gaudio','Duncan','C','Sassuolo',13,'6,09',1,4,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lorenzo','Dybala','A','Juventus',17,'6,72',4,1,3,0,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Amadou','Dzeko','A','Roma',19,'6,55',7,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mitchell','Dzemaili','C','Bologna',14,'5,96',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Edera','A','Torino',2,'5',0,0,0,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Koffi','Ekdal','C','Sampdoria',18,'5,88',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Berat','Elmas','C','Napoli',11,'5,85',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Filip','Empereur','D','Verona',3,'5,83',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicolas','Fagioli','C','Juventus',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giulio','Falco','A','Lecce',15,'6,3',2,1,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alfredo','Falcone','P','Sampdoria',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonio','Farago''','C','Cagliari',8,'5,88',1,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluigi','Faraoni','D','Verona',18,'6,11',2,2,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Costa','Fares','C','SPAL',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bartlomiej','Farias','A','Lecce',12,'5,96',2,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leo','Favilli','A','Genoa',9,'5,57',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Edgaras','Fazio','D','Roma',10,'5,61',0,0,0,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alfred','Felipe','D','SPAL',10,'5,67',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bobby','Fiamozzi','D','Lecce',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Paulo','Floccari','A','SPAL',15,'5,5',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES (NULL,'Florenzi','D','Roma',14,'6',0,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Fofana','C','Udinese',14,'5,96',1,4,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Simone','Freuler','C','Atalanta',14,'6,08',2,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Albin','Fuzato','P','Roma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Yamiq','Gabbia','D','Milan',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Eljif','Gabbiadini','A','Sampdoria',15,'6',4,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alan','Gabriel','P','Lecce',19,'6,29',0,0,2,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Can','Gaetano','C','Napoli',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Emerson','Gagliardini','C','Inter',11,'6,09',2,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sebastiano','Gagliolo','D','Parma',16,'5,87',1,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicolo','Gallo','D','Lecce',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Filippo','Gastaldello','D','Brescia',4,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Wladimiro','Gazzola','D','Parma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Iago','Gervinho','A','Parma',17,'6,03',4,3,3,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Paolo','Ghezzal','C','Fiorentina',8,'5,58',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Davide','Ghiglione','D','Genoa',16,'5,93',0,5,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mohamed','Ghoulam','D','Napoli',5,'5,9',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Diego','Gilli','D','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Godin','D','Inter',12,'6,14',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Goldaniga','D','Genoa',1,'5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Gollini','P','Atalanta',17,'6,24',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alex','Gosens','D','Atalanta',16,'6,4',6,3,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianmarco','Grassi','C','Parma',9,'5,88',1,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Riccardo','Guerrieri','P','Lazio',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sergio','Gumus','A','Genoa',3,'6,25',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Gunter','D','Verona',16,'5,63',0,0,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Seko','Handanovic','P','Inter',19,'6,26',0,0,0,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Remo','Hateboer','D','Atalanta',17,'5,81',0,3,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniel','Haye','C','Lecce',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Matteo','Hernani','C','Parma',18,'5,94',0,1,8,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Manolo','Higuain','A','Juventus',17,'6,25',5,3,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Hysaj','D','Napoli',8,'5,57',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluca','Iacoponi','D','Parma',19,'5,97',2,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Roberto','Ibanez','D','Atalanta',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Riccardo','Ibrahimovic','A','Milan',2,'6,75',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonino','Icardi','A','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniele','Igor','D','SPAL',15,'5,7',0,1,7,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marcello','Ilicic','A','Atalanta',15,'6,57',9,2,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Imbula','C','Lecce',3,'5,67',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rachid','Immobile','A','Lazio',18,'6,89',13,5,3,0,7,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Paolo','Inglese','A','Parma',10,'5,61',2,0,1,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Faouzi','Insigne','A','Napoli',18,'6,03',1,1,1,0,2,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Filippo','Ionita','C','Cagliari',16,'5,91',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Diego','Izzo','D','Torino',19,'5,95',1,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Edoardo','Jagiello','C','Genoa',4,'5,75',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Pierluigi','Jajalo','C','Udinese',14,'5,86',0,0,5,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alejandro','Jandrei','P','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Robin','Jankovic','C','SPAL',6,'5,25',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alberto','Jankto','C','Sampdoria',14,'5,82',2,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Guido','Jaroszynski','D','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sinan','Jony','C','Lazio',8,'5,7',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Koray','Joronen','P','Brescia',16,'6,34',0,0,1,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Samir','Kalinic','A','Roma',6,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Hans','Karamoh','A','Parma',5,'6,12',1,1,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Thom','Karnezis','P','Napoli',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Liam','Kessie''','C','Milan',16,'5,41',0,0,2,0,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Theo','Khedira','C','Juventus',12,'5,92',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Kjaer','D','Milan',5,'5,8',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gonzalo','Klavan','D','Cagliari',16,'5,71',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Elseid','Kluivert','C','Roma',12,'6,17',3,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Simone','Kolarov','D','Roma',19,'5,92',3,2,5,0,2,2,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Roger','Kouame''','A','Genoa',11,'6,45',5,2,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Zlatan','Koulibaly','D','Napoli',14,'5,68',0,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('dos','Krejci','C','Bologna',10,'5,95',1,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Josip','Krunic','C','Milan',7,'5,64',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giannelli','Kucka','C','Parma',14,'6,11',2,2,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ciro','Kulusevski','C','Parma',19,'6,45',4,7,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Roberto','Kumbulla','D','Verona',12,'6,27',1,0,3,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lorenzo','Kurtic','C','Parma',17,'6',2,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Arthur','Kyriakopoulos','D','Sassuolo',10,'6,06',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Armando','Lapadula','A','Lecce',12,'6',3,0,5,1,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Filip','Lasagna','A','Udinese',18,'5,58',3,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Laurini','D','Parma',5,'5,62',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Laxalt','C','Torino',14,'5,8',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Lazaro','C','Inter',6,'5,83',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jakub','Lazovic','C','Verona',18,'6,17',1,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Pedro','Lerager','C','Genoa',11,'5,64',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bogdan','Leris','C','Sampdoria',7,'5,71',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Letica','P','SPAL',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Silva','Linetty','C','Sampdoria',11,'6,09',1,3,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jesse','Lirola','D','Fiorentina',16,'5,81',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jesus','Llorente','A','Napoli',15,'6,05',3,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nikola','Lobotka','C','Napoli',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Yann','Lozano','A','Napoli',14,'5,75',2,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Orestis','Lucioni','D','Lecce',18,'5,72',1,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Franck','Lukic','C','Torino',13,'5,79',0,1,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sami','Lulic','C','Lazio',17,'5,97',0,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Simon','Luperto','D','Napoli',8,'5,83',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ragnar','Lyanco','D','Torino',6,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Justin','Lykogiannis','D','Cagliari',8,'5,75',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alexandar','Magnanelli','C','Sassuolo',13,'5,95',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Christian','Magnani','D','Brescia',2,'5',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kalidou','Majer','C','Lecce',13,'5,92',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ladislav','Maksimovic','D','Napoli',8,'5,88',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rade','Malcuit','D','Napoli',3,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jan','Malinovskyi','C','Atalanta',16,'6,17',2,0,4,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Juraj','Mancosu','C','Lecce',15,'6,17',1,0,2,0,4,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Dejan','Mandragora','C','Udinese',18,'5,79',0,2,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marash','Mangraviti','D','Brescia',6,'5,5',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jasmin','Manolas','D','Napoli',13,'6',2,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giorgos','Marchetti','P','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluca','Marlon','D','Sassuolo',14,'5,93',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kevin','Maroni','C','Sampdoria',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Vincent','Marrone','D','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Diego','Martella','D','Brescia',12,'5,3',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Valentino','Marusic','C','Lazio',6,'6,08',1,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Darko','Mateju','D','Brescia',16,'5,56',0,1,4,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Manuel','Matri','A','Brescia',8,'5,67',0,0,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rafael','Mattiello','D','Cagliari',2,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lucas','Matuidi','C','Juventus',17,'5,91',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mehdi','Mbaye','D','Bologna',9,'5,56',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Karlo','Meccariello','D','Lecce',6,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Karol','Medel','C','Bologna',13,'5,88',0,0,7,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Pol','Meite''','C','Torino',16,'5,61',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fernando','Meret','P','Napoli',13,'6,23',0,0,0,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Faso','Merola','A','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stanislav','Mertens','A','Napoli',16,'6,03',4,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Manuel','Milenkovic','D','Fiorentina',19,'6,08',3,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Hirving','Milik','A','Napoli',10,'6,4',7,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Felippe','Milli','P','Lecce',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leiva','Millico','A','Torino',2,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabio','Minelli','D','Parma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alberto','Mirante','P','Roma',1,'6,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Felipe','Missiroli','C','SPAL',18,'5,83',0,0,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jordan','Mkhitaryan','C','Roma',9,'5,94',3,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Romelu','Moncini','A','SPAL',4,'5,33',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sasa','Montiel','C','Fiorentina',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Senad','Morosini','C','Brescia',3,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Sebastiano','Muldur','D','Sassuolo',9,'6',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Murgia','C','SPAL',14,'5,73',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Muriel','A','Atalanta',17,'6,29',6,0,0,0,4,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Francesco','Murillo','D','Sampdoria',10,'5,5',0,0,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giangiacomo','Murru','D','Sampdoria',19,'5,66',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Zan','Musacchio','D','Milan',16,'5,69',0,0,4,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nikola','Musso','P','Udinese',19,'6,37',0,0,0,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kevin','Nainggolan','C','Cagliari',16,'6,47',4,4,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniel','Nandez','C','Cagliari',18,'6,22',1,2,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ruslan','Ndoj','C','Brescia',8,'5,5',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluca','Nestorovski','A','Udinese',13,'5,9',1,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','Nicolas','P','Udinese',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rolando','N''Koulou','D','Torino',13,'5,81',0,0,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Massimiliano','Nuytinck','D','Udinese',9,'6,28',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Kostas','Obiang','C','Sassuolo',16,'5,63',1,0,7,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Okaka','A','Udinese',15,'6,13',4,1,7,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rui','Okoli','D','Atalanta',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Oliva','C','Cagliari',7,'6,25',1,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gonzalo','Olsen','P','Cagliari',14,'6,46',0,0,0,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bruno','Opoku','D','Udinese',7,'5,79',0,0,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lautaro','Orsolini','A','Bologna',19,'6,13',5,3,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Adam','Ospina','P','Napoli',6,'5,75',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Padelli','P','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ales','Pajac','D','Genoa',11,'5,65',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Palacio','A','Bologna',19,'6,17',5,2,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Palomino','D','Atalanta',15,'5,83',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Blaise','Paloschi','A','SPAL',9,'5,43',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ibrahima','Pandev','A','Genoa',16,'6,17',4,0,4,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Biagio','Paqueta''','C','Milan',14,'5,58',0,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gary','Parigini','C','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Soualiho','Parolo','C','Lazio',13,'6',0,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alex','Pasalic','C','Atalanta',17,'6,31',4,2,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Dries','Pastore','C','Roma',8,'6,14',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicola','Patric','D','Lazio',6,'6',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Arkadiusz','Pavoletti','A','Cagliari',1,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Savic','Paz','D','Bologna',1,'6,5',0,1,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Joakim','Pazzini','A','Verona',6,'7',1,0,0,0,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Vincenzo','Pedro','A','Fiorentina',4,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonio','Pegolo','P','Sassuolo',3,'7',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Simone','Peluso','D','Sassuolo',14,'5,5',0,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ivan','Perica','A','Udinese',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tofol','Perin','P','Genoa',2,'6,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leonardo','Perisan','P','Udinese',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mert','Perisic','C','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Perotti','C','Roma',11,'6,1',0,1,1,0,3,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luis','Pessina','C','Verona',17,'5,88',2,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicola','Petagna','A','SPAL',19,'5,89',4,1,4,0,2,2,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Juwara','Petriccione','C','Lecce',16,'5,94',0,3,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mateo','Piatek','A','Milan',18,'5,56',1,0,1,0,3,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Juan','Piccoli','A','Atalanta',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marko','Pinamonti','A','Genoa',15,'5,67',2,1,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Miralem','Pinsoglio','P','Juventus',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Emanuele','Pisacane','D','Cagliari',17,'5,82',1,0,3,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ilija','Pjaca','A','Juventus',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Matteo','Pjanic','C','Juventus',17,'6,32',3,1,7,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lazar','Plizzari','P','Milan',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicolas','Poli','C','Bologna',17,'5,94',1,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bram','Politano','A','Inter',11,'5,94',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Pedro','Proto','P','Lazio',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stefano','Pulgar','C','Fiorentina',18,'6',0,0,7,0,3,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Caleb','Puscas','A','Inter',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Christian','Quagliarella','A','Sampdoria',16,'5,78',2,1,2,0,3,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Robin','Rabiot','C','Juventus',11,'5,73',0,0,2,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicholas','Radovanovic','C','Genoa',16,'5,82',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Riccardo','Radu','D','Lazio',15,'5,8',1,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('David','Radunovic','P','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniele','Rafael','P','Cagliari',6,'6,08',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marko','Ragatzu','A','Cagliari',4,'7',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Rodrigo','Ramirez','C','Sampdoria',11,'6',2,1,3,0,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jose','Ramsey','C','Juventus',10,'6,05',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alberto','Ranocchia','D','Inter',2,'6,25',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Goran','Raspadori','A','Sassuolo',4,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lucas','Rebic','A','Milan',8,'5,5',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Vittorio','Reca','D','SPAL',11,'5,68',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','Regini','D','Sampdoria',2,'5,75',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mario','Ribery','C','Fiorentina',11,'6,59',2,2,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Javier','Riccardi','C','Roma',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marko','Rincon','C','Torino',16,'6,12',1,1,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lopez','Rispoli','D','Lecce',16,'5,62',0,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leonardo','Rizzo','C','Bologna',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nehuen','Rog','C','Cagliari',17,'6,12',1,0,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giampaolo','Rogerio','D','Sassuolo',3,'5,33',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giampaolo','Romagna','D','Sassuolo',12,'5,79',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Pereira','Romulo','C','Brescia',18,'5,81',1,3,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Gianluca','Rosati','P','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lorenzo','Rossettini','D','Lecce',18,'5,83',0,1,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luca','Rovella','C','Genoa',1,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Rrahmani','D','Verona',18,'6,06',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Mattia','Rugani','D','Juventus',1,'5',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Samuele','Ruiz','C','Napoli',17,'5,74',1,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Diego','Sabelli','D','Brescia',19,'5,92',0,2,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Matteo','Sala','D','SPAL',8,'5,64',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Salamon','D','SPAL',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jacopo','Samir','D','Udinese',10,'5,5',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('German','Sanabria','A','Genoa',9,'5,81',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giuseppe','Sandro','C','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Krzysztof','Santander','A','Bologna',16,'5,69',0,0,4,0,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Roberto','Santon','D','Roma',9,'5,67',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Saponara','C','Genoa',4,'5,75',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Carlo','Schone','C','Genoa',16,'5,88',1,0,3,0,0,1,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabio','Schouten','C','Bologna',7,'5,58',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Semprini','Scozzarella','C','Parma',9,'6,28',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Miralem','Seculin','P','Sampdoria',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Sema','C','Udinese',15,'5,93',2,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Matteo','Semprini','D','Brescia',1,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Silvio','Sensi','C','Inter',10,'6,4',3,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Erick','Sepe','P','Parma',19,'6,26',0,0,1,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabio','Shakhov','C','Lecce',12,'5,77',0,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Adrien','Siligardi','A','Parma',1,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ivan','Silvestri','P','Verona',18,'6,22',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ionut','Simeone','A','Cagliari',18,'6',5,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stefan','Sirigu','P','Torino',19,'6,58',0,0,3,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Boris','Skorupski','P','Bologna',19,'5,95',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bittencourt','Skrabb','A','Brescia',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniele','Skriniar','D','Inter',18,'6,25',0,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Cristian','Smalling','D','Roma',14,'6,21',2,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leonardo','Soriano','C','Bologna',13,'5,96',3,1,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luca','Sottil','A','Fiorentina',9,'5,81',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Spalek','C','Brescia',13,'5,5',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Leonardo','Spinazzola','D','Roma',11,'6,15',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ante','Sportiello','P','Atalanta',2,'6,25',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Arkadiusz','Sprocati','A','Parma',13,'5,83',1,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Vasco','Stepinski','A','Verona',12,'5,78',2,0,1,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Frank','Stijepovic','A','Sampdoria',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessio','Strakosha','P','Lazio',18,'6,39',0,0,0,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Davide','Strefezza','C','SPAL',14,'6,04',1,2,3,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stefano','Sturaro','C','Genoa',5,'5,7',1,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Tomas','Suso','C','Milan',16,'5,72',1,2,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Svanberg','C','Bologna',11,'5,94',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicholas','Szczesny','P','Juventus',12,'6,38',0,0,1,0,0,0,1);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Becao','Tabanelli','C','Lecce',13,'5,81',1,0,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ricardo','Tachtsidis','C','Lecce',16,'5,53',0,1,3,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marko','Teodorczyk','A','Udinese',6,'6',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fred','Terracciano','P','Fiorentina',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Filippo','Terzic','D','Fiorentina',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessio','Thereau','A','Fiorentina',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Cristian','Thorsby','C','Sampdoria',8,'5,75',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nenad','Toljan','D','Sassuolo',17,'5,91',1,1,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Cristiano','Toloi','D','Atalanta',17,'6,09',0,4,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonio','Tomiyasu','D','Bologna',14,'5,79',0,1,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Aleandro','Tomovic','D','SPAL',16,'5,7',0,1,5,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luca','Tonali','C','Brescia',18,'6,25',1,0,5,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Francesco','Tonelli','D','Napoli',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicolo','Torregrossa','A','Brescia',9,'6,11',1,1,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Amir','Tremolada','C','Brescia',1,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Daniele','Tripaldelli','D','Sassuolo',2,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Fabian','Troost-Ekong','D','Udinese',17,'5,79',0,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Tupta','A','Verona',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stefano','Turati','P','Sassuolo',2,'6,25',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jacopo','Ujkani','P','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Bartosz','Under','C','Roma',9,'5,92',1,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Eddie','Valdifiori','C','SPAL',8,'5,69',0,1,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicholas','Valoti','C','SPAL',15,'5,86',1,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Antonio','Vavro','D','Lazio',2,'5,75',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alexis','Vecino','C','Inter',14,'6,04',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Michel','Venuti','D','Fiorentina',6,'5,62',0,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicola','Vera','D','Lecce',3,'6',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Federico','Verdi','C','Torino',17,'5,79',0,2,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Davide','Veretout','C','Roma',17,'6,15',0,0,3,0,1,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Riccardo','Verre','C','Verona',17,'6,06',1,0,4,0,2,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Emiliano','Vicari','D','SPAL',19,'5,87',0,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Aleksejs','Vieira','C','Sampdoria',16,'5,66',0,1,6,1,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('N','Vigorito','P','Lecce',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jerdy','Viviani','C','SPAL',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Matteo','Vlahovic','A','Fiorentina',15,'5,89',3,0,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andrea','Vodisek','P','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Ken','Walace','C','Udinese',9,'5,79',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Alessandro','Wallace','D','Lazio',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Stefano','Walukiewicz','D','Cagliari',1,'4,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luigi','Younes','C','Napoli',6,'5,5',0,0,1,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Jevhen','Zaccagni','C','Verona',17,'6,18',1,3,4,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Luca','Zaccagno','P','Torino',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Marco','Zaniolo','C','Roma',18,'6,08',4,1,6,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Giovanni','Zappacosta','D','Roma',1,'5,5',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Salvatore','Zaza','A','Torino',13,'5,92',3,0,3,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lukasz','Zennaro','C','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Andreas','Zielinski','C','Napoli',19,'5,82',1,1,2,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Zek','Zmrhal','C','Brescia',6,'5,83',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Lukasz','Zortea','D','Atalanta',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Nicholas','Zukanovic','D','Genoa',0,'0',0,0,0,0,0,0,0);
-INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES ('Aleksejs','Zurkowski','C','Fiorentina',2,'0',0,0,0,0,0,0,0);
+INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES
+ ('Francesco','Acerbi','D','Lazio',18,6.42,1,1,4,0,0,0,0)
+,('Bobby','Adekanye','A','Lazio',1,0.00,0,0,0,0,0,0,0)
+,('Claude','Adjapong','D','Verona',1,0.00,0,0,0,0,0,0,0)
+,('Andrea','Adorante','A','Parma',0,0.00,0,0,0,0,0,0,0)
+,('Lucien','Agoume','C','Inter',1,0.00,0,0,0,0,0,0,0)
+,('Kevin','Agudelo','C','Genoa',9,5.83,1,0,3,1,0,0,0)
+,('Ola','Aina','D','Torino',16,5.67,0,0,4,0,0,0,0)
+,('Fabrizio','Alastra','P','Parma',0,0.00,0,0,0,0,0,0,0)
+,('Sandro','Alfonso','P','Brescia',3,5.83,0,0,0,0,0,0,0)
+,('Enrico','Allan','C','Napoli',13,6.04,1,1,2,0,0,0,0)
+,('Marques','Almici','D','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Alberto','Amrabat','C','Verona',17,6.26,0,0,6,0,0,0,0)
+,('Sofyan','Andrenacci','P','Brescia',0,0.00,0,0,0,0,0,0,0)
+,('Andre','Angella','D','Udinese',0,0.00,0,0,0,0,0,0,0)
+,('Lorenzo','Ankersen','D','Genoa',12,5.75,0,0,1,0,0,0,0)
+,('Cristian','Ansaldi','C','Torino',13,6.35,4,2,5,0,0,0,0)
+,('Mirko','Antonucci','A','Roma',2,5.75,0,0,1,0,0,0,0)
+,('Guilherme','Arana','D','Atalanta',4,6.00,0,0,0,0,0,0,0)
+,('Kwadwo','Asamoah','D','Inter',8,6.12,0,1,1,0,0,0,0)
+,('Emil','Audero','P','Sampdoria',19,6.03,0,0,0,0,0,0,0)
+,('Emil','Augello','D','Sampdoria',2,6.00,0,0,0,0,0,0,0)
+,('Tommaso','Aye''','A','Brescia',10,5.44,0,0,2,0,0,0,0)
+,('Florian','Babacar','A','Lecce',15,5.71,2,0,2,0,0,2,0)
+,('Khouma','Badelj','C','Fiorentina',16,5.77,1,0,1,0,0,0,0)
+,('Milan','Badu','C','Verona',2,0.00,0,0,0,0,0,0,0)
+,('Emmanuel','Bahlouli','A','Sampdoria',0,0.00,0,0,0,0,0,0,0)
+,('Mohamed','Balotelli','A','Brescia',14,6.07,5,0,4,0,0,0,0)
+,('Mario','Bani','D','Bologna',16,5.81,2,0,8,0,0,0,0)
+,('Mattia','Barak','C','Udinese',8,5.75,0,0,1,0,0,0,0)
+,('Antonin','Baraye','A','Parma',0,0.00,0,0,0,0,0,0,0)
+,('Nicolo','Barella','C','Inter',14,6.11,1,2,5,0,0,0,0)
+,('Antonino','Barilla''','C','Parma',18,5.76,1,0,5,0,0,0,0)
+,('Antonio','Barreca','D','Genoa',7,5.64,0,1,0,0,0,0,0)
+,('Edgar','Barreto','C','Sampdoria',2,5.50,0,0,0,0,0,0,0)
+,('Musa','Barrow','A','Bologna',7,5.93,0,2,0,0,0,1,0)
+,('Daniele','Baselli','C','Torino',15,5.97,0,1,3,0,0,0,0)
+,('Alessandro','Bastoni','D','Inter',10,6.00,0,0,4,0,0,0,0)
+,('Michel','Bastos','D','Lazio',6,5.75,0,0,2,0,0,0,0)
+,('Asmir','Begovic','P','Milan',0,0.00,0,0,0,0,0,0,0)
+,('Valon','Behrami','C','Genoa',2,5.75,0,0,1,0,0,0,0)
+,('Niki','Beloko','C','Fiorentina',0,0.00,0,0,0,0,0,0,0)
+,('Andrea','Belotti','A','Torino',17,6.47,4,2,2,0,5,0,0)
+,('Marco','Benassi','C','Fiorentina',11,5.83,1,0,1,0,0,0,0)
+,('Ismael','Bennacer','C','Milan',14,5.82,0,0,8,0,0,0,0)
+,('Rodrigo','Bentancur','C','Juventus',13,6.15,0,3,5,0,0,0,0)
+,('Domenico','Berardi','A','Sassuolo',14,6.57,8,2,3,1,0,1,0)
+,('Alex','Berenguer','C','Torino',12,6.27,5,0,2,0,0,0,0)
+,('B.','Bereszynski','D','Sampdoria',12,5.62,0,0,4,0,0,0,0)
+,('Federico','Bernardeschi','C','Juventus',14,5.42,0,0,2,0,0,0,0)
+,('Tommaso','Berni','P','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Andrea','Bertolacci','C','Sampdoria',5,5.88,0,0,1,0,0,0,0)
+,('Tommaso','Bessa','C','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Andrea','Biancu','C','Cagliari',0,0.00,0,0,0,0,0,0,0)
+,('Daniel','Bianda','D','Roma',0,0.00,0,0,0,0,0,0,0)
+,('Lucas','Biglia','C','Milan',7,5.43,0,1,3,0,0,0,0)
+,('Cristiano','Biraghi','D','Inter',13,5.79,0,2,0,0,0,0,0)
+,('Davide','Biraschi','D','Genoa',8,5.44,0,0,1,1,0,0,0)
+,('Valter','Birsa','C','Cagliari',2,6.00,0,0,0,0,0,0,0)
+,('Dimitri','Bisoli','C','Brescia',19,5.87,0,1,5,0,0,0,0)
+,('Marco','Bleve','P','Lecce',0,0.00,0,0,0,0,0,0,0)
+,('Kevin-Prince','Boateng','A','Fiorentina',14,5.79,1,0,2,0,0,0,0)
+,('Salvatore','Bocchetti','D','Verona',5,5.90,0,0,2,0,0,0,0)
+,('Jeremie','Boga','A','Sassuolo',18,6.06,4,1,0,0,0,0,0)
+,('Leonardo','Bonaventura','C','Milan',12,6.05,2,0,1,0,0,0,0)
+,('Federico','Bonazzoli','A','Sampdoria',8,6.07,1,0,1,0,0,0,0)
+,('Kevin','Bonifazi','D','Torino',3,6.33,1,0,0,0,0,0,0)
+,('Leonardo','Bonucci','D','Juventus',19,6.45,3,0,2,0,0,0,0)
+,('Fabio','Borghetto','P','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Valero','Borini','C','Verona',2,5.50,0,0,1,0,0,0,0)
+,('Devid','Bouah','D','Roma',0,0.00,0,0,0,0,0,0,0)
+,('Mehdi','Bourabia','C','Sassuolo',5,5.40,0,0,1,0,0,0,0)
+,('Federico','Brancolini','P','Fiorentina',0,0.00,0,0,0,0,0,0,0)
+,('Gleison','Bremer','D','Torino',11,5.55,1,0,2,2,0,0,0)
+,('Marcelo','Brozovic','C','Inter',18,6.28,2,5,5,0,0,0,0)
+,('Gaston','Brugman','C','Parma',11,5.90,0,0,0,0,0,0,0)
+,('Alves','Buffon','P','Juventus',7,6.14,0,0,0,0,0,0,0)
+,('Gianluigi','Buongiorno','D','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Alessandro','Burgio','C','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Fabrizio','Cacciatore','D','Cagliari',11,5.68,0,0,0,1,0,0,0)
+,('Martin','Caceres','D','Fiorentina',15,5.97,1,0,4,0,0,0,0)
+,('Mattia','Caicedo','A','Lazio',13,6.38,4,1,3,0,0,1,0)
+,('Davide','Calabresi','D','Bologna',0,0.00,0,0,0,0,0,0,0)
+,('Davide','Calabria','D','Milan',13,5.46,0,1,2,2,0,0,0)
+,('Marco','Caldara','D','Atalanta',0,0.00,0,0,0,0,0,0,0)
+,('Hadam','Calderoni','D','Lecce',16,5.80,3,1,5,0,0,0,0)
+,('Jose','Calhanoglu','C','Milan',18,6.00,2,1,5,0,0,0,0)
+,('Antonio','Callejon','C','Napoli',18,5.92,1,4,2,0,0,0,0)
+,('Gianmarco','Cancelo','D','Juventus',0,0.00,0,0,0,0,0,0,0)
+,('Paolo','Candela','D','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Gianluca','Candreva','C','Inter',16,6.33,2,4,4,0,0,0,0)
+,('Francesco','Cangiano','A','Bologna',0,0.00,0,0,0,0,0,0,0)
+,('Tommaso','Caprari','A','Sampdoria',16,5.86,3,0,2,1,0,0,0)
+,('Francesco','Caputo','A','Sassuolo',17,6.16,8,3,2,0,0,0,0)
+,('Timothy','Cassandro','D','Bologna',0,0.00,0,0,0,0,0,0,0)
+,('Samu','Cassata','C','Genoa',11,5.30,0,0,4,1,0,0,0)
+,('Lucas','Castagne','D','Atalanta',13,6.08,1,1,3,0,0,0,0)
+,('Gaetano','Castillejo','C','Milan',9,6.17,0,0,0,0,0,0,0)
+,('Danilo','Castro','C','Cagliari',14,6.23,2,0,2,0,0,0,0)
+,('Federico','Castrovilli','C','Fiorentina',18,6.53,3,2,7,0,0,0,0)
+,('Luca','Cataldi','C','Lazio',10,6.12,0,0,3,0,0,0,0)
+,('Alberto','Ceccherini','D','Fiorentina',5,5.83,0,0,0,0,0,0,0)
+,('N','Ceppitelli','D','Cagliari',9,6.25,2,0,4,0,0,0,0)
+,('Julian','Cerri','A','Cagliari',10,5.88,1,0,1,0,0,0,0)
+,('Jhon','Cetin','D','Roma',4,5.75,0,0,2,1,0,0,0)
+,('Giorgio','Chabot','D','Sampdoria',5,6.00,0,0,1,0,0,0,0)
+,('Federico','Chancellor','D','Brescia',16,5.91,2,0,3,0,0,0,0)
+,('Vlad','Chiellini','D','Juventus',1,7.00,1,0,0,0,0,0,0)
+,('Gianmarco','Chiesa','C','Fiorentina',16,6.22,2,2,3,0,0,1,0)
+,('Luca','Chiriches','D','Sassuolo',4,5.00,0,0,0,0,0,0,0)
+,('Thiago','Cigarini','C','Cagliari',16,6.10,0,1,4,0,0,0,0)
+,('Andrea','Cionek','D','SPAL',15,5.70,0,0,7,0,0,0,0)
+,('Ebrima','Cistana','D','Brescia',17,5.76,1,0,6,1,0,0,0)
+,('Omar','Colley','D','Sampdoria',16,5.91,0,0,5,0,0,0,0)
+,('Simone','Colombi','P','Parma',0,0.00,0,0,0,0,0,0,0)
+,('Andrea','Consigli','P','Sassuolo',14,6.29,0,0,0,0,0,0,1)
+,('Andrea','Conti','D','Milan',11,5.75,0,0,2,0,0,0,0)
+,('Gabriele','Corbo','D','Bologna',0,0.00,0,0,0,0,0,0,0)
+,('Andreas','Cornelius','A','Parma',12,6.15,6,0,1,0,0,0,0)
+,('Joaquin','Correa','A','Lazio',17,6.35,6,1,0,0,0,1,0)
+,('Alessio','Coulibaly','C','Udinese',0,0.00,0,0,0,0,0,0,0)
+,('Alessandro','Cragno','P','Cagliari',0,0.00,0,0,0,0,0,0,0)
+,('Domenico','Crescenzi','D','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Bryan','Criscito','D','Genoa',13,6.00,0,0,5,0,4,0,0)
+,('Jaime','Cristante','C','Roma',9,5.79,1,0,2,0,0,0,0)
+,('Tommaso','Cuadrado','C','Juventus',16,6.03,0,1,4,1,0,0,0)
+,('Patrick','Cucchietti','P','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Costa','Cutrone','A','Fiorentina',1,6.00,0,0,0,0,0,0,0)
+,('N','Dabo','C','SPAL',0,0.00,0,0,0,0,0,0,0)
+,('Henrique','Dalbert','D','Fiorentina',18,5.92,0,3,4,0,0,0,0)
+,('Marco','D''Alessandro','C','SPAL',4,5.75,0,0,0,0,0,0,0)
+,('Danilo','D''Ambrosio','D','Inter',11,6.11,1,0,4,0,0,0,0)
+,('Larangeira','Danilo','D','Juventus',9,5.89,1,0,0,0,0,0,0)
+,('Luiz','Danzi','C','Verona',1,0.00,0,0,0,0,0,0,0)
+,('Andrea','Darmian','D','Parma',15,6.00,0,1,3,0,0,0,0)
+,('Matteo','Dawidowicz','D','Verona',9,5.75,0,0,1,2,0,0,0)
+,('Pawel','Defrel','A','Sassuolo',8,5.94,1,1,1,0,0,0,0)
+,('Angelis','Deiola','C','Lecce',2,6.00,0,0,0,0,0,0,0)
+,('Ligt','Dell''Orco','D','Lecce',6,5.25,0,0,0,0,0,0,0)
+,('Maio','Demiral','D','Juventus',5,6.30,1,1,1,0,0,0,0)
+,('Paul','Demme','C','Napoli',0,0.00,0,0,0,0,0,0,0)
+,('Roon','Denswil','D','Bologna',13,5.54,0,0,4,0,0,0,0)
+,('Sciglio','Depaoli','D','Sampdoria',14,5.92,0,0,5,0,0,0,0)
+,('Silvestri','Dermaku','D','Parma',7,6.14,0,0,1,0,0,0,0)
+,('Vrij','Dessena','C','Brescia',6,5.58,0,0,2,1,0,0,0)
+,('Gregoire','Destro','A','Genoa',5,5.62,0,0,2,0,0,0,0)
+,('Alessandro','Diawara','C','Roma',11,6.10,0,0,3,0,0,0,0)
+,('Cristian','Dijks','D','Bologna',4,5.88,0,0,2,0,0,0,0)
+,('N','Dimarco','D','Inter',2,0.00,0,0,0,0,0,0,0)
+,('Diego','Djidji','D','Torino',9,5.64,0,0,0,0,0,0,0)
+,('Stefano','Djimsiti','D','Atalanta',17,6.06,1,0,2,0,0,0,0)
+,('Fabio','Djuricic','C','Sassuolo',13,6.00,3,1,4,0,0,0,0)
+,('Kastriot','Dominguez','C','Bologna',1,6.00,0,0,0,0,0,0,0)
+,('Daniele','Donati','D','Lecce',2,6.25,0,0,0,0,0,0,0)
+,('Mattia','Dragowski','P','Fiorentina',19,6.05,0,0,1,0,0,0,1)
+,('Carmine','Duarte','D','Milan',5,5.60,0,0,2,0,0,0,0)
+,('Francesco','Dubickas','A','Lecce',1,0.00,0,0,0,0,0,0,0)
+,('Gaudio','Duncan','C','Sassuolo',13,6.09,1,4,3,0,0,0,0)
+,('Lorenzo','Dybala','A','Juventus',17,6.72,4,1,3,0,1,0,0)
+,('Amadou','Dzeko','A','Roma',19,6.55,7,2,2,0,0,0,0)
+,('Mitchell','Dzemaili','C','Bologna',14,5.96,1,1,2,0,0,0,0)
+,('Federico','Edera','A','Torino',2,5.00,0,0,0,1,0,0,0)
+,('Koffi','Ekdal','C','Sampdoria',18,5.88,0,0,2,0,0,0,0)
+,('Berat','Elmas','C','Napoli',11,5.85,0,0,4,0,0,0,0)
+,('Filip','Empereur','D','Verona',3,5.83,0,0,1,0,0,0,0)
+,('Nicolas','Fagioli','C','Juventus',0,0.00,0,0,0,0,0,0,0)
+,('Giulio','Falco','A','Lecce',15,6.30,2,1,0,0,0,0,0)
+,('Alfredo','Falcone','P','Sampdoria',0,0.00,0,0,0,0,0,0,0)
+,('Antonio','Farago''','C','Cagliari',8,5.88,1,1,1,0,0,0,0)
+,('Gianluigi','Faraoni','D','Verona',18,6.11,2,2,3,0,0,0,0)
+,('Costa','Fares','C','SPAL',0,0.00,0,0,0,0,0,0,0)
+,('Bartlomiej','Farias','A','Lecce',12,5.96,2,0,2,1,0,0,0)
+,('Leo','Favilli','A','Genoa',9,5.57,0,0,2,0,0,0,0)
+,('Edgaras','Fazio','D','Roma',10,5.61,0,0,0,1,0,0,0)
+,('Alfred','Felipe','D','SPAL',10,5.67,0,0,3,0,0,0,0)
+,('Bobby','Fiamozzi','D','Lecce',0,0.00,0,0,0,0,0,0,0)
+,('Paulo','Floccari','A','SPAL',15,5.50,0,0,2,0,0,0,0)
+,('Alessandro','Florenzi','D','Roma',14,6.00,0,1,5,0,0,0,0)
+,('N','Fofana','C','Udinese',14,5.96,1,4,1,0,0,0,0)
+,('Simone','Freuler','C','Atalanta',14,6.08,2,1,2,0,0,0,0)
+,('Albin','Fuzato','P','Roma',0,0.00,0,0,0,0,0,0,0)
+,('Yamiq','Gabbia','D','Milan',0,0.00,0,0,0,0,0,0,0)
+,('Eljif','Gabbiadini','A','Sampdoria',15,6.00,4,1,1,0,0,0,0)
+,('Alan','Gabriel','P','Lecce',19,6.29,0,0,2,0,0,0,1)
+,('Can','Gaetano','C','Napoli',0,0.00,0,0,0,0,0,0,0)
+,('Emerson','Gagliardini','C','Inter',11,6.09,2,0,2,0,0,0,0)
+,('Sebastiano','Gagliolo','D','Parma',16,5.87,1,1,5,0,0,0,0)
+,('Nicolo','Gallo','D','Lecce',0,0.00,0,0,0,0,0,0,0)
+,('Filippo','Gastaldello','D','Brescia',4,5.50,0,0,0,0,0,0,0)
+,('Wladimiro','Gazzola','D','Parma',0,0.00,0,0,0,0,0,0,0)
+,('Iago','Gervinho','A','Parma',17,6.03,4,3,3,0,0,1,0)
+,('Paolo','Ghezzal','C','Fiorentina',8,5.58,0,0,0,0,0,0,0)
+,('Davide','Ghiglione','D','Genoa',16,5.93,0,5,4,0,0,0,0)
+,('Mohamed','Ghoulam','D','Napoli',5,5.90,0,0,2,0,0,0,0)
+,('Diego','Gilli','D','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Andrea','Godin','D','Inter',12,6.14,0,1,2,0,0,0,0)
+,('Federico','Goldaniga','D','Genoa',1,5.00,0,0,0,0,0,0,0)
+,('N','Gollini','P','Atalanta',17,6.24,0,0,2,0,0,0,0)
+,('Alex','Gosens','D','Atalanta',16,6.40,6,3,1,0,0,0,0)
+,('Gianmarco','Grassi','C','Parma',9,5.88,1,0,3,0,0,0,0)
+,('Riccardo','Guerrieri','P','Lazio',0,0.00,0,0,0,0,0,0,0)
+,('Sergio','Gumus','A','Genoa',3,6.25,0,0,0,0,0,0,0)
+,('Alessandro','Gunter','D','Verona',16,5.63,0,0,6,0,0,0,0)
+,('Seko','Handanovic','P','Inter',19,6.26,0,0,0,0,0,0,1)
+,('Remo','Hateboer','D','Atalanta',17,5.81,0,3,5,0,0,0,0)
+,('Daniel','Haye','C','Lecce',0,0.00,0,0,0,0,0,0,0)
+,('Matteo','Hernani','C','Parma',18,5.94,0,1,8,0,0,0,0)
+,('Manolo','Higuain','A','Juventus',17,6.25,5,3,1,0,0,0,0)
+,('N','Hysaj','D','Napoli',8,5.57,0,0,1,0,0,0,0)
+,('Gianluca','Iacoponi','D','Parma',19,5.97,2,0,3,0,0,0,0)
+,('Roberto','Ibanez','D','Atalanta',0,0.00,0,0,0,0,0,0,0)
+,('Riccardo','Ibrahimovic','A','Milan',2,6.75,1,0,0,0,0,0,0)
+,('Antonino','Icardi','A','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Daniele','Igor','D','SPAL',15,5.70,0,1,7,0,0,0,0)
+,('Marcello','Ilicic','A','Atalanta',15,6.57,9,2,1,1,0,0,0)
+,('N','Imbula','C','Lecce',3,5.67,0,0,0,0,0,0,0)
+,('Rachid','Immobile','A','Lazio',18,6.89,13,5,3,0,7,1,0)
+,('Paolo','Inglese','A','Parma',10,5.61,2,0,1,0,0,1,0)
+,('Faouzi','Insigne','A','Napoli',18,6.03,1,1,1,0,2,0,0)
+,('Filippo','Ionita','C','Cagliari',16,5.91,0,1,2,0,0,0,0)
+,('Diego','Izzo','D','Torino',19,5.95,1,0,4,0,0,0,0)
+,('Edoardo','Jagiello','C','Genoa',4,5.75,0,0,0,0,0,0,0)
+,('Pierluigi','Jajalo','C','Udinese',14,5.86,0,0,5,1,0,0,0)
+,('Alejandro','Jandrei','P','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Robin','Jankovic','C','SPAL',6,5.25,0,0,1,0,0,0,0)
+,('Alberto','Jankto','C','Sampdoria',14,5.82,2,2,2,0,0,0,0)
+,('Guido','Jaroszynski','D','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Sinan','Jony','C','Lazio',8,5.70,0,1,1,0,0,0,0)
+,('Koray','Joronen','P','Brescia',16,6.34,0,0,1,0,0,0,1)
+,('Samir','Kalinic','A','Roma',6,5.75,0,0,1,0,0,0,0)
+,('Hans','Karamoh','A','Parma',5,6.12,1,1,0,0,0,0,0)
+,('Thom','Karnezis','P','Napoli',0,0.00,0,0,0,0,0,0,0)
+,('Liam','Kessie''','C','Milan',16,5.41,0,0,2,0,1,0,0)
+,('Theo','Khedira','C','Juventus',12,5.92,0,1,3,0,0,0,0)
+,('N','Kjaer','D','Milan',5,5.80,0,0,2,0,0,0,0)
+,('Gonzalo','Klavan','D','Cagliari',16,5.71,0,0,3,0,0,0,0)
+,('Elseid','Kluivert','C','Roma',12,6.17,3,0,2,1,0,0,0)
+,('Simone','Kolarov','D','Roma',19,5.92,3,2,5,0,2,2,0)
+,('Roger','Kouame''','A','Genoa',11,6.45,5,2,1,0,0,0,0)
+,('Zlatan','Koulibaly','D','Napoli',14,5.68,0,0,2,1,0,0,0)
+,('dos','Krejci','C','Bologna',10,5.95,1,0,2,0,0,0,0)
+,('Josip','Krunic','C','Milan',7,5.64,0,1,3,0,0,0,0)
+,('Giannelli','Kucka','C','Parma',14,6.11,2,2,1,0,0,0,0)
+,('Ciro','Kulusevski','C','Parma',19,6.45,4,7,2,0,0,0,0)
+,('Roberto','Kumbulla','D','Verona',12,6.27,1,0,3,1,0,0,0)
+,('Lorenzo','Kurtic','C','Parma',17,6.00,2,0,5,0,0,0,0)
+,('Arthur','Kyriakopoulos','D','Sassuolo',10,6.06,0,1,1,0,0,0,0)
+,('Armando','Lapadula','A','Lecce',12,6.00,3,0,5,1,1,0,0)
+,('Filip','Lasagna','A','Udinese',18,5.58,3,0,0,0,0,0,0)
+,('N','Laurini','D','Parma',5,5.62,0,0,1,0,0,0,0)
+,('N','Laxalt','C','Torino',14,5.80,0,1,3,0,0,0,0)
+,('N','Lazaro','C','Inter',6,5.83,0,1,2,0,0,0,0)
+,('Jakub','Lazovic','C','Verona',18,6.17,1,2,2,0,0,0,0)
+,('Pedro','Lerager','C','Genoa',11,5.64,0,0,3,0,0,0,0)
+,('Bogdan','Leris','C','Sampdoria',7,5.71,0,0,0,0,0,0,0)
+,('N','Letica','P','SPAL',0,0.00,0,0,0,0,0,0,0)
+,('Silva','Linetty','C','Sampdoria',11,6.09,1,3,2,0,0,0,0)
+,('Jesse','Lirola','D','Fiorentina',16,5.81,0,0,4,0,0,0,0)
+,('Jesus','Llorente','A','Napoli',15,6.05,3,1,1,0,0,0,0)
+,('Nikola','Lobotka','C','Napoli',0,0.00,0,0,0,0,0,0,0)
+,('Yann','Lozano','A','Napoli',14,5.75,2,1,1,0,0,0,0)
+,('Orestis','Lucioni','D','Lecce',18,5.72,1,0,5,0,0,0,0)
+,('Franck','Lukic','C','Torino',13,5.79,0,1,4,0,0,0,0)
+,('Sami','Lulic','C','Lazio',17,5.97,0,1,5,0,0,0,0)
+,('Simon','Luperto','D','Napoli',8,5.83,0,0,2,0,0,0,0)
+,('Ragnar','Lyanco','D','Torino',6,5.75,0,0,1,0,0,0,0)
+,('Justin','Lykogiannis','D','Cagliari',8,5.75,0,0,3,0,0,0,0)
+,('Alexandar','Magnanelli','C','Sassuolo',13,5.95,0,0,4,0,0,0,0)
+,('Christian','Magnani','D','Brescia',2,5.00,0,0,2,0,0,0,0)
+,('Kalidou','Majer','C','Lecce',13,5.92,0,0,4,0,0,0,0)
+,('Ladislav','Maksimovic','D','Napoli',8,5.88,1,1,2,0,0,0,0)
+,('Rade','Malcuit','D','Napoli',3,6.00,0,0,0,0,0,0,0)
+,('Jan','Malinovskyi','C','Atalanta',16,6.17,2,0,4,1,0,0,0)
+,('Juraj','Mancosu','C','Lecce',15,6.17,1,0,2,0,4,0,0)
+,('Dejan','Mandragora','C','Udinese',18,5.79,0,2,1,0,0,0,0)
+,('Marash','Mangraviti','D','Brescia',6,5.50,0,0,2,0,0,0,0)
+,('Jasmin','Manolas','D','Napoli',13,6.00,2,0,2,0,0,0,0)
+,('Giorgos','Marchetti','P','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Gianluca','Marlon','D','Sassuolo',14,5.93,0,0,3,0,0,0,0)
+,('Kevin','Maroni','C','Sampdoria',0,0.00,0,0,0,0,0,0,0)
+,('Vincent','Marrone','D','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Diego','Martella','D','Brescia',12,5.30,0,0,1,0,0,0,0)
+,('Valentino','Marusic','C','Lazio',6,6.08,1,0,2,0,0,0,0)
+,('Darko','Mateju','D','Brescia',16,5.56,0,1,4,1,0,0,0)
+,('Manuel','Matri','A','Brescia',8,5.67,0,0,1,1,0,0,0)
+,('Rafael','Mattiello','D','Cagliari',2,0.00,0,0,0,0,0,0,0)
+,('Lucas','Matuidi','C','Juventus',17,5.91,0,0,1,0,0,0,0)
+,('Mehdi','Mbaye','D','Bologna',9,5.56,0,1,2,0,0,0,0)
+,('Karlo','Meccariello','D','Lecce',6,5.75,0,0,1,0,0,0,0)
+,('Karol','Medel','C','Bologna',13,5.88,0,0,7,1,0,0,0)
+,('Pol','Meite''','C','Torino',16,5.61,0,1,1,0,0,0,0)
+,('Fernando','Meret','P','Napoli',13,6.23,0,0,0,0,0,0,1)
+,('Faso','Merola','A','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Stanislav','Mertens','A','Napoli',16,6.03,4,1,3,0,0,0,0)
+,('Manuel','Milenkovic','D','Fiorentina',19,6.08,3,0,4,0,0,0,0)
+,('Hirving','Milik','A','Napoli',10,6.40,7,0,2,0,0,0,0)
+,('Felippe','Milli','P','Lecce',0,0.00,0,0,0,0,0,0,0)
+,('Leiva','Millico','A','Torino',2,0.00,0,0,0,0,0,0,0)
+,('Fabio','Minelli','D','Parma',0,0.00,0,0,0,0,0,0,0)
+,('Alberto','Mirante','P','Roma',1,6.50,0,0,0,0,0,0,0)
+,('Felipe','Missiroli','C','SPAL',18,5.83,0,0,6,0,0,0,0)
+,('Jordan','Mkhitaryan','C','Roma',9,5.94,3,1,1,0,0,0,0)
+,('Romelu','Moncini','A','SPAL',4,5.33,0,0,0,0,0,0,0)
+,('Sasa','Montiel','C','Fiorentina',0,0.00,0,0,0,0,0,0,0)
+,('Senad','Morosini','C','Brescia',3,6.00,0,0,0,0,0,0,0)
+,('Sebastiano','Muldur','D','Sassuolo',9,6.00,0,1,2,0,0,0,0)
+,('N','Murgia','C','SPAL',14,5.73,0,1,2,0,0,0,0)
+,('N','Muriel','A','Atalanta',17,6.29,6,0,0,0,4,1,0)
+,('Francesco','Murillo','D','Sampdoria',10,5.50,0,0,1,1,0,0,0)
+,('Giangiacomo','Murru','D','Sampdoria',19,5.66,0,0,3,0,0,0,0)
+,('Zan','Musacchio','D','Milan',16,5.69,0,0,4,1,0,0,0)
+,('Nikola','Musso','P','Udinese',19,6.37,0,0,0,0,0,0,1)
+,('Kevin','Nainggolan','C','Cagliari',16,6.47,4,4,3,0,0,0,0)
+,('Daniel','Nandez','C','Cagliari',18,6.22,1,2,6,0,0,0,0)
+,('Ruslan','Ndoj','C','Brescia',8,5.50,0,0,1,0,0,0,0)
+,('Gianluca','Nestorovski','A','Udinese',13,5.90,1,1,3,0,0,0,0)
+,('Marco','Nicolas','P','Udinese',0,0.00,0,0,0,0,0,0,0)
+,('Rolando','N''Koulou','D','Torino',13,5.81,0,0,1,1,0,0,0)
+,('Massimiliano','Nuytinck','D','Udinese',9,6.28,0,0,2,0,0,0,0)
+,('Kostas','Obiang','C','Sassuolo',16,5.63,1,0,7,0,0,0,0)
+,('Federico','Okaka','A','Udinese',15,6.13,4,1,7,0,0,0,0)
+,('Rui','Okoli','D','Atalanta',0,0.00,0,0,0,0,0,0,0)
+,('N','Oliva','C','Cagliari',7,6.25,1,0,1,0,0,0,0)
+,('Gonzalo','Olsen','P','Cagliari',14,6.46,0,0,0,1,0,0,0)
+,('Bruno','Opoku','D','Udinese',7,5.79,0,0,1,1,0,0,0)
+,('Lautaro','Orsolini','A','Bologna',19,6.13,5,3,2,0,0,0,0)
+,('Adam','Ospina','P','Napoli',6,5.75,0,0,0,0,0,0,0)
+,('Andrea','Padelli','P','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Ales','Pajac','D','Genoa',11,5.65,0,0,1,0,0,0,0)
+,('Alessandro','Palacio','A','Bologna',19,6.17,5,2,3,0,0,0,0)
+,('Federico','Palomino','D','Atalanta',15,5.83,0,0,2,0,0,0,0)
+,('Blaise','Paloschi','A','SPAL',9,5.43,0,0,0,0,0,0,0)
+,('Ibrahima','Pandev','A','Genoa',16,6.17,4,0,4,1,0,0,0)
+,('Biagio','Paqueta''','C','Milan',14,5.58,0,0,5,0,0,0,0)
+,('Gary','Parigini','C','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Soualiho','Parolo','C','Lazio',13,6.00,0,0,5,0,0,0,0)
+,('Alex','Pasalic','C','Atalanta',17,6.31,4,2,3,0,0,0,0)
+,('Dries','Pastore','C','Roma',8,6.14,0,0,0,0,0,0,0)
+,('Nicola','Patric','D','Lazio',6,6.00,0,0,1,0,0,0,0)
+,('Arkadiusz','Pavoletti','A','Cagliari',1,5.50,0,0,0,0,0,0,0)
+,('Savic','Paz','D','Bologna',1,6.50,0,1,0,0,0,0,0)
+,('Joakim','Pazzini','A','Verona',6,7.00,1,0,0,0,1,0,0)
+,('Vincenzo','Pedro','A','Fiorentina',4,5.50,0,0,0,0,0,0,0)
+,('Antonio','Pegolo','P','Sassuolo',3,7.00,0,0,0,0,0,0,0)
+,('Simone','Peluso','D','Sassuolo',14,5.50,0,1,3,0,0,0,0)
+,('Ivan','Perica','A','Udinese',0,0.00,0,0,0,0,0,0,0)
+,('Tofol','Perin','P','Genoa',2,6.50,0,0,0,0,0,0,0)
+,('Leonardo','Perisan','P','Udinese',0,0.00,0,0,0,0,0,0,0)
+,('Mert','Perisic','C','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Alessandro','Perotti','C','Roma',11,6.10,0,1,1,0,3,0,0)
+,('Luis','Pessina','C','Verona',17,5.88,2,0,2,0,0,0,0)
+,('Nicola','Petagna','A','SPAL',19,5.89,4,1,4,0,2,2,0)
+,('Juwara','Petriccione','C','Lecce',16,5.94,0,3,6,0,0,0,0)
+,('Mateo','Piatek','A','Milan',18,5.56,1,0,1,0,3,0,0)
+,('Juan','Piccoli','A','Atalanta',0,0.00,0,0,0,0,0,0,0)
+,('Marko','Pinamonti','A','Genoa',15,5.67,2,1,0,0,0,0,0)
+,('Miralem','Pinsoglio','P','Juventus',0,0.00,0,0,0,0,0,0,0)
+,('Emanuele','Pisacane','D','Cagliari',17,5.82,1,0,3,1,0,0,0)
+,('Ilija','Pjaca','A','Juventus',0,0.00,0,0,0,0,0,0,0)
+,('Matteo','Pjanic','C','Juventus',17,6.32,3,1,7,0,0,0,0)
+,('Lazar','Plizzari','P','Milan',0,0.00,0,0,0,0,0,0,0)
+,('Nicolas','Poli','C','Bologna',17,5.94,1,0,3,0,0,0,0)
+,('Bram','Politano','A','Inter',11,5.94,0,0,0,0,0,0,0)
+,('Pedro','Proto','P','Lazio',0,0.00,0,0,0,0,0,0,0)
+,('Stefano','Pulgar','C','Fiorentina',18,6.00,0,0,7,0,3,0,0)
+,('Caleb','Puscas','A','Inter',0,0.00,0,0,0,0,0,0,0)
+,('Christian','Quagliarella','A','Sampdoria',16,5.78,2,1,2,0,3,1,0)
+,('Robin','Rabiot','C','Juventus',11,5.73,0,0,2,1,0,0,0)
+,('Nicholas','Radovanovic','C','Genoa',16,5.82,0,0,2,0,0,0,0)
+,('Riccardo','Radu','D','Lazio',15,5.80,1,0,4,0,0,0,0)
+,('David','Radunovic','P','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Daniele','Rafael','P','Cagliari',6,6.08,0,0,0,0,0,0,0)
+,('Marko','Ragatzu','A','Cagliari',4,7.00,1,0,0,0,0,0,0)
+,('Rodrigo','Ramirez','C','Sampdoria',11,6.00,2,1,3,0,1,0,0)
+,('Jose','Ramsey','C','Juventus',10,6.05,1,0,0,0,0,0,0)
+,('Alberto','Ranocchia','D','Inter',2,6.25,0,0,1,0,0,0,0)
+,('Goran','Raspadori','A','Sassuolo',4,5.50,0,0,0,0,0,0,0)
+,('Lucas','Rebic','A','Milan',8,5.50,0,0,2,0,0,0,0)
+,('Vittorio','Reca','D','SPAL',11,5.68,0,0,1,0,0,0,0)
+,('Marco','Regini','D','Sampdoria',2,5.75,0,0,0,0,0,0,0)
+,('Mario','Ribery','C','Fiorentina',11,6.59,2,2,1,1,0,0,0)
+,('Javier','Riccardi','C','Roma',0,0.00,0,0,0,0,0,0,0)
+,('Marko','Rincon','C','Torino',16,6.12,1,1,4,0,0,0,0)
+,('Lopez','Rispoli','D','Lecce',16,5.62,0,0,4,0,0,0,0)
+,('Leonardo','Rizzo','C','Bologna',0,0.00,0,0,0,0,0,0,0)
+,('Nehuen','Rog','C','Cagliari',17,6.12,1,0,6,0,0,0,0)
+,('Giampaolo','Rogerio','D','Sassuolo',3,5.33,0,1,1,0,0,0,0)
+,('Giampaolo','Romagna','D','Sassuolo',12,5.79,0,0,2,0,0,0,0)
+,('Pereira','Romulo','C','Brescia',18,5.81,1,3,2,0,0,0,0)
+,('Gianluca','Rosati','P','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Lorenzo','Rossettini','D','Lecce',18,5.83,0,1,5,0,0,0,0)
+,('Luca','Rovella','C','Genoa',1,6.00,0,0,0,0,0,0,0)
+,('Federico','Rrahmani','D','Verona',18,6.06,0,0,2,0,0,0,0)
+,('Mattia','Rugani','D','Juventus',1,5.00,0,0,1,0,0,0,0)
+,('Samuele','Ruiz','C','Napoli',17,5.74,1,2,2,0,0,0,0)
+,('Diego','Sabelli','D','Brescia',19,5.92,0,2,1,0,0,0,0)
+,('Matteo','Sala','D','SPAL',8,5.64,0,0,1,0,0,0,0)
+,('Andrea','Salamon','D','SPAL',0,0.00,0,0,0,0,0,0,0)
+,('Jacopo','Samir','D','Udinese',10,5.50,0,0,3,0,0,0,0)
+,('German','Sanabria','A','Genoa',9,5.81,1,1,2,0,0,0,0)
+,('Giuseppe','Sandro','C','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Krzysztof','Santander','A','Bologna',16,5.69,0,0,4,0,1,0,0)
+,('Roberto','Santon','D','Roma',9,5.67,0,0,1,0,0,0,0)
+,('Andrea','Saponara','C','Genoa',4,5.75,0,0,1,0,0,0,0)
+,('Carlo','Schone','C','Genoa',16,5.88,1,0,3,0,0,1,0)
+,('Fabio','Schouten','C','Bologna',7,5.58,0,0,2,0,0,0,0)
+,('Semprini','Scozzarella','C','Parma',9,6.28,0,0,2,0,0,0,0)
+,('Miralem','Seculin','P','Sampdoria',0,0.00,0,0,0,0,0,0,0)
+,('Andrea','Sema','C','Udinese',15,5.93,2,0,1,0,0,0,0)
+,('Matteo','Semprini','D','Brescia',1,0.00,0,0,0,0,0,0,0)
+,('Silvio','Sensi','C','Inter',10,6.40,3,0,2,0,0,0,0)
+,('Erick','Sepe','P','Parma',19,6.26,0,0,1,0,0,0,1)
+,('Fabio','Shakhov','C','Lecce',12,5.77,0,2,2,0,0,0,0)
+,('Adrien','Siligardi','A','Parma',1,5.50,0,0,0,0,0,0,0)
+,('Ivan','Silvestri','P','Verona',18,6.22,0,0,1,0,0,0,0)
+,('Ionut','Simeone','A','Cagliari',18,6.00,5,2,2,0,0,0,0)
+,('Stefan','Sirigu','P','Torino',19,6.58,0,0,3,0,0,0,1)
+,('Boris','Skorupski','P','Bologna',19,5.95,0,0,1,0,0,0,0)
+,('Bittencourt','Skrabb','A','Brescia',0,0.00,0,0,0,0,0,0,0)
+,('Daniele','Skriniar','D','Inter',18,6.25,0,0,5,0,0,0,0)
+,('Cristian','Smalling','D','Roma',14,6.21,2,1,1,0,0,0,0)
+,('Leonardo','Soriano','C','Bologna',13,5.96,3,1,1,1,0,0,0)
+,('Luca','Sottil','A','Fiorentina',9,5.81,0,0,2,0,0,0,0)
+,('Andrea','Spalek','C','Brescia',13,5.50,1,1,2,0,0,0,0)
+,('Leonardo','Spinazzola','D','Roma',11,6.15,0,1,1,0,0,0,0)
+,('Ante','Sportiello','P','Atalanta',2,6.25,0,0,0,0,0,0,0)
+,('Arkadiusz','Sprocati','A','Parma',13,5.83,1,0,0,0,0,0,0)
+,('Vasco','Stepinski','A','Verona',12,5.78,2,0,1,1,0,0,0)
+,('Frank','Stijepovic','A','Sampdoria',0,0.00,0,0,0,0,0,0,0)
+,('Alessio','Strakosha','P','Lazio',18,6.39,0,0,0,0,0,0,1)
+,('Davide','Strefezza','C','SPAL',14,6.04,1,2,3,1,0,0,0)
+,('Stefano','Sturaro','C','Genoa',5,5.70,1,0,2,0,0,0,0)
+,('Tomas','Suso','C','Milan',16,5.72,1,2,2,0,0,0,0)
+,('Andrea','Svanberg','C','Bologna',11,5.94,0,1,1,0,0,0,0)
+,('Nicholas','Szczesny','P','Juventus',12,6.38,0,0,1,0,0,0,1)
+,('Becao','Tabanelli','C','Lecce',13,5.81,1,0,4,0,0,0,0)
+,('Ricardo','Tachtsidis','C','Lecce',16,5.53,0,1,3,1,0,0,0)
+,('Marko','Teodorczyk','A','Udinese',6,6.00,0,0,1,0,0,0,0)
+,('Fred','Terracciano','P','Fiorentina',0,0.00,0,0,0,0,0,0,0)
+,('Filippo','Terzic','D','Fiorentina',0,0.00,0,0,0,0,0,0,0)
+,('Alessio','Thereau','A','Fiorentina',0,0.00,0,0,0,0,0,0,0)
+,('Cristian','Thorsby','C','Sampdoria',8,5.75,0,0,2,0,0,0,0)
+,('Nenad','Toljan','D','Sassuolo',17,5.91,1,1,6,0,0,0,0)
+,('Cristiano','Toloi','D','Atalanta',17,6.09,0,4,5,0,0,0,0)
+,('Antonio','Tomiyasu','D','Bologna',14,5.79,0,1,4,0,0,0,0)
+,('Aleandro','Tomovic','D','SPAL',16,5.70,0,1,5,1,0,0,0)
+,('Luca','Tonali','C','Brescia',18,6.25,1,0,5,0,0,0,0)
+,('Francesco','Tonelli','D','Napoli',0,0.00,0,0,0,0,0,0,0)
+,('Nicolo','Torregrossa','A','Brescia',9,6.11,1,1,3,0,0,0,0)
+,('Amir','Tremolada','C','Brescia',1,5.50,0,0,0,0,0,0,0)
+,('Daniele','Tripaldelli','D','Sassuolo',2,5.50,0,0,0,0,0,0,0)
+,('Fabian','Troost-Ekong','D','Udinese',17,5.79,0,0,2,0,0,0,0)
+,('Alessandro','Tupta','A','Verona',0,0.00,0,0,0,0,0,0,0)
+,('Stefano','Turati','P','Sassuolo',2,6.25,0,0,0,0,0,0,0)
+,('Jacopo','Ujkani','P','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Bartosz','Under','C','Roma',9,5.92,1,0,1,0,0,0,0)
+,('Eddie','Valdifiori','C','SPAL',8,5.69,0,1,1,0,0,0,0)
+,('Nicholas','Valoti','C','SPAL',15,5.86,1,0,3,0,0,0,0)
+,('Antonio','Vavro','D','Lazio',2,5.75,0,0,0,0,0,0,0)
+,('Alexis','Vecino','C','Inter',14,6.04,1,1,2,0,0,0,0)
+,('Michel','Venuti','D','Fiorentina',6,5.62,0,1,2,0,0,0,0)
+,('Nicola','Vera','D','Lecce',3,6.00,0,0,0,0,0,0,0)
+,('Federico','Verdi','C','Torino',17,5.79,0,2,1,0,0,0,0)
+,('Davide','Veretout','C','Roma',17,6.15,0,0,3,0,1,0,0)
+,('Riccardo','Verre','C','Verona',17,6.06,1,0,4,0,2,0,0)
+,('Emiliano','Vicari','D','SPAL',19,5.87,0,0,3,0,0,0,0)
+,('Aleksejs','Vieira','C','Sampdoria',16,5.66,0,1,6,1,0,0,0)
+,('N','Vigorito','P','Lecce',0,0.00,0,0,0,0,0,0,0)
+,('Jerdy','Viviani','C','SPAL',0,0.00,0,0,0,0,0,0,0)
+,('Matteo','Vlahovic','A','Fiorentina',15,5.89,3,0,2,0,0,0,0)
+,('Andrea','Vodisek','P','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Ken','Walace','C','Udinese',9,5.79,0,0,1,0,0,0,0)
+,('Alessandro','Wallace','D','Lazio',0,0.00,0,0,0,0,0,0,0)
+,('Stefano','Walukiewicz','D','Cagliari',1,4.50,0,0,0,0,0,0,0)
+,('Luigi','Younes','C','Napoli',6,5.50,0,0,1,0,0,0,0)
+,('Jevhen','Zaccagni','C','Verona',17,6.18,1,3,4,0,0,0,0)
+,('Luca','Zaccagno','P','Torino',0,0.00,0,0,0,0,0,0,0)
+,('Marco','Zaniolo','C','Roma',18,6.08,4,1,6,0,0,0,0)
+,('Giovanni','Zappacosta','D','Roma',1,5.50,0,0,0,0,0,0,0)
+,('Salvatore','Zaza','A','Torino',13,5.92,3,0,3,0,0,0,0)
+,('Lukasz','Zennaro','C','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Andreas','Zielinski','C','Napoli',19,5.82,1,1,2,0,0,0,0)
+,('Zek','Zmrhal','C','Brescia',6,5.83,0,0,0,0,0,0,0)
+,('Lukasz','Zortea','D','Atalanta',0,0.00,0,0,0,0,0,0,0)
+,('Nicholas','Zukanovic','D','Genoa',0,0.00,0,0,0,0,0,0,0)
+,('Aleksejs','Zurkowski','C','Fiorentina',2,0.00,0,0,0,0,0,0,0);
