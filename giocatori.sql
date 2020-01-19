@@ -1,3 +1,5 @@
+use fantacalciounisa;
+alter table giocatore alter column prezzoBase set default 0;
 INSERT INTO Giocatore(Nome,Cognome,Ruolo,SquadraReale,Presenze,VotoMedio,Goal,Assist,Ammonizioni,Espulsioni,rigoriSegnati,rigoriSbagliati,rigoriParati) VALUES
  ('Francesco','Acerbi','D','Lazio',18,6.42,1,1,4,0,0,0,0)
 ,('Bobby','Adekanye','A','Lazio',1,0.00,0,0,0,0,0,0,0)
