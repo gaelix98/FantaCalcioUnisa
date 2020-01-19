@@ -1,0 +1,388 @@
+{
+  "id": "5b1d3d71-51f8-4676-a73b-8ae92cb9e58d",
+  "version": "2.0",
+  "name": "Post",
+  "url": "http://localhost:8080/FantaFootball/index.jsp",
+  "tests": [{
+    "id": "f0cbd066-aebd-4b32-9cdd-0c37ff0fae8d",
+    "name": "1.9.1.",
+    "commands": [{
+      "id": "508fa5ec-ef0a-4a1f-88ea-61341fe05280",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/FantaFootball/login.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6004181-901f-4ecc-a6a4-c850d32a3fef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f19d8226-9f4b-4ffc-b705-9499433ea1ab",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba0fa7ce-2b67-4a2d-8d6c-4169569376de",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "LoScarso"
+    }, {
+      "id": "070071b9-23ff-4862-8885-71a6a89c1850",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76ec6c65-4168-44b9-9231-f3b478620caf",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "bingobangobongo1"
+    }, {
+      "id": "d3b060f4-144d-48d6-88b4-39e33b9436b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "02d3894e-0c56-49e7-8590-08f2b4835e6d",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .genric-btn",
+      "targets": [
+        ["css=a:nth-child(2) > .genric-btn", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Inserisci Post')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b15d8a44-b743-4711-b3fc-709c32c20562",
+      "comment": "",
+      "command": "click",
+      "target": "id=titolo",
+      "targets": [
+        ["id=titolo", "id"],
+        ["name=titolo", "name"],
+        ["css=#titolo", "css:finder"],
+        ["xpath=//input[@id='titolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "89d458a1-2cda-4179-bab0-26112e1f0289",
+      "comment": "",
+      "command": "type",
+      "target": "id=titolo",
+      "targets": [
+        ["id=titolo", "id"],
+        ["name=titolo", "name"],
+        ["css=#titolo", "css:finder"],
+        ["xpath=//input[@id='titolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "post di Test"
+    }, {
+      "id": "aad111b2-1391-4d49-a572-d9d013450af4",
+      "comment": "",
+      "command": "click",
+      "target": "id=testo",
+      "targets": [
+        ["id=testo", "id"],
+        ["name=testo", "name"],
+        ["css=#testo", "css:finder"],
+        ["xpath=//textarea[@id='testo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "122ff5cb-3516-4ecb-b5fb-a9567ce09cad",
+      "comment": "",
+      "command": "type",
+      "target": "id=testo",
+      "targets": [
+        ["id=testo", "id"],
+        ["name=testo", "name"],
+        ["css=#testo", "css:finder"],
+        ["xpath=//textarea[@id='testo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": " \\n \t\t\t\tnon va\t\t"
+    }, {
+      "id": "b7bfa4fd-ce96-483a-bd83-2649afe7e07c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Conferma')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7dcc868d-12c7-4671-8bc6-66ee805027f1",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Post",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "09842c93-860b-4f4f-8331-9d5581ec180b",
+    "name": "1.9.2",
+    "commands": [{
+      "id": "34a5276e-ecd4-4d9b-9450-d990c3e1c9a3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/FantaFootball/index.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "319f4d67-1a35-492b-9623-5d6070144dde",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a20207c1-cfa6-46da-87ac-3e0bf209f5ab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5e97f41-4b30-4931-9201-8b2aed0f5d3e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(5) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.jsp')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88b9b396-267b-4369-98cb-e8bf307ba808",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "edc43c8f-fded-49b2-af22-95fe4cfde184",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "LoScarso"
+    }, {
+      "id": "23114518-8ccc-4fd7-9cdc-6dd45195c92d",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f19b7b23-0458-48cf-ae4e-ed5b8d5f47af",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "bingobangobongo1"
+    }, {
+      "id": "6c3b006b-9ea1-4796-a692-4dd822593243",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46f55734-cfd0-4094-9b8f-3bb64d6dc686",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .genric-btn",
+      "targets": [
+        ["css=a:nth-child(2) > .genric-btn", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Inserisci Post')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "297edc29-1965-44e1-9a2e-797a88a43d3d",
+      "comment": "",
+      "command": "click",
+      "target": "id=titolo",
+      "targets": [
+        ["id=titolo", "id"],
+        ["name=titolo", "name"],
+        ["css=#titolo", "css:finder"],
+        ["xpath=//input[@id='titolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "069f58ab-44c5-498f-8136-1f274643df7e",
+      "comment": "",
+      "command": "type",
+      "target": "id=titolo",
+      "targets": [
+        ["id=titolo", "id"],
+        ["name=titolo", "name"],
+        ["css=#titolo", "css:finder"],
+        ["xpath=//input[@id='titolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "testino"
+    }, {
+      "id": "828dea69-f51c-42a1-aa30-dc51c45ac5dd",
+      "comment": "",
+      "command": "click",
+      "target": "id=testo",
+      "targets": [
+        ["id=testo", "id"],
+        ["name=testo", "name"],
+        ["css=#testo", "css:finder"],
+        ["xpath=//textarea[@id='testo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8608c583-150b-49f3-a9e9-52ecf907c297",
+      "comment": "",
+      "command": "type",
+      "target": "id=testo",
+      "targets": [
+        ["id=testo", "id"],
+        ["name=testo", "name"],
+        ["css=#testo", "css:finder"],
+        ["xpath=//textarea[@id='testo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": " \\n \t\t\til testo deve contenere almeno venti parole\t\t\t"
+    }, {
+      "id": "b51183ee-9f7f-4780-a28f-76fd34a8e989",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Conferma')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8591f6fd-88ed-4f82-839c-016ddb2924af",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Area Personale",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ece5efba-e334-4add-ba14-76a1063019d0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/FantaFootball/login.jsp", "http://localhost:8080/FantaFootball/index.jsp"],
+  "plugins": []
+}

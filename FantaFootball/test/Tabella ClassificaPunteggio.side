@@ -1,0 +1,148 @@
+{
+  "id": "169394e8-93d7-483b-88c7-5bae9470e4f6",
+  "version": "2.0",
+  "name": "Tabella Classifica(Punteggio)",
+  "url": "http://localhost:8080/FantaFootball/index.jsp",
+  "tests": [{
+    "id": "dc3d1171-37aa-41be-ada6-0eaabf349801",
+    "name": "Punteggio",
+    "commands": [{
+      "id": "28cd94a0-5630-4dd2-97c6-e06b5a5c0e5a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/FantaFootball/index.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0154ac05-6b4c-43e7-9a43-351683314c58",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14ec68f3-dde5-443f-962e-c0fe29034f78",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(5) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.jsp')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd0e2d04-a1d6-4d48-a54e-aad9ccba2106",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11671acb-64ca-45dc-a95f-a00689bf7586",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pasquale98"
+    }, {
+      "id": "839275f3-dbdd-4821-9139-8e1f75ddd9e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ba384a2-c351-42cc-b158-bffe0f630ff5",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "pasquale12"
+    }, {
+      "id": "7a4c4ee5-12ea-42a7-86ca-d8ca9acddad1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dce9dd37-fa7b-4aa9-b35f-cd144c993bff",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=MemeroniX",
+      "targets": [
+        ["linkText=MemeroniX", "linkText"],
+        ["css=.row:nth-child(2) > .col-md-4 > p > a", "css:finder"],
+        ["xpath=//a[contains(text(),'MemeroniX')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'getLegaServlet?q=MemeroniX')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'MemeroniX')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ac5f714-f8ca-41ec-b0d5-e33f1b15dcfd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84e9ea10-3463-471c-99dd-a3a546502108",
+      "comment": "Se l'ordine della Classifica e':      1posto FantaCola,    2posto Zoe4Evah e' CORRETTO",
+      "command": "assertTitle",
+      "target": "Classifica",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f73a36b7-07f2-4ae9-add3-620a021d35f4",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["dc3d1171-37aa-41be-ada6-0eaabf349801"]
+  }],
+  "urls": ["http://localhost:8080/FantaFootball/index.jsp"],
+  "plugins": []
+}

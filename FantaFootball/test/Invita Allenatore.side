@@ -1,0 +1,186 @@
+{
+  "id": "ad48dddf-4181-4e4b-a26b-273ced71010e",
+  "version": "2.0",
+  "name": "Invita Allenatore",
+  "url": "http://localhost:8080/FantaFootball/index.jsp",
+  "tests": [{
+    "id": "03cce251-4e4f-46f1-9982-ee4018cfe3e1",
+    "name": "1.4.4",
+    "commands": [{
+      "id": "12285a63-959c-49df-b91d-5cbc272338ae",
+      "comment": "",
+      "command": "open",
+      "target": "/FantaFootball/index.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f8bdf40-a2ce-42c9-95d8-d1c2ef27fedc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55ff204d-572c-441b-b406-2f47aa0fe2ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(5) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.jsp')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb99e7be-65e8-4849-8df6-a625298ff7e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a30a00b-2c72-46db-aa96-d3f4bd631d93",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pasquale98"
+    }, {
+      "id": "1193fc47-b4e5-4f87-a05e-0aaea7ac0c22",
+      "comment": "",
+      "command": "click",
+      "target": "css=#form1 > div:nth-child(3)",
+      "targets": [
+        ["css=#form1 > div:nth-child(3)", "css:finder"],
+        ["xpath=//form[@id='form1']/div[3]", "xpath:idRelative"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc9eeb8e-68b8-4da1-bba0-e633e40f7c14",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ec600d9-5f28-48fb-bef8-657614cb41a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "pasquale12"
+    }, {
+      "id": "205e011f-ece2-4261-8d32-dbfca059348e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37a4f95a-c88a-4f6f-9ddc-15ab54f462b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(2) > .col-lg-7 > a:nth-child(1) > .genric-btn",
+      "targets": [
+        ["css=.row:nth-child(2) > .col-lg-7 > a:nth-child(1) > .genric-btn", "css:finder"],
+        ["xpath=//div[2]/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Invita partecipanti')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d16dae21-34f3-4d16-ad65-ddce3da54c32",
+      "comment": "",
+      "command": "click",
+      "target": "id=userall",
+      "targets": [
+        ["id=userall", "id"],
+        ["name=userall", "name"],
+        ["css=#userall", "css:finder"],
+        ["xpath=//input[@id='userall']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7371e6a4-0ff6-44f3-9035-e1a7b6ce0148",
+      "comment": "",
+      "command": "type",
+      "target": "id=userall",
+      "targets": [
+        ["id=userall", "id"],
+        ["name=userall", "name"],
+        ["css=#userall", "css:finder"],
+        ["xpath=//input[@id='userall']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Artattack"
+    }, {
+      "id": "f31e0847-aa30-461f-acdd-a00e8acec0b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn:nth-child(5)",
+      "targets": [
+        ["css=.genric-btn:nth-child(5)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2c789a7-7f2f-405e-88a5-66e80cc03964",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "FantaFootball",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2938b2df-b790-452e-ace1-0f9fc7b8d627",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["03cce251-4e4f-46f1-9982-ee4018cfe3e1"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

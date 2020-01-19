@@ -1,0 +1,357 @@
+{
+  "id": "156c3870-eb97-4fe1-b4ab-811318a8ebcb",
+  "version": "2.0",
+  "name": "Tabelle",
+  "url": "http://localhost:8080/FantaFootball/index.jsp",
+  "tests": [{
+    "id": "2fdf4bce-1956-4dcc-b6a3-78e1c592adb8",
+    "name": "1.10.1",
+    "commands": [{
+      "id": "6b7dc32a-9ac9-4d49-bb16-896791a49b8a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/FantaFootball/index.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9445ea5a-1d2c-4c51-a163-762af163c1d9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84561809-701c-4020-9b27-b755e6a88cc5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e282bb8e-495e-421c-9a67-a66a14b4a9e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(5) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.jsp')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a995b053-a795-44fc-8edc-c60f49b6d4b0",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00feedb0-2ae2-42a5-88f1-89695f2321b0",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pasquale98"
+    }, {
+      "id": "4a8dc825-6bc1-4739-9985-60de3a2b3255",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4257224-6356-4635-861d-5f3a1ae8bf04",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "pasquale12"
+    }, {
+      "id": "f26e387b-e2d5-4e8f-b882-5c3477fab4ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b20007da-29c8-420c-ba2b-91483cce2c79",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=MemeroniX",
+      "targets": [
+        ["linkText=MemeroniX", "linkText"],
+        ["css=p:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'MemeroniX')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'getLegaServlet?q=MemeroniX')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'MemeroniX')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88c60b5f-1dc4-4b33-9d93-222f8c8533d4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aste",
+      "targets": [
+        ["linkText=Aste", "linkText"],
+        ["css=h4:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aste')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'aste.jsp')]", "xpath:href"],
+        ["xpath=//h4[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aste')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78f1289d-d38a-439b-bd70-4db09f52053f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .genric-btn",
+      "targets": [
+        ["css=a:nth-child(2) > .genric-btn", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45c270f2-08c9-4538-a785-b6635a1aa189",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c44da35f-dad0-44ae-9980-90280b245438",
+      "comment": "",
+      "command": "select",
+      "target": "id=ruolo",
+      "targets": [],
+      "value": "label=Attaccante"
+    }, {
+      "id": "4e59d704-dbf9-4648-a701-24b80fbe8d94",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d67500f1-5df1-401c-8dd6-fd547639e0c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtra!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47f30619-8ae9-43a4-987a-01a0d9828e64",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2736d45e-854f-4446-9f1f-50a2ed81361c",
+      "comment": "",
+      "command": "select",
+      "target": "id=ruolo",
+      "targets": [],
+      "value": "label=Centrocampista"
+    }, {
+      "id": "ae2e6298-e457-40a5-bd2e-35f0a28fbf46",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91e5ec72-6580-4bb4-a616-5a18ded3491d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtra!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "707cba8f-128d-4944-8a33-0fa2280a2140",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1831e997-5889-46cc-bd08-1d321366d077",
+      "comment": "",
+      "command": "select",
+      "target": "id=ruolo",
+      "targets": [],
+      "value": "label=Difensore"
+    }, {
+      "id": "b386858c-aa7a-4867-9613-6045d53c70b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "407ef8d0-139e-4b01-ba0c-4fe72c0c4eeb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtra!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5dc25ea9-3746-4a0f-ad97-f0c0bb9f8ef3",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84e5596a-0cba-4b22-b41f-cad1ae45342a",
+      "comment": "",
+      "command": "click",
+      "target": "id=ruolo",
+      "targets": [
+        ["id=ruolo", "id"],
+        ["name=ruolo", "name"],
+        ["css=#ruolo", "css:finder"],
+        ["xpath=//select[@id='ruolo']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a79a5347-ba21-49f5-93d9-29959fa70cea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.genric-btn",
+      "targets": [
+        ["css=.genric-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form1']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtra!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56078625-27ac-45af-9a78-c3babf579b96",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Offerte",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4e3fbff2-3b49-4c04-b19e-73dccf55d25c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/FantaFootball/index.jsp"],
+  "plugins": []
+}
