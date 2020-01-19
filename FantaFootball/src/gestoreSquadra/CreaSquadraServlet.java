@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
@@ -111,6 +112,9 @@ public class CreaSquadraServlet extends HttpServlet {
 							invito.setRisposta(true);
 							invitod.updateInvito(invito); 
 							session.setAttribute("inviti", inviti);
+							List<Lega> leghe=(ArrayList<Lega>)session.getAttribute("leghe");
+							leghe.add(lega);
+							session.setAttribute("leghe", leghe);
 						}	
 					}
 					else {

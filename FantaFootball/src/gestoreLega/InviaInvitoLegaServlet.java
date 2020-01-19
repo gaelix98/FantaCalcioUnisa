@@ -7,13 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.RequestDispatcher;
@@ -22,12 +20,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
-import gestoreLega.Asta;
-import gestoreLega.AstaDAO;
 import gestoreSquadra.SquadraDAO;
 import gestoreUtente.Allenatore;
 import gestoreUtente.AllenatoreDAO;
@@ -67,26 +62,26 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 
 		if ((username!= null  || email!=null)) {
 			System.out.println("fuori2");
-			
-				
-					try {
-						if(!username.equals("") && allenatord.getAllenatoreByUsername(username)!=null) {
-							if( sq.getSquadraByUserELega(username, lega)==null) {
-							invitato = allenatord.getAllenatoreByUsername(username);
-							Lega legaa = legad.getLegaByNome(lega);
-							System.out.println(legaa.getNome());
-							try {
-								invitd.addInvito(new Invito(invitato,legaa, false));
-							} catch (SQLException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+
+
+			try {
+				if(!username.equals("") && allenatord.getAllenatoreByUsername(username)!=null) {
+					if( sq.getSquadraByUserELega(username, lega)==null) {
+						invitato = allenatord.getAllenatoreByUsername(username);
+						Lega legaa = legad.getLegaByNome(lega);
+						System.out.println(legaa.getNome());
+						try {
+							invitd.addInvito(new Invito(invitato,legaa, false));
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
-					
 					}
-				
-			
-				else if(!email.equals("")) {
+
+				}
+
+
+				/*else if(!email.equals("")) {
 					System.out.println("fuori1");
 					String mail = request.getParameter("emailall");
 					String object =("Unisciti alla fantastica lega!");
@@ -94,19 +89,19 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 					System.out.println(mail + " " + object + " " + message);
 					try
 					{ System.out.println("fuori");
-						sendMailFrmoUser(object, message,mail);
-						response.setContentType("application/json");
-						response.setCharacterEncoding("UTF-8");
-						
+					sendMailFrmoUser(object, message,mail);
+					response.setContentType("application/json");
+					response.setCharacterEncoding("UTF-8");
+
 					}
 					catch(MessagingException e)
 					{
 						response.setContentType("application/json");
 						response.setCharacterEncoding("UTF-8");
-						
+
 					}
 
-				}
+				}*/
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -134,24 +129,24 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 	}
 
 
-	public static void sendMailFrmoUser(String objet,String msg,String email)throws MessagingException
+	/*public static void sendMailFrmoUser(String objet,String msg,String email)throws MessagingException
 	{
 		final String usernameM = "professore6puntipls@outlook.com";
 		final String password = "Esame1401";
 		// Creazione di una mail session
 		Properties props = new Properties();
-		   
-//         props.put("mail.smtp.socketFactory.port", "587");
-//         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-//         props.put("mail.smtp.socketFactory.fallback", "true");
-         props.put("mail.smtp.host", "smtp-mail.outlook.com");
-         props.put("mail.smtp.port", "587");
-         props.put("mail.smtp.starttls.enable","true");
-         props.put("mail.smtp.auth", "true");
-		 props.put("mail.debug", "true"); 
-		 
-		
-		
+
+		//         props.put("mail.smtp.socketFactory.port", "587");
+		//         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		//         props.put("mail.smtp.socketFactory.fallback", "true");
+		props.put("mail.smtp.host", "smtp-mail.outlook.com");
+		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.starttls.enable","true");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.debug", "true"); 
+
+
+
 		Session session = Session.getInstance(props, 
 				new javax.mail.Authenticator(){
 			protected PasswordAuthentication getPasswordAuthentication() {
@@ -168,13 +163,13 @@ public class InviaInvitoLegaServlet extends HttpServlet {
 
 		// Aggiunta degli indirizzi del mittente e del destinatario
 		InternetAddress fromAddress = new InternetAddress("professore6puntipls@outlook.com");
-		
+
 		message.setFrom(fromAddress);
 		message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 
 		// Invio del messaggio
 		Transport.send(message);
-	}
+	}*/
 
 
 }

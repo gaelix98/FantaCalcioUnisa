@@ -85,6 +85,7 @@
 					%>
 					<a href="filtraGiocatoriServlet?squadra=&p=0&data=<%=astaInCorso.getDataInizio() %>&prezzoBase=&ruolo="><button class="genric-btn primary circle arrow">Fai offerte per
 							l'asta</button></a>
+					<a href="leMieOfferte.jsp"><button class="genric-btn primary circle arrow">Le tue offerte</button></a>
 							
 					<%
 						} else {

@@ -47,7 +47,7 @@ public class filtraGiocatoriServlet extends HttpServlet {
 		List<Giocatore> giocatori=new ArrayList<>();
 
 		HttpSession session=request.getSession();
-
+	
 
 		switch(p) {
 		case "0":
@@ -103,7 +103,7 @@ public class filtraGiocatoriServlet extends HttpServlet {
 			break;
 		}
 		switch(p) {
-		case "0": redirect="faiOfferta.jsp"; break;
+		case "0": redirect="faiOfferta.jsp";break;
 		case "1": redirect="NewFormazione.jsp"; break;
 		}
 
@@ -111,6 +111,8 @@ public class filtraGiocatoriServlet extends HttpServlet {
 		for(int i=0;i<giocatori.size();i++) {
 			System.out.println(giocatori.get(i).getNome());
 		}
+		
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(redirect);
 		requestDispatcher.forward(request, response);
 	}

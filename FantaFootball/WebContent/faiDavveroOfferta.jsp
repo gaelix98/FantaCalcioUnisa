@@ -81,7 +81,7 @@
 						<div class="mt-10">
 							<h5>Inserisci qui la tua offerta</h5>
 							<input type="number" name="sommaOfferta"
-								placeholder="Quanto Offri?" id="sommaOfferta"
+								placeholder="Quanto Offri?" id="sommaOfferta" min=<%=giocatore.getPrezzoBase()%>
 								class="single-input"><br>
 						</div>
 					</div>

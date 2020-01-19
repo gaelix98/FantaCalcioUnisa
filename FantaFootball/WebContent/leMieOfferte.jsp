@@ -12,7 +12,23 @@
 	
 
 	<%
-		ArrayList<Offerta> offerte = (ArrayList<Offerta>) request.getAttribute("offerte");
+		ArrayList<Offerta> offerte = (ArrayList<Offerta>) session.getAttribute("offerte");
+	Lega lega = (Lega) session.getAttribute("lega");
+	List<Asta> aste = (List<Asta>) session.getAttribute("aste");
+	List<Asta> prossimeAste = new ArrayList<>();
+	Asta astaInCorso = null; 
+	List<Asta> astePrecedenti = new ArrayList<>();  
+	Date dataAttuale = new Date();
+	for (Asta asta : aste) {
+		if (asta.getDataFine().before(dataAttuale)) {
+			astePrecedenti.add(asta);
+		} else if (asta.getDataInizio().after(dataAttuale)) {
+			prossimeAste.add(asta);
+		} else {
+			astaInCorso = asta;
+			
+		}
+	}
 	%>
 	<%@ include file="menu.jsp"%>
 	<div class="container">
@@ -20,9 +36,8 @@
 			<h1></h1>
 		</div>
 		<div class="row">
-			<div class="col-lg-8 col-md-16">
+			<div class="col-lg-10 col-md-12">
 				<div class="blog_left_sidebar">
-					<div style="overflow: scroll; height: 30em; width: 90em">
 						<table class="table">
 							<thead>
 								<tr>
@@ -38,6 +53,7 @@
 							</thead>
 							<tbody>
 								<%
+								if (offerte!=null){
 									for (int i = 0; i < offerte.size(); i++) {
 								%>
 								<tr>
@@ -75,14 +91,17 @@
 								</tr>
 								<%
 									}
+								}
 								%>
 							</tbody>
 						</table>
 					</div>
 				</div>
+				<div class="col-lg-2">
+				<h4><a href="filtraGiocatoriServlet?squadra=&p=0&data=<%=astaInCorso.getDataInizio() %>&prezzoBase=&ruolo=">
+				Torna alla lista dei giocatori</a></h4></div>
 			</div>
 		</div>
-	</div>
 
 	<%@include file="footer.jsp"%>
 </body>
